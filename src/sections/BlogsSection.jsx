@@ -11,7 +11,7 @@ function BlogsSection() {
   const Blogs = [
     { title: "Power Skills are the Edge", date: "1/1/26", imageUrl: "Home/blog1.avif" },
     { title: "AI Ethics", date: "8/4/25", imageUrl: "Home/blog2.avif" },
-    { title: "ChatAI at Work", date: "7/31/25", imageUrl: "Home/blog1.avif" },
+    { title: "ChatAI at Work", date: "7/31/25", imageUrl: "Home/blog3.avif" },
   ];
 
   useGSAP(

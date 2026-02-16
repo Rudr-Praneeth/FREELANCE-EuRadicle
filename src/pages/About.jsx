@@ -1,13 +1,18 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
-import JourneySection from '../sections/JourneySection'
+import AboutSection from '../sections/AboutSection'
+import Timeline from '../sections/Timeline'
+import OurApproach from '../sections/OurApproach'
+import MindsBehind from '../sections/MindsBehind'
+import GlobalFootprintsSection from '../sections/GlobalFooterSection'
 
 const About = () => {
   return (
     <div>
-      <Navbar />
-      <div className='h-screen'></div>
-      <JourneySection />
+      <AboutSection />
+      <Timeline />
+      <OurApproach />
+      <MindsBehind />
+      <GlobalFootprintsSection />
     </div>
   )
 }

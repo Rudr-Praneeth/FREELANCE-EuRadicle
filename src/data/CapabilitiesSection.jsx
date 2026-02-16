@@ -101,7 +101,7 @@ const CapabilitiesSection = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h1 className="text-h2 text-primary-navy tracking-tight">
-            OUR <span className="text-brand-600">CAPABILITIES</span>
+            OUR <span className="text-primary-mauve">CAPABILITIES</span>
           </h1>
         </div>
 

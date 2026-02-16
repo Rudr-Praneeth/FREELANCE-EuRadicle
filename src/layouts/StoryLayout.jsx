@@ -1,10 +1,8 @@
 import React from 'react'
 
-const StoryLayout = () => {
+const StoryLayout = (props) => {
   return (
-    <div>
-        
-    </div>
+    <div>StoryLayout</div>
   )
 }
 

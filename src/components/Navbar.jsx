@@ -23,7 +23,6 @@ function Navbar() {
   const dropdownRef = useRef(null);
   const mobileMenuRef = useRef(null);
   const ctaRef = useRef(null);
-  const dropdownWrapperRef = useRef(null);
 
   const [openDropdown, setOpenDropdown] = useState(false);
   const [openMobile, setOpenMobile] = useState(false);
@@ -31,11 +30,11 @@ function Navbar() {
   useGSAP(
     () => {
       const links = gsap.utils.toArray(".nav-link");
-
       links.forEach((link) => {
         const underline = link.querySelector(".underline");
 
         link.addEventListener("mouseenter", () => {
+          gsap.killTweensOf(underline);
           gsap.to(underline, {
             scaleX: 1,
             duration: 0.45,
@@ -45,10 +44,12 @@ function Navbar() {
         });
 
         link.addEventListener("mouseleave", () => {
+          gsap.killTweensOf(underline);
           gsap.to(underline, {
             scaleX: 0,
             duration: 0.35,
             ease: "power3.inOut",
+            transformOrigin: "right",
           });
         });
       });
@@ -61,8 +62,8 @@ function Navbar() {
       if (openDropdown) {
         gsap.fromTo(
           dropdownRef.current,
-          { opacity: 0, y: -24 },
-          { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" },
+          { opacity: 0, y: -20 },
+          { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" },
         );
       }
     },
@@ -75,13 +76,13 @@ function Navbar() {
         gsap.fromTo(
           mobileMenuRef.current,
           { height: 0, opacity: 0 },
-          { height: "auto", opacity: 1, duration: 0.5, ease: "power3.out" },
+          { height: "auto", opacity: 1, duration: 0.45, ease: "power3.out" },
         );
       } else {
         gsap.to(mobileMenuRef.current, {
           height: 0,
           opacity: 0,
-          duration: 0.4,
+          duration: 0.35,
           ease: "power3.inOut",
         });
       }
@@ -92,18 +93,16 @@ function Navbar() {
   useGSAP(
     () => {
       const btn = ctaRef.current;
-
       btn.addEventListener("mouseenter", () => {
         gsap.to(btn, {
           boxShadow: "0 0 24px var(--color-primary-mauve)",
-          duration: 0.35,
+          duration: 0.3,
         });
       });
-
       btn.addEventListener("mouseleave", () => {
         gsap.to(btn, {
           boxShadow: "0 0 0px transparent",
-          duration: 0.35,
+          duration: 0.3,
         });
       });
     },
@@ -115,19 +114,20 @@ function Navbar() {
       ref={navRef}
       className="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md border-b border-[var(--color-brand-400)] shadow-sm z-50"
     >
-      <div className="w-full flex items-center justify-between px-6 py-4">
-        <a href="/" className="flex items-center">
-          <img
-            src="/Home/logo.webp"
-            alt="Euradicle Logo"
-            className="h-12 w-auto"
-          />
-        </a>
+      <div className="w-full flex items-center justify-between px-8 py-4">
+        <div className="w-1/4 flex items-center">
+          <Link to="/" className="flex items-center">
+            <img
+              src="/Home/logo.webp"
+              alt="Euradicle Logo"
+              className="h-12 w-auto"
+            />
+          </Link>
+        </div>
 
-        <nav className="hidden md:flex items-center gap-12">
+        <nav className="hidden md:flex w-1/2 items-center justify-center gap-12">
           {NavLinks.map((item) => {
             const isDropdown = item === "OUR CAPABILITIES";
-
             return (
               <div
                 key={item}
@@ -156,7 +156,7 @@ function Navbar() {
           })}
         </nav>
 
-        <div className="hidden md:flex items-center">
+        <div className="hidden md:flex w-1/4 items-center justify-end">
           <a
             ref={ctaRef}
             href="/contact"
@@ -178,16 +178,15 @@ function Navbar() {
 
       {openDropdown && (
         <div
-          ref={dropdownWrapperRef}
           onMouseEnter={() => setOpenDropdown(true)}
           onMouseLeave={() => setOpenDropdown(false)}
           className="hidden md:block absolute left-0 top-full w-full"
         >
           <div
             ref={dropdownRef}
-            className="w-full bg-black/70 text-white py-12"
+            className="w-full bg-black/80 text-white py-12"
           >
-            <div className="w-full px-16 grid grid-cols-4 gap-10">
+            <div className="w-full px-20 grid grid-cols-4 gap-10">
               {capabilities.map((cap) => (
                 <a
                   key={cap}
@@ -220,7 +219,7 @@ function Navbar() {
                   : item === "WHY EURADICLE"
                     ? "/why-euradicle"
                     : item === "OUR CAPABILITIES"
-                      ? "/our-capabilities"
+                      ? "/capabilities"
                       : item === "GROW WITH US"
                         ? "/grow-with-us"
                         : "/"
@@ -230,7 +229,6 @@ function Navbar() {
               {item}
             </Link>
           ))}
-
           <a
             href="/contact"
             className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-[var(--color-primary-mauve)] text-white text-subheading-sm"

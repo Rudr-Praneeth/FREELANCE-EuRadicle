@@ -1,35 +1,35 @@
 const capabilities = [
     {
         title: "Leadership Development",
-        imageUrl: ""
+        imageUrl: "Capabilities/Leadership development Card.png"
     },
     {
         title: "Consulting & Talent Management",
-        imageUrl: ""
+        imageUrl: "Capabilities/Consulting & Talent Management - Card.png"
     },
     {
         title: "Assessment & Development Centers",
-        imageUrl: ""
+        imageUrl: "Capabilities/Assessment & Development Centers - Card.png"
     },
     {
         title: "Power Skills Development",
-        imageUrl: ""
+        imageUrl: "Capabilities/Power Skills Development Card.png"
     },
     {
         title: "Digital & Business Transformation",
-        imageUrl: ""
+        imageUrl: "Capabilities/DIGITAL & BUSINESS TRANSFORMATION.jpg"
     },
     {
         title: "Commercial & Sales Enablement",
-        imageUrl: ""
+        imageUrl: "Capabilities/Commercials & Sales Enablement.png"
     },
     {
         title: "DEI & Culture Building",
-        imageUrl: ""
+        imageUrl: "Capabilities/DEI & CULTURE BUILDING inside picture.png"
     },
     {
         title: "Creative Solutions",
-        imageUrl: ""
+        imageUrl: "Capabilities/Creative solutions.png"
     },
 ];
 

@@ -47,7 +47,7 @@ const Stories = [
 const Testimonials = [
   {
     org: "Ashiana",
-    logoUrl: "logos/ashiana.png",
+    logoUrl: "logos/11.png",
     by: "Surbhi Dewaan",
     designation: "Vice President & Head HR",
     testimonial:
@@ -55,7 +55,7 @@ const Testimonials = [
   },
   {
     org: "LG",
-    logoUrl: "logos/lg.png",
+    logoUrl: "logos/8.png",
     by: "Nidhi Kakkar",
     designation: "General Manager L&D & HR",
     testimonial:
@@ -63,7 +63,7 @@ const Testimonials = [
   },
   {
     org: "Societe Generale",
-    logoUrl: "logos/societe-generale.png",
+    logoUrl: "logos/21.png",
     by: "Simrat Gahlot",
     designation: "Head Talent Management & Leadership Training",
     testimonial:
@@ -71,7 +71,7 @@ const Testimonials = [
   },
   {
     org: "Arcesium",
-    logoUrl: "logos/arcesium.png",
+    logoUrl: "logos/4.png",
     by: "Rachel Mathew",
     designation: "Senior Manager L&D",
     testimonial:
@@ -79,7 +79,7 @@ const Testimonials = [
   },
   {
     org: "Air India",
-    logoUrl: "logos/air-india.png",
+    logoUrl: "logos/13.png",
     by: "Participant Feedback",
     designation: "",
     testimonial:
@@ -87,7 +87,7 @@ const Testimonials = [
   },
   {
     org: "Al Maha",
-    logoUrl: "logos/al-maha.png",
+    logoUrl: "logos/28.png",
     by: "Participant Feedback",
     designation: "",
     testimonial:
@@ -95,7 +95,7 @@ const Testimonials = [
   },
   {
     org: "Arvind Mills",
-    logoUrl: "logos/arvind-mills.png",
+    logoUrl: "logos/32.png",
     by: "Participant Feedback",
     designation: "",
     testimonial:
@@ -103,7 +103,7 @@ const Testimonials = [
   },
   {
     org: "Coca Cola",
-    logoUrl: "logos/coca-cola.png",
+    logoUrl: "logos/31.png",
     by: "Participant Feedback",
     designation: "",
     testimonial:
@@ -111,7 +111,7 @@ const Testimonials = [
   },
   {
     org: "Keller",
-    logoUrl: "logos/keller.png",
+    logoUrl: "logos/26.png",
     by: "Participant Feedback",
     designation: "",
     testimonial:
@@ -119,7 +119,7 @@ const Testimonials = [
   },
   {
     org: "Peepal Co",
-    logoUrl: "logos/peepal-co.png",
+    logoUrl: "",
     by: "Participant Feedback",
     designation: "",
     testimonial:
@@ -127,7 +127,7 @@ const Testimonials = [
   },
   {
     org: "Zscaler",
-    logoUrl: "logos/zscaler.png",
+    logoUrl: "logos/12.png",
     by: "Participant Feedback",
     designation: "",
     testimonial:

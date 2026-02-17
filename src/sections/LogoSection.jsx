@@ -69,7 +69,9 @@ const LogoSection = () => {
   const container = useRef(null);
 
   const totalLogos = 35;
-  const indices = Array.from({ length: totalLogos }, (_, i) => i + 1);
+  const indices = Array.from({ length: totalLogos }, (_, i) => i + 1).filter(
+  (i) => i !== 18
+);
 
   const colSize = Math.ceil(indices.length / 4);
   const columns = [

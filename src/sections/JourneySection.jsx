@@ -47,7 +47,7 @@ function JourneySection() {
 
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-4xl">
-        <h2 className="journey-heading text-h2 text-bg-white tracking-tight leading-tight">
+        <h2 className="journey-heading text-h1 text-bg-white tracking-tight leading-tight">
           Start your journey
           <br />
           <span className="text-brand-500">
@@ -58,9 +58,9 @@ function JourneySection() {
         <div className="journey-cta mt-10">
           <a
             href="/contact"
-            className="inline-flex items-center justify-center px-10 py-4 rounded-full bg-bg-white text-primary-navy text-subheading-sm font-semibold hover:bg-brand-500 hover:text-bg-white transition-all duration-300 shadow-xl"
+            className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-bg-white text-primary-navy text-subheading-sm font-semibold hover:bg-brand-500 hover:text-bg-white transition-all duration-300 shadow-xl"
           >
-            Take the first step now
+            Contact Us
           </a>
         </div>
       </div>

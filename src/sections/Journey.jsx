@@ -45,7 +45,7 @@ export default function Journey() {
         </h1>
 
         <div className="jr-cards grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="jr-card rounded-2xl border border-[var(--color-bg-muted)] bg-[var(--color-bg-white)] p-8">
+          <div className="jr-card rounded-2xl border border-2 border-[var(--color-bg-muted)] bg-[var(--color-bg-white)] p-8">
             <div className="text-body-sm text-[var(--color-primary-mauve)] mb-6">
               01
             </div>
@@ -54,7 +54,7 @@ export default function Journey() {
             <p className="text-body-sm">+91 96611 88313</p>
           </div>
 
-          <div className="jr-card rounded-2xl border border-[var(--color-bg-muted)] bg-[var(--color-bg-white)] p-8">
+          <div className="jr-card rounded-2xl border border-2 border-[var(--color-bg-muted)] bg-[var(--color-bg-white)] p-8">
             <div className="text-body-sm text-[var(--color-primary-mauve)] mb-6">
               02
             </div>
@@ -62,7 +62,7 @@ export default function Journey() {
             <p className="text-body-sm">info@euradicle.com</p>
           </div>
 
-          <div className="jr-card rounded-2xl border border-[var(--color-bg-muted)] bg-[var(--color-bg-white)] p-8">
+          <div className="jr-card rounded-2xl border border-2 border-[var(--color-bg-muted)] bg-[var(--color-bg-white)] p-8">
             <div className="text-body-sm text-[var(--color-primary-mauve)] mb-6">
               03
             </div>

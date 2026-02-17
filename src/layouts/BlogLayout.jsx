@@ -101,15 +101,15 @@ function BlogLayout({ children, title, subtitle, date, category, image }) {
       </div>
 
       <div className="relative max-w-5xl mx-auto">
-        <div className="bg-white rounded-[40px] px-10 md:px-16 py-14 shadow-xl relative z-10 -mt-[30vh]">
+        <div className="bg-white rounded-[40px] px-10 md:px-16 py-8 shadow-xl relative z-10 -mt-[20vh]">
           <Link
             to="/"
-            className="blog-back inline-flex items-center gap-2 text-sm text-[var(--color-primary-mauve)] mb-6"
+            className="blog-back inline-flex items-center text-sm text-[var(--color-primary-mauve)] mb-2"
           >
             ← Back
           </Link>
 
-          <div className="blog-meta flex items-center gap-4 mb-6">
+          <div className="blog-meta flex items-center gap-4 mb-2">
             <span className="px-4 py-1 rounded-full bg-gray-100 text-sm text-gray-600">
               {date}
             </span>
@@ -122,11 +122,11 @@ function BlogLayout({ children, title, subtitle, date, category, image }) {
             {title}
           </h1>
 
-          <p className="blog-subtitle mt-6 text-lg text-gray-600 max-w-3xl">
+          <p className="blog-subtitle my-4 text-lg text-[var(--color-primary-navy)]/70 max-w-3xl italic">
             {subtitle}
           </p>
 
-          <div className="mt-10 overflow-hidden rounded-[30px]">
+          <div className="overflow-hidden rounded-[30px]">
             <img
               ref={heroRef}
               src={image}

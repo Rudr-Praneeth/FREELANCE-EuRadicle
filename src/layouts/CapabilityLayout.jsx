@@ -3,7 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
-gsap.registerPlugin(useGSAP);
 
 function CapabilityLayout({ title, subtitle, image, children }) {
   const containerRef = useRef(null);
@@ -77,13 +76,13 @@ function CapabilityLayout({ title, subtitle, image, children }) {
           <img
             src={image}
             alt={title}
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover object-top"
           />
         )}
 
         <div className="absolute inset-0 bg-[var(--color-primary-navy)]/60"></div>
 
-        <div className="relative z-10 flex flex-col items-center justify-center text-center h-full px-6">
+        <div className="relative z-10 flex flex-col items-center justify-center text-center h-full px-10">
           <h1 ref={titleRef} className="text-h1 text-white mb-6 max-w-4xl"></h1>
 
           <p

@@ -14,7 +14,7 @@ const Showreel = () => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: container.current,
-        start: "top top",
+        start: "top top+=30",
         end: "+=200%",
         scrub: true,
         pin: true,
@@ -52,7 +52,7 @@ const Showreel = () => {
     >
       <div 
         ref={textRef}
-        className="absolute top-[20%] z-10 w-full text-center pointer-events-none"
+        className="absolute top-[8%] z-10 w-full text-center pointer-events-none"
       >
         <h2 className="text-[12vw] leading-none font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-brand-500/40 to-brand-500/10 uppercase">
           Showreel

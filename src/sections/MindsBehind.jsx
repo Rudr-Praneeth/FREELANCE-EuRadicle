@@ -14,43 +14,43 @@ export default function MindsBehind() {
       title: "Client Partnerships",
       text:
         "Focused on building trusted relationships, our sales team works closely with clients to understand their capability needs and shape meaningful engagements from the outset. Their role is to ensure alignment, clarity, and long-term value across every partnership.",
-      img: "https://via.placeholder.com/600x360",
+      img: "Minds/Client Partnership..jpg",
     },
     {
       title: "Capability & Insights Lab",
       text:
         "Anchoring EuRadicle’s thinking, our R&D team continuously explores emerging trends, capability frameworks, and evolving business challenges. Their insights inform solution design and keep our offerings relevant, practical, and future-ready.",
-      img: "https://via.placeholder.com/600x360",
+      img: "Minds/Capability & Insights Lab.jpg",
     },
     {
       title: "Learning Architecture",
       text:
         "Our content team translates insight into structured learning journeys. They design clear, application-oriented content that reflects our consulting philosophy and supports sustained capability building.",
-      img: "https://via.placeholder.com/600x360",
+      img: "Minds/Learning Architecture.jpg",
     },
     {
       title: "Experience Design Studio",
       text:
         "Bringing learning to life, our creative solutions team crafts engaging experiences through thoughtful design, formats, and visual storytelling—enhancing participation and reinforcing impact.",
-      img: "https://via.placeholder.com/600x360",
+      img: "Minds/Experience Design Studio.jpg",
     },
     {
       title: "Delivery & Governance",
       text:
         "Ensuring seamless execution, our operations team anchors every engagement with strong coordination, governance, and quality oversight. They enable consistency and reliability across programs and geographies.",
-      img: "https://via.placeholder.com/600x360",
+      img: "Minds/Delivery & Governance.jpg",
     },
     {
       title: "Financial Stewardship",
       text:
         "Providing financial rigor and transparency, our finance team supports informed decision-making and sustainable growth, ensuring operational discipline across the organization.",
-      img: "https://via.placeholder.com/600x360",
+      img: "Minds/Financial Stewardship.jpg",
     },
     {
       title: "People & Culture",
       text:
         "Shaping the foundation of EuRadicle, our HR team focuses on talent development, alignment, and building a culture where individuals and teams grow together.",
-      img: "https://via.placeholder.com/600x360",
+      img: "Minds/People & Culture.jpg",
     },
   ]
 
@@ -135,11 +135,11 @@ export default function MindsBehind() {
                 />
               </svg>
 
-              <div className="relative z-10 overflow-hidden rounded-2xl">
+              <div className="relative z-10 overflow-hidden rounded-4xl p-2">
                 <img
                   src={item.img}
                   alt=""
-                  className="h-44 w-full object-cover"
+                  className="h-55 w-full object-cover object-top rounded-2xl"
                 />
                 <div className="p-6">
                   <h3 className="text-lg font-semibold text-primary-mauve">

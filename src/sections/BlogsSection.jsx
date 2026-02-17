@@ -9,9 +9,9 @@ function BlogsSection() {
   const sectionRef = useRef(null);
 
   const Blogs = [
-    { title: "Power Skills are the Edge", date: "1/1/26", imageUrl: "Home/blog1.avif" },
-    { title: "AI Ethics", date: "8/4/25", imageUrl: "Home/blog2.avif" },
-    { title: "ChatAI at Work", date: "7/31/25", imageUrl: "Home/blog3.avif" },
+    { title: "Power Skills are the Edge", date: "1/1/26", imageUrl: "Home/blog1.jpg" },
+    { title: "AI Ethics", date: "8/4/25", imageUrl: "Home/blog2.jpg" },
+    { title: "ChatAI at Work", date: "7/31/25", imageUrl: "Home/blog3.jpeg" },
   ];
 
   useGSAP(
@@ -58,7 +58,7 @@ function BlogsSection() {
       style={{ background: 'linear-gradient(to bottom left, #E1E8FF, #F9DCED)' }}
     >
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-h3 text-center mb-14 normal-case">
+        <h2 className="text-h1 text-center mb-14 normal-case">
           <span className="text-[var(--color-primary-navy)]">NEWS & </span>
           <span className="text-[var(--color-primary-mauve)]">UPDATE</span>
         </h2>

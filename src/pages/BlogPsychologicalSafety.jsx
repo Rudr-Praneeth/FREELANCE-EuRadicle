@@ -7,7 +7,7 @@ function BlogPsychologicalSafety() {
       subtitle="Why trust and psychological safety function as performance accelerators."
       date="Aug 4, 2025"
       category="News"
-      image="/Home/blog2.avif"
+      image="/Home/blog2.jpg"
     >
       <p>
         Why do capable teams stay silent in critical moments? Why do

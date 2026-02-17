@@ -1,6 +1,9 @@
 import { useRef } from "react"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
+import ScrollTrigger from "gsap/ScrollTrigger"
+
+gsap.registerPlugin(ScrollTrigger)
 
 export default function BeyondBusiness() {
   const sectionRef = useRef(null)
@@ -20,17 +23,21 @@ export default function BeyondBusiness() {
         }
       })
 
-      gsap.to(wordsRef.current, {
-        color: "var(--color-primary-navy)",
-        stagger: 0.08,
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".bb-box",
-          start: "top 80%",
-          end: "bottom 55%",
-          scrub: true
+      gsap.fromTo(
+        wordsRef.current,
+        { color: "rgba(0,0,0,0.3)" },
+        {
+          color: "var(--color-primary-navy)",
+          stagger: 0.08,
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".bb-box",
+            start: "top 75%",
+            end: "bottom 60%",
+            scrub: true
+          }
         }
-      })
+      )
     },
     { scope: sectionRef }
   )
@@ -70,13 +77,14 @@ export default function BeyondBusiness() {
           </div>
         </div>
 
-        <div className="bb-box mt-16 rounded-2xl border border-[var(--color-primary-mauve)] bg-[var(--color-bg-muted)] px-8 py-12">
-          <p className="text-h5 text-center">
+        <div className="bb-box mt-16 rounded-2xl border border-[var(--color-primary-mauve)] bg-[var(--color-primary-mauve)]/10 px-8 py-12">
+          <p className="text-h2 text-center">
             {statement.split(" ").map((word, i) => (
               <span
                 key={i}
                 ref={(el) => (wordsRef.current[i] = el)}
-                className="text-[var(--color-brand-400)] inline-block mr-1"
+                className="inline-block mr-1"
+                style={{ color: "rgba(0,0,0,0.3)" }}
               >
                 {word}
               </span>
@@ -85,5 +93,5 @@ export default function BeyondBusiness() {
         </div>
       </div>
     </section>
-  ) 
+  )
 }

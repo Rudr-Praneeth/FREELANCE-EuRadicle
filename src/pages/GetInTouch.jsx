@@ -26,7 +26,7 @@ const GetInTouch = () => {
   return (
     <div>
       <Journey />
-      <ContactSection  fields={fields}/>
+      <ContactSection imageUrl={"https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg"} fields={fields}/>
     </div>
   )
 }

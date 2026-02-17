@@ -6,7 +6,7 @@ function LeadershipDevelopment() {
       badge="Leadership Development"
       title="Leadership Development"
       subtitle="Building leaders who think strategically, decide with clarity, and lead through complexity."
-      image="/Home/Journey.avif"
+      image="/Capabilities/Leadership development inside picture.png"
     >
       <p>
         We enable leadership capability across levels — from emerging leaders to

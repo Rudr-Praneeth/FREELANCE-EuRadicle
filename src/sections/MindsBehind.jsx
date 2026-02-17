@@ -84,14 +84,18 @@ export default function MindsBehind() {
   );
 
   return (
-    <section ref={sectionRef} className="bg-white pb-8">
-      <div className="mx-auto max-w-7xl px-6">
+    <section
+      ref={sectionRef}
+      className="bg-white pb-12 sm:pb-16 md:pb-20 lg:pb-24"
+    >
+      <div className="mx-auto w-full max-w-[1400px] px-4 sm:px-6 md:px-8 lg:px-10">
         <div className="text-center">
-          <h2 className="text-h1 font-bold text-primary-navy">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold text-primary-navy leading-tight">
             THE COLLECTIVE{" "}
             <span className="text-primary-mauve">CAPABILITY</span>
           </h2>
-          <p className="mx-auto mt-2 max-w-3xl text-sm leading-relaxed">
+
+          <p className="mx-auto mt-3 sm:mt-4 md:mt-5 max-w-3xl text-xs sm:text-sm md:text-base leading-relaxed">
             We combine deep expertise, practical experience, and a
             results-driven approach to deliver transformative solutions for our
             clients. Our versatile pool of consultants brings together diverse
@@ -104,14 +108,33 @@ export default function MindsBehind() {
           </p>
         </div>
 
-        <div className="mt-8 grid grid-cols-3 gap-8">
+        <div
+          className="
+        mt-10
+        sm:mt-12
+        md:mt-14
+        lg:mt-16
+        grid
+        grid-cols-1
+        sm:grid-cols-2
+        lg:grid-cols-3
+        gap-6
+        sm:gap-7
+        md:gap-8
+        "
+        >
           {items.map((item, i) => (
             <div
               key={i}
               ref={(el) => (cardsRef.current[i] = el)}
-              className={`relative rounded-2xl bg-white shadow-lg ${
-                i === items.length - 1 ? "col-start-2" : ""
-              }`}
+              className={`
+              relative
+              rounded-2xl
+              bg-white
+              shadow-lg
+              w-full
+              ${i === items.length - 1 ? "sm:col-start-2 lg:col-start-2" : ""}
+              `}
             >
               <svg
                 className="absolute inset-0 h-full w-full"
@@ -132,17 +155,47 @@ export default function MindsBehind() {
                 />
               </svg>
 
-              <div className="relative z-10 overflow-hidden rounded-4xl p-2">
+              <div className="relative z-10 overflow-hidden rounded-2xl p-2">
                 <img
                   src={item.img}
                   alt=""
-                  className="h-55 w-full object-cover object-top rounded-2xl"
+                  className="
+                  w-full
+                  h-48
+                  sm:h-52
+                  md:h-56
+                  lg:h-56
+                  object-cover
+                  object-top
+                  rounded-xl
+                  "
                 />
-                <div className="p-6">
-                  <h3 className="text-lg font-semibold text-primary-mauve">
+
+                <div className="p-4 sm:p-5 md:p-6">
+                  <h3
+                    className="
+                  text-base
+                  sm:text-lg
+                  md:text-xl
+                  font-semibold
+                  text-primary-mauve
+                  "
+                  >
                     {item.title}
                   </h3>
-                  <p className="mt-3 text-sm leading-relaxed">{item.text}</p>
+
+                  <p
+                    className="
+                  mt-2
+                  sm:mt-3
+                  text-xs
+                  sm:text-sm
+                  md:text-sm
+                  leading-relaxed
+                  "
+                  >
+                    {item.text}
+                  </p>
                 </div>
               </div>
             </div>

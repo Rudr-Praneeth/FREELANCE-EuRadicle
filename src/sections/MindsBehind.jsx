@@ -1,75 +1,68 @@
-import { useRef } from "react"
-import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { useGSAP } from "@gsap/react"
+import { useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
 
 export default function MindsBehind() {
-  const sectionRef = useRef(null)
-  const cardsRef = useRef([])
+  const sectionRef = useRef(null);
+  const cardsRef = useRef([]);
 
   const items = [
     {
       title: "Client Partnerships",
-      text:
-        "Focused on building trusted relationships, our sales team works closely with clients to understand their capability needs and shape meaningful engagements from the outset. Their role is to ensure alignment, clarity, and long-term value across every partnership.",
-      img: "Minds/Client Partnership..jpg",
+      text: "Focused on building trusted relationships, our sales team works closely with clients to understand their capability needs and shape meaningful engagements from the outset. Their role is to ensure alignment, clarity, and long-term value across every partnership",
+      img: "Minds/compressed-Client Partnership..jpg",
     },
     {
       title: "Capability & Insights Lab",
-      text:
-        "Anchoring EuRadicle’s thinking, our R&D team continuously explores emerging trends, capability frameworks, and evolving business challenges. Their insights inform solution design and keep our offerings relevant, practical, and future-ready.",
-      img: "Minds/Capability & Insights Lab.jpg",
+      text: "Anchoring EuRadicle’s thinking, our R&D team continuously explores emerging trends, capability frameworks, and evolving business challenges. Their insights inform solution design and keep our offerings relevant, practical, and future-ready.",
+      img: "Minds/compressed-Capability & Insights Lab.jpg",
     },
     {
       title: "Learning Architecture",
-      text:
-        "Our content team translates insight into structured learning journeys. They design clear, application-oriented content that reflects our consulting philosophy and supports sustained capability building.",
-      img: "Minds/Learning Architecture.jpg",
+      text: "Our content team translates insight into structured learning journeys. They design clear, application-oriented content that reflects our consulting philosophy and supports sustained capability building.",
+      img: "Minds/compressed-Learning Architecture.jpg",
     },
     {
       title: "Experience Design Studio",
-      text:
-        "Bringing learning to life, our creative solutions team crafts engaging experiences through thoughtful design, formats, and visual storytelling—enhancing participation and reinforcing impact.",
-      img: "Minds/Experience Design Studio.jpg",
+      text: "Bringing learning to life, our creative solutions team crafts engaging experiences through thoughtful design, formats, and visual storytelling-enhancing participation and reinforcing impact.",
+      img: "Minds/compressed-Experience Design Studio.jpg",
     },
     {
       title: "Delivery & Governance",
-      text:
-        "Ensuring seamless execution, our operations team anchors every engagement with strong coordination, governance, and quality oversight. They enable consistency and reliability across programs and geographies.",
-      img: "Minds/Delivery & Governance.jpg",
+      text: "Ensuring seamless execution, our operations team anchors every engagement with strong coordination, governance, and quality oversight. They enable consistency and reliability across programs and geographies.",
+      img: "Minds/compressed-Delivery & Governance.jpg",
     },
     {
       title: "Financial Stewardship",
-      text:
-        "Providing financial rigor and transparency, our finance team supports informed decision-making and sustainable growth, ensuring operational discipline across the organization.",
-      img: "Minds/Financial Stewardship.jpg",
+      text: "Providing financial rigor and transparency, our finance team supports informed decision-making and sustainable growth, ensuring operational discipline across the organization.",
+      img: "Minds/compressed-Financial Stewardship.jpg",
     },
     {
       title: "People & Culture",
-      text:
-        "Shaping the foundation of EuRadicle, our HR team focuses on talent development, alignment, and building a culture where individuals and teams grow together.",
-      img: "Minds/People & Culture.jpg",
+      text: "Shaping the foundation of EuRadicle, our HR team focuses on talent development, alignment, and building a culture where individuals and teams grow together.",
+      img: "Minds/compressed-People & Culture.jpg",
     },
-  ]
+  ];
 
   useGSAP(
     () => {
       cardsRef.current.forEach((card) => {
-        const border = card.querySelector(".card-border")
+        const border = card.querySelector(".card-border");
 
         gsap.set(border, {
           strokeDasharray: 1000,
           strokeDashoffset: 1000,
-        })
+        });
 
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: card,
             start: "top 80%",
           },
-        })
+        });
 
         tl.to(border, {
           strokeDashoffset: 0,
@@ -83,27 +76,31 @@ export default function MindsBehind() {
             duration: 0.6,
             ease: "power3.out",
           },
-          "-=0.3"
-        )
-      })
+          "-=0.3",
+        );
+      });
     },
-    { scope: sectionRef }
-  )
+    { scope: sectionRef },
+  );
 
   return (
     <section ref={sectionRef} className="bg-white pb-8">
       <div className="mx-auto max-w-7xl px-6">
         <div className="text-center">
           <h2 className="text-h1 font-bold text-primary-navy">
-            MINDS BEHIND <span className="text-primary-mauve">EURADICLE</span>
+            THE COLLECTIVE{" "}
+            <span className="text-primary-mauve">CAPABILITY</span>
           </h2>
           <p className="mx-auto mt-2 max-w-3xl text-sm leading-relaxed">
-            We combine deep expertise, practical experience, and a results-driven
-            approach to deliver transformative solutions for our clients. Our
-            versatile pool of consultants brings together diverse industry
-            knowledge, specialized skills, and a consultative mindset, enabling
-            us to address complex business challenges with precision and
-            creativity.
+            We combine deep expertise, practical experience, and a
+            results-driven approach to deliver transformative solutions for our
+            clients. Our versatile pool of consultants brings together diverse
+            industry knowledge, specialized skills, and a consultative mindset,
+            enabling us to address complex business challenges with precision
+            and creativity. By leveraging this collective strength, we craft
+            strategies that are actionable, impactful, and tailored to each
+            organization’s unique context, ensuring sustainable growth and
+            measurable outcomes.
           </p>
         </div>
 
@@ -145,9 +142,7 @@ export default function MindsBehind() {
                   <h3 className="text-lg font-semibold text-primary-mauve">
                     {item.title}
                   </h3>
-                  <p className="mt-3 text-sm leading-relaxed">
-                    {item.text}
-                  </p>
+                  <p className="mt-3 text-sm leading-relaxed">{item.text}</p>
                 </div>
               </div>
             </div>
@@ -155,5 +150,5 @@ export default function MindsBehind() {
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -51,7 +51,7 @@ export default function StoryTimelineSection() {
     {
       year: "2025–26",
       title: "Where We Are Today",
-      text: "A global talent and capability consulting firm with consultants and delivery capabilities across India, the USA, and the UAE. Work with organizations across industries—including enterprises with Fortune 500 footprints—is guided by three core commitments: end-to-end accountability, deep expertise, and agile, co-created solutions.",
+      text: "A global talent and capability consulting firm with consultants and delivery capabilities across India, the USA, and the UAE. Work with organizations across industries-including enterprises with Fortune 500 footprints-is guided by three core commitments: end-to-end accountability, deep expertise, and agile, co-created solutions.",
       logo: "Timeline Logo/2023 - 2025.png"
     },
   ];

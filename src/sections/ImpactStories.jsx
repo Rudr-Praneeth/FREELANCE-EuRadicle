@@ -83,9 +83,9 @@ const ImpactStories = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   const images = [
-    '/Home/AwarenessCard.jpg',
-    '/Home/AspireCard.jpeg',
-    '/Home/PrysmCard.jpeg',
+    '/Home/compressed-AwarenessCard.jpg',
+    '/Home/compressed-AspireCard.jpeg',
+    '/Home/compressed-PrysmCard.jpeg',
   ];
 
   useGSAP(() => {
@@ -107,7 +107,7 @@ const ImpactStories = () => {
       {/* Animated Cloud Background */}
       <img
         ref={cloudRef}
-        src="/Home/cloud.avif"
+        src="/Home/compressed-cloud.avif"
         alt=""
         className="absolute top-0 left-0 w-[130%] h-full object-cover opacity-60 pointer-events-none mix-blend-overlay"
       />

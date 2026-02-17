@@ -9,9 +9,9 @@ function BlogsSection() {
   const sectionRef = useRef(null);
 
   const Blogs = [
-    { title: "Power Skills are the Edge", date: "1/1/26", imageUrl: "Home/blog1.jpg" },
-    { title: "AI Ethics", date: "8/4/25", imageUrl: "Home/blog2.jpg" },
-    { title: "ChatAI at Work", date: "7/31/25", imageUrl: "Home/blog3.jpeg" },
+    { title: "Power Skills are the Edge", date: "1/1/26", imageUrl: "Home/compressed-blog1.jpg" },
+    { title: "AI Ethics", date: "8/4/25", imageUrl: "Home/compressed-blog2.jpg" },
+    { title: "ChatAI at Work", date: "7/31/25", imageUrl: "Home/compressed-blog3.jpeg" },
   ];
 
   useGSAP(

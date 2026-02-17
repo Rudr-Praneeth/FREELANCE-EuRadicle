@@ -54,25 +54,16 @@ export default function BeyondBusiness() {
               BEYOND BUSINESS
             </h1>
             <h2 className="text-h2">
-              We believe that growth carries a responsibility – to give back to
-              the world that enables it.
+              We believe that growth carries a responsibility - to give back to the world that enables it.
             </h2>
           </div>
 
           <div className="bb-fade">
             <p className="text-body mb-4">
-              At EuRadicle, every program we deliver is tied to a simple yet
-              powerful commitment. As we work with organizations to build
-              capability and leadership, we invest in nurturing life beyond the
-              workplace. This means planting trees to support environmental
-              sustainability, while also extending care to old age homes and
-              orphanages through food, clothing, and essential support.
+              At EuRadicle, every program we deliver is tied to a simple yet powerful commitment. As we work with organizations to build capability and leadership, we invest in nurturing life beyond the workplace. This means planting trees to support environmental sustainability, while also extending care to old age homes and orphanages through food, clothing, and essential support.
             </p>
             <p className="text-body">
-              For us, impact is both long-term and immediate. It’s about creating
-              a greener tomorrow while standing beside those who need care and
-              dignity today. These actions reflect who we are – a firm that
-              believes progress is most meaningful when it is shared.
+              For us, impact is both long-term and immediate. It’s about creating a greener tomorrow while standing beside those who need care and dignity today. These actions reflect who we are - a firm that believes progress is most meaningful when it is shared. It is embedded in how we grow, partner, and contribute -with empathy, intention, and purpose.
             </p>
           </div>
         </div>

@@ -13,7 +13,7 @@ export default function WhyEuradicle() {
   const items = [
     {
       title: "Work That Shapes Leaders, Not Just Slides",
-      text: "At EuRadicle, your work directly influences how professionals think, lead, and grow. Every project you touch contributes to real transformation—across leadership, consulting capability, and organizational impact. This isn’t back-end work; this is front-row participation in shaping future-ready leaders."
+      text: "At EuRadicle, your work directly influences how professionals think, lead, and grow. Every project you touch contributes to real transformation—across leadership, consulting capability, and organizational impact. This isn’t back-end work; this is front-row participation in shaping future-ready leaders"
     },
     {
       title: "A Consulting Mindset from Day One",

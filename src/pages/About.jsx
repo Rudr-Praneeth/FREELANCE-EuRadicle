@@ -4,6 +4,7 @@ import Timeline from '../sections/Timeline'
 import OurApproach from '../sections/OurApproach'
 import MindsBehind from '../sections/MindsBehind'
 import GlobalFootprintsSection from '../sections/GlobalFooterSection'
+import BeyondBusiness from '../sections/BeyondBusiness'
 
 const About = () => {
   return (
@@ -13,6 +14,7 @@ const About = () => {
       <OurApproach />
       <MindsBehind />
       <GlobalFootprintsSection />
+      <BeyondBusiness />
     </div>
   )
 }

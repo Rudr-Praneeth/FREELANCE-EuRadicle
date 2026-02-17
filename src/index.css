@@ -171,3 +171,66 @@ h3 {
   line-height: 1.3;
   letter-spacing: 0.08em;
 }
+.cta-wrapper {
+  @apply relative z-20 inline-block;
+}
+
+.cta-button {
+  @apply relative px-6 py-4 rounded-lg
+         flex items-center justify-center
+         overflow-hidden
+         cursor-pointer
+         bg-[var(--color-primary-navy)];
+}
+
+/* Expanding circle */
+.cta-button .bg-circle {
+  @apply absolute -right-10 top-1/2 -translate-y-1/2
+         w-[120%] h-[120%]
+         rounded-full
+         bg-[var(--color-primary-mauve)]
+         origin-center
+         transition-all duration-500;
+}
+
+
+.cta-button:hover .bg-circle {
+  @apply size-10 right-10;
+}
+
+/* Text */
+.cta-button .text {
+  @apply uppercase text-white md:text-sm
+         transition-all duration-500
+         -translate-x-5 xl:translate-x-0;
+}
+
+.cta-button:hover .text {
+  @apply text-white -translate-x-5;
+}
+
+/* Arrow wrapper */
+.cta-button .arrow-wrapper {
+  @apply absolute right-10 top-1/2 -translate-y-1/2
+         size-10 rounded-full
+         flex items-center justify-center
+         overflow-hidden
+         transition-all duration-500;
+}
+
+.cta-button:hover .arrow-wrapper {
+  @apply bg-white;
+}
+
+/* Arrow animation */
+.cta-button .arrow-icon {
+  @apply text-[var(--color-primary-navy)]
+         text-lg
+         xl:-translate-y-32
+         translate-y-0
+         transition-all duration-500;
+}
+
+.cta-button:hover .arrow-icon {
+  @apply translate-y-0;
+}

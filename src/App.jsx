@@ -16,6 +16,8 @@ import PowerSkillsDevelopment from "./pages/PowerSkillsDevelopment.jsx"
 import DigitalBusinessTransformation from "./pages/DigitalBusinessTransformation.jsx"
 import CommercialSalesEnablement from "./pages/CommercialSalesEnablement.jsx";
 import CreativeSolutions from "./pages/CreativeSolutions.jsx";
+import GetInTouch from "./pages/GetInTouch.jsx";
+import Contact from "./pages/Contact.jsx";
 
 const App = () => {
   return (
@@ -27,12 +29,9 @@ const App = () => {
           <Route path="/home" element={<Home />} />
           <Route path="/why-euradicle" element={<About />} />
           <Route path="/capabilities" element={<Capabilities />} />
-          <Route
-            path="/grow-with-us"
-            element={
-              <div className="pt-24 text-center text-h2">Grow With Us</div>
-            }
-          />
+          <Route path="/grow-with-us" element={<div className="pt-24 text-center text-h2">Grow With Us</div>}/>
+          <Route path="/get-in-touch" element={<GetInTouch />}/>
+          <Route path="/contact" element={<Contact />}/>
           <Route path="/blogs/power-skills" element={<BlogPowerSkills />} />
           <Route path="/blogs/ai-ethics" element={<BlogPsychologicalSafety />} />
           <Route path="/blogs/chatai-at" element={<BlogCapabilityBuilding />} />

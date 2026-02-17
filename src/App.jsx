@@ -6,6 +6,7 @@ import JourneySection from "./sections/JourneySection";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Capabilities from "./pages/Capabilities.jsx";
+import GrowWithUs from "./pages/GrowWithUs.jsx"
 import BlogPowerSkills from "./pages/BlogPowerSkills.jsx";
 import BlogPsychologicalSafety from "./pages/BlogPsychologicalSafety.jsx";
 import BlogCapabilityBuilding from "./pages/BlogCapabilityBuilding.jsx";
@@ -31,7 +32,7 @@ const App = () => {
           <Route path="/home" element={<Home />} />
           <Route path="/why-euradicle" element={<About />} />
           <Route path="/capabilities" element={<Capabilities />} />
-          <Route path="/grow-with-us" element={<div className="pt-24 text-center text-h2">Grow With Us</div>}/>
+          <Route path="/grow-with-us" element={<GrowWithUs />}/>
           <Route path="/get-in-touch" element={<GetInTouch />}/>
           <Route path="/contact" element={<Contact />}/>
           <Route path="/blogs/power-skills" element={<BlogPowerSkills />} />

@@ -17,10 +17,12 @@ import AssessmentDevelopmentCenters from "./pages/AssessmentDevelopmentCenters.j
 import PowerSkillsDevelopment from "./pages/PowerSkillsDevelopment.jsx";
 import DigitalBusinessTransformation from "./pages/DigitalBusinessTransformation.jsx";
 import CommercialSalesEnablement from "./pages/CommercialSalesEnablement.jsx";
+import DEICultureBuilding from "./pages/DEICultureBuilding.jsx"
 import CreativeSolutions from "./pages/CreativeSolutions.jsx";
 import GetInTouch from "./pages/GetInTouch.jsx";
 import Contact from "./pages/Contact.jsx";
 import NotFound from "./pages/NotFound.jsx"
+import Footer from "./components/Footer.jsx";
 
 const App = () => {
   return (
@@ -44,7 +46,8 @@ const App = () => {
           <Route path="/capabilities/power-skills-development" element={<PowerSkillsDevelopment />} />
           <Route path="/capabilities/digital-business-transformation" element={<DigitalBusinessTransformation />} />
           <Route path="/capabilities/commercial-sales-enablement" element={<CommercialSalesEnablement />} />
-          <Route path="/capabilities/dei-culture-building" element={<CreativeSolutions />} />
+          <Route path="/capabilities/creative-solutions" element={<CreativeSolutions />} />
+          <Route path="/capabilities/dei-culture-building" element={<DEICultureBuilding />} />
           {/* <Route path="/stories/awareness" element={<Story1 />} /> */}
 
 
@@ -52,6 +55,7 @@ const App = () => {
           <Route path="*" element={<NotFound />}/>
         </Routes>
         <JourneySection />
+        <Footer />
       </div>
     </Router>
   );

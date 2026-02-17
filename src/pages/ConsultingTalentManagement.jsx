@@ -7,7 +7,7 @@ function ConsultingTalentManagement() {
       badge="Consulting & Talent Management"
       title="Consulting & Talent Management"
       subtitle="Aligning talent strategy, organizational design, and capability architecture with business ambition."
-      image="/Home/Journey.avif"
+      image="/Capabilities/Consulting & Talent Management inside picture.png"
     >
       <p>
         We partner with HR and leadership teams to design scalable talent

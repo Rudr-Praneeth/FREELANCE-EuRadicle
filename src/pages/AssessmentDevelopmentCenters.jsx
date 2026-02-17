@@ -7,7 +7,7 @@ function AssessmentDevelopmentCenters() {
       badge="Assessment & Development Centers (ACDC)"
       title="Assessment & Development Centers (ACDC)"
       subtitle="Delivering objective, data-driven insights into talent potential and readiness."
-      image="/Home/Journey.avif"
+      image="/Capabilities/compressed-Assessment & Development Centers inside picture.png"
     >
       <p>
         Our assessment and development centers support informed decisions

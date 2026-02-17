@@ -7,7 +7,7 @@ function BlogCapabilityBuilding() {
       subtitle="Why organizations must move beyond training programs to build real capability."
       date="Jul 31, 2025"
       category="News"
-      image="/Home/blog3.jpeg"
+      image="/Home/compressed-blog3.jpeg"
     >
       <p>
         For decades, organizations have invested heavily in training programs,

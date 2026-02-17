@@ -7,7 +7,7 @@ function PowerSkillsDevelopment() {
       badge="Power Skills Development"
       title="Power Skills Development"
       subtitle="Strengthening the human capabilities that enable influence, collaboration, and impact."
-      image="/Home/Journey.avif"
+      image="/Capabilities/compressed-Power Skills Development Inside picture.png"
     >
       <p>
         We build critical power skills such as communication effectiveness,

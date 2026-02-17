@@ -7,7 +7,7 @@ function CreativeSolutions() {
       badge="Creative Solutions"
       title="Creative Solutions"
       subtitle="Designing immersive learning and engagement experiences that turn insight into sustained action."
-      image="/Home/CreativeSolutions.avif"
+      image="/Capabilities/compressed-Creative solutions.png"
     >
       <p>
         Learning experiences must engage the mind, emotion, and application—not just deliver content. 

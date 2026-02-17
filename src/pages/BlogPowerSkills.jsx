@@ -7,27 +7,18 @@ function BlogPowerSkills() {
       subtitle="Why power skills are the new currency of leadership in the age of AI."
       date="Jan 1, 2026"
       category="News"
-      image="/Home/blog1.jpg"
+      image="/Home/compressed-blog1.jpg"
     >
       <h2 className="text-2xl font-semibold text-[var(--color-primary-mauve)]">
         The paradox shaping leadership today
       </h2>
 
       <p>
-        Professionals today have access to unprecedented intelligence. Data is
-        richer, insights are faster, AI enables sharper predictions, and
-        execution can be automated at scale. Yet across organizations,
-        effectiveness at work feels increasingly strained.
+        Professionals today have access to unprecedented intelligence. Data is richer, insights are faster, AI enables sharper predictions, and execution can be automated at scale. Yet across organizations, effectiveness at work feels increasingly strained. 
       </p>
 
       <p>
-        This is not anecdotal. Research shows that 44% of core job skills are
-        expected to change by 2027 (WEF’s Future of Jobs Report 2023), with
-        leadership, analytical thinking, and decision-making among the
-        fastest-growing capabilities. The challenge is no longer access to
-        information. It is the ability to interpret, decide, and perform when
-        certainty is incomplete. This is where power skills emerge as the new
-        currency of leadership.
+        This is not anecdotal. Research shows that 44% of core job skills are expected to change by 2027 (WEF’s Future of Jobs Report 2023), with leadership, analytical thinking, and decision-making among the fastest-growing capabilities. The challenge is no longer access to information. It is the ability to interpret, decide, and perform when certainty is incomplete. This is where power skills emerge as the new currency of leadership.
       </p>
 
       <h2 className="text-2xl font-semibold text-[var(--color-primary-mauve)]">
@@ -35,30 +26,10 @@ function BlogPowerSkills() {
       </h2>
 
       <p>
-        Power skills are often mistaken as interpersonal traits. Leading
-        human-capital research increasingly reframes these skills not as “soft,”
-        but as enduring capabilities that drive performance, trust, and
-        execution quality across the workforce. They show up in how
-        professionals exercise judgment and make decisions when information is
-        incomplete, how they think strategically amid competing priorities, and
-        how they influence outcomes without relying on authority.
+        Power skills are often mistaken as interpersonal traits. Leading human-capital research increasingly reframes these skills not as “soft,” but as enduring capabilities that drive performance, trust, and execution quality across the workforce. They show up in how professionals exercise judgment and make decisions when information is incomplete, how they think strategically amid competing priorities, and how they influence outcomes without relying on authority. Power skills are equally evident in a leader’s ability to regulate emotion under pressure, communicate with clarity across stakeholders, navigate conflict constructively, and lead critical conversations during moments of uncertainty and change. Together, these capabilities shape how leaders think, relate, and act when processes fall short and answers are unclear.
       </p>
-
       <p>
-        Power skills are equally evident in a leader’s ability to regulate
-        emotion under pressure, communicate with clarity across stakeholders,
-        navigate conflict constructively, and lead critical conversations during
-        moments of uncertainty and change. Together, these capabilities shape
-        how leaders think, relate, and act when processes fall short and answers
-        are unclear.
-      </p>
-
-      <p>
-        Unlike technical skills, power skills do not depreciate with
-        technological change. Power skills are not about personality or style.
-        They are about performance in moments that matter. As AI accelerates
-        complexity and compresses decision cycles, their relevance only
-        intensifies.
+        Unlike technical skills, power skills do not depreciate with technological change. Power skills are not about personality or style. They are about performance in moments that matter. As AI accelerates complexity and compresses decision cycles, their relevance only intensifies. 
       </p>
 
       <h2 className="text-2xl font-semibold text-[var(--color-primary-mauve)]">

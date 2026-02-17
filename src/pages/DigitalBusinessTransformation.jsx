@@ -7,7 +7,7 @@ function DigitalBusinessTransformation() {
       badge="Digital & Business Transformation"
       title="Digital & Business Transformation"
       subtitle="Enabling leaders and teams to navigate change and perform in evolving business environments."
-      image="/Home/Journey.avif"
+      image="/Capabilities/compressed-DIGITAL & BUSINESS TRANSFORMATION.jpg"
     >
       <p>
         We support organizations in building transformation-ready mindsets and

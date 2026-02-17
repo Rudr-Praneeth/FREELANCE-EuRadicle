@@ -7,7 +7,7 @@ function CommercialSalesEnablement() {
       badge="Commercial & Sales Enablement"
       title="Commercial & Sales Enablement"
       subtitle="Developing commercial acumen that converts relationships into measurable growth."
-      image="/Home/SalesEnablement.avif"
+      image="/Capabilities/compressed-Commercials & Sales Enablement.png"
     >
       <p>
         Sustainable growth requires more than sales targets—it demands strong

@@ -5,7 +5,7 @@ export default function DEICultureBuilding() {
     <CapabilityLayout
       title="DEI & Culture Building"
       subtitle="Creating inclusive, values-driven cultures where trust, belonging, and performance coexist."
-      image="/images/capabilities/dei-culture.jpg"
+      image="/Capabilities/compressed-DEI & CULTURE BUILDING inside picture.png"
     >
       <p>
         We help organizations embed inclusive leadership behaviours and culture

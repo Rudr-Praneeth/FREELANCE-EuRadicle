@@ -19,13 +19,7 @@ export default function AboutSection() {
         },
       });
 
-      tl.from(logoRef.current, {
-        opacity: 0,
-        y: 40,
-        scale: 0.95,
-        duration: 1,
-        ease: "power3.out",
-      }).from(
+      tl.from(
         linesRef.current,
         {
           opacity: 0,
@@ -34,10 +28,10 @@ export default function AboutSection() {
           ease: "power2.out",
           stagger: 0.12,
         },
-        "-=0.6",
+        "-=0.6"
       );
     },
-    { scope: sectionRef },
+    { scope: sectionRef }
   );
 
   const lines = [
@@ -47,35 +41,23 @@ export default function AboutSection() {
   return (
     <section
       ref={sectionRef}
-      className="w-[80%] mx-auto py-16 md:px-24 md:py-24"
+      className="w-full max-w-[95%] min-[600px]:max-w-2xl min-[768px]:max-w-4xl min-[992px]:max-w-5xl min-[1200px]:max-w-6xl mx-auto py-12 px-4 max-[600px]:px-5 min-[600px]:py-14 min-[600px]:px-6 min-[768px]:py-16 min-[768px]:px-10 min-[992px]:py-20 min-[992px]:px-16 min-[1200px]:py-24 min-[1200px]:px-24 mt-20"
     >
-      <h1 className="text-h1 text-center mb-8">
+      <h1 className="text-h1 text-center mb-6 min-[600px]:mb-7 min-[768px]:mb-8 text-[clamp(28px,5vw,56px)] leading-tight">
         About <span className="text-primary-mauve">Us</span>
       </h1>
-      {/* <div className="mx-auto grid max-w-6xl grid-cols-1 gap-12 md:grid-cols-2 md:items-center"> */}
 
-      {/* <div className="flex justify-center items-center">
-          <img
-            ref={logoRef}
-            src="/Home/logo.webp"
-            alt="EuRadicle Logo"
-            className="w-48 md:w-56"
-          />
-        </div> */}
-
-      {/* RIGHT: Text aligned left */}
-      <div className="space-y-2 text-center italic">
+      <div className="space-y-2 min-[600px]:space-y-3 text-center italic">
         {lines.map((line, i) => (
           <p
             key={i}
             ref={(el) => (linesRef.current[i] = el)}
-            className="text-body-lg text-primary-navy"
+            className="text-body-lg text-primary-navy text-[clamp(16px,2.5vw,22px)] leading-relaxed px-1 min-[600px]:px-2"
           >
             {line}
           </p>
         ))}
       </div>
-      {/* </div> */}
     </section>
   );
 }

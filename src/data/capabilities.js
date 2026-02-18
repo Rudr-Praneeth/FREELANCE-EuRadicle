@@ -36,29 +36,29 @@ const capabilities = [
 
 const Services = [
   {
-    title: "Consulting & Talent Management",
-    tagline: "Designing talent systems that scale with your business.",
-    description: "We help organizations build integrated talent ecosystems where people strategy drives business performance. Through structured diagnostics, competency frameworks, and governance models, we design development systems that are measurable, practical, and sustainable. Leveraging talent assessments, capability mapping, and progress dashboards, we transform fragmented efforts into a cohesive, future-ready talent strategy."
+    title: "Capability Programs",
+    tagline: "Building capability that translates into performance.",
+    description: "We design immersive, experience-led programs that strengthen leadership, functional expertise, and power skills across levels. Anchored in diagnostics, real-world simulations, and structured learning journeys, our approach blends reflection with application to drive measurable behavior change. The focus is not just learning—but building capabilities that directly enhance performance, collaboration, and business outcomes."
   },
   {
-    title: "Career Pathway Planning",
-    tagline: "Creating clarity, direction, and momentum for growth.",
-    description: "We design transparent career pathways that give employees a clear view of how they can grow within the organization. Through role architecture, skill mapping, and readiness assessments, we enable purposeful career conversations and informed progression decisions-driving engagement, internal mobility, and long-term retention."
+    title: "Coaching",
+    tagline: "Unlocking leadership potential through focused transformation.",
+    description: "Our coaching engagements enable leaders to deepen self-awareness, sharpen decision-making, and elevate influence. Using structured coaching frameworks, behavioral insights, and reflective dialogue, we create space for clarity, accountability, and growth. The result is sustained leadership effectiveness aligned with both personal aspirations and organizational priorities."
   },
   {
-    title: "Succession Planning",
-    tagline: "Ensuring leadership continuity with confidence.",
-    description: "Our approach focuses on readiness, not replacement. We identify critical roles, assess potential with objective tools, and design targeted development plans to close capability gaps. Through structured talent reviews, leadership assessments, and future-role simulations, we help organizations build a strong, future-ready leadership pipeline."
+    title: "Talent Management Services",
+    tagline: "Strengthening pipelines for long-term organizational success.",
+    description: "We design structured talent frameworks that identify potential, accelerate readiness, and ensure leadership continuity. Through objective assessments, governance models, and development pathways, we bring rigor and transparency to talent decisions. Our approach enables organizations to reduce leadership risk while building strong internal mobility and future-ready pipelines."
   },
   {
-    title: "Hi-Pot Development Plan",
-    tagline: "Accelerating future leaders for strategic impact.",
-    description: "We partner with organizations to identify and elevate high-potential talent through structured assessments, experiential learning, and personalized development journeys. By combining psychometrics, real-time feedback, and stretch assignments, we build strategic thinking, influence, and execution capability-enabling emerging leaders to create meaningful impact early and sustain it over time."
+    title: "Human Capital Consulting",
+    tagline: "Aligning people strategy with business transformation.",
+    description: "We partner with organizations to design robust people systems that enable growth and change. Through structured diagnostics, capability frameworks, and transformation roadmaps, we align workforce strategy with evolving business priorities. Our consulting approach delivers scalable, sustainable solutions that enhance effectiveness and drive long-term impact."
   },
   {
-    title: "DEI & Culture Building",
-    tagline: "Embedding inclusion into leadership and everyday work.",
-    description: "We help organizations cultivate inclusive cultures where diverse talent can thrive and lead. Through experiential learning, reflective dialogue, mentoring, and facilitated conversations, we strengthen inclusive leadership behaviors and everyday practices. The result is equitable growth, deeper collaboration, and culture change that is visible, measurable, and sustainable."
+    title: "Creative Solution",
+    tagline: "Designing learning experiences that engage and endure.",
+    description: "We create compelling, learner-centric solutions that bring strategy and capability to life. From digital learning and visual storytelling to structured content design, our approach blends instructional science with creativity. The outcome is engaging, scalable learning experiences that strengthen retention, application, and brand impact."
   }
 ];
 

@@ -24,10 +24,10 @@ function JourneySection() {
           opacity: 0,
           duration: 0.8,
         },
-        "-=0.5"
+        "-=0.5",
       );
     },
-    { scope: sectionRef }
+    { scope: sectionRef },
   );
 
   return (
@@ -36,11 +36,14 @@ function JourneySection() {
       className="relative w-full h-screen flex items-center justify-center overflow-hidden"
     >
       {/* Background Image */}
-      <img
-        src="/Home/Journey.avif"
-        alt="Journey"
+      <video
+        src="/Home/FooterBackground.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
         className="absolute inset-0 w-full h-full object-cover object-[center_30%]"
-      />
+      ></video>
 
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/55"></div>
@@ -50,9 +53,7 @@ function JourneySection() {
         <h2 className="journey-heading text-h1 text-bg-white tracking-tight leading-tight">
           Start your journey
           <br />
-          <span className="text-brand-500">
-            toward lasting growth.
-          </span>
+          <span className="text-brand-500">toward lasting growth.</span>
         </h2>
 
         <div className="journey-cta mt-10">

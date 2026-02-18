@@ -13,18 +13,12 @@ function ConsultingTalentManagement() {
         We partner with HR and leadership teams to design scalable talent
         frameworks, succession strategies, and organization-wide capability
         models.
-      </p>
-
-      <p>
         Creating future-ready organizations requires moving beyond transactional
         HR processes toward strategic, business-aligned talent systems.
         EuRadicle’s Consulting & Talent Management capability enables
         organizations to strengthen internal consulting capability, build
         robust leadership pipelines, and design talent frameworks that support
         long-term growth.
-      </p>
-
-      <p>
         Through consulting programs, advisory interventions, and
         capability-building workshops, HR teams and leaders develop the
         confidence to make informed, strategic talent decisions that align

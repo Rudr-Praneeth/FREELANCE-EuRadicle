@@ -12,18 +12,12 @@ function LeadershipDevelopment() {
         We enable leadership capability across levels — from emerging leaders to
         senior executives — focusing on enterprise thinking, influence,
         emotional intelligence, and leadership effectiveness.
-      </p>
-
-      <p>
         Leadership today requires far more than positional authority—it demands
         clarity of thought, emotional intelligence, and the ability to engage
         people through change and complexity. EuRadicle’s Leadership Development
         offerings are designed to enhance leadership effectiveness across
         levels by building self-aware, people-centric, and performance-driven
         leaders.
-      </p>
-
-      <p>
         Through leadership development programs, structured leadership
         journeys, experiential workshops, and coaching interventions, leaders
         develop practical capabilities that translate directly into improved
@@ -57,7 +51,7 @@ function LeadershipDevelopment() {
       <p>
         Sustainable leadership impact emerges when leaders shift from directing
         tasks to developing people. This focus area strengthens leaders’ ability
-        to engage in meaningful, growth-oriented conversations that build trust
+        to engage in meaningful, growth-oriented conversations that build trust 
         and accountability.
       </p>
 

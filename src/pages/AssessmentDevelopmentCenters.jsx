@@ -13,17 +13,11 @@ function AssessmentDevelopmentCenters() {
         Our assessment and development centers support informed decisions
         around leadership readiness, high-potential identification, and
         targeted development planning.
-      </p>
-
-      <p>
         Making confident talent decisions requires more than intuition—it
         requires data-driven insight and contextual understanding. EuRadicle’s
         Assessment & Development Centers are designed to evaluate readiness,
         identify potential, and accelerate development through evidence-based
         assessment approaches.
-      </p>
-
-      <p>
         By blending behavioral science, real-world simulations, and
         business-aligned frameworks, organizations gain clarity on talent
         strengths, development needs, and future readiness at both individual

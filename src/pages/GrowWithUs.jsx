@@ -8,7 +8,7 @@ const GrowWithUs = () => {
   useEffect(()=>{
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
+      behavior: "auto",
     });
   })
     const interns = [

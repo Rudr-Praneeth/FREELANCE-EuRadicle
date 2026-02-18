@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 // import data from "../data/home";
@@ -9,9 +10,12 @@ function BlogsSection() {
   const sectionRef = useRef(null);
 
   const Blogs = [
-    { title: "Power Skills are the Edge", date: "1/1/26", imageUrl: "Home/compressed-blog1.jpg" },
-    { title: "AI Ethics", date: "8/4/25", imageUrl: "Home/compressed-blog2.jpg" },
-    { title: "ChatAI at Work", date: "7/31/25", imageUrl: "Home/compressed-blog3.jpeg" },
+    {
+      title: "Power Skills are the Edge",
+      imageUrl: "Home/compressed-blog1.jpeg",
+    },
+    { title: "AI Ethics", imageUrl: "Home/compressed-blog2.jpeg" },
+    { title: "ChatAI at Work", imageUrl: "Home/compressed-blog3.jpeg" },
   ];
 
   useGSAP(
@@ -38,7 +42,7 @@ function BlogsSection() {
         });
       });
     },
-    { scope: sectionRef }
+    { scope: sectionRef },
   );
 
   const slugify = (title) =>
@@ -55,7 +59,9 @@ function BlogsSection() {
     <section
       ref={sectionRef}
       className="w-full py-20 px-6"
-      style={{ background: 'linear-gradient(to bottom left, #E1E8FF, #F9DCED)' }}
+      style={{
+        background: "linear-gradient(to bottom left, #E1E8FF, #F9DCED)",
+      }}
     >
       <div className="max-w-6xl mx-auto">
         <h2 className="text-h1 text-center mb-14 normal-case">
@@ -65,9 +71,9 @@ function BlogsSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {Blogs.map((blog) => (
-            <a
+            <Link
               key={blog.title}
-              href={`/blogs/${slugify(blog.title)}`}
+              to={`/blogs/${slugify(blog.title)}`}
               className="blog-card bg-[var(--color-bg-white)] rounded-2xl p-4 block"
             >
               <div className="relative overflow-hidden rounded-xl">
@@ -89,11 +95,11 @@ function BlogsSection() {
                   {blog.date}
                 </span> */}
               </div>
-            </a>
+            </Link>
           ))}
         </div>
 
-        <div className="flex justify-center mt-12">
+        {/* <div className="flex justify-center mt-12">
           <a
             href="/blogs"
             className="px-6 py-3 rounded-full text-body-sm text-white"
@@ -103,7 +109,7 @@ function BlogsSection() {
           >
             See All
           </a>
-        </div>
+        </div> */}
       </div>
     </section>
   );

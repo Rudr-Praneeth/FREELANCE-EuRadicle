@@ -5,9 +5,9 @@ function BlogPsychologicalSafety() {
     <BlogLayout
       title="PSYCHOLOGICAL SAFETY, TRUST, AND PERFORMANCE: THE CAPABILITY CONNECTION"
       subtitle="Why trust and psychological safety function as performance accelerators."
-      date="Aug 4, 2025"
+      // date="Aug 4, 2025"
       category="News"
-      image="/Home/compressed-blog2.jpg"
+      image="/Home/compressed-blog2.jpeg"
     >
       <p>
         Why do capable teams stay silent in critical moments? Why do

@@ -7,11 +7,12 @@ import BlogsSection from "../sections/BlogsSection";
 import Testimonials from "../sections/Testimonials";
 import LogoSection from "../sections/LogoSection";
 
-const Home = () => {
+const Home = () => { 
   useEffect(() => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
+      left: 0,
+      behavior: "auto",
     });
   },[])
   return (

@@ -21,39 +21,63 @@ function BlogLayout({ children, title, subtitle, date, category, image }) {
         opacity: 0,
         duration: 0.6,
       })
-        .from(".blog-meta", {
-          y: 20,
-          opacity: 0,
-          duration: 0.6,
-        }, "-=0.4")
-        .from(".blog-title", {
-          y: 40,
-          opacity: 0,
-          duration: 0.8,
-        }, "-=0.4")
-        .from(".blog-subtitle", {
-          y: 30,
-          opacity: 0,
-          duration: 0.7,
-        }, "-=0.5")
-        .from(heroRef.current, {
-          scale: 1.05,
-          opacity: 0,
-          duration: 1,
-        }, "-=0.6")
-        .from(".blog-content > *", {
-          y: 40,
-          opacity: 0,
-          stagger: 0.12,
-          duration: 0.8,
-        }, "-=0.6")
-        .from(ctaRef.current, {
-          y: 30,
-          opacity: 0,
-          duration: 0.6,
-        }, "-=0.4");
+        .from(
+          ".blog-meta",
+          {
+            y: 20,
+            opacity: 0,
+            duration: 0.6,
+          },
+          "-=0.4",
+        )
+        .from(
+          ".blog-title",
+          {
+            y: 40,
+            opacity: 0,
+            duration: 0.8,
+          },
+          "-=0.4",
+        )
+        .from(
+          ".blog-subtitle",
+          {
+            y: 30,
+            opacity: 0,
+            duration: 0.7,
+          },
+          "-=0.5",
+        )
+        .from(
+          heroRef.current,
+          {
+            scale: 1.05,
+            opacity: 0,
+            duration: 1,
+          },
+          "-=0.6",
+        )
+        .from(
+          ".blog-content > *",
+          {
+            y: 40,
+            opacity: 0,
+            stagger: 0.12,
+            duration: 0.8,
+          },
+          "-=0.6",
+        )
+        .from(
+          ctaRef.current,
+          {
+            y: 30,
+            opacity: 0,
+            duration: 0.6,
+          },
+          "-=0.4",
+        );
     },
-    { scope: containerRef }
+    { scope: containerRef },
   );
 
   useGSAP(
@@ -82,78 +106,79 @@ function BlogLayout({ children, title, subtitle, date, category, image }) {
         });
       });
     },
-    { scope: containerRef }
+    { scope: containerRef },
   );
 
   return (
     <section>
       <section
-      ref={containerRef}
-      className="relative w-full min-h-screen bg-[var(--color-bg-white)] pt-32 pb-24 px-6 mt-25"
-    >
-      <div className="absolute top-[-20px] left-0 w-full h-[60vh] overflow-hidden">
-        <img
-          src={image}
-          alt="Blog Hero"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black/60"></div>
-      </div>
+        ref={containerRef}
+        className="relative w-full min-h-screen bg-[var(--color-bg-white)] pt-32 pb-24 px-6 mt-25"
+      >
+        <div className="absolute top-[-20px] left-0 w-full h-[60vh] overflow-hidden">
+          <img
+            src={image}
+            alt="Blog Hero"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/60"></div>
+        </div>
 
-      <div className="relative max-w-5xl mx-auto">
-        <div className="bg-white rounded-[40px] px-10 md:px-16 py-8 shadow-xl relative z-10 -mt-[20vh]">
-          <Link
-            to="/"
-            className="blog-back inline-flex items-center text-sm text-[var(--color-primary-mauve)] mb-2"
-          >
-            ← Back
-          </Link>
-
-          <div className="blog-meta flex items-center gap-4 mb-2">
-            <span className="px-4 py-1 rounded-full bg-gray-100 text-sm text-gray-600">
-              {date}
-            </span>
-            <span className="px-4 py-1 rounded-full bg-gray-100 text-sm text-gray-600">
-              {category}
-            </span>
-          </div>
-
-          <h1 className="blog-title text-4xl md:text-5xl font-semibold text-[var(--color-primary-navy)] leading-tight">
-            {title}
-          </h1>
-
-          <p className="blog-subtitle my-4 text-lg text-[var(--color-primary-navy)]/70 max-w-3xl italic">
-            {subtitle}
-          </p>
-
-          <div className="overflow-hidden rounded-[30px]">
-            <img
-              ref={heroRef}
-              src={image}
-              alt="Blog"
-              className="w-full h-[420px] object-cover transition-transform duration-500"
-            />
-          </div>
-
-          <div
-            ref={contentRef}
-            className="blog-content mt-12 space-y-8 text-gray-700 text-lg leading-relaxed"
-          >
-            {children}
-          </div>
-
-          <div className="mt-16 flex justify-center">
+        <div className="relative max-w-5xl mx-auto">
+          <div className="bg-white rounded-[40px] px-10 md:px-16 py-8 shadow-xl relative z-10 -mt-[20vh]">
             <Link
-              ref={ctaRef}
-              to="/contact"
-              className="px-8 py-4 rounded-full bg-[var(--color-primary-mauve)] text-white font-semibold"
+              to="/"
+              state={{ scrollTo: "blogs" }}
+              className="blog-back inline-flex items-center text-sm text-[var(--color-primary-mauve)] mb-2"
             >
-              Get in Touch
+              ← Back
             </Link>
+
+            <div className="blog-meta flex items-center gap-4 mb-2">
+              {/* <span className="px-4 py-1 rounded-full bg-gray-100 text-sm text-gray-600">
+              {date}
+            </span> */}
+              <span className="px-4 py-1 rounded-full bg-gray-100 text-sm text-gray-600">
+                {category}
+              </span>
+            </div>
+
+            <h1 className="blog-title text-4xl md:text-5xl font-semibold text-[var(--color-primary-navy)] leading-tight">
+              {title}
+            </h1>
+
+            <p className="blog-subtitle my-4 text-lg text-[var(--color-primary-navy)]/70 max-w-3xl italic">
+              {subtitle}
+            </p>
+
+            <div className="overflow-hidden rounded-[30px]">
+              <img
+                ref={heroRef}
+                src={image}
+                alt="Blog"
+                className="w-full h-[420px] object-cover transition-transform duration-500"
+              />
+            </div>
+
+            <div
+              ref={contentRef}
+              className="blog-content mt-12 space-y-8 text-gray-700 text-lg leading-relaxed"
+            >
+              {children}
+            </div>
+
+            <div className="mt-16 flex justify-center">
+              <Link
+                ref={ctaRef}
+                to="/contact"
+                className="px-8 py-4 rounded-full bg-[var(--color-primary-mauve)] text-white font-semibold"
+              >
+                Get in Touch
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
     </section>
   );
 }

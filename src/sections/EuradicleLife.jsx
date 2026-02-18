@@ -1,25 +1,49 @@
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
+import { useRef } from "react"
+import { useGSAP } from "@gsap/react"
+import gsap from "gsap"
 
 export default function EuradicleLife() {
-const headingRef = useRef(null);
+  const sectionRef = useRef(null)
+  const carouselRef = useRef(null)
 
-useEffect(() => {
-gsap.fromTo(
-headingRef.current,
-{ y: 40, opacity: 0 },
-{ y: 0, opacity: 1, duration: 1, ease: "power3.out" },
-);
-}, []);
+  const images = [
+    "/Celebrations/compressed-celeb1.jpeg",
+    "/Celebrations/compressed-celeb2.jpeg",
+    "/Celebrations/compressed-celeb3.jpeg",
+    "/Celebrations/compressed-celeb4.jpeg",
+    "/Celebrations/compressed-celeb5.jpeg",
+    "/Celebrations/compressed-celeb6.jpeg",
+  ]
 
-return ( <section className="w-full bg-[var(--color-bg-white)] overflow-hidden px-4 py-16 sm:px-6 sm:py-20 md:px-8 md:py-24 lg:px-10 lg:py-28 xl:px-12 xl:py-32"> <div className="w-full max-w-5xl mx-auto text-center"> <h1
-       ref={headingRef}
-       className="text-h1 sm:text-h2 md:text-h1 mb-4"
-     > <span className="text-[var(--color-primary-navy)]">LIFE AT</span>{" "} <span className="text-[var(--color-primary-mauve)]">EURADICLE</span> </h1>
+  useGSAP(
+    () => {
+      const totalWidth = carouselRef.current.scrollWidth / 2
+      gsap.to(carouselRef.current, {
+        x: -totalWidth,
+        duration: 25,
+        ease: "none",
+        repeat: -1,
+      })
+    },
+    { scope: sectionRef }
+  )
 
-    <div className="italic text-body sm:text-body-lg space-y-4 max-w-4xl mx-auto">
-      <p>
-        At EuRadicle, we believe great work doesn’t come from burnout - it
+  return (
+    <section
+      ref={sectionRef}
+      className="w-full bg-[var(--color-bg-white)] overflow-hidden"
+    >
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
+
+        <div className="text-center mb-12">
+          <h1 className="text-h1 sm:text-h2 mb-6">
+            <span className="text-[var(--color-primary-navy)]">LIFE AT </span>
+            <span className="text-[var(--color-primary-mauve)]">EURADICLE</span>
+          </h1>
+
+          <div className="italic text-body sm:text-body-lg max-w-3xl mx-auto space-y-4">
+            <p>
+              At EuRadicle, we believe great work doesn’t come from burnout - it
         comes from balance, belonging, and a bit of joy along the way. We
         are deeply committed to building leaders, shaping organisations, and
         creating impact that truly matters. At the same time, we place equal
@@ -38,44 +62,74 @@ return ( <section className="w-full bg-[var(--color-bg-white)] overflow-hidden p
         is about doing meaningful work with good people - without losing
         yourself in the process. And that’s a culture we’re proud to build,
         every single day.
-      </p>
-    </div>
-  </div>
+            </p>
+          </div>
+        </div>
 
-  <div className="w-full max-w-5xl mx-auto mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 auto-rows-[250px] sm:auto-rows-[300px] md:auto-rows-[350px] lg:auto-rows-[400px]">
-    <div className="overflow-hidden rounded-2xl sm:row-span-2">
-      <img
-        src="/Celebrations/compressed-celeb2.jpeg"
-        alt=""
-        className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-      />
-    </div>
+        <div className="hidden md:grid h-[75vh] max-h-[700px] grid-cols-3 grid-rows-4 gap-5">
+          <div className="col-span-2 row-span-2 overflow-hidden rounded-2xl">
+            <img
+              src={images[0]}
+              alt=""
+              className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+            />
+          </div>
 
-    <div className="overflow-hidden rounded-2xl">
-      <img
-        src="/Celebrations/compressed-celeb1.jpeg"
-        alt=""
-        className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-      />
-    </div>
+          <div className="col-span-1 row-span-1 overflow-hidden rounded-2xl">
+            <img
+              src={images[1]}
+              alt=""
+              className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+            />
+          </div>
 
-    <div className="overflow-hidden rounded-2xl">
-      <img
-        src="/Celebrations/compressed-celeb3.jpeg"
-        alt=""
-        className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-      />
-    </div>
+          <div className="col-span-1 row-span-1 overflow-hidden rounded-2xl">
+            <img
+              src={images[2]}
+              alt=""
+              className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+            />
+          </div>
 
-    <div className="overflow-hidden rounded-2xl sm:col-span-2">
-      <img
-        src="/Celebrations/compressed-celeb4.jpeg"
-        alt=""
-        className="w-full h-full object-cover object-bottom transition-transform duration-700 hover:scale-105"
-      />
-    </div>
-  </div>
-</section>
+          <div className="col-span-1 row-span-2 overflow-hidden rounded-2xl">
+            <img
+              src={images[3]}
+              alt=""
+              className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+            />
+          </div>
 
-);
+          <div className="col-span-2 row-span-2 overflow-hidden rounded-2xl">
+            <img
+              src={images[4]}
+              alt=""
+              className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+            />
+          </div>
+
+          <div className="col-span-1 row-span-1 overflow-hidden rounded-2xl">
+            <img
+              src={images[5]}
+              alt=""
+              className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+            />
+          </div>
+        </div>
+
+        <div className="md:hidden mt-8 overflow-hidden">
+          <div ref={carouselRef} className="flex gap-4 w-max">
+            {[...images, ...images].map((src, i) => (
+              <img
+                key={i}
+                src={src}
+                alt=""
+                className="h-64 w-auto rounded-xl object-cover"
+              />
+            ))}
+          </div>
+        </div>
+
+      </div>
+    </section>
+  )
 }

@@ -26,25 +26,6 @@ function Navbar() {
   const [openDropdown, setOpenDropdown] = useState(false);
   const [openMobile, setOpenMobile] = useState(false);
 
-  const resetScrolls = () => {
-    try {
-      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-    } catch {}
-    try {
-      document.documentElement.scrollTop = 0;
-      document.body.scrollTop = 0;
-    } catch {}
-    try {
-      document.querySelectorAll("*").forEach((el) => {
-        try {
-          const s = getComputedStyle(el);
-          if (s.overflowX === "auto" || s.overflowX === "scroll" || s.overflowX === "overlay") el.scrollLeft = 0;
-          if (s.overflowY === "auto" || s.overflowY === "scroll" || s.overflowY === "overlay") el.scrollTop = 0;
-        } catch {}
-      });
-    } catch {}
-  };
-
   useEffect(() => {
     return () => {
       if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current);
@@ -66,27 +47,40 @@ function Navbar() {
         });
       });
     },
-    { scope: navRef },
+    { scope: navRef }
   );
 
   useGSAP(
     () => {
       if (openDropdown && dropdownRef.current) {
-        gsap.fromTo(dropdownRef.current, { opacity: 0, y: -12 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" });
+        gsap.fromTo(
+          dropdownRef.current,
+          { opacity: 0, y: -12 },
+          { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }
+        );
       }
     },
-    { dependencies: [openDropdown] },
+    { dependencies: [openDropdown] }
   );
 
   useGSAP(
     () => {
       if (openMobile && mobileMenuRef.current) {
-        gsap.fromTo(mobileMenuRef.current, { height: 0, opacity: 0 }, { height: "auto", opacity: 1, duration: 0.45, ease: "power3.out" });
+        gsap.fromTo(
+          mobileMenuRef.current,
+          { height: 0, opacity: 0 },
+          { height: "auto", opacity: 1, duration: 0.45, ease: "power3.out" }
+        );
       } else if (mobileMenuRef.current) {
-        gsap.to(mobileMenuRef.current, { height: 0, opacity: 0, duration: 0.35, ease: "power3.inOut" });
+        gsap.to(mobileMenuRef.current, {
+          height: 0,
+          opacity: 0,
+          duration: 0.35,
+          ease: "power3.inOut",
+        });
       }
     },
-    { dependencies: [openMobile] },
+    { dependencies: [openMobile] }
   );
 
   useGSAP(
@@ -100,13 +94,12 @@ function Navbar() {
         gsap.to(btn, { boxShadow: "0 0 0px transparent", duration: 0.3 });
       });
     },
-    { scope: navRef },
+    { scope: navRef }
   );
 
   const handleNavClick = () => {
     setOpenMobile(false);
     setOpenDropdown(false);
-    setTimeout(() => resetScrolls(), 60);
   };
 
   const openDropdownImmediate = () => {
@@ -152,7 +145,11 @@ function Navbar() {
               return (
                 <div key={item}>
                   <Link to={to} onClick={handleNavClick} className="nav-link relative text-body text-[var(--color-primary-navy)]">
-                    {item === "OUR CAPABILITIES"? "Our Capabilities": item === "WHY EURADICLE"? "Why EuRadicle": item.slice(0,1) + item.slice(1,item.length).toLowerCase()}
+                    {item === "OUR CAPABILITIES"
+                      ? "Our Capabilities"
+                      : item === "WHY EURADICLE"
+                      ? "Why EuRadicle"
+                      : item.slice(0, 1) + item.slice(1).toLowerCase()}
                     <span className="underline absolute left-0 -bottom-1 h-[2px] w-full bg-[var(--color-primary-mauve)] scale-x-0"></span>
                   </Link>
                 </div>
@@ -168,17 +165,29 @@ function Navbar() {
                 onFocus={openDropdownImmediate}
                 onBlur={() => closeDropdownDelayed(120)}
               >
-                <Link to={to} aria-haspopup="menu" aria-expanded={openDropdown} className="nav-link relative text-body text-[var(--color-primary-navy)]">
-                  {item === "OUR CAPABILITIES"? "Our Capabilities":"Our Capabilities"}
+                <Link
+                  to={to}
+                  aria-haspopup="menu"
+                  aria-expanded={openDropdown}
+                  className="nav-link relative text-body text-[var(--color-primary-navy)]"
+                >
+                  Our Capabilities
                   <span className="underline absolute left-0 -bottom-1 h-[2px] w-full bg-[var(--color-primary-mauve)] scale-x-0"></span>
                 </Link>
 
                 {openDropdown && (
-                  <div className="fixed left-0 top-[72px] w-screen" onMouseEnter={openDropdownImmediate} onMouseLeave={() => closeDropdownDelayed(120)}>                    
-                  <div ref={dropdownRef} className="w-screen bg-black/80 text-white py-12">
-                    <div className="max-w-screen-xl mx-auto px-20 grid grid-cols-4 gap-10">
+                  <div
+                    className="fixed left-0 top-[72px] w-screen"
+                    onMouseEnter={openDropdownImmediate}
+                    onMouseLeave={() => closeDropdownDelayed(120)}
+                  >
+                    <div ref={dropdownRef} className="w-screen bg-black/80 text-white py-12">
+                      <div className="max-w-screen-xl mx-auto px-20 grid grid-cols-4 gap-10">
                         {capabilities.map((cap) => {
-                          const path = `/capabilities/${cap.toLowerCase().replace(/&/g, "").replace(/\s+/g, "-")}`;
+                          const path = `/capabilities/${cap
+                            .toLowerCase()
+                            .replace(/&/g, "")
+                            .replace(/\s+/g, "-")}`;
                           return (
                             <Link
                               key={cap}
@@ -201,19 +210,32 @@ function Navbar() {
         </nav>
 
         <div className="hidden md:flex w-1/4 items-center justify-end">
-          <Link ref={ctaRef} to="/get-in-touch" onClick={handleNavClick} className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-[var(--color-primary-mauve)] text-white text-subheading-xs mr-4">
+          <Link
+            ref={ctaRef}
+            to="/get-in-touch"
+            onClick={handleNavClick}
+            className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-[var(--color-primary-mauve)] text-white text-subheading-xs mr-4"
+          >
             GET IN TOUCH
           </Link>
         </div>
 
-        <button className="md:hidden flex flex-col gap-1" onClick={() => setOpenMobile(!openMobile)} aria-label="Toggle menu">
+        <button
+          className="md:hidden flex flex-col gap-1"
+          onClick={() => setOpenMobile(!openMobile)}
+          aria-label="Toggle menu"
+        >
           <span className="w-6 h-[2px] bg-[var(--color-primary-navy)]"></span>
           <span className="w-6 h-[2px] bg-[var(--color-primary-navy)]"></span>
           <span className="w-6 h-[2px] bg-[var(--color-primary-navy)]"></span>
         </button>
       </div>
 
-      <div ref={mobileMenuRef} className="md:hidden overflow-hidden bg-[var(--color-bg-white)] px-6" style={{ height: 0 }}>
+      <div
+        ref={mobileMenuRef}
+        className="md:hidden overflow-hidden bg-[var(--color-bg-white)] px-6"
+        style={{ height: 0 }}
+      >
         <div className="flex flex-col gap-6 py-6">
           {NavLinks.map((item) => {
             const to =
@@ -227,12 +249,21 @@ function Navbar() {
                 ? "/grow-with-us"
                 : "/";
             return (
-              <Link key={item} to={to} onClick={handleNavClick} className="text-subheading text-[var(--color-primary-navy)]">
+              <Link
+                key={item}
+                to={to}
+                onClick={handleNavClick}
+                className="text-subheading text-[var(--color-primary-navy)]"
+              >
                 {item}
               </Link>
             );
           })}
-          <Link to="/contact" onClick={handleNavClick} className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-[var(--color-primary-mauve)] text-white text-subheading-sm">
+          <Link
+            to="/contact"
+            onClick={handleNavClick}
+            className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-[var(--color-primary-mauve)] text-white text-subheading-sm"
+          >
             GET IN TOUCH
           </Link>
         </div>

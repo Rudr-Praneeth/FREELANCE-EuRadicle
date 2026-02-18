@@ -20,7 +20,7 @@ export default function StoryTimelineSection({ items }) {
   useGSAP(
     () => {
       if (!items.length) return;
-
+      ScrollTrigger.clearScrollMemory();
       const mm = gsap.matchMedia();
 
       mm.add("(min-width: 768px)", () => {
@@ -45,9 +45,7 @@ export default function StoryTimelineSection({ items }) {
               inertia: false,
             },
             onUpdate: (self) => {
-              const index = Math.round(
-                self.progress * (items.length - 1),
-              );
+              const index = Math.round(self.progress * (items.length - 1));
               setActiveIndex(index);
             },
           },
@@ -85,9 +83,7 @@ export default function StoryTimelineSection({ items }) {
               inertia: false,
             },
             onUpdate: (self) => {
-              const index = Math.round(
-                self.progress * (items.length - 1),
-              );
+              const index = Math.round(self.progress * (items.length - 1));
               setActiveIndex(index);
             },
           },
@@ -103,7 +99,12 @@ export default function StoryTimelineSection({ items }) {
         });
       });
 
-      return () => mm.revert();
+      return () => {
+        mm.revert();
+        ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+        ScrollTrigger.clearScrollMemory();
+        window.scrollTo(0, 0);
+      };
     },
     { scope: sectionRef, dependencies: [items.length] },
   );
@@ -157,24 +158,17 @@ export default function StoryTimelineSection({ items }) {
       ref={sectionRef}
       className="relative w-full overflow-hidden min-[768px]:h-screen py-16 min-[768px]:py-0"
       style={{
-        background:
-          "linear-gradient(to bottom right, #E4E7FD, #F4DEF0)",
+        background: "linear-gradient(to bottom right, #E4E7FD, #F4DEF0)",
       }}
     >
       <h1 className="text-center text-h1 pt-10 min-[600px]:pt-12 min-[768px]:pt-16 text-[clamp(28px,5vw,56px)]">
-        OUR{" "}
-        <span className="text-[var(--color-primary-mauve)]">
-          STORY
-        </span>
+        OUR <span className="text-[var(--color-primary-mauve)]">STORY</span>
       </h1>
 
       <div className="hidden md:block relative min-[768px]:absolute top-20 min-[768px]:top-32 left-1/2 w-full max-w-[95%] min-[768px]:max-w-6xl -translate-x-1/2 px-4 min-[600px]:px-6 mb-10 min-[768px]:mb-0">
         <div className="flex items-center overflow-x-auto min-[768px]:overflow-visible">
           {items.map((item, i) => (
-            <div
-              key={i}
-              className="flex items-center min-w-max flex-1"
-            >
+            <div key={i} className="flex items-center min-w-max flex-1">
               <div
                 className={`z-10 flex h-9 min-[600px]:h-10 min-w-20 min-[600px]:min-w-24 items-center justify-center rounded-full border text-body-sm font-semibold transition-all duration-500 ${
                   activeIndex === i
@@ -212,9 +206,7 @@ export default function StoryTimelineSection({ items }) {
                 </h3>
 
                 <div
-                  ref={(el) =>
-                    (contentRefs.current[i] = el)
-                  }
+                  ref={(el) => (contentRefs.current[i] = el)}
                   className="overflow-hidden"
                 >
                   <p className="mt-4 min-[600px]:mt-5 text-body-sm">

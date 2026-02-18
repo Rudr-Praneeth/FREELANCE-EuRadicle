@@ -11,11 +11,23 @@ function BlogsSection() {
 
   const Blogs = [
     {
-      title: "Power Skills are the Edge",
+      title:
+        "Why Power Skills are the new Currency of Leadership in the age of AI",
       imageUrl: "Home/compressed-blog1.jpeg",
+      path: "power-skills",
     },
-    { title: "AI Ethics", imageUrl: "Home/compressed-blog2.jpeg" },
-    { title: "ChatAI at Work", imageUrl: "Home/compressed-blog3.jpeg" },
+    {
+      title:
+        "From Training Programs to Capability Building: What Organisations must Rethink",
+      imageUrl: "Home/compressed-blog2.jpeg",
+      path: "chatai-at",
+    },
+    {
+      title:
+        "Psychological Safety, Trust and Performance: The Capability Connection",
+      imageUrl: "Home/compressed-blog3.jpeg",
+      path: "ai-ethics",
+    },
   ];
 
   useGSAP(
@@ -73,7 +85,7 @@ function BlogsSection() {
           {Blogs.map((blog) => (
             <Link
               key={blog.title}
-              to={`/blogs/${slugify(blog.title)}`}
+              to={`/blogs/${blog.path}`}
               className="blog-card bg-[var(--color-bg-white)] rounded-2xl p-4 block"
             >
               <div className="relative overflow-hidden rounded-xl">

@@ -97,7 +97,7 @@ const LogoSection = () => {
             </h1>
           </div>
 
-          <div className="relative bg-gradient-to-br from-[var(--color-primary-mauve)]/20 to-transparent rounded-[28px] p-6 md:p-10 shadow-sm border border-brand-400/10">
+          <div className="relative rounded-[28px] p-6 md:p-10 shadow-sm border border-brand-400/10">
             <div className="block lg:hidden">
               <LogoMarqueeColumn logoIndices={indices} reverse={false} />
             </div>

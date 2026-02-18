@@ -41,7 +41,7 @@ export default function AboutSection() {
   return (
     <section
       ref={sectionRef}
-      className="w-full max-w-[95%] min-[600px]:max-w-2xl min-[768px]:max-w-4xl min-[992px]:max-w-5xl min-[1200px]:max-w-6xl mx-auto py-12 px-4 max-[600px]:px-5 min-[600px]:py-14 min-[600px]:px-6 min-[768px]:py-16 min-[768px]:px-10 min-[992px]:py-20 min-[992px]:px-16 min-[1200px]:py-24 min-[1200px]:px-24 mt-20"
+      className="w-full max-w-[95%] min-[600px]:max-w-2xl min-[768px]:max-w-4xl min-[992px]:max-w-5xl min-[1200px]:max-w-6xl mx-auto py-8 px-4 max-[600px]:px-5 min-[600px]:py-14 min-[600px]:px-6 min-[768px]:py-16 min-[768px]:px-10 max-[992px]:mt-12 min-[992px]:py-20 min-[992px]:px-16 max-[992px]:mt-5 min-[1200px]:py-24 min-[1200px]:px-24"
     >
       <h1 className="text-h1 text-center mb-6 min-[600px]:mb-7 min-[768px]:mb-8 text-[clamp(28px,5vw,56px)] leading-tight">
         About <span className="text-primary-mauve">Us</span>

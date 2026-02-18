@@ -33,7 +33,7 @@ function JourneySection() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full h-[85vh] flex items-center justify-center overflow-hidden"
+      className="relative w-full h-screen flex items-center justify-center overflow-hidden"
     >
       {/* Background Image */}
       <img

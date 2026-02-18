@@ -43,7 +43,7 @@ export default function Footer() {
   return (
     <footer
       ref={footerRef}
-      className="bg-[var(--color-bg-muted)] text-black py-20 px-6"
+      className="bg-[var(--color-bg-muted)] text-black py-20 px-6 z-90"
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-[1fr_2fr_1fr] gap-16">
         <div className="flex flex-col items-center text-center space-y-6">

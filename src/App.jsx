@@ -51,9 +51,9 @@ const App = () => {
           <Route path="/capabilities/commercial-sales-enablement" element={<CommercialSalesEnablement />} />
           <Route path="/capabilities/creative-solutions" element={<CreativeSolutions />} />
           <Route path="/capabilities/dei-culture-building" element={<DEICultureBuilding />} />
-          <Route path="/stories/awareness" element={<Story1 />} />
+          {/* <Route path="/stories/awareness" element={<Story1 />} />
           <Route path="/stories/aspire" element={<Story2 />} />
-          <Route path="/stories/catalyst" element={<Story3 />} />
+          <Route path="/stories/catalyst" element={<Story3 />} /> */}
           <Route path="*" element={<NotFound />} />
         </Routes>
         <JourneySection />

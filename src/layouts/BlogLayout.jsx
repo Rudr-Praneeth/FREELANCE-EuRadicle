@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -11,6 +11,7 @@ function BlogLayout({ children, title, subtitle, date, category, image }) {
   const heroRef = useRef(null);
   const contentRef = useRef(null);
   const ctaRef = useRef(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useGSAP(
     () => {
@@ -28,7 +29,7 @@ function BlogLayout({ children, title, subtitle, date, category, image }) {
             opacity: 0,
             duration: 0.6,
           },
-          "-=0.4",
+          "-=0.4"
         )
         .from(
           ".blog-title",
@@ -37,7 +38,7 @@ function BlogLayout({ children, title, subtitle, date, category, image }) {
             opacity: 0,
             duration: 0.8,
           },
-          "-=0.4",
+          "-=0.4"
         )
         .from(
           ".blog-subtitle",
@@ -46,7 +47,7 @@ function BlogLayout({ children, title, subtitle, date, category, image }) {
             opacity: 0,
             duration: 0.7,
           },
-          "-=0.5",
+          "-=0.5"
         )
         .from(
           heroRef.current,
@@ -55,7 +56,7 @@ function BlogLayout({ children, title, subtitle, date, category, image }) {
             opacity: 0,
             duration: 1,
           },
-          "-=0.6",
+          "-=0.6"
         )
         .from(
           ".blog-content > *",
@@ -65,7 +66,7 @@ function BlogLayout({ children, title, subtitle, date, category, image }) {
             stagger: 0.12,
             duration: 0.8,
           },
-          "-=0.6",
+          "-=0.6"
         )
         .from(
           ctaRef.current,
@@ -74,10 +75,10 @@ function BlogLayout({ children, title, subtitle, date, category, image }) {
             opacity: 0,
             duration: 0.6,
           },
-          "-=0.4",
+          "-=0.4"
         );
     },
-    { scope: containerRef },
+    { scope: containerRef }
   );
 
   useGSAP(
@@ -106,7 +107,7 @@ function BlogLayout({ children, title, subtitle, date, category, image }) {
         });
       });
     },
-    { scope: containerRef },
+    { scope: containerRef }
   );
 
   return (
@@ -135,9 +136,6 @@ function BlogLayout({ children, title, subtitle, date, category, image }) {
             </Link>
 
             <div className="blog-meta flex items-center gap-4 mb-2">
-              {/* <span className="px-4 py-1 rounded-full bg-gray-100 text-sm text-gray-600">
-              {date}
-            </span> */}
               <span className="px-4 py-1 rounded-full bg-gray-100 text-sm text-gray-600">
                 {category}
               </span>
@@ -168,17 +166,59 @@ function BlogLayout({ children, title, subtitle, date, category, image }) {
             </div>
 
             <div className="mt-16 flex justify-center">
-              <Link
+              <button
                 ref={ctaRef}
-                to="/contact"
+                onClick={() => setIsModalOpen(true)}
                 className="px-8 py-4 rounded-full bg-[var(--color-primary-mauve)] text-white font-semibold"
               >
                 Get in Touch
-              </Link>
+              </button>
             </div>
           </div>
         </div>
       </section>
+
+      {isModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-6">
+          <div className="bg-white rounded-2xl w-full max-w-md p-8 relative">
+            <button
+              onClick={() => setIsModalOpen(false)}
+              className="absolute top-4 right-4 text-[var(--color-primary-navy)] text-xl"
+            >
+              ×
+            </button>
+            <h3 className="text-xl font-semibold text-[var(--color-primary-mauve)] mb-6">
+              Get in Touch
+            </h3>
+            <form className="space-y-4">
+              <input
+                type="text"
+                placeholder="Full Name"
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-mauve)]"
+                required
+              />
+              <input
+                type="email"
+                placeholder="Email Address"
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-mauve)]"
+                required
+              />
+              <input
+                type="tel"
+                placeholder="Phone Number"
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-mauve)]"
+                required
+              />
+              <button
+                type="submit"
+                className="w-full bg-[var(--color-primary-mauve)] text-white py-3 rounded-lg transition-all duration-300 hover:scale-105"
+              >
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

@@ -182,7 +182,8 @@ const Testimonials = [
   },
   {
     org: "Peepal Co",
-    logoUrl: "",
+    logoUrl: "/logos/peepalco.png",
+    h: 5,
     by: "",
     designation: "",
     testimonial:

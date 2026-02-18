@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import EuradicleLife from '../sections/EuradicleLife'
 import Jobs from "../sections/Jobs"
 import WhyEuradicle from "../sections/WhyEuradicle"
 import Interns from "../sections/Interns"
 
 const GrowWithUs = () => {
+  useEffect(()=>{
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  })
     const interns = [
       {
         text: "“What really stood out to me at EuRadicle is how people-focused the culture is. Even during my internship, I never felt like I was “just an intern.” My ideas were heard, my suggestions were considered, and I was included in real discussions. The team is very open and supportive, which made it easy for me to learn and try new things without being afraid of making mistakes. With the guidance and encouragement, I received, I slowly moved from just learning to actually taking ownership of my work. Because of that trust and support, becoming a full-time team member felt like a natural step, and it continues to motivate me to grow and do better every day.",

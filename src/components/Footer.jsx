@@ -46,17 +46,17 @@ export default function Footer() {
       className="bg-[var(--color-bg-muted)] text-black py-20 px-6 z-90"
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-[1fr_2fr_1fr] gap-16">
-        <div className="flex flex-col items-center text-center space-y-6">
+        <div className="flex flex-col items-center justify-center text-center space-y-6">
           <img
             src="/Home/logo.webp"
             alt="EuRadicle Logo"
-            className="w-40 h-auto"
+            className="w-40 h-auto mb-20 sm:mb-12"
           />
 
-          <p className="text-body-sm max-w-xs">
+          {/* <p className="text-body-sm max-w-xs">
             truly transforming developing talent that performs with purpose and
             leads with impact turning your people into your most enduring edge.
-          </p>
+          </p> */}
 
           <div className="flex gap-6 text-xl">
             <a
@@ -86,8 +86,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col items-center">
-          <h3 className="text-subheading mb-8 text-center">Our Capabilities</h3>
+        <div className="flex flex-col items-start">
+          <h3 className="text-subheading mb-8">Our Capabilities</h3>
 
           <div className="grid grid-cols-2 gap-x-12 gap-y-4 text-body-sm">
             <Link
@@ -156,7 +156,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col items-start">
+        <div className="hidden sm:block flex flex-col items-start">
           <h3 className="text-subheading mb-8">Insights</h3>
 
           <div className="flex flex-col gap-4 text-body-sm">

@@ -46,11 +46,11 @@ export default function GlobalFooterSection() {
       className="w-full bg-[var(--color-bg-white)] relative z-10"
     >
       <div className="max-w-6xl mx-auto px-4 py-8 text-center">
-        <h1 className="text-h2 gfs-animate">
+        <h1 className="text-h1 gfs-animate">
           OUR GLOBAL{" "}
           <span className="text-[var(--color-primary-mauve)]">FOOTPRINTS</span>
         </h1>
-        <p className="text-body-md mt-6 max-w-3xl mx-auto gfs-animate">
+        <p className="italic text-body-md mt-6 max-w-3xl mx-auto gfs-animate">
           Our footprint spans key growth and innovation markets across the U.S.,
           UAE, the Middle East, and India, allowing us to operate with both
           global perspective and local relevance. With our registered office in

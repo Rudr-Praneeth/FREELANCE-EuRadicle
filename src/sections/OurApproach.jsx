@@ -97,10 +97,10 @@ export default function OurApproach({ data }) {
             OUR <span className="text-primary-mauve">APPROACH</span>
           </h2>
 
-          <p className="mx-auto mt-6 max-w-3xl text-sm leading-relaxed text-primary-navy">
+          <p className="italic mx-auto mt-6 max-w-3xl text-sm leading-relaxed text-primary-navy">
             Our approach is designed to move organizations beyond isolated
             people development initiatives toward sustainable leadership and
-            capability transformation...
+            capability transformation.
           </p>
 
         </div>

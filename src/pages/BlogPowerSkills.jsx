@@ -7,7 +7,7 @@ function BlogPowerSkills() {
       subtitle="Why power skills are the new currency of leadership in the age of AI."
       date="Jan 1, 2026"
       category="News"
-      image="/Home/compressed-blog1.jpg"
+      image="/Home/compressed-blog1.jpeg"
     >
       <h2 className="text-2xl font-semibold text-[var(--color-primary-mauve)]">
         The paradox shaping leadership today

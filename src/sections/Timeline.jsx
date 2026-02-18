@@ -226,7 +226,7 @@ export default function StoryTimelineSection({ items }) {
                   <img
                     src={item.logo}
                     alt=""
-                    className="absolute top-6 right-6 h-16 min-[600px]:h-18 min-[768px]:h-20 w-auto object-contain"
+                    className="absolute top-0 right-0 h-22 min-[600px]:h-24 min-[768px]:h-28 w-auto object-contain"
                   />
                 </div>
               </div>

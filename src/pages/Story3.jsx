@@ -1,42 +1,132 @@
-import React from 'react';
-import StoryLayout from '../layouts/StoryLayout';
+// src/sections/Story1.jsx
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Catalyst } from "../data/home";
 
-const CatalystStory = () => {
-  const storyData = {
-    title: "CATALYST: Developing Business Consultants for Strategic Roles",
-    tagline: "Helping leaders transition from functional execution to enterprise-level value creation",
-    heroImage: "/path-to-your-catalyst-hero.jpg",
-    overlayContent: "A high-impact leadership journey designed to help experienced managers and senior leaders transition from functional execution to enterprise-level thinking, influence, and value creation.",
-    sections: [
-      "CATALYST is EuRadicle’s consultative leadership pathway, built for professionals at a critical career inflection point—where success depends not just on delivery, but on how effectively leaders think, influence, and engage as strategic partners.",
-      "This program was delivered under the client-facing name PRYSM – Professional Readiness for Young Strategic Minds, and was designed to enable senior leaders to operate as trusted internal consultants rather than functional specialists.",
-      "The journey focused on building structured and strategic thinking, audience-centric communication, stakeholder engagement, emotional regulation, personal leadership presence, and a value-driven consultative mindset. Through real business scenarios, reflective dialogue, and practical frameworks, participants explored how to navigate complex stakeholder environments, align diverse perspectives, and drive outcomes with clarity and credibility.",
-      "Rather than teaching skills in isolation, CATALYST integrated strategic thinking, relationship building, influence, and personal leadership into a cohesive readiness journey—ensuring direct translation into day-to-day leadership effectiveness.",
-      "The impact analysis revealed a clear shift in how participants approached leadership and decision-making, demonstrating a visible movement from solution execution to consultative ownership."
-    ],
-    outcomes: [
-      "Sharper strategic and analytical thinking for enterprise-level decision-making",
-      "Greater confidence in influencing stakeholders across functions and hierarchies",
-      "Improved ability to communicate value with clarity, intent, and credibility",
-      "Stronger consultative presence rooted in empathy, insight, and trust",
-      "Enhanced capability to navigate complexity and drive alignment in diverse teams"
-    ],
-    quote: "At EuRadicle, we view professional readiness as a mindset shift—not a skill checklist. Future-ready leaders create value by combining structured thinking with consultative influence.",
-    conclusion: "Participants showed tangible improvements in decision speed, stakeholder trust, and collaboration. Ready to build your internal consultative pipeline?"
-  };
+gsap.registerPlugin(ScrollTrigger);
+
+export default function Story1() {
+  const parasRef = useRef([]);
+  const outcomesRef = useRef([]);
+  const imagesRef = useRef([]);
+  const taglineRef = useRef(null);
+  const subtagRef = useRef(null);
+
+  useEffect(() => {
+    const typewriter = (el, text, callback) => {
+      let idx = 0;
+      const type = () => {
+        if (idx <= text.length) {
+          el.textContent = text.slice(0, idx);
+          idx++;
+          setTimeout(type, 60);
+        } else if (callback) callback();
+      };
+      type();
+    };
+
+    typewriter(taglineRef.current, Catalyst.tagline, () => {
+      typewriter(subtagRef.current, Catalyst.subtag);
+    });
+
+    parasRef.current.forEach((el, idx) => {
+      gsap.fromTo(
+        el,
+        { x: 100, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          scrollTrigger: { trigger: el, start: "top 80%" },
+          duration: 1,
+          delay: idx * 0.2,
+        }
+      );
+    });
+
+    outcomesRef.current.forEach((el, idx) => {
+      gsap.fromTo(
+        el,
+        { x: 100, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          scrollTrigger: { trigger: el, start: "top 80%" },
+          duration: 1,
+          delay: idx * 0.2,
+        }
+      );
+    });
+
+    imagesRef.current.forEach((el, idx) => {
+      el.addEventListener("mouseenter", () => {
+        gsap.to(imagesRef.current[0], { x: -120, y: 120, duration: 0.5 });
+        gsap.to(imagesRef.current[1], { x: 120, y: 120, duration: 0.5 });
+        gsap.to(imagesRef.current[2], { x: 0, y: -60, duration: 0.5 });
+      });
+      el.addEventListener("mouseleave", () => {
+        imagesRef.current.forEach((img) =>
+          gsap.to(img, { x: 0, y: 0, duration: 0.5 })
+        );
+      });
+    });
+  }, []);
 
   return (
-    <StoryLayout 
-      title={storyData.title}
-      tagline={storyData.tagline}
-      heroImage={storyData.heroImage}
-      overlayContent={storyData.overlayContent}
-      sections={storyData.sections}
-      outcomes={storyData.outcomes}
-      quote={storyData.quote}
-      conclusion={storyData.conclusion}
-    />
-  );
-};
+    <section className="w-full">
+      <div
+        className="relative w-full h-[400px] md:h-[500px] mt-[84px] bg-center bg-cover flex flex-col items-center justify-center"
+        style={{ backgroundImage: `url(${Catalyst.bannerUrl})` }}
+      >
+        <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center gap-2 px-4 text-center">
+          <h1 ref={taglineRef} className="text-2xl md:text-4xl text-white font-heading"></h1>
+          <h2 ref={subtagRef} className="text-lg md:text-xl text-white font-heading"></h2>
+        </div>
+      </div>
 
-export default CatalystStory;
+      <div className="container mx-auto px-6 md:px-12 py-12 flex flex-col md:flex-row gap-8">
+        <div className="md:w-2/3 flex flex-col gap-4">
+          <h2 className="text-h4 font-heading text-mauve">Introduction</h2>
+          {Catalyst.paras.map((para, idx) => (
+            <p
+              key={idx}
+              ref={(el) => (parasRef.current[idx] = el)}
+              className="text-body text-primary-navy"
+            >
+              {para}
+            </p>
+          ))}
+
+          <h2 className="mt-6 text-h4 font-heading text-mauve">Outcomes</h2>
+          <ul className="flex flex-col gap-2">
+            {Catalyst.outcomes.map((outcome, idx) => (
+              <li
+                key={idx}
+                ref={(el) => (outcomesRef.current[idx] = el)}
+                className="text-body text-primary-navy"
+              >
+                {outcome}
+              </li>
+            ))}
+          </ul>
+
+          <p className="mt-4 text-body text-primary-navy">{Catalyst.outro}</p>
+        </div>
+
+        <div className="md:w-1/3 flex flex-col items-center md:items-end relative h-[400px]">
+          {Catalyst.hoveerImages.map((img, idx) => {
+            const isSide = idx === 0 || idx === 2;
+            return (
+              <img
+                key={idx}
+                ref={(el) => (imagesRef.current[idx] = el)}
+                src={img}
+                className={`absolute top-0 left-10 w-[300px] h-[300px] rounded-lg border border-gray-200 shadow-lg cursor-pointer transition-all duration-500 object-cover object-center`}
+              />
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}

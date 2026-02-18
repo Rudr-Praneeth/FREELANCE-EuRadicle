@@ -1,7 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import ContactSection from '../sections/ContactSection'
 
 const Contact = () => {
+  useEffect(()=>{
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  })
   const fields = [
     [{
       name: "Name",

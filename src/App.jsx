@@ -11,6 +11,8 @@ import BlogPowerSkills from "./pages/BlogPowerSkills.jsx";
 import BlogPsychologicalSafety from "./pages/BlogPsychologicalSafety.jsx";
 import BlogCapabilityBuilding from "./pages/BlogCapabilityBuilding.jsx";
 import Story1 from "./pages/Story1.jsx";
+import Story2 from "./pages/Story2.jsx";
+import Story3 from "./pages/Story3.jsx";
 import LeadershipDevelopment from "./pages/LeadershipDevelopment.jsx";
 import ConsultingTalentManagement from "./pages/ConsultingTalentManagement.jsx";
 import AssessmentDevelopmentCenters from "./pages/AssessmentDevelopmentCenters.jsx";
@@ -48,7 +50,9 @@ const App = () => {
           <Route path="/capabilities/commercial-sales-enablement" element={<CommercialSalesEnablement />} />
           <Route path="/capabilities/creative-solutions" element={<CreativeSolutions />} />
           <Route path="/capabilities/dei-culture-building" element={<DEICultureBuilding />} />
-          {/* <Route path="/stories/awareness" element={<Story1 />} /> */}
+          <Route path="/stories/awareness" element={<Story1 />} />
+          <Route path="/stories/aspire" element={<Story2 />} />
+          <Route path="/stories/catalyst" element={<Story3 />} />
 
 
 

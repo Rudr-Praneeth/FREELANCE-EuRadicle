@@ -54,8 +54,8 @@ const Showreel = () => {
         ref={textRef}
         className="absolute top-[8%] z-10 w-full text-center pointer-events-none"
       >
-        <h2 className="text-[12vw] leading-none font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-brand-500/40 to-brand-500/10 uppercase">
-          Showreel
+        <h2 className="text-[15vw] leading-none font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-brand-500/40 to-brand-500/10 uppercase">
+          Discover Us
         </h2>
       </div>
 

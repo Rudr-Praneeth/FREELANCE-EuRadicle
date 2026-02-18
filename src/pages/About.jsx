@@ -59,17 +59,54 @@ const About = () => {
             {
               number: "03",
               title: "Agile Co-Created Solutions",
-              text: `Every solution is developed in close collaboration with clients-blending consulting expertise with deep contextual insight. Programs are co-created to align with business realities, leadership expectations, and organizational culture.
-From enterprise leadership journeys to capability programs for growing organizations, solutions are tailored to reflect each client’s brand, language, and real-world challenges-driving relevance, ownership, and on-the-job application with measurable impact.
+              text: `Every solution is developed in close collaboration with clients-blending consulting expertise with deep contextual insight. Programs are co-created to align with business realities, leadership expectations, and organizational culture. From enterprise leadership journeys to capability programs for growing organizations, solutions are tailored to reflect each client’s brand, language, and real-world challenges-driving relevance, ownership, and on-the-job application with measurable impact.
 `,
             },
     ];
+      const minds = [
+    {
+      title: "Client Partnerships",
+      text: "Focused on building trusted relationships, our sales team works closely with clients to understand their capability needs and shape meaningful engagements from the outset. Their role is to ensure alignment, clarity, and long-term value across every partnership",
+      img: "Minds/compressed-Client Partnership..jpg",
+    },
+    {
+      title: "Capability & Insights Lab",
+      text: "Anchoring EuRadicle’s thinking, our R&D team continuously explores emerging trends, capability frameworks, and evolving business challenges. Their insights inform solution design and keep our offerings relevant, practical, and future-ready.",
+      img: "Minds/compressed-Capability & Insights Lab.jpg",
+    },
+    {
+      title: "Learning Architecture",
+      text: "Our content team translates insight into structured learning journeys. They design clear, application-oriented content that reflects our consulting philosophy and supports sustained capability building.",
+      img: "Minds/compressed-Learning Architecture.jpg",
+    },
+    {
+      title: "Experience Design Studio",
+      text: "Bringing learning to life, our creative solutions team crafts engaging experiences through thoughtful design, formats, and visual storytelling-enhancing participation and reinforcing impact.",
+      img: "Minds/compressed-Experience Design Studio.jpg",
+    },
+    {
+      title: "Delivery & Governance",
+      text: "Ensuring seamless execution, our operations team anchors every engagement with strong coordination, governance, and quality oversight. They enable consistency and reliability across programs and geographies.",
+      img: "Minds/compressed-Delivery & Governance.jpg",
+    },
+    {
+      title: "Financial Stewardship",
+      text: "Providing financial rigor and transparency, our finance team supports informed decision-making and sustainable growth, ensuring operational discipline across the organization.",
+      img: "Minds/compressed-Financial Stewardship.jpg",
+    },
+    {
+      title: "People & Culture",
+      text: "Shaping the foundation of EuRadicle, our HR team focuses on talent development, alignment, and building a culture where individuals and teams grow together.",
+      img: "Minds/compressed-People & Culture.jpg",
+    },
+  ];
+
   return (
     <div>
       <AboutSection />
       <Timeline  items={items}/>
       <OurApproach data={data}/>
-      <MindsBehind />
+      <MindsBehind items={minds}/>
       <GlobalFootprintsSection />
       <BeyondBusiness />
     </div>

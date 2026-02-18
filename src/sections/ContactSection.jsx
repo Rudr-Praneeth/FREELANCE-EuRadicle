@@ -6,7 +6,7 @@ import {
   FaYoutube
 } from "react-icons/fa"
 
-export default function ContactSection({ imageUrl, fields = [], header }) {
+export default function ContactSection({ imageUrl, fields = [], header, show }) {
   const socials = [
     { label: "LinkedIn", icon: <FaLinkedinIn /> },
     { label: "Facebook", icon: <FaFacebookF /> },
@@ -16,10 +16,19 @@ export default function ContactSection({ imageUrl, fields = [], header }) {
 
   return (
     <section className="w-full bg-[var(--color-bg-white)]">
-      {header  && header}
+      {header && header}
       <div className="max-w-6xl mx-auto px-4 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
-          <form className="rounded-2xl bg-[var(--color-brand-400)]/10 p-8 space-y-2 w-[100%]">
+          
+          <div className="w-full h-full overflow-hidden rounded-2xl group order-1 md:order-2">
+            <img
+              src={imageUrl}
+              alt="contact"
+              className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+            />
+          </div>
+
+          <form className="rounded-2xl bg-[var(--color-brand-400)]/10 p-8 space-y-2 w-[100%] order-2 md:order-1">
             {fields.map((fieldGroup, index) => {
               if (Array.isArray(fieldGroup)) {
                 return (
@@ -91,25 +100,19 @@ export default function ContactSection({ imageUrl, fields = [], header }) {
               className="w-[100%] mt-8 mx-auto"
             />
           </form>
-
-          <div className="w-full h-full overflow-hidden rounded-2xl group">
-            <img
-              src={imageUrl}
-              alt="contact"
-              className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-            />
-          </div>
         </div>
 
-        <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-2 px-12 w-max mx-auto">
-          {socials.map((item) => (
-            <FlowButton
-              key={item.label}
-              icon={item.icon}
-              id="contact"
-              arrow={false}
-            />
-          ))}
+        <div className="mt-8 flex justify-center gap-2 md:grid md:grid-cols-4 px-4 md:px-12 w-full md:w-max mx-auto">
+          {show &&
+            socials.map((item) => (
+              <div key={item.label} className="scale-75 md:scale-100">
+                <FlowButton
+                  icon={item.icon}
+                  id="contact"
+                  arrow={false}
+                />
+              </div>
+            ))}
         </div>
       </div>
     </section>

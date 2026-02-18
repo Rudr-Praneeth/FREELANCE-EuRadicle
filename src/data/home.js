@@ -1,3 +1,5 @@
+import { path } from "framer-motion/client";
+
 const Hero = {
   title: "THE AI CHANGE LEADERSHIP PATHWAY",
   tag : "Truely Transforming",
@@ -11,7 +13,7 @@ const Impact = {
     speedometer : {
         Projects: "500+",
         Clients: "50+",
-        Partners_onboard: "7500+"
+        Professionals_Trained: "7500+"
     }
 }
 
@@ -22,7 +24,8 @@ const Stories = [
       "Helping senior leaders lead confidently in an AI-enabled business environment",
     description:
       "A curated leadership experience designed to build clarity, judgment, and readiness for responsible AI adoption.",
-    iconUrl: "Home/compressed-AwarenessIcon.jpeg"
+    iconUrl: "Home/compressed-AwarenessIcon.jpeg",
+    path: "awareness"
   },
   {
     title: "ASPIRE",
@@ -30,15 +33,17 @@ const Stories = [
       "Enabling women leaders to rise with confidence, clarity, and sustained impact",
     description:
       "A thoughtfully designed leadership journey focused on strengthening presence, decision-making, and personal sustainability for women leaders navigating complex professional and personal realities.",
-    iconUrl: "Home/compressed-AspireIcon.jpeg"
+    iconUrl: "Home/compressed-AspireIcon.jpeg",
+    path: "aspire"
   },
   {
-    title: "CATALYST",
+    title: "ENTERPRISE CONSULTING",
     tagline:
       "Developing Business Consultants for Strategic Roles",
     description:
       "A high-impact leadership journey designed to help experienced managers and senior leaders transition from functional execution to enterprise-level thinking, influence, and value creation.",
-    iconUrl: "Home/compressed-CatalystIcon.jpeg"
+    iconUrl: "Home/compressed-CatalystIcon.jpeg",
+    path: "catalyst"
   }
 ];
 
@@ -57,7 +62,9 @@ outcomes : [
   "Greater readiness to lead AI-enabled change and address resistance within teams",
   "A more responsible, bias-aware approach to AI adoption in day-to-day leadership practice"
 ],
-outro: "The pathway enabled leaders to move from awareness to ownership—equipping them to guide AI conversations and initiatives with credibility, judgment, and intent. At EuRadicle, we believe AI awareness is not about mastering tools-it is about developing the judgement to lead responsibly in complexity. This program reflected that belief through its design, facilitation, and outcomes."
+outro: "The pathway enabled leaders to move from awareness to ownership—equipping them to guide AI conversations and initiatives with credibility, judgment, and intent. At EuRadicle, we believe AI awareness is not about mastering tools-it is about developing the judgement to lead responsibly in complexity. This program reflected that belief through its design, facilitation, and outcomes.",
+bannerUrl: "/Home/compressed-AwarenessBanner.jpg",
+hoveerImages: ["/Home/compressed-AwarenessHover1.jpg","/Home/compressed-AwarenessHover2.jpg","/Home/compressed-AwarenessHover3.jpg"]
 }
 
 const Aspire = {
@@ -74,17 +81,19 @@ const Aspire = {
   "Improved ability to balance leadership demands across work, family, and personal identity",
   "Stronger sense of agency, presence, and long-term leadership direction"
  ],
- outro: "The program created a supportive yet challenging space for women leaders to reflect, recalibrate, and lead with greater intention and confidence. At EuRadicle, we believe leadership development must address both performance and sustainability. ASCENT reflects our philosophy of designing leadership journeys that are deeply personalized, context-aware, and human—while being delivered with strong program governance and execution excellence."
+ outro: "The program created a supportive yet challenging space for women leaders to reflect, recalibrate, and lead with greater intention and confidence. At EuRadicle, we believe leadership development must address both performance and sustainability. ASCENT reflects our philosophy of designing leadership journeys that are deeply personalized, context-aware, and human—while being delivered with strong program governance and execution excellence.",
+bannerUrl: "/Home/compressed-AspireBanner.jpg",
+hoveerImages: ["/Home/compressed-AspireHover1.jpg","/Home/compressed-AwarenessHover2.jpg","/Home/compressed-AwarenessHover3.jpg"]
 }
 
 const Catalyst = {
   tagline : "Developing Business Consultants for Strategic Roles",
   subtag: "A high-impact leadership journey designed to help experienced managers and senior leaders transition from functional execution to enterprise-level thinking, influence, and value creation.",
   paras: [
-"CATALYST is EuRadicle’s consultative leadership pathway, built for professionals at a critical career inflection point—where success depends not just on delivery, but on how effectively leaders think, influence, and engage as strategic partners.",
+"Enterprise Consulting is EuRadicle’s consultative leadership pathway, built for professionals at a critical career inflection point—where success depends not just on delivery, but on how effectively leaders think, influence, and engage as strategic partners.",
 "This program was delivered under the client-facing name PRYSM – Professional Readiness for Young Strategic Minds, and was designed to enable senior leaders to operate as trusted internal consultants rather than functional specialists.",
 "The journey focused on building structured and strategic thinking, audience-centric communication, stakeholder engagement, emotional regulation, personal leadership presence, and a value-driven consultative mindset. Through real business scenarios, reflective dialogue, and practical frameworks, participants explored how to navigate complex stakeholder environments, align diverse perspectives, and drive outcomes with clarity and credibility.",
-    "Rather than teaching skills in isolation, CATALYST integrated strategic thinking, relationship building, influence, and personal leadership into a cohesive readiness journey—ensuring direct translation into day-to-day leadership effectiveness.",
+    "Rather than teaching skills in isolation, Enterprise Consulting integrated strategic thinking, relationship building, influence, and personal leadership into a cohesive readiness journey—ensuring direct translation into day-to-day leadership effectiveness.",
   ],
   outcomes : [
 "Sharper strategic and analytical thinking for enterprise-level decision-making",
@@ -93,7 +102,9 @@ const Catalyst = {
  "Stronger consultative presence rooted in empathy, insight, and trust",   
  "Enhanced capability to navigate complexity and drive alignment in diverse teams",   
   ],
-  outro: "Participants demonstrated a visible movement from solution execution to consultative ownership, along with tangible improvements in decision speed, stakeholder trust, collaboration, and clarity of thinking.At EuRadicle, we view professional readiness as a mindset shift—not a skill checklist. CATALYST reflects our belief that future-ready leaders create sustained business value by combining structured thinking, emotional intelligence, and consultative influence."
+  outro: "Participants demonstrated a visible movement from solution execution to consultative ownership, along with tangible improvements in decision speed, stakeholder trust, collaboration, and clarity of thinking.At EuRadicle, we view professional readiness as a mindset shift—not a skill checklist. Enterprise Consulting reflects our belief that future-ready leaders create sustained business value by combining structured thinking, emotional intelligence, and consultative influence.",
+bannerUrl: "/Home/compressed-PrysmBanner.jpg",
+hoveerImages: ["/Home/compressed-PrysmHover1.jpg","/Home/compressed-PrysmHover2.jpg","/Home/compressed-PrysmHover3.jpg"]
 }
 
 const Testimonials = [
@@ -132,7 +143,7 @@ const Testimonials = [
   {
     org: "Air India",
     logoUrl: "logos/13.png",
-    by: "Participant Feedback",
+    by: "",
     designation: "",
     testimonial:
       "The session was highly engaging and insightful, with excellent energy brought in by the trainer throughout. The program offered diverse perspectives and interactive activities that made learning both practical and impactful. Complex concepts were simplified effectively using real-life analogies, making them easy to understand and apply at work. The trainer’s passion and delivery style were truly commendable. I walked away with valuable insights and would love even more hands-on practice and peer discussions in future sessions. Overall, an excellent program — I look forward to participating in more such trainings."
@@ -140,7 +151,7 @@ const Testimonials = [
   {
     org: "Al Maha",
     logoUrl: "logos/28.png",
-    by: "Participant Feedback",
+    by: "",
     designation: "",
     testimonial:
       "The training provided a clear and practical understanding of leadership and innovation. The facilitator delivered the concepts with great clarity and energy, making the learning experience both engaging and inspiring. Participants found the session highly valuable and appreciated the motivational approach that made the content relatable and easy to grasp. Overall, it was an excellent learning experience led by a dynamic and impactful trainer."
@@ -148,7 +159,7 @@ const Testimonials = [
   {
     org: "Arvind Mills",
     logoUrl: "logos/32.png",
-    by: "Participant Feedback",
+    by: "",
     designation: "",
     testimonial:
       "The program created an engaging and motivating learning environment, making concepts easy to understand and apply. Participants valued the practical insights and real-world relevance, and many expressed the need for such trainings to be conducted regularly and extended to more team members. Overall, the experience was insightful, enriching, and highly appreciated."
@@ -156,7 +167,7 @@ const Testimonials = [
   {
     org: "Coca Cola",
     logoUrl: "logos/31.png",
-    by: "Participant Feedback",
+    by: "",
     designation: "",
     testimonial:
       "A highly constructive and informative session, delivered with clarity and strong articulation. Participants appreciated the engaging approach and the relevance of the content and examples to real business contexts. Overall, a valuable and impactful learning experience."
@@ -164,7 +175,7 @@ const Testimonials = [
   {
     org: "Keller",
     logoUrl: "logos/26.png",
-    by: "Participant Feedback",
+    by: "",
     designation: "",
     testimonial:
       "A well-structured and thoughtfully designed program that delivered meaningful and practical insights. Participants found the session highly engaging, with interactive activities and clear explanations that deepened their understanding of leadership concepts. The facilitator’s clarity, dedication, and ability to align learning with real workplace needs were especially appreciated. Overall, a powerful and impactful experience that left participants satisfied and better equipped for their professional journey."
@@ -172,7 +183,7 @@ const Testimonials = [
   {
     org: "Peepal Co",
     logoUrl: "",
-    by: "Participant Feedback",
+    by: "",
     designation: "",
     testimonial:
       "An engaging and well-delivered session that provided practical frameworks directly applicable at work. Participants appreciated the structured approach, constructive insights, and overall clarity of the program. The experience was both valuable and impactful, reinforcing key concepts in a meaningful way."
@@ -180,7 +191,7 @@ const Testimonials = [
   {
     org: "Zscaler",
     logoUrl: "logos/12.png",
-    by: "Participant Feedback",
+    by: "",
     designation: "",
     testimonial:
       "The program delivered a highly beneficial and enjoyable learning experience. Participants described it as a great overall experience and expressed interest in extending the training across the organization. The session was well received, reinforcing its value and positive impact."

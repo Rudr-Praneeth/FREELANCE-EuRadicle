@@ -90,16 +90,7 @@ export default function FlowButton({
   return (
     <a
       onClick={(e) => {
-        e.preventDefault()
-        const target = document.getElementById(id)
-        if (target) {
-          const offset = window.innerHeight * 0.15
-          const top =
-            target.getBoundingClientRect().top +
-            window.pageYOffset -
-            offset
-          window.scrollTo({ top, behavior: "smooth" })
-        }
+        e.preventDefault();
       }}
       className={`${className ?? ""} ${
         centered ? "mx-auto block" : ""

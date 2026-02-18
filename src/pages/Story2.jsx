@@ -1,40 +1,132 @@
-import React from 'react';
-import StoryLayout from '../layouts/StoryLayout';
+// src/sections/Story1.jsx
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Aspire } from "../data/home";
 
-const AspireStory = () => {
-  const storyData = {
-    title: "ASPIRE",
-    tagline: "Enabling women leaders to rise with confidence, clarity, and sustained impact",
-    heroImage: "/path-to-your-aspire-hero.jpg",
-    overlayContent: "A thoughtfully designed leadership journey focused on strengthening presence, decision-making, and personal sustainability for women leaders navigating complex professional and personal realities.",
-    sections: [
-      "As organizations accelerate growth and transformation, women leaders are often required to operate at high intensity across multiple roles—professional, personal, and relational. EuRadicle designed ASCENT as a leadership journey that helps women leaders build confidence, resilience, and leadership presence while staying anchored to what matters most.",
-      "The program was recently delivered as a customized women leadership initiative within the insurance and financial services sector, with two parallel cohorts running simultaneously for different leadership teams. EuRadicle managed the engagement end-to-end, including program design, coordination, facilitation, and ongoing stakeholder alignment—demonstrating our capability to handle complex, multi-track leadership journeys seamlessly.",
-      "The journey blended immersive leadership sessions with back-to-back coaching conversations, creating space for reflection, dialogue, and application. Participants explored leadership confidence, influence, and decision-making, while also addressing a core reality many women leaders face—balancing the three worlds of work, family, and self.",
-      "Every element of the program was customized to reflect the organization’s context, leadership expectations, and brand identity, ensuring strong alignment and ownership. The program created a supportive yet challenging space for women leaders to reflect, recalibrate, and lead with greater intention and confidence."
-    ],
-    outcomes: [
-      "Increased leadership confidence and clarity in navigating professional responsibilities",
-      "Greater self-awareness around priorities, boundaries, and sustainable performance",
-      "Improved ability to balance leadership demands across work, family, and personal identity",
-      "Stronger sense of agency, presence, and long-term leadership direction"
-    ],
-    quote: "At EuRadicle, we believe leadership development must address both performance and sustainability. ASCENT reflects our philosophy of designing journeys that are deeply personalized and human.",
-    conclusion: "ASCENT is delivered with strong program governance and execution excellence, ensuring leaders lead with greater intention. Ready to enable your women leaders to rise?"
-  };
+gsap.registerPlugin(ScrollTrigger);
+
+export default function Story1() {
+  const parasRef = useRef([]);
+  const outcomesRef = useRef([]);
+  const imagesRef = useRef([]);
+  const taglineRef = useRef(null);
+  const subtagRef = useRef(null);
+
+  useEffect(() => {
+    const typewriter = (el, text, callback) => {
+      let idx = 0;
+      const type = () => {
+        if (idx <= text.length) {
+          el.textContent = text.slice(0, idx);
+          idx++;
+          setTimeout(type, 60);
+        } else if (callback) callback();
+      };
+      type();
+    };
+
+    typewriter(taglineRef.current, Aspire.tagline, () => {
+      typewriter(subtagRef.current, Aspire.subtag);
+    });
+
+    parasRef.current.forEach((el, idx) => {
+      gsap.fromTo(
+        el,
+        { x: 100, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          scrollTrigger: { trigger: el, start: "top 80%" },
+          duration: 1,
+          delay: idx * 0.2,
+        }
+      );
+    });
+
+    outcomesRef.current.forEach((el, idx) => {
+      gsap.fromTo(
+        el,
+        { x: 100, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          scrollTrigger: { trigger: el, start: "top 80%" },
+          duration: 1,
+          delay: idx * 0.2,
+        }
+      );
+    });
+
+    imagesRef.current.forEach((el, idx) => {
+      el.addEventListener("mouseenter", () => {
+        gsap.to(imagesRef.current[0], { x: -120, y: 120, duration: 0.5 });
+        gsap.to(imagesRef.current[1], { x: 120, y: 120, duration: 0.5 });
+        gsap.to(imagesRef.current[2], { x: 0, y: -60, duration: 0.5 });
+      });
+      el.addEventListener("mouseleave", () => {
+        imagesRef.current.forEach((img) =>
+          gsap.to(img, { x: 0, y: 0, duration: 0.5 })
+        );
+      });
+    });
+  }, []);
 
   return (
-    <StoryLayout 
-      title={storyData.title}
-      tagline={storyData.tagline}
-      heroImage={storyData.heroImage}
-      overlayContent={storyData.overlayContent}
-      sections={storyData.sections}
-      outcomes={storyData.outcomes}
-      quote={storyData.quote}
-      conclusion={storyData.conclusion}
-    />
-  );
-};
+    <section className="w-full">
+      <div
+        className="relative w-full h-[400px] md:h-[500px] mt-[84px] bg-center bg-cover flex flex-col items-center justify-center"
+        style={{ backgroundImage: `url(${Aspire.bannerUrl})` }}
+      >
+        <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center gap-2 px-4 text-center">
+          <h1 ref={taglineRef} className="text-2xl md:text-4xl text-white font-heading"></h1>
+          <h2 ref={subtagRef} className="text-lg md:text-xl text-white font-heading"></h2>
+        </div>
+      </div>
 
-export default AspireStory;
+      <div className="container mx-auto px-6 md:px-12 py-12 flex flex-col md:flex-row gap-8">
+        <div className="md:w-2/3 flex flex-col gap-4">
+          <h2 className="text-h4 font-heading text-mauve">Introduction</h2>
+          {Aspire.paras.map((para, idx) => (
+            <p
+              key={idx}
+              ref={(el) => (parasRef.current[idx] = el)}
+              className="text-body text-primary-navy"
+            >
+              {para}
+            </p>
+          ))}
+
+          <h2 className="mt-6 text-h4 font-heading text-mauve">Outcomes</h2>
+          <ul className="flex flex-col gap-2">
+            {Aspire.outcomes.map((outcome, idx) => (
+              <li
+                key={idx}
+                ref={(el) => (outcomesRef.current[idx] = el)}
+                className="text-body text-primary-navy"
+              >
+                {outcome}
+              </li>
+            ))}
+          </ul>
+
+          <p className="mt-4 text-body text-primary-navy">{Aspire.outro}</p>
+        </div>
+
+        <div className="md:w-1/3 flex flex-col items-center md:items-end relative h-[400px]">
+          {Aspire.hoveerImages.map((img, idx) => {
+            const isSide = idx === 0 || idx === 2;
+            return (
+              <img
+                key={idx}
+                ref={(el) => (imagesRef.current[idx] = el)}
+                src={img}
+                className={`absolute top-0 left-10 w-[300px] h-[300px] rounded-lg border border-gray-200 shadow-lg cursor-pointer transition-all duration-500 object-cover object-center`}
+              />
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}

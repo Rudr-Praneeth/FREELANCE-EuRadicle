@@ -35,7 +35,7 @@ export default function AboutSection() {
   );
 
   const lines = [
-    "EuRadicle is a global talent and capability consulting firm that partners with organizations to build leadership depth, accelerate performance, and enable sustainable transformation. We work at the intersection of strategy, leadership, and human capability, helping enterprises translate intent into execution through consulting-led learning journeys, assessments, and culture-shaping interventions. With consultants and delivery capabilities across India, the United States, and the Middle East, we support organizations across industries in solving complex people and performance challenges. Our work is grounded in real business contexts, driven by data and insight, and designed to create measurable impact by building leaders, teams, and systems that are future-ready, resilient, and aligned to organizational goals",
+    "EuRadicle is a global talent and capability consulting firm that partners with organizations to build leadership depth, accelerate performance, and enable sustainable transformation. We work at the intersection of strategy, leadership, and human capability, helping enterprises translate intent into execution through consulting-led learning journeys, assessments, and culture-shaping interventions. With consultants and delivery capabilities across India, the United States, and the Middle East, we support organizations across industries in solving complex people and performance challenges. Our work is grounded in real business contexts, driven by data and insight, and designed to create measurable impact by building leaders, teams, and systems that are future-ready, resilient, and aligned to organizational goals.",
   ];
 
   return (

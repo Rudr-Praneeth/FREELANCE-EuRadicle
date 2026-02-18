@@ -59,8 +59,8 @@ function BlogsSection() {
     >
       <div className="max-w-6xl mx-auto">
         <h2 className="text-h1 text-center mb-14 normal-case">
-          <span className="text-[var(--color-primary-navy)]">NEWS & </span>
-          <span className="text-[var(--color-primary-mauve)]">UPDATE</span>
+          <span className="text-[var(--color-primary-navy)]">INDUSTRY </span>
+          <span className="text-[var(--color-primary-mauve)]">INSIGHTS</span>
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -85,9 +85,9 @@ function BlogsSection() {
                 <p className="text-body text-[var(--color-primary-navy)]">
                   {blog.title}
                 </p>
-                <span className="text-body-xs bg-[var(--color-bg-muted)] px-3 py-1 rounded-full">
+                {/* <span className="text-body-xs bg-[var(--color-bg-muted)] px-3 py-1 rounded-full">
                   {blog.date}
-                </span>
+                </span> */}
               </div>
             </a>
           ))}

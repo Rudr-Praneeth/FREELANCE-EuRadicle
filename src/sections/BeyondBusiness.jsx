@@ -8,6 +8,8 @@ gsap.registerPlugin(ScrollTrigger)
 export default function BeyondBusiness() {
   const sectionRef = useRef(null)
   const wordsRef = useRef([])
+  const textRef = useRef(null)
+  const carouselRef = useRef(null)
 
   useGSAP(
     () => {
@@ -19,8 +21,8 @@ export default function BeyondBusiness() {
         stagger: 0.15,
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 80%"
-        }
+          start: "top 75%",
+        },
       })
 
       gsap.fromTo(
@@ -31,34 +33,63 @@ export default function BeyondBusiness() {
           stagger: 0.08,
           ease: "none",
           scrollTrigger: {
-            trigger: ".bb-box",
-            start: "top 75%",
+            trigger: textRef.current,
+            start: "top 80%",
             end: "bottom 60%",
-            scrub: true
-          }
+            scrub: true,
+          },
         }
       )
+
+      const totalWidth = carouselRef.current.scrollWidth / 2
+
+      gsap.to(carouselRef.current, {
+        x: -totalWidth,
+        duration: 25,
+        ease: "none",
+        repeat: -1,
+      })
     },
     { scope: sectionRef }
   )
 
   const statement =
-    "Beyond Business is not separate from what we do. It is embedded in how we grow, partner, and contribute – with empathy, intention, and purpose."
+    "We believe that growth carries a responsibility - to give back to the world that enables it."
+
+  const images = [
+    "https://images.unsplash.com/photo-1469474968028-56623f02e42e",
+    "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+    "https://images.unsplash.com/photo-1493244040629-496f6d136cc3",
+    "https://images.unsplash.com/photo-1470770841072-f978cf4d019e",
+    "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
+  ]
 
   return (
-    <section ref={sectionRef} className="w-full bg-[var(--color-bg-white)]">
+    <section ref={sectionRef} className="w-full bg-[var(--color-bg-white)] overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
           <div className="bb-fade">
             <h1 className="text-h1 text-[var(--color-primary-mauve)] mb-6">
               BEYOND BUSINESS
             </h1>
-            <h2 className="text-h2">
-              We believe that growth carries a responsibility - to give back to the world that enables it.
+            <h2
+              ref={textRef}
+              className="text-h3 leading-relaxed"
+            >
+              {statement.split(" ").map((word, i) => (
+                <span
+                  key={i}
+                  ref={(el) => (wordsRef.current[i] = el)}
+                  className="inline-block mr-1"
+                  style={{ color: "rgba(0,0,0,0.3)" }}
+                >
+                  {word}
+                </span>
+              ))}
             </h2>
           </div>
 
-          <div className="bb-fade">
+          <div className="bb-fade italic">
             <p className="text-body mb-4">
               At EuRadicle, every program we deliver is tied to a simple yet powerful commitment. As we work with organizations to build capability and leadership, we invest in nurturing life beyond the workplace. This means planting trees to support environmental sustainability, while also extending care to old age homes and orphanages through food, clothing, and essential support.
             </p>
@@ -68,19 +99,20 @@ export default function BeyondBusiness() {
           </div>
         </div>
 
-        <div className="bb-box mt-16 rounded-2xl border border-[var(--color-primary-mauve)] bg-[var(--color-primary-mauve)]/10 px-8 py-12">
-          <p className="text-h2 text-center">
-            {statement.split(" ").map((word, i) => (
-              <span
+        <div className="mt-14 overflow-hidden">
+          <div
+            ref={carouselRef}
+            className="flex gap-6 w-max"
+          >
+            {[...images, ...images].map((src, i) => (
+              <img
                 key={i}
-                ref={(el) => (wordsRef.current[i] = el)}
-                className="inline-block mr-1"
-                style={{ color: "rgba(0,0,0,0.3)" }}
-              >
-                {word}
-              </span>
+                src={src}
+                alt=""
+                className="h-32 sm:h-36 md:h-40 w-auto rounded-xl object-cover"
+              />
             ))}
-          </p>
+          </div>
         </div>
       </div>
     </section>

@@ -1,41 +1,195 @@
-import React from 'react';
-import StoryLayout from '../layouts/StoryLayout';
+// src/sections/Story1.jsx
+import { useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { LeaderStory } from "../data/home";
 
-const AIChangeLeadershipStory = () => {
-  const storyData = {
-    title: "THE AI CHANGE LEADERSHIP PATHWAY",
-    tagline: "Helping senior leaders lead confidently in an AI-enabled business environment",
-    heroImage: "/path-to-your-ai-hero-image.jpg", 
-    overlayContent: "A curated leadership experience designed to build clarity, judgment, and readiness for responsible AI adoption.",
-    sections: [
-      "As AI continues to reshape industries—particularly in highly regulated and decision-intensive sectors—senior leaders are increasingly required to take informed positions on AI, often without the time or space to fully explore its implications. EuRadicle designed this leadership pathway to help leaders build clarity, confidence, and perspective while navigating AI-led change.",
-      "The engagement focused on AI not as a technology topic, but as a leadership and decision-making challenge. Through contextual discussions and real-world scenarios drawn from the financial services environment, leaders explored how AI influences strategy, risk, ethics, governance, and organizational culture.",
-      "As part of this pathway, EuRadicle recently delivered a customized leadership intervention for senior leaders that centered on building AI awareness, interpretability, and decision confidence. The learning journey combined virtual and in-person experiences and was shaped entirely around the organization’s industry context and leadership realities.",
-      "What set this engagement apart was EuRadicle’s deep customization approach. Case studies, scenarios, and discussions were tailored to the organization’s operating environment, regulatory landscape, and participant roles—ensuring relevance, depth, and application without unnecessary technical complexity.",
-      "The pathway enabled leaders to move from awareness to ownership—equipping them to guide AI conversations and initiatives with credibility, judgment, and intent."
-    ],
-    outcomes: [
-      "Clearer understanding of AI concepts and their relevance to leadership decisions",
-      "Increased confidence in evaluating AI-driven outputs, risks, and ethical considerations",
-      "Greater readiness to lead AI-enabled change and address resistance within teams",
-      "A more responsible, bias-aware approach to AI adoption in day-to-day leadership practice"
-    ],
-    quote: "At EuRadicle, we believe AI awareness is not about mastering tools—it is about developing the judgement to lead responsibly in complexity.",
-    conclusion: "This program reflected that belief through its design, facilitation, and outcomes. Ready to transform your leadership for the AI era?"
-  };
+gsap.registerPlugin(ScrollTrigger);
+
+export default function Story1() {
+  const navigate = useNavigate();
+  const parasRef = useRef([]);
+  const outcomesRef = useRef([]); 
+  const imagesRef = useRef([]);
+  const taglineRef = useRef(null);
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+    
+    const wordByWord = (el, text) => {
+      const words = text.split(" ");
+      el.innerHTML = "";
+      words.forEach((word) => {
+        const span = document.createElement("span");
+        span.textContent = word + " ";
+        span.style.opacity = 0;
+        span.style.display = "inline-block";
+        span.style.transform = "translateY(20px)";
+        el.appendChild(span);
+      });
+
+      gsap.to(el.children, {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        stagger: 0.1,
+        ease: "power3.out",
+      });
+    };
+
+    wordByWord(taglineRef.current, LeaderStory.tagline);
+
+    parasRef.current.forEach((el, idx) => {
+      gsap.fromTo(
+        el,
+        { x: 80, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          scrollTrigger: { trigger: el, start: "top 85%" },
+          duration: 0.8,
+          delay: idx * 0.15,
+          ease: "power3.out",
+        }
+      );
+    });
+
+    outcomesRef.current.forEach((el, idx) => {
+      gsap.fromTo(
+        el,
+        { x: 80, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          scrollTrigger: { trigger: el, start: "top 85%" },
+          duration: 0.8,
+          delay: idx * 0.15,
+          ease: "power3.out",
+        }
+      );
+    });
+
+    const spread = () => {
+      gsap.to(imagesRef.current[0], {
+        x: -80,
+        y: 40,
+        rotate: -6,
+        scale: 0.95,
+        duration: 0.5,
+        ease: "power3.out",
+      });
+      gsap.to(imagesRef.current[1], {
+        x: 80,
+        y: 40,
+        rotate: 6,
+        scale: 0.95,
+        duration: 0.5,
+        ease: "power3.out",
+      });
+      gsap.to(imagesRef.current[2], {
+        x: 0,
+        y: -60,
+        rotate: 0,
+        scale: 1.05,
+        duration: 0.5,
+        ease: "power3.out",
+      });
+    };
+
+    const reset = () => {
+      imagesRef.current.forEach((img) =>
+        gsap.to(img, {
+          x: 0,
+          y: 0,
+          rotate: 0,
+          scale: 1,
+          duration: 0.5,
+          ease: "power3.out",
+        })
+      );
+    };
+
+    imagesRef.current.forEach((el) => {
+      el.addEventListener("mouseenter", spread);
+      el.addEventListener("mouseleave", reset);
+    });
+  }, []);
 
   return (
-    <StoryLayout 
-      title={storyData.title}
-      tagline={storyData.tagline}
-      heroImage={storyData.heroImage}
-      overlayContent={storyData.overlayContent}
-      sections={storyData.sections}
-      outcomes={storyData.outcomes}
-      quote={storyData.quote}
-      conclusion={storyData.conclusion}
-    />
-  );
-};
+    <section className="w-full">
+      <div
+        className="relative w-full h-[400px] md:h-[500px] mt-[84px] bg-center bg-cover flex flex-col items-center justify-center"
+        style={{ backgroundImage: `url(${LeaderStory.bannerUrl})` }}
+      >
+        <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center px-4 text-center">
+          <h1
+            ref={taglineRef}
+            className="text-2xl md:text-4xl text-white font-heading max-w-3xl"
+          ></h1>
+        </div>
+      </div>
 
-export default AIChangeLeadershipStory;
+      <div className="container mx-auto px-6 md:px-12 py-6">
+        <button
+          onClick={() => navigate(-1)}
+          className="mb-10 px-6 py-2 border border-mauve text-mauve hover:bg-mauve hover:text-white transition-all duration-300 rounded-md"
+        >
+          ← Back
+        </button>
+
+        <div className="flex flex-col md:flex-row gap-12">
+          <div className="md:w-1/3 flex items-center justify-center relative h-[420px]">
+            {LeaderStory.hoveerImages.map((img, idx) => (
+              <img
+                key={idx}
+                ref={(el) => (imagesRef.current[idx] = el)}
+                src={img}
+                className="absolute w-[260px] h-[320px] md:w-[280px] md:h-[360px] rounded-2xl border border-gray-200 shadow-xl cursor-pointer transition-all duration-500 object-cover"
+              />
+            ))}
+          </div>
+
+          <div className="md:w-2/3 flex flex-col gap-4">
+            <h2 className="text-h4 font-heading text-mauve">
+              Introduction
+            </h2>
+
+            {LeaderStory.paras.map((para, idx) => (
+              <p
+                key={idx}
+                ref={(el) => (parasRef.current[idx] = el)}
+                className="text-body text-primary-navy"
+              >
+                {para}
+              </p>
+            ))}
+
+            <h2 className="mt-6 text-h4 font-heading text-mauve">
+              Outcomes
+            </h2>
+
+            <ul className="flex flex-col gap-2">
+              {LeaderStory.outcomes.map((outcome, idx) => (
+                <li
+                  key={idx}
+                  ref={(el) => (outcomesRef.current[idx] = el)}
+                  className="text-body text-primary-navy"
+                >
+                  {outcome}
+                </li>
+              ))}
+            </ul>
+
+            <p className="mt-4 text-body text-primary-navy">
+              {LeaderStory.outro}
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

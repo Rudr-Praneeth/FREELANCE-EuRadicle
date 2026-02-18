@@ -17,6 +17,12 @@ const GetInTouch = () => {
       placeholder: "Enter your email"
     },
     {
+      name: "Number",
+      label: "Number",
+      type: "number",
+      placeholder: "Enter your Mobile Number"
+    },
+    {
       name: "Message",
       label: "Message",
       type: "text",
@@ -26,7 +32,7 @@ const GetInTouch = () => {
   return (
     <div>
       <Journey />
-      <ContactSection imageUrl={"https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg"} fields={fields}/>
+      <ContactSection imageUrl={"https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg"} fields={fields} show={true}/>
     </div>
   )
 }

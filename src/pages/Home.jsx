@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Hero from "../sections/Hero";
 import Showreel from "../sections/Showreel";
 import ImpactSection from "../sections/ImpactSection";
@@ -8,6 +8,12 @@ import Testimonials from "../sections/Testimonials";
 import LogoSection from "../sections/LogoSection";
 
 const Home = () => {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  },[])
   return (
     <div className="">
       <Hero />

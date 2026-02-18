@@ -17,7 +17,7 @@ const Hero = () => {
       .from(badgeRef.current, { y: 20, opacity: 0 }, '-=0.5')
       .from(titleRef.current, { y: 30, opacity: 0 }, '-=0.7')
       .from(sublineRef.current, { y: 20, opacity: 0 }, '-=0.7')
-      .from(buttonRef.current, { scale: 0.8, opacity: 0 }, '-=0.5');
+      // .from(buttonRef.current, { scale: 0.8, opacity: 0 }, '-=0.5');
   }, { scope: container });
 
   return (
@@ -44,15 +44,15 @@ const Hero = () => {
           ref={badgeRef}
           className="mb-5 min-[600px]:mb-6 min-[768px]:mb-7 min-[992px]:mb-8 flex items-center gap-2 rounded-full border border-bg-white/30 bg-bg-white/10 px-3 py-1 min-[600px]:px-4 backdrop-blur-md"
         >
-          <span className="h-1.5 w-1.5 rounded-full bg-brand-500" />
-          <span className="text-subheading-sm uppercase tracking-wider text-[10px] min-[600px]:text-xs min-[768px]:text-sm">
+          <span className="h-1 w-1 rounded-xl bg-brand-500" />
+          <span className="text-subheading-xs uppercase tracking-tighter text-[10px] min-[600px]:text-xs min-[768px]:text-sm">
             Truly Transforming
           </span>
         </div>
 
         <h1
           ref={titleRef}
-          className="text-h1 mb-4 min-[600px]:mb-5 min-[768px]:mb-6 max-w-full min-[600px]:max-w-2xl min-[768px]:max-w-3xl min-[992px]:max-w-4xl text-[clamp(28px,6vw,64px)] leading-[1.1]"
+          className="text-h1-spl mb-4 min-[600px]:mb-5 min-[768px]:mb-6 max-w-full min-[600px]:max-w-2xl min-[768px]:max-w-3xl min-[992px]:max-w-4xl text-[clamp(28px,6vw,64px)] leading-[1.1]"
         >
           Reimagining Talent <br />
           For A Changing <span className="text-brand-500">World</span>
@@ -65,7 +65,7 @@ const Hero = () => {
           We develop talent that performs with purpose and leads with impact turning your people into your most enduring edge.
         </p>
 
-        <button
+        {/* <button
           ref={buttonRef}
           className="group relative overflow-hidden rounded-full border-2 border-bg-white px-6 py-2.5 min-[600px]:px-7 min-[600px]:py-3 min-[768px]:px-8 min-[768px]:py-3.5 transition-colors hover:bg-bg-white"
         >
@@ -73,7 +73,7 @@ const Hero = () => {
             View Programs
           </span>
           <div className="absolute inset-0 z-0 translate-y-full bg-bg-white transition-transform duration-300 group-hover:translate-y-0" />
-        </button>
+        </button> */}
       </div>
 
       <div className="absolute bottom-6 min-[600px]:bottom-7 min-[768px]:bottom-8 left-1/2 -translate-x-1/2 animate-bounce opacity-50">

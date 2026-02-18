@@ -9,7 +9,7 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 function ImpactSection() {
   const sectionRef = useRef(null);
 
-  useGSAP(
+  useGSAP( 
     () => {
       const ctx = gsap.context(() => {
         const counters = gsap.utils.toArray(".counter");
@@ -42,7 +42,7 @@ function ImpactSection() {
   const stats = [
     { label: "Projects", value: Impact.speedometer.Projects },
     { label: "Clients", value: Impact.speedometer.Clients },
-    { label: "Partners Onboarded", value: Impact.speedometer.Partners_onboard },
+    { label: "Professionals Trained", value: Impact.speedometer.Professionals_Trained },
   ];
 
   return (
@@ -58,7 +58,7 @@ function ImpactSection() {
           <span className="text-[var(--color-primary-mauve)]">Glance</span>
         </h1>
 
-        <p className="text-body-lg text-[var(--color-primary-navy)] max-w-full min-[600px]:max-w-xl min-[768px]:max-w-2xl min-[992px]:max-w-3xl mx-auto mb-10 min-[600px]:mb-12 min-[768px]:mb-14 text-[clamp(14px,2.5vw,20px)] leading-relaxed">
+        <p className="italic text-body-lg text-[var(--color-primary-navy)] max-w-full min-[600px]:max-w-xl min-[768px]:max-w-2xl min-[992px]:max-w-3xl mx-auto mb-10 min-[600px]:mb-12 min-[768px]:mb-14 text-[clamp(14px,2.5vw,20px)] leading-relaxed">
           The impact of leadership development shows up over time <br className="hidden min-[600px]:block" /> in decisions made, teams strengthened, and cultures shaped.
         </p>
 

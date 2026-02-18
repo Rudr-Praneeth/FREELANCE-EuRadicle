@@ -152,7 +152,7 @@ function Navbar() {
               return (
                 <div key={item}>
                   <Link to={to} onClick={handleNavClick} className="nav-link relative text-body text-[var(--color-primary-navy)]">
-                    {item}
+                    {item === "OUR CAPABILITIES"? "Our Capabilities": item === "WHY EURADICLE"? "Why EuRadicle": item.slice(0,1) + item.slice(1,item.length).toLowerCase()}
                     <span className="underline absolute left-0 -bottom-1 h-[2px] w-full bg-[var(--color-primary-mauve)] scale-x-0"></span>
                   </Link>
                 </div>
@@ -169,7 +169,7 @@ function Navbar() {
                 onBlur={() => closeDropdownDelayed(120)}
               >
                 <Link to={to} aria-haspopup="menu" aria-expanded={openDropdown} className="nav-link relative text-body text-[var(--color-primary-navy)]">
-                  {item}
+                  {item === "OUR CAPABILITIES"? "Our Capabilities":"Our Capabilities"}
                   <span className="underline absolute left-0 -bottom-1 h-[2px] w-full bg-[var(--color-primary-mauve)] scale-x-0"></span>
                 </Link>
 

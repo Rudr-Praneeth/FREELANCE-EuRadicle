@@ -48,9 +48,9 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-[1fr_2fr_1fr] gap-16">
         <div className="flex flex-col items-center justify-center text-center space-y-6">
           <img
-            src="/Home/logo.webp"
+            src="/Home/logo.gif"
             alt="EuRadicle Logo"
-            className="w-40 h-auto mb-20 sm:mb-12"
+            className="w-auto h-30"
           />
 
           {/* <p className="text-body-sm max-w-xs">

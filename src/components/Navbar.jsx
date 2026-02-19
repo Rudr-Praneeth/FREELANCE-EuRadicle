@@ -181,13 +181,13 @@ function Navbar({ openModal }) {
       ref={navRef}
       className="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md border-b border-[var(--color-brand-400)] shadow-sm z-50"
     >
-      <div className="w-full flex items-center justify-between px-6 py-4">
+      <div className="w-full flex items-center justify-between px-6">
         <div className="flex w-1/2 md:w-1/6 items-center">
           <Link to="/" onClick={handleNavClick} className="flex items-center">
             <img
-              src="/Home/logo.webp"
+              src="/Home/logo.gif"
               alt="Euradicle Logo"
-              className="h-12 w-auto"
+              className="h-20 w-auto"
             />
           </Link>
         </div>

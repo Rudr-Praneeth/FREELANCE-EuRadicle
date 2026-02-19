@@ -1,6 +1,6 @@
-import React, { useRef } from 'react';
-import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
+import React, { useRef, useState } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const Hero = () => {
   const container = useRef(null);
@@ -8,17 +8,22 @@ const Hero = () => {
   const badgeRef = useRef(null);
   const titleRef = useRef(null);
   const sublineRef = useRef(null);
-  const buttonRef = useRef(null);
 
-  useGSAP(() => {
-    const tl = gsap.timeline({ defaults: { ease: 'power3.out', duration: 1 } });
+  const [videoLoaded, setVideoLoaded] = useState(false);
 
-    tl.fromTo(videoRef.current, { opacity: 0 }, { opacity: 1, duration: 1.5 })
-      .from(badgeRef.current, { y: 20, opacity: 0 }, '-=0.5')
-      .from(titleRef.current, { y: 30, opacity: 0 }, '-=0.7')
-      .from(sublineRef.current, { y: 20, opacity: 0 }, '-=0.7')
-      // .from(buttonRef.current, { scale: 0.8, opacity: 0 }, '-=0.5');
-  }, { scope: container });
+  useGSAP(
+    () => {
+      const tl = gsap.timeline({
+        defaults: { ease: "power3.out", duration: 1 },
+      });
+
+      tl.fromTo(videoRef.current, { opacity: 0 }, { opacity: 1, duration: 1.5 })
+        .from(badgeRef.current, { y: 20, opacity: 0 }, "-=0.5")
+        .from(titleRef.current, { y: 30, opacity: 0 }, "-=0.7")
+        .from(sublineRef.current, { y: 20, opacity: 0 }, "-=0.7");
+    },
+    { scope: container },
+  );
 
   return (
     <section
@@ -26,16 +31,27 @@ const Hero = () => {
       className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-bg-dark text-bg-white mt-6 min-[600px]:mt-8 min-[768px]:mt-10 min-[992px]:mt-12"
     >
       <div className="absolute inset-0 z-0">
+        <img
+          src="/Home/hero-poster.jpg"
+          alt=""
+          className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
+            videoLoaded ? "opacity-0" : "opacity-100"
+          }`}
+        />
+
         <video
           ref={videoRef}
           autoPlay
           muted
           loop
           playsInline
+          preload="metadata"
+          onCanPlayThrough={() => setVideoLoaded(true)}
           className="h-full w-full object-cover opacity-0"
         >
           <source src="/Home/background.mp4" type="video/mp4" />
         </video>
+
         <div className="absolute inset-0 bg-primary-navy/40" />
       </div>
 
@@ -62,18 +78,9 @@ const Hero = () => {
           ref={sublineRef}
           className="text-body-lg mb-6 min-[600px]:mb-8 min-[768px]:mb-10 max-w-full min-[600px]:max-w-xl min-[768px]:max-w-2xl text-bg-muted/90 text-[clamp(14px,2.5vw,20px)] leading-relaxed"
         >
-          We develop talent that performs with purpose and leads with impact turning your people into your most enduring edge.
+          We develop talent that performs with purpose and leads with impact
+          turning your people into your most enduring edge.
         </p>
-
-        {/* <button
-          ref={buttonRef}
-          className="group relative overflow-hidden rounded-full border-2 border-bg-white px-6 py-2.5 min-[600px]:px-7 min-[600px]:py-3 min-[768px]:px-8 min-[768px]:py-3.5 transition-colors hover:bg-bg-white"
-        >
-          <span className="text-subheading relative z-10 group-hover:text-primary-purple transition-colors text-sm min-[600px]:text-base">
-            View Programs
-          </span>
-          <div className="absolute inset-0 z-0 translate-y-full bg-bg-white transition-transform duration-300 group-hover:translate-y-0" />
-        </button> */}
       </div>
 
       <div className="absolute bottom-6 min-[600px]:bottom-7 min-[768px]:bottom-8 left-1/2 -translate-x-1/2 animate-bounce opacity-50">

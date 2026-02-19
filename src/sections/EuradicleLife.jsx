@@ -19,7 +19,6 @@ export default function EuradicleLife() {
       className="w-full bg-[var(--color-bg-white)] py-12 sm:py-16 lg:py-20 mt-6"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* TEXT SECTION */}
         <div className="text-center mb-10 lg:mb-16">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-4">
             <span className="text-[var(--color-primary-navy)]">LIFE AT </span>
@@ -40,12 +39,13 @@ export default function EuradicleLife() {
           </p>
         </div>
 
-        {/* IMAGE GRID - Hidden on small screens */}
         <div className="hidden md:grid grid-cols-12 gap-5 auto-rows-[250px] lg:auto-rows-[300px]">
           <div className="col-span-7 row-span-2 overflow-hidden rounded-3xl">
             <img
               src={images[1]}
               alt=""
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
             />
           </div>
@@ -54,6 +54,8 @@ export default function EuradicleLife() {
             <img
               src={images[3]}
               alt=""
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
             />
           </div>
@@ -62,6 +64,8 @@ export default function EuradicleLife() {
             <img
               src={images[0]}
               alt=""
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
             />
           </div>
@@ -70,6 +74,8 @@ export default function EuradicleLife() {
             <img
               src={images[2]}
               alt=""
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
             />
           </div>
@@ -78,6 +84,8 @@ export default function EuradicleLife() {
             <img
               src={images[4]}
               alt=""
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
             />
           </div>

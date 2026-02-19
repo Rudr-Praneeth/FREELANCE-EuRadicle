@@ -12,7 +12,7 @@ function CommercialSalesEnablement() {
         {
           heading: "Sales & Trade Promotion Excellence",
           description:
-            "Growth thrives on disciplined execution. We align customer insight, trade strategy, and performance focus—equipping sales teams to drive revenue and adapt to evolving markets.",
+            "Growth thrives on disciplined execution. We align customer insight, trade strategy, and performance focus,equipping sales teams to drive revenue and adapt to evolving markets.",
         },
         {
           heading: "Negotiation & Influence for Sales",
@@ -27,7 +27,7 @@ function CommercialSalesEnablement() {
         {
           heading: "Channel & Retail Effectiveness",
           description:
-            "Strong channels deliver strong results. We enhance coordination and ownership across distributors and retailers—driving visibility, reach, and measurable on-ground impact.",
+            "Strong channels deliver strong results. We enhance coordination and ownership across distributors and retailers,driving visibility, reach, and measurable on-ground impact.",
         },
         {
           heading: "Key Account Management Excellence",
@@ -37,7 +37,7 @@ function CommercialSalesEnablement() {
         {
           heading: "Solution & Consultative Selling",
           description:
-            "Consultative selling starts with understanding. We sharpen diagnosis, tailor solutions, and articulate value clearly—turning prospects into long-term partners.",
+            "Consultative selling starts with understanding. We sharpen diagnosis, tailor solutions, and articulate value clearly,turning prospects into long-term partners.",
         },
       ]}
     />

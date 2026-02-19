@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import JourneySection from "./sections/JourneySection";
@@ -25,13 +25,19 @@ import Contact from "./pages/Contact.jsx";
 import NotFound from "./pages/NotFound.jsx";
 import Footer from "./components/Footer.jsx";
 import ScrollToTop from "./utils/ScrollToTop.jsx";
+import Brochures from "./pages/Brochures.jsx"
 
 const App = () => {
+  const [modalType, setModalType] = useState(null);
+
+const openModal = (type) => setModalType(type);
+const closeModal = () => setModalType(null);
+
   return (
     <Router>
       <ScrollToTop />
       <div className="overflow-hidden">
-        <Navbar />
+        <Navbar openModal={openModal} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
@@ -54,6 +60,7 @@ const App = () => {
           <Route path="/stories/awareness" element={<Story1 />} />
           <Route path="/stories/aspire" element={<Story2 />} />
           <Route path="/stories/catalyst" element={<Story3 />} />
+          <Route path="/brochures" element={<Brochures modalType={modalType} closeModal={closeModal} openModal={openModal} />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <JourneySection />

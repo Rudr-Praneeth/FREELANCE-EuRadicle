@@ -57,7 +57,7 @@ function BlogPowerSkills() {
 
       <p>
         Currencies derive value because they are transferable, scalable, trusted
-        — and power skills share these properties. They travel across roles,
+        , and power skills share these properties. They travel across roles,
         functions, and contexts, shape culture through everyday behaviours, and
         compound in impact as they are practiced at scale.
       </p>

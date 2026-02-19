@@ -56,7 +56,7 @@ export default function Interns({ interns }) {
           <div className="italic text-body sm:text-body-lg max-w-3xl mx-auto space-y-4">
             <p>
               At EuRadicle, our Early Talent & Internship programs are built to
-              give emerging professionals more than just exposure — we provide a
+              give emerging professionals more than just exposure , we provide a
               true launchpad for their careers. From day one, interns are
               treated as contributors, not observers, gaining hands-on
               experience across live projects, client engagements, research,

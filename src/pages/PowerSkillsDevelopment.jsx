@@ -7,7 +7,7 @@ function PowerSkillsDevelopment() {
       title="Power Skills Development"
       subtitle="Strengthening the human capabilities that enable influence, collaboration, and impact."
       image="/Capabilities/compressed-Power Skills Development Inside picture.png"
-      intro="Power skills are no longer optional add-ons—they are core capabilities that determine how effectively professionals lead, collaborate, and influence in complex business environments. EuRadicle’s Power Skills Development capability focuses on strengthening human-centered skills that directly impact performance, relationships, and decision quality at work. By enhancing communication, emotional intelligence, influence, and judgment, individuals are enabled to operate with confidence, clarity, and credibility across roles, teams, and stakeholder contexts."
+      intro="Power skills are no longer optional add-ons,they are core capabilities that determine how effectively professionals lead, collaborate, and influence in complex business environments. EuRadicle’s Power Skills Development capability focuses on strengthening human-centered skills that directly impact performance, relationships, and decision quality at work. By enhancing communication, emotional intelligence, influence, and judgment, individuals are enabled to operate with confidence, clarity, and credibility across roles, teams, and stakeholder contexts."
       cards={[
         {
           heading: "Train the Trainer & Learning Facilitation",

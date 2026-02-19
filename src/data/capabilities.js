@@ -38,7 +38,7 @@ const Services = [
   {
     title: "Capability Programs",
     tagline: "Building capability that translates into performance.",
-    description: "We design immersive, experience-led programs that strengthen leadership, functional expertise, and power skills across levels. Anchored in diagnostics, real-world simulations, and structured learning journeys, our approach blends reflection with application to drive measurable behavior change. The focus is not just learning—but building capabilities that directly enhance performance, collaboration, and business outcomes."
+    description: "We design immersive, experience-led programs that strengthen leadership, functional expertise, and power skills across levels. Anchored in diagnostics, real-world simulations, and structured learning journeys, our approach blends reflection with application to drive measurable behavior change. The focus is not just learning,but building capabilities that directly enhance performance, collaboration, and business outcomes."
   },
   {
     title: "Coaching",

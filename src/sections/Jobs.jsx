@@ -108,7 +108,7 @@ export default function Jobs() {
           <p className="text-body-lg italic jobs-animate">
             Join a global consulting firm where impact is intentional and growth
             is personal. At EuRadicle, curious minds come together in a culture
-            of trust, collaboration, and continuous learning — where high
+            of trust, collaboration, and continuous learning , where high
             performance coexists with balance and authenticity. You’ll be
             encouraged to think deeply, contribute meaningfully, and take
             ownership of the impact you create. This is a place where your ideas

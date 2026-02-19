@@ -17,7 +17,7 @@ function DigitalBusinessTransformation() {
         {
           heading: "Gen AI / Generative AI Enablement",
           description:
-            "AI readiness is a strategic edge. We build digital confidence and responsible adoption—helping teams integrate generative tools to boost efficiency, insight, and innovation while keeping the human touch.",
+            "AI readiness is a strategic edge. We build digital confidence and responsible adoption,helping teams integrate generative tools to boost efficiency, insight, and innovation while keeping the human touch.",
         },
         {
           heading: "Data-Driven Decision Making",

@@ -7,7 +7,7 @@ function CreativeSolutions() {
       title="Creative Solutions"
       subtitle="Designing immersive learning and engagement experiences that turn insight into sustained action."
       image="/Capabilities/compressed-Creative solutions.png"
-      intro="Learning experiences must engage the mind, emotion, and application—not just deliver content. EuRadicle’s Creative Solutions capability focuses on designing immersive, learner-centric experiences that drive real capability development. By blending instructional design, storytelling, and operational excellence, organizations create learning journeys that are impactful, scalable, and aligned with business goals."
+      intro="Learning experiences must engage the mind, emotion, and application,not just deliver content. EuRadicle’s Creative Solutions capability focuses on designing immersive, learner-centric experiences that drive real capability development. By blending instructional design, storytelling, and operational excellence, organizations create learning journeys that are impactful, scalable, and aligned with business goals."
       cards={[
         {
           heading: "E-Learning & Digital Course Design",
@@ -27,12 +27,12 @@ function CreativeSolutions() {
         {
           heading: "Program Management & Learning Operations",
           description:
-            "Excellence is orchestrated behind the scenes. We ensure seamless planning, governance, and delivery—turning learning initiatives into consistent, high-impact experiences.",
+            "Excellence is orchestrated behind the scenes. We ensure seamless planning, governance, and delivery,turning learning initiatives into consistent, high-impact experiences.",
         },
         {
           heading: "Learning Analytics & Reporting",
           description:
-            "Impact must be measurable. We transform learning data into actionable insights—demonstrating effectiveness, ROI, and guiding smarter learning decisions.",
+            "Impact must be measurable. We transform learning data into actionable insights,demonstrating effectiveness, ROI, and guiding smarter learning decisions.",
         },
       ]}
     />

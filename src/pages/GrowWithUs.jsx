@@ -31,19 +31,19 @@ const GrowWithUs = () => {
   const items = [
     {
       title: "Work That Shapes Leaders, Not Just Slides",
-      text: "At EuRadicle, your work directly influences how professionals think, lead, and grow. Every project you touch contributes to real transformation—across leadership, consulting capability, and organizational impact. This isn’t back-end work; this is front-row participation in shaping future-ready leaders"
+      text: "At EuRadicle, your work directly influences how professionals think, lead, and grow. Every project you touch contributes to real transformation,across leadership, consulting capability, and organizational impact. This isn’t back-end work; this is front-row participation in shaping future-ready leaders"
     },
     {
       title: "A Consulting Mindset from Day One",
-      text: "You don’t just execute—you think, question, and co-create. We operate like a consulting firm, encouraging structured thinking, client empathy, and outcome-driven solutions. From strategy discussions to delivery, you’re treated as a problem-solver, not just a role-holder."
+      text: "You don’t just execute,you think, question, and co-create. We operate like a consulting firm, encouraging structured thinking, client empathy, and outcome-driven solutions. From strategy discussions to delivery, you’re treated as a problem-solver, not just a role-holder."
     },
     {
       title: "Learn Fast, Grow Faster",
-      text: "Startups teach speed—but we add depth. You’ll gain exposure across consulting, L&D, operations, and client engagement, building skills that compound over time. With high ownership and real accountability, growth here isn’t promised—it’s practiced every day."
+      text: "Startups teach speed,but we add depth. You’ll gain exposure across consulting, L&D, operations, and client engagement, building skills that compound over time. With high ownership and real accountability, growth here isn’t promised,it’s practiced every day."
     },
     {
       title: "Global Exposure, Human Culture",
-      text: "With a footprint across the US, Middle East, and India, you work in a global context while staying rooted in a people-first culture. We value trust, curiosity, and collaboration—because high performance is sustainable only when humans come first."
+      text: "With a footprint across the US, Middle East, and India, you work in a global context while staying rooted in a people-first culture. We value trust, curiosity, and collaboration,because high performance is sustainable only when humans come first."
     }
   ];
   return (

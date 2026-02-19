@@ -11,12 +11,12 @@ function LeadershipDevelopment() {
         {
           heading: "Managerial & Leadership Journeys",
           description:
-            "Leadership is a transition, not a title. We equip leaders to step into greater responsibility with clarity and confidence—strengthening decision-making, people leadership, and performance ownership to lead with lasting impact.",
+            "Leadership is a transition, not a title. We equip leaders to step into greater responsibility with clarity and confidence,strengthening decision-making, people leadership, and performance ownership to lead with lasting impact.",
         },
         {
           heading: "Coaching Mindsets & Conversations",
           description:
-            "Leadership evolves from directing to developing. We help leaders adopt a coaching mindset—listening deeply, asking powerful questions, and giving feedback that builds trust, accountability, and high-performing teams.",
+            "Leadership evolves from directing to developing. We help leaders adopt a coaching mindset,listening deeply, asking powerful questions, and giving feedback that builds trust, accountability, and high-performing teams.",
         },
         {
           heading: "Team Effectiveness & Collaboration",

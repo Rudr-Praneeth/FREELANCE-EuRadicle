@@ -17,8 +17,8 @@ const GetInTouch = () => {
       placeholder: "Enter your email"
     },
     {
-      name: "Number",
-      label: "Number",
+      name: "PhoneNumber",
+      label: "Mobile Number",
       type: "number",
       placeholder: "Enter your Mobile Number"
     },

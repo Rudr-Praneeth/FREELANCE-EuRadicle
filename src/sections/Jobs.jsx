@@ -18,14 +18,14 @@ export default function Jobs() {
     {
       id: "ops-hyd",
       title: "Operations - Associate/Sr. Associate",
-      location: "Hyd, India",
+      location: "Hyderabad, India",
       description:
         "Manage internal workflows, streamline processes, and ensure operational excellence across teams.",
     },
     {
       id: "content-hyd",
       title: "Content & Solutioning - Associate/Intern",
-      location: "Hyd, India",
+      location: "Hyderabad, India",
       description:
         "Develop research-driven content and support consulting solution design for global clients.",
     },

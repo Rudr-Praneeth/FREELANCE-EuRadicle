@@ -6,46 +6,16 @@ import {
   FaFacebookF,
   FaYoutube,
 } from "react-icons/fa";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
 
 export default function Footer() {
   const footerRef = useRef(null);
-
-  useGSAP(
-    () => {
-      const links = gsap.utils.toArray(".footer-link");
-      links.forEach((link) => {
-        const underline = link.querySelector(".underline");
-        link.addEventListener("mouseenter", () => {
-          gsap.killTweensOf(underline);
-          gsap.to(underline, {
-            scaleX: 1,
-            duration: 0.45,
-            ease: "power3.out",
-            transformOrigin: "left",
-          });
-        });
-        link.addEventListener("mouseleave", () => {
-          gsap.killTweensOf(underline);
-          gsap.to(underline, {
-            scaleX: 0,
-            duration: 0.35,
-            ease: "power3.inOut",
-            transformOrigin: "right",
-          });
-        });
-      });
-    },
-    { scope: footerRef },
-  );
 
   return (
     <footer
       ref={footerRef}
       className="bg-[var(--color-bg-muted)] text-black py-20 px-6 z-90"
     >
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-[1fr_2fr_1fr] gap-16">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-[1fr_2fr_2fr] gap-8">
         <div className="flex flex-col items-center justify-center text-center space-y-6">
           <img
             src="/Home/logo.gif"
@@ -53,33 +23,28 @@ export default function Footer() {
             className="w-auto h-30"
           />
 
-          {/* <p className="text-body-sm max-w-xs">
-            truly transforming developing talent that performs with purpose and
-            leads with impact turning your people into your most enduring edge.
-          </p> */}
-
           <div className="flex gap-6 text-xl">
             <a
               href="#"
-              className="hover:text-[var(--color-primary-mauve)] transition-colors duration-300"
+              className="hover:text-[var(--color-primary-mauve)] transition-all duration-300 transform hover:scale-110"
             >
               <FaLinkedinIn />
             </a>
             <a
               href="#"
-              className="hover:text-[var(--color-primary-mauve)] transition-colors duration-300"
+              className="hover:text-[var(--color-primary-mauve)] transition-all duration-300 transform hover:scale-110"
             >
               <FaInstagram />
             </a>
             <a
               href="#"
-              className="hover:text-[var(--color-primary-mauve)] transition-colors duration-300"
+              className="hover:text-[var(--color-primary-mauve)] transition-all duration-300 transform hover:scale-110"
             >
               <FaFacebookF />
             </a>
             <a
               href="#"
-              className="hover:text-[var(--color-primary-mauve)] transition-colors duration-300"
+              className="hover:text-[var(--color-primary-mauve)] transition-all duration-300 transform hover:scale-110"
             >
               <FaYoutube />
             </a>
@@ -89,91 +54,126 @@ export default function Footer() {
         <div className="flex flex-col items-start">
           <h3 className="text-subheading mb-8">Our Capabilities</h3>
 
-          <div className="grid grid-cols-2 gap-x-12 gap-y-4 text-body-sm">
+          <div className="grid grid-cols-2 gap-x-8 gap-y-6 text-body-sm">
             <Link
               to="/capabilities/leadership-development"
-              className="footer-link relative"
+              className="footer-link relative hover:text-[var(--color-primary-mauve)] transform transition-all duration-300 hover:scale-105"
             >
               Leadership Development
-              <span className="underline absolute left-0 -bottom-1 h-[2px] w-full bg-[var(--color-primary-mauve)] scale-x-0"></span>
             </Link>
 
             <Link
               to="/capabilities/consulting-talent-management"
-              className="footer-link relative"
+              className="footer-link relative hover:text-[var(--color-primary-mauve)] transform transition-all duration-300 hover:scale-105"
             >
               Consulting & Talent Management
-              <span className="underline absolute left-0 -bottom-1 h-[2px] w-full bg-[var(--color-primary-mauve)] scale-x-0"></span>
             </Link>
 
             <Link
               to="/capabilities/assessment-development-centers"
-              className="footer-link relative"
+              className="footer-link relative hover:text-[var(--color-primary-mauve)] transform transition-all duration-300 hover:scale-105"
             >
               Assessment Development Centers
-              <span className="underline absolute left-0 -bottom-1 h-[2px] w-full bg-[var(--color-primary-mauve)] scale-x-0"></span>
             </Link>
 
             <Link
               to="/capabilities/power-skills-development"
-              className="footer-link relative"
+              className="footer-link relative hover:text-[var(--color-primary-mauve)] transform transition-all duration-300 hover:scale-105"
             >
               Power Skills Development
-              <span className="underline absolute left-0 -bottom-1 h-[2px] w-full bg-[var(--color-primary-mauve)] scale-x-0"></span>
             </Link>
 
             <Link
               to="/capabilities/digital-business-transformation"
-              className="footer-link relative"
+              className="footer-link relative hover:text-[var(--color-primary-mauve)] transform transition-all duration-300 hover:scale-105"
             >
               Digital & Business Transformation
-              <span className="underline absolute left-0 -bottom-1 h-[2px] w-full bg-[var(--color-primary-mauve)] scale-x-0"></span>
             </Link>
 
             <Link
               to="/capabilities/commercial-sales-enablement"
-              className="footer-link relative"
+              className="footer-link relative hover:text-[var(--color-primary-mauve)] transform transition-all duration-300 hover:scale-105"
             >
               Commercial Sales Enablement
-              <span className="underline absolute left-0 -bottom-1 h-[2px] w-full bg-[var(--color-primary-mauve)] scale-x-0"></span>
             </Link>
 
             <Link
               to="/capabilities/creative-solutions"
-              className="footer-link relative"
+              className="footer-link relative hover:text-[var(--color-primary-mauve)] transform transition-all duration-300 hover:scale-105"
             >
               Creative Solutions
-              <span className="underline absolute left-0 -bottom-1 h-[2px] w-full bg-[var(--color-primary-mauve)] scale-x-0"></span>
             </Link>
 
             <Link
               to="/capabilities/dei-culture-building"
-              className="footer-link relative"
+              className="footer-link relative hover:text-[var(--color-primary-mauve)] transform transition-all duration-300 hover:scale-105"
             >
               DEI & Culture Building
-              <span className="underline absolute left-0 -bottom-1 h-[2px] w-full bg-[var(--color-primary-mauve)] scale-x-0"></span>
             </Link>
           </div>
         </div>
 
-        <div className="hidden sm:block flex flex-col items-start">
-          <h3 className="text-subheading mb-8">Insights</h3>
+        <div className="flex flex-col items-start">
+          <h3 className="text-subheading mb-8">Contact Us</h3>
 
-          <div className="flex flex-col gap-4 text-body-sm">
-            <Link to="/blogs/power-skills" className="footer-link relative">
-              Power Skills
-              <span className="underline absolute left-0 -bottom-1 h-[2px] w-full bg-[var(--color-primary-mauve)] scale-x-0"></span>
-            </Link>
-
-            <Link to="/blogs/ai-ethics" className="footer-link relative">
-              AI & Ethics
-              <span className="underline absolute left-0 -bottom-1 h-[2px] w-full bg-[var(--color-primary-mauve)] scale-x-0"></span>
-            </Link>
-
-            <Link to="/blogs/chatai-at" className="footer-link relative">
-              Capability Building
-              <span className="underline absolute left-0 -bottom-1 h-[2px] w-full bg-[var(--color-primary-mauve)] scale-x-0"></span>
-            </Link>
+          <div className="flex flex-col text-body-sm">
+            <p className="footer-link relative">
+              <a
+                href="mailto:info@euradicle.com"
+                className="hover:text-[var(--color-primary-mauve)]"
+              >
+                info@euradicle.com
+              </a>
+            </p>
+            <p className="footer-link relative">
+              <a
+                href="tel:+914031003306"
+              className="footer-link relative hover:text-[var(--color-primary-mauve)] transform transition-all duration-300 hover:scale-105"
+              >
+                +91 40 3100 3306
+              </a>
+            </p>
+            <p className="footer-link relative">
+              <a
+                href="tel:+919661188313"
+              className="footer-link relative hover:text-[var(--color-primary-mauve)] transform transition-all duration-300 hover:scale-105"
+              >
+                +91 966 118 8313
+              </a>
+            </p>
+            {/* </p> */}
+            <div className="flex items-center justify-evenly gap-6 mt-2">
+              <div>
+                <p className="footer-link relative text-body">India</p>
+              <p className="footer-link relative">
+                2nd floor
+                Building no: 8-2-120/86/5/B
+                <br />
+                Road No 3, Banjara Hills
+                <br />
+                Hyderabad, Telangana - 500034
+              </p>
+              </div>
+              <div>
+                
+              <p className="footer-link relative text-body">USA</p>
+              {/* <p className="footer-link relative">
+                <a
+                  href="tel:+17134293753"
+                  className="hover:text-[var(--color-primary-mauve)]"
+                >
+                  +1 (713) 429 3753
+                </a>
+              </p> */}
+              <p className="footer-link relative">
+                EuRadicle Learning Inc
+                <br />
+                10301 Northwest Freeway, Suite 314
+                <br />
+                Houston Texas - 77092
+              </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

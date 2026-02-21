@@ -10,10 +10,10 @@ const Contact = () => {
   })
   const fields = [
     [{
-      name: "Name",
-      label: "Name",
+      name: "FirstName",
+      label: "First Name",
       type: "text",
-      placeholder: "Enter your name"
+      placeholder: "Enter your First Name"
     },
     {
       name: "LastName",
@@ -21,7 +21,7 @@ const Contact = () => {
       type: "text",
       placeholder: "Enter your Last Name"
     }],
-    {
+    [{
       name: "Company",
       label: "Company",
       type: "text",
@@ -32,12 +32,18 @@ const Contact = () => {
       label: "Designation",
       type: "text",
       placeholder: "Enter your Designation"
-    },
+    }],
     {
       name: "Email",
       label: "Email",
       type: "email",
       placeholder: "Enter your email"
+    },
+    {
+      name: "PhoneNumber",
+      label: "Mobile Number",
+      type: "number",
+      placeholder: "Enter your mobile number"
     },
   ]
   return (

@@ -20,13 +20,13 @@ const GrowWithUs = () => {
       },
       {
         text: "My journey with EuRadicle began as a Finance & Administration Intern, where I gained hands-on exposure to both financial management and administrative operations. During this phase, I worked closely with the leadership and operations teams, supporting financial processes, compliance, vendor coordination, documentation, and day-to-day administrative activities that ensured smooth organizational functioning. This holistic experience helped me understand how financial discipline, structured processes, and efficient administration together enable seamless client delivery and sustainable growth, laying a strong foundation for my professional development and eventually evolving into a full-time role where I continue to strengthen and streamline both finance and administrative operations across the organization.",
-        name: "Lokesh Akujo",
+        name: "Lokesh Akoju",
         role: "Sr. Associate – Finance & Admin",
         url: "/Interns/2.png"
       },
       {
         text: "I joined EuRadicle as an intern expecting a learning opportunity, but it quickly became a phase of accelerated growth and a defining career milestone. From day one, I was treated not as “just an intern,” but as a contributor trusted with real work, real clients, and meaningful impact. What makes EuRadicle stand out is its vibrant, collaborative culture where ideas are valued, creativity thrives, and every challenge pushes you to think beyond the obvious. Even while balancing exams and classes, the team ensured I never had to choose between academics and professional growth, offering flexibility and genuine support throughout. During my internship, I worked on innovation-driven projects that expanded my thinking across strategy, creativity, and solution design, and that trust and exposure eventually led to my transition into a Senior Associate – Content Development & Solutioning. Today, I design capability programs and create research-backed learning solutions to address complex talent challenges for large organizations, contributing to enterprise-level impact. At EuRadicle, early talent isn’t just managed, it is mentored, empowered, and accelerated.",
-        name: "Saba Siddique",
+        name: "Saba Siddiqui",
         role: "Sr. Associate – Content Development & Solutioning",
         url: "/Interns/3.png"
       },

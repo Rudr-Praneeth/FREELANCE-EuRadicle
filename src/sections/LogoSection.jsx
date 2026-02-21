@@ -18,7 +18,7 @@ const LogoMarqueeColumn = ({ logoIndices, reverse = false }) => {
 
       timeline.current = gsap.to(track, {
         y: reverse ? 0 : -height,
-        duration: 50,
+        duration: 20,
         ease: "none",
         repeat: -1,
         modifiers: {
@@ -65,7 +65,7 @@ const LogoMarqueeColumn = ({ logoIndices, reverse = false }) => {
 const LogoSection = () => {
   const container = useRef(null);
 
-  const totalLogos = 35;
+  const totalLogos = 34;
   const indices = Array.from({ length: totalLogos }, (_, i) => i + 1).filter(
     (i) => i !== 18
   );

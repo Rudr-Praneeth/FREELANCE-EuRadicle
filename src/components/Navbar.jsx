@@ -7,7 +7,7 @@ const NavLinks = [
   "HOME",
   "WHY EURADICLE",
   "OUR CAPABILITIES",
-  "BROCHURES & E-CERTIFICATES",
+  "DOWNLOADS",
   "GROW WITH US",
 ];
 
@@ -179,15 +179,15 @@ function Navbar({ openModal }) {
   return (
     <header
       ref={navRef}
-      className="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md border-b border-[var(--color-brand-400)] shadow-sm z-50"
+      className="fixed top-0 left-0 w-full h-20 bg-white/90 backdrop-blur-md border-b border-[var(--color-brand-400)] shadow-sm z-50"
     >
-      <div className="w-full flex items-center justify-between px-6">
-        <div className="flex w-1/2 md:w-1/6 items-center">
+      <div className="w-full h-full flex items-center justify-between px-6">
+        <div className="flex w-1/2 md:w-1/6 items-center h-full">
           <Link to="/" onClick={handleNavClick} className="flex items-center">
             <img
               src="/Home/logo.gif"
               alt="Euradicle Logo"
-              className="h-20 w-auto"
+              className="h-full max-h-28 w-auto"
             />
           </Link>
         </div>
@@ -195,7 +195,7 @@ function Navbar({ openModal }) {
         <nav className="hidden md:flex w-4/6 items-center justify-center gap-8">
           {NavLinks.map((item) => {
             const isCapabilities = item === "OUR CAPABILITIES";
-            const isBrochure = item === "BROCHURES & E-CERTIFICATES";
+            const isBrochure = item === "DOWNLOADS";
 
             const to =
               item === "HOME"
@@ -204,7 +204,7 @@ function Navbar({ openModal }) {
                   ? "/why-euradicle"
                   : item === "OUR CAPABILITIES"
                     ? "/capabilities"
-                    : item === "BROCHURES & E-CERTIFICATES"
+                    : item === "DOWNLOADS"
                       ? "/brochures"
                       : item === "GROW WITH US"
                         ? "/grow-with-us"
@@ -244,7 +244,7 @@ function Navbar({ openModal }) {
 
                   {openDropdown && (
                     <div
-                      className="fixed left-0 top-[72px] w-screen"
+                      className="fixed left-0 top-[80px] w-screen"
                       onMouseEnter={openDropdownImmediate}
                       onMouseLeave={() => closeDropdownDelayed(120)}
                     >
@@ -288,19 +288,19 @@ function Navbar({ openModal }) {
                   to={to}
                   className="nav-link relative text-body text-[var(--color-primary-navy)]"
                 >
-                  Brochures & E-Certificates
+                  Downloads
                   <span className="underline absolute left-0 -bottom-1 h-[2px] w-full bg-[var(--color-primary-mauve)] scale-x-0"></span>
                 </Link>
 
                 {openBrochureDropdown && (
                   <div
-                    className="fixed left-0 top-[72px] w-screen"
+                    className="fixed top-[80px] w-screen"
                     onMouseEnter={openBrochureImmediate}
                     onMouseLeave={() => closeBrochureDelayed(120)}
                   >
                     <div
                       ref={brochureDropdownRef}
-                      className="w-screen bg-black/80 text-white py-16"
+                      className="w-fit bg-black/80 text-white py-16"
                     >
                       <div className="max-w-screen-xl mx-auto px-20 flex flex-col gap-8">
                         <button
@@ -365,7 +365,7 @@ function Navbar({ openModal }) {
                   ? "/why-euradicle"
                   : item === "OUR CAPABILITIES"
                     ? "/capabilities"
-                    : item === "BROCHURES & E-CERTIFICATES"
+                    : item === "DOWNLOADS"
                       ? "/brochures"
                       : item === "GROW WITH US"
                         ? "/grow-with-us"

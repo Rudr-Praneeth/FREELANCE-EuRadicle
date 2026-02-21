@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import JourneySection from "./sections/JourneySection";
@@ -25,19 +25,23 @@ import Contact from "./pages/Contact.jsx";
 import NotFound from "./pages/NotFound.jsx";
 import Footer from "./components/Footer.jsx";
 import ScrollToTop from "./utils/ScrollToTop.jsx";
-import Brochures from "./pages/Brochures.jsx"
+import Brochures from "./pages/Brochures.jsx";
+import ResourcesModal from "./components/ResourceModal.jsx";
 
 const App = () => {
   const [modalType, setModalType] = useState(null);
 
-const openModal = (type) => setModalType(type);
-const closeModal = () => setModalType(null);
+  const openModal = (type) => setModalType(type);
+  const closeModal = () => setModalType(null);
 
   return (
     <Router>
       <ScrollToTop />
       <div className="overflow-hidden">
         <Navbar openModal={openModal} />
+        {modalType && (
+          <ResourcesModal modalType={modalType} closeModal={closeModal} />
+        )}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
@@ -47,20 +51,50 @@ const closeModal = () => setModalType(null);
           <Route path="/get-in-touch" element={<GetInTouch />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/blogs/power-skills" element={<BlogPowerSkills />} />
-          <Route path="/blogs/ai-ethics" element={<BlogPsychologicalSafety />} />
+          <Route
+            path="/blogs/ai-ethics"
+            element={<BlogPsychologicalSafety />}
+          />
           <Route path="/blogs/chatai-at" element={<BlogCapabilityBuilding />} />
-          <Route path="/capabilities/leadership-development" element={<LeadershipDevelopment />} />
-          <Route path="/capabilities/consulting-talent-management" element={<ConsultingTalentManagement />} />
-          <Route path="/capabilities/assessment-development-centers" element={<AssessmentDevelopmentCenters />} />
-          <Route path="/capabilities/power-skills-development" element={<PowerSkillsDevelopment />} />
-          <Route path="/capabilities/digital-business-transformation" element={<DigitalBusinessTransformation />} />
-          <Route path="/capabilities/commercial-sales-enablement" element={<CommercialSalesEnablement />} />
-          <Route path="/capabilities/creative-solutions" element={<CreativeSolutions />} />
-          <Route path="/capabilities/dei-culture-building" element={<DEICultureBuilding />} />
+          <Route
+            path="/capabilities/leadership-development"
+            element={<LeadershipDevelopment />}
+          />
+          <Route
+            path="/capabilities/consulting-talent-management"
+            element={<ConsultingTalentManagement />}
+          />
+          <Route
+            path="/capabilities/assessment-development-centers"
+            element={<AssessmentDevelopmentCenters />}
+          />
+          <Route
+            path="/capabilities/power-skills-development"
+            element={<PowerSkillsDevelopment />}
+          />
+          <Route
+            path="/capabilities/digital-business-transformation"
+            element={<DigitalBusinessTransformation />}
+          />
+          <Route
+            path="/capabilities/commercial-sales-enablement"
+            element={<CommercialSalesEnablement />}
+          />
+          <Route
+            path="/capabilities/creative-solutions"
+            element={<CreativeSolutions />}
+          />
+          <Route
+            path="/capabilities/dei-culture-building"
+            element={<DEICultureBuilding />}
+          />
           <Route path="/stories/awareness" element={<Story1 />} />
           <Route path="/stories/aspire" element={<Story2 />} />
           <Route path="/stories/catalyst" element={<Story3 />} />
-          <Route path="/brochures" element={<Brochures modalType={modalType} closeModal={closeModal} openModal={openModal} />} />
+          <Route
+            path="/brochures"
+            element={<Brochures openModal={openModal} />}
+          />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <JourneySection />

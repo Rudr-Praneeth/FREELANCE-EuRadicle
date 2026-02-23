@@ -51,13 +51,18 @@ const CapabilityCard = ({ title, imageUrl, index }) => {
     <div 
       ref={cardRef}
       onClick={() => navigate(`/capabilities/${slug}`)}
-      className="group relative flex flex-col w-full h-full min-h-[340px] bg-bg-white rounded-xl overflow-hidden border border-brand-400/20 shadow-sm cursor-pointer opacity-0"
+      className="group relative flex flex-col w-full h-full min-h-[340px] bg-bg-white rounded-xl overflow-hidden shadow-sm cursor-pointer opacity-0 p-2"
     >
-      <div className="relative h-44 w-full overflow-hidden">
+      <span className="pointer-events-none absolute top-0 left-0 h-[2px] w-0 bg-brand-500 transition-all duration-300 group-hover:w-full" />
+      <span className="pointer-events-none absolute top-0 right-0 w-[2px] h-0 bg-brand-500 transition-all duration-300 delay-300 group-hover:h-full" />
+      <span className="pointer-events-none absolute bottom-0 right-0 h-[2px] w-0 bg-brand-500 transition-all duration-300 delay-[600ms] group-hover:w-full" />
+      <span className="pointer-events-none absolute bottom-0 left-0 w-[2px] h-0 bg-brand-500 transition-all duration-300 delay-[900ms] group-hover:h-full" />
+
+      <div className="relative h-44 w-full overflow-hidden rounded-xl">
         <img 
           src={imageUrl || "/api/placeholder/400/320"} 
           alt={title} 
-          className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+          className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110 rounded-xl"
         />
         <div className="absolute inset-0 bg-primary-navy/20 transition-opacity duration-500 group-hover:opacity-0" />
       </div>

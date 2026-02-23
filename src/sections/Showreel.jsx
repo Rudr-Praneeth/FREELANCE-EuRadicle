@@ -15,7 +15,7 @@ const Showreel = () => {
       scrollTrigger: {
         trigger: container.current,
         start: "top top+=30",
-        end: "+=200%",
+        end: "+=100%",
         scrub: true,
         pin: true,
         anticipatePin: 1,

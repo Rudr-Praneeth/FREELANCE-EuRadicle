@@ -21,7 +21,7 @@ export default function WhyEuradicle({ items }) {
         const getScrollAmount = () => {
           const trackWidth = track.scrollWidth;
           const sectionWidth = section.clientWidth;
-          return Math.max(trackWidth - sectionWidth, 0);
+          return Math.max(trackWidth - sectionWidth + 80, 0);
         };
 
         const ctx = gsap.context(() => {
@@ -80,8 +80,9 @@ export default function WhyEuradicle({ items }) {
             WHY JOIN
           </span>{" "}
           <span className="text-[var(--color-primary-mauve)]">
-            EURADICLE
+            EURADICLE 
           </span>
+          {" "}?
         </h1>
       </div>
 

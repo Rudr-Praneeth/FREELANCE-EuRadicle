@@ -59,7 +59,7 @@ const About = () => {
             {
               number: "03",
               title: "Agile Co-Created Solutions",
-              text: `Every solution is developed in close collaboration with clients-blending consulting expertise with deep contextual insight. Programs are co-created to align with business realities, leadership expectations, and organizational culture. From enterprise leadership journeys to capability programs for growing organizations, solutions are tailored to reflect each client’s brand, language, and real-world challenges-driving relevance, ownership, and on-the-job application with measurable impact.
+              text: `Every solution is developed in close collaboration with clients-blending consulting expertise with deep contextual insight. Solutions are co-created to align with business realities, leadership expectations, and organizational culture. From enterprise leadership journeys to capability programs for growing organizations, solutions are tailored to reflect each client’s brand, language, and real-world challenges-driving relevance, ownership, and on-the-job application with measurable impact.
 `,
             },
     ];

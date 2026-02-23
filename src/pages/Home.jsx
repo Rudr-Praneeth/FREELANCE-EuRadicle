@@ -14,7 +14,7 @@ const Home = () => {
       left: 0,
       behavior: "auto",
     });
-  },[])
+  }, [])
   return (
     <div className="">
       <Hero />

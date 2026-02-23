@@ -69,6 +69,7 @@ function BlogsSection() {
 
   return (
     <section
+    id="blogs"
       ref={sectionRef}
       className="w-full py-20 px-6"
       style={{
@@ -94,9 +95,9 @@ function BlogsSection() {
                   alt={blog.title}
                   className="blog-image w-full h-48 object-cover"
                 />
-                <span className="absolute top-3 left-3 bg-[var(--color-bg-white)] text-body-xs px-3 py-1 rounded-full">
+                {/* <span className="absolute top-3 left-3 bg-[var(--color-bg-white)] text-body-xs px-3 py-1 rounded-full">
                   News
-                </span>
+                </span> */}
               </div>
 
               <div className="flex items-center justify-between mt-4">

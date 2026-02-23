@@ -189,7 +189,7 @@ export default function Story1() {
               Outcomes
             </h2>
 
-            <ul className="flex flex-col gap-2">
+            <ul className="flex flex-col gap-2 list-disc pl-6">
               {Catalyst.outcomes.map((outcome, idx) => (
                 <li
                   key={idx}

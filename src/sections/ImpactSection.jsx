@@ -59,7 +59,7 @@ function ImpactSection() {
         </h1>
 
         <p className="italic text-body-lg text-[var(--color-primary-navy)] max-w-full min-[600px]:max-w-xl min-[768px]:max-w-2xl min-[992px]:max-w-3xl mx-auto mb-10 min-[600px]:mb-12 min-[768px]:mb-14 text-[clamp(14px,2.5vw,20px)] leading-relaxed">
-          The impact of leadership development shows up over time <br className="hidden min-[600px]:block" /> in decisions made, teams strengthened, and cultures shaped.
+          The impact of leadership development shows up over time in decisions made, teams strengthened, and cultures shaped.
         </p>
 
         <div className="grid grid-cols-1 min-[600px]:grid-cols-2 min-[768px]:grid-cols-3 gap-8 min-[768px]:gap-10">

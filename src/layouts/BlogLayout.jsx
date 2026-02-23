@@ -7,7 +7,7 @@ import Navbar from "../components/Navbar";
 gsap.registerPlugin(useGSAP);
 
 function BlogLayout({ children, title, subtitle, date, category, image }) {
-  const containerRef = useRef(null);
+  const containerRef = useRef(null); 
   const heroRef = useRef(null);
   const contentRef = useRef(null);
   const ctaRef = useRef(null);
@@ -136,9 +136,9 @@ function BlogLayout({ children, title, subtitle, date, category, image }) {
             </Link>
 
             <div className="blog-meta flex items-center gap-4 mb-2">
-              <span className="px-4 py-1 rounded-full bg-gray-100 text-sm text-gray-600">
+              {/* <span className="px-4 py-1 rounded-full bg-gray-100 text-sm text-gray-600">
                 {category}
-              </span>
+              </span> */}
             </div>
 
             <h1 className="blog-title text-4xl md:text-5xl font-semibold text-[var(--color-primary-navy)] leading-tight">

@@ -300,9 +300,9 @@ function Navbar({ openModal }) {
                   >
                     <div
                       ref={brochureDropdownRef}
-                      className="w-fit bg-black/80 text-white py-16"
+                      className="w-fit bg-black/80 text-white py-8"
                     >
-                      <div className="max-w-screen-xl mx-auto px-20 flex flex-col gap-8">
+                      <div className="max-w-screen-xl mx-auto pl-4 pr-8 flex flex-col gap-8">
                         <button
                           onClick={() => {
                             handleNavClick();

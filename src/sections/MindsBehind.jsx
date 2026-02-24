@@ -50,7 +50,7 @@ export default function MindsBehind({ items }) {
       ref={sectionRef}
       className="bg-white pb-12 sm:pb-16 md:pb-20 lg:pb-24"
     >
-      <div className="mx-auto w-full max-w-[1400px] px-4 sm:px-6 md:px-8 lg:px-10">
+      <div className="mx-auto w-full max-w-350 px-4 sm:px-6 md:px-8 lg:px-10">
         <div className="text-center">
           <h2 className="text-h1 font-bold text-primary-navy leading-tight">
             OUR CORE{" "}
@@ -84,7 +84,7 @@ export default function MindsBehind({ items }) {
                 max-w-xs
                 sm:max-w-sm
                 lg:max-w-sm
-                min-h-[380px]
+                min-h-95
                 ${
                   i === items.length - 1
                     ? "sm:col-span-2 sm:col-start-1 sm:justify-self-center lg:col-span-1 lg:col-start-2"

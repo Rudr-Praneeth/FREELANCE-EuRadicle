@@ -39,47 +39,47 @@ export default function Jobs() {
   ];
 
   useGSAP(
-  (context) => {
-    const q = context.selector;
+    (context) => {
+      const q = context.selector;
 
-    const cards = q(".jobs-card");
+      const cards = q(".jobs-card");
 
-    gsap.fromTo(
-      cards,
-      { y: 40, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.8, stagger: 0.15, ease: "power3.out" }
-    );
+      gsap.fromTo(
+        cards,
+        { y: 40, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.8, stagger: 0.15, ease: "power3.out" },
+      );
 
-    cards.forEach((card) => {
-      const enter = () => {
-        gsap.to(card, {
-          y: -10,
-          scale: 1.03,
-          duration: 0.4,
-          ease: "power3.out",
+      cards.forEach((card) => {
+        const enter = () => {
+          gsap.to(card, {
+            y: -10,
+            scale: 1.03,
+            duration: 0.4,
+            ease: "power3.out",
+          });
+        };
+
+        const leave = () => {
+          gsap.to(card, {
+            y: 0,
+            scale: 1,
+            duration: 0.4,
+            ease: "power3.out",
+          });
+        };
+
+        card.addEventListener("mouseenter", enter);
+        card.addEventListener("mouseleave", leave);
+
+        context.add(() => {
+          card.removeEventListener("mouseenter", enter);
+          card.removeEventListener("mouseleave", leave);
         });
-      };
-
-      const leave = () => {
-        gsap.to(card, {
-          y: 0,
-          scale: 1,
-          duration: 0.4,
-          ease: "power3.out",
-        });
-      };
-
-      card.addEventListener("mouseenter", enter);
-      card.addEventListener("mouseleave", leave);
-
-      context.add(() => {
-        card.removeEventListener("mouseenter", enter);
-        card.removeEventListener("mouseleave", leave);
       });
-    });
-  },
-  { scope: sectionRef }
-);
+    },
+    { scope: sectionRef },
+  );
 
   useEffect(() => {
     const handleEsc = (e) => {
@@ -178,7 +178,7 @@ export default function Jobs() {
               >
                 <input
                   type="text"
-                  placeholder="Name"
+                  placeholder="Full Name"
                   required
                   className="w-full border border-[var(--color-primary-mauve)] rounded-xl px-4 py-3 bg-transparent focus:outline-none"
                 />
@@ -192,18 +192,20 @@ export default function Jobs() {
 
                 <input
                   type="tel"
-                  placeholder="Number"
+                  placeholder="Phone number"
                   required
                   className="w-full border border-[var(--color-primary-mauve)] rounded-xl px-4 py-3 bg-transparent focus:outline-none"
                 />
 
-                <input
-                  type="file"
-                  accept=".pdf,.doc,.docx"
-                  required
-                  className="w-full border border-[var(--color-primary-mauve)] rounded-xl px-4 py-3 bg-transparent focus:outline-none"
-                />
-
+                <label className="w-full flex items-center justify-center border border-[var(--color-primary-mauve)] rounded-xl px-4 py-3 cursor-pointer">
+                  <span className="text-gray-400">Attach your resume</span>
+                  <input
+                    type="file"
+                    accept=".pdf,.doc,.docx"
+                    required
+                    className="hidden"
+                  />
+                </label>
                 <button
                   type="submit"
                   className="w-full bg-[var(--color-primary-mauve)] text-white py-3 rounded-xl hover:opacity-90 transition"
@@ -213,7 +215,7 @@ export default function Jobs() {
               </form>
             </div>
           </div>,
-          document.body
+          document.body,
         )}
     </>
   );

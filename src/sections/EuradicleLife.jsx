@@ -16,16 +16,16 @@ export default function EuradicleLife() {
   return (
     <section
       ref={sectionRef}
-      className="w-full bg-[var(--color-bg-white)] py-12 sm:py-16 lg:py-20 mt-6"
+      className="w-full bg-[var(--color-bg-white)] py-12 sm:py-16 lg:py-20 mt-6 max-[660px]:mt-10"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10 lg:mb-16">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-4">
+          <h1 className="text-h1 sm:text-h2 lg:text-h1 font-semibold mb-4">
             <span className="text-[var(--color-primary-navy)]">LIFE AT </span>
             <span className="text-[var(--color-primary-mauve)]">EURADICLE</span>
           </h1>
 
-          <p className="italic text-base sm:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed">
+          <p className="italic text-body-lg lg:text-xl max-w-5xl mx-auto leading-relaxed">
             We believe the best work comes from people who feel valued,
             supported, and truly seen-not from burnout. We believe meaningful
             impact begins with balance, trust, and a deep sense of belonging.

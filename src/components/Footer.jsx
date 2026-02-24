@@ -13,168 +13,92 @@ export default function Footer() {
   return (
     <footer
       ref={footerRef}
-      className="bg-[var(--color-bg-muted)] text-black py-20 px-6 z-90"
+      className="bg-[var(--color-bg-muted)] text-black py-16 md:py-24 px-6 md:px-12 z-90 border-t border-brand-400/10"
     >
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-[1fr_2fr_2fr] gap-8">
-        <div className="flex flex-col items-center justify-center text-center space-y-6">
-          <img
-            src="/Home/logo.gif"
-            alt="EuRadicle Logo"
-            className="w-auto h-30"
-          />
-
-          <div className="flex gap-6 text-xl">
-            <a
-              href="#"
-              className="hover:text-[var(--color-primary-mauve)] transition-all duration-300 transform hover:scale-110"
-            >
-              <FaLinkedinIn />
-            </a>
-            <a
-              href="#"
-              className="hover:text-[var(--color-primary-mauve)] transition-all duration-300 transform hover:scale-110"
-            >
-              <FaInstagram />
-            </a>
-            <a
-              href="#"
-              className="hover:text-[var(--color-primary-mauve)] transition-all duration-300 transform hover:scale-110"
-            >
-              <FaFacebookF />
-            </a>
-            <a
-              href="#"
-              className="hover:text-[var(--color-primary-mauve)] transition-all duration-300 transform hover:scale-110"
-            >
-              <FaYoutube />
-            </a>
-          </div>
-        </div>
-
-        <div className="flex flex-col items-start">
-          <h3 className="text-subheading mb-8">Our Capabilities</h3>
-
-          <div className="grid grid-cols-2 gap-x-8 gap-y-6 text-body-sm">
-            <Link
-              to="/capabilities/leadership-development"
-              className="footer-link relative hover:text-[var(--color-primary-mauve)] transform transition-all duration-300 hover:scale-105"
-            >
-              Leadership Development
-            </Link>
-
-            <Link
-              to="/capabilities/consulting-talent-management"
-              className="footer-link relative hover:text-[var(--color-primary-mauve)] transform transition-all duration-300 hover:scale-105"
-            >
-              Consulting & Talent Management
-            </Link>
-
-            <Link
-              to="/capabilities/assessment-development-centers"
-              className="footer-link relative hover:text-[var(--color-primary-mauve)] transform transition-all duration-300 hover:scale-105"
-            >
-              Assessment Development Centers
-            </Link>
-
-            <Link
-              to="/capabilities/power-skills-development"
-              className="footer-link relative hover:text-[var(--color-primary-mauve)] transform transition-all duration-300 hover:scale-105"
-            >
-              Power Skills Development
-            </Link>
-
-            <Link
-              to="/capabilities/digital-business-transformation"
-              className="footer-link relative hover:text-[var(--color-primary-mauve)] transform transition-all duration-300 hover:scale-105"
-            >
-              Digital & Business Transformation
-            </Link>
-
-            <Link
-              to="/capabilities/commercial-sales-enablement"
-              className="footer-link relative hover:text-[var(--color-primary-mauve)] transform transition-all duration-300 hover:scale-105"
-            >
-              Commercial Sales Enablement
-            </Link>
-
-            <Link
-              to="/capabilities/creative-solutions"
-              className="footer-link relative hover:text-[var(--color-primary-mauve)] transform transition-all duration-300 hover:scale-105"
-            >
-              Creative Solutions
-            </Link>
-
-            <Link
-              to="/capabilities/dei-culture-building"
-              className="footer-link relative hover:text-[var(--color-primary-mauve)] transform transition-all duration-300 hover:scale-105"
-            >
-              DEI & Culture Building
-            </Link>
-          </div>
-        </div>
-
-        <div className="flex flex-col items-start">
-          <h3 className="text-subheading mb-8">Contact Us</h3>
-
-          <div className="flex flex-col text-body-sm">
-            <p className="footer-link relative">
-              <a
-                href="mailto:info@euradicle.com"
-                className="hover:text-[var(--color-primary-mauve)]"
-              >
-                info@euradicle.com
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8">
+        
+        <div className="lg:col-span-3 flex flex-col justify-between items-start space-y-12">
+          <div className="space-y-8">
+            <img
+              src="/Home/logo.gif"
+              alt="EuRadicle Logo"
+              className="w-auto h-20 md:h-24 object-contain"
+            />
+            <div className="flex gap-5 text-xl text-primary-navy/80">
+              <a href="#" className="p-2 rounded-full border border-brand-400/20 hover:bg-white hover:text-[var(--color-primary-mauve)] transition-all duration-300">
+                <FaLinkedinIn />
               </a>
-            </p>
-            <p className="footer-link relative">
-              <a
-                href="tel:+914031003306"
-              className="footer-link relative hover:text-[var(--color-primary-mauve)] transform transition-all duration-300 hover:scale-105"
-              >
-                +91 40 3100 3306
+              <a href="#" className="p-2 rounded-full border border-brand-400/20 hover:bg-white hover:text-[var(--color-primary-mauve)] transition-all duration-300">
+                <FaInstagram />
               </a>
-            </p>
-            <p className="footer-link relative">
-              <a
-                href="tel:+919661188313"
-              className="footer-link relative hover:text-[var(--color-primary-mauve)] transform transition-all duration-300 hover:scale-105"
-              >
-                +91 966 118 8313
+              <a href="#" className="p-2 rounded-full border border-brand-400/20 hover:bg-white hover:text-[var(--color-primary-mauve)] transition-all duration-300">
+                <FaFacebookF />
               </a>
-            </p>
-            {/* </p> */}
-            <div className="flex items-center justify-evenly gap-6 mt-2">
-              <div>
-                <p className="footer-link relative text-body">India</p>
-              <p className="footer-link relative">
-                2nd floor
-                Building no: 8-2-120/86/5/B
-                <br />
-                Road No 3, Banjara Hills
-                <br />
-                Hyderabad, Telangana - 500034
-              </p>
-              </div>
-              <div>
-                
-              <p className="footer-link relative text-body">USA</p>
-              {/* <p className="footer-link relative">
-                <a
-                  href="tel:+17134293753"
-                  className="hover:text-[var(--color-primary-mauve)]"
-                >
-                  +1 (713) 429 3753
-                </a>
-              </p> */}
-              <p className="footer-link relative">
-                EuRadicle Learning Inc
-                <br />
-                10301 Northwest Freeway, Suite 314
-                <br />
-                Houston Texas - 77092
-              </p>
-              </div>
+              <a href="#" className="p-2 rounded-full border border-brand-400/20 hover:bg-white hover:text-[var(--color-primary-mauve)] transition-all duration-300">
+                <FaYoutube />
+              </a>
             </div>
           </div>
+          <p className="text-[10px] uppercase tracking-widest opacity-40 hidden lg:block">
+            © 2026 EuRadicle Learning Inc.
+          </p>
+        </div>
+
+        <div className="lg:col-span-3">
+          <h3 className="text-subheading mb-8 pb-3 border-b border-brand-400/10 w-full">Our Capabilities</h3>
+          <nav className="flex flex-col space-y-4 text-body-sm text-primary-navy/80">
+            <Link to="/capabilities/leadership-development" className="hover:text-[var(--color-primary-mauve)] transition-colors w-fit">Leadership Development</Link>
+            <Link to="/capabilities/consulting-talent-management" className="hover:text-[var(--color-primary-mauve)] transition-colors w-fit">Consulting & Talent Management</Link>
+            <Link to="/capabilities/assessment-development-centers" className="hover:text-[var(--color-primary-mauve)] transition-colors w-fit">Assessment Development Centers</Link>
+            <Link to="/capabilities/power-skills-development" className="hover:text-[var(--color-primary-mauve)] transition-colors w-fit">Power Skills Development</Link>
+            <Link to="/capabilities/digital-business-transformation" className="hover:text-[var(--color-primary-mauve)] transition-colors w-fit">Digital & Business Transformation</Link>
+            <Link to="/capabilities/commercial-sales-enablement" className="hover:text-[var(--color-primary-mauve)] transition-colors w-fit">Commercial Sales Enablement</Link>
+            <Link to="/capabilities/creative-solutions" className="hover:text-[var(--color-primary-mauve)] transition-colors w-fit">Creative Solutions</Link>
+            <Link to="/capabilities/dei-culture-building" className="hover:text-[var(--color-primary-mauve)] transition-colors w-fit">DEI & Culture Building</Link>
+          </nav>
+        </div>
+
+        <div className="lg:col-span-3">
+          <h3 className="text-subheading mb-8 pb-3 border-b border-brand-400/10 w-full">Contact Details</h3>
+          <div className="flex flex-col space-y-6 text-body-sm text-primary-navy/80">
+            <div className="space-y-1">
+              <p className="text-[10px] uppercase tracking-widest opacity-40 font-bold mb-2">Email</p>
+              <a href="mailto:info@euradicle.com" className="hover:text-[var(--color-primary-mauve)] transition-colors block text-base font-medium">info@euradicle.com</a>
+            </div>
+            <div className="space-y-1">
+              <p className="text-[10px] uppercase tracking-widest opacity-40 font-bold mb-2">Inquiries</p>
+              <a href="tel:+914031003306" className="hover:text-[var(--color-primary-mauve)] transition-colors block">+91 40 3100 3306</a>
+              <a href="tel:+919661188313" className="hover:text-[var(--color-primary-mauve)] transition-colors block">+91 966 118 8313</a>
+            </div>
+          </div>
+        </div>
+
+        <div className="lg:col-span-3">
+          <h3 className="text-subheading mb-8 pb-3 border-b border-brand-400/10 w-full">Global Presence</h3>
+          <div className="space-y-8 text-body-sm text-primary-navy/80">
+            <div className="space-y-2">
+              <p className="font-bold text-primary-navy text-[10px] uppercase tracking-[0.2em] opacity-40">India Hub</p>
+              <p className="leading-relaxed">
+                2nd floor Building no: 8-2-120/86/5/B<br />
+                Road No 3, Banjara Hills, Hyderabad<br />
+                Telangana - 500034
+              </p>
+            </div>
+            <div className="space-y-2">
+              <p className="font-bold text-primary-navy text-[10px] uppercase tracking-[0.2em] opacity-40">USA Office</p>
+              <p className="leading-relaxed">
+                EuRadicle Learning Inc<br />
+                10301 Northwest Freeway, Suite 314<br />
+                Houston Texas - 77092
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="col-span-full pt-12 mt-12 border-t border-brand-400/10 lg:hidden text-center">
+          <p className="text-[10px] uppercase tracking-widest opacity-40">
+            © 2026 EuRadicle Learning Inc.
+          </p>
         </div>
       </div>
     </footer>

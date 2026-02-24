@@ -50,7 +50,7 @@ export default function Interns({ interns, info }) {
             <span className="text-[var(--color-primary-mauve)]">TALENT</span>
           </h1>
 
-          <div className="italic text-body sm:text-body-lg max-w-4xl mx-auto space-y-3">
+          <div className="italic text-body sm:text-body-lg max-w-5xl mx-auto space-y-3">
             <p>{info}</p>
           </div>
         </div>

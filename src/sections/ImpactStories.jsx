@@ -53,7 +53,7 @@ const StoryCard = ({ story, index, isHovered, onHover, onLeave, image, slug }) =
           <img
             src={story.iconUrl}
             alt={`${story.title} icon`}
-            className="w-full h-full object-contain rounded-xl"
+            className="w-full h-full object-contain rounded-xl "
           />
         </div>
       )}
@@ -73,7 +73,7 @@ const StoryCard = ({ story, index, isHovered, onHover, onLeave, image, slug }) =
           <h4 className="italic text-white mb-4 text-body">
             {story.tagline}
           </h4>
-          <button className="relative bottom-25 left-0 px-8 py-2.5 rounded-full bg-bg-white text-primary-navy text-subheading-sm font-semibold hover:bg-brand-500 hover:text-bg-white transition-colors duration-300 shadow-xl">
+          <button className="relative max-[595px]:bottom-35 bottom-25 left-0 px-8 py-2.5 rounded-full bg-bg-white text-primary-navy text-subheading-sm font-semibold hover:bg-brand-500 hover:text-bg-white transition-colors duration-300 shadow-xl">
             Know More
           </button>
         </div>

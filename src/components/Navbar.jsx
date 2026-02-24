@@ -7,8 +7,8 @@ const NavLinks = [
   "HOME",
   "WHY EURADICLE",
   "OUR CAPABILITIES",
-  "DOWNLOADS",
   "GROW WITH US",
+  "DOWNLOADS",
 ];
 
 const capabilities = [
@@ -192,7 +192,7 @@ function Navbar({ openModal }) {
           </Link>
         </div>
 
-        <nav className="hidden md:flex w-4/6 items-center justify-center gap-8">
+        <nav className="hidden min-[900px]:flex w-4/6 items-center justify-center gap-8">
           {NavLinks.map((item) => {
             const isCapabilities = item === "OUR CAPABILITIES";
             const isBrochure = item === "DOWNLOADS";
@@ -331,7 +331,7 @@ function Navbar({ openModal }) {
           })}
         </nav>
 
-        <div className="hidden md:flex w-1/6 items-center justify-end">
+        <div className="hidden min-[900px]:flex w-1/6 items-center justify-end">
           <Link
             to="/get-in-touch"
             onClick={handleNavClick}
@@ -342,7 +342,7 @@ function Navbar({ openModal }) {
         </div>
 
         <button
-          className="md:hidden flex flex-col gap-1"
+          className="min-[900px]:hidden flex flex-col gap-1"
           onClick={() => setOpenMobile(!openMobile)}
         >
           <span className="w-6 h-[2px] bg-[var(--color-primary-navy)]"></span>
@@ -353,7 +353,7 @@ function Navbar({ openModal }) {
 
       <div
         ref={mobileMenuRef}
-        className="md:hidden overflow-hidden bg-[var(--color-bg-white)]"
+        className="min-[900px]:hidden overflow-hidden bg-[var(--color-bg-white)]"
         style={{ height: 0 }}
       >
         <div className="flex flex-col gap-4 py-6 px-4">

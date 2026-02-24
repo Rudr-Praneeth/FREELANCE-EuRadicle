@@ -63,10 +63,10 @@ export default function GlobalFooterSection() {
         </p>
       </div>
 
-      <div className="w-[80%] h-[420px] mx-auto rounded-xl pb-8 relative z-0">
+      <div className="h-[270px] w-auto sm:w-[80%] sm:h-[420px] mx-auto rounded-xl pb-8 relative z-0">
         <MapContainer
-          center={[20, 0]}
-          zoom={isMobile ? 0.5 : 2}
+          center={[0, 0]}
+          zoom={isMobile ? 0.4 : 2}
           scrollWheelZoom={false}
            attributionControl={false} 
           className="w-full h-full rounded-3xl"

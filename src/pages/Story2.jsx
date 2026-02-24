@@ -108,17 +108,17 @@ export default function Story1() {
     };
 
     const reset = () => {
-      imagesRef.current.forEach((img, idx) =>
-        gsap.to(img, {
-          x: idx === 0 ? -25 : idx === 1 ? 25 : 0,
-          y: idx === 2 ? 18 : 0,
-          rotate: idx === 0 ? -6 : idx === 1 ? 6 : 0,
-          scale: 0.96,
-          duration: 0.5,
-          ease: "power3.out",
-        }),
-      );
-    };
+  imagesRef.current.forEach((img, idx) =>
+    gsap.to(img, {
+      x: idx === 0 ? -25 : idx === 1 ? 25 : 0,
+      y: idx === 2 ? 18 : 0,
+      rotate: idx === 0 ? -6 : idx === 1 ? 6 : 0,
+      scale: 0.96,
+      duration: 0.5,
+      ease: "power3.out",
+    }),
+  );
+};
 
     imagesRef.current.forEach((el) => {
       el.addEventListener("mouseenter", spread);
@@ -158,7 +158,7 @@ export default function Story1() {
         </div>
       </div>
 
-      <div className="container mx-auto px-6 md:px-12 py-6">
+      <div className="container mx-auto px-6 md:px-12 py-4">
         <button
           onClick={() => navigate(-1)}
           className="mb-10 px-6 py-2 border border-mauve text-mauve hover:bg-mauve hover:text-white transition-all duration-300 rounded-md"
@@ -166,8 +166,8 @@ export default function Story1() {
           ← Back
         </button>
 
-        <div className="flex flex-col md:flex-row gap-12">
-          <div className="md:w-[40%] flex items-center justify-center relative h-[520px]">
+        <div className="flex flex-col md:flex-row gap-12 md:gap-6">
+          <div className="md:w-[40%] flex items-center justify-center relative min-h-[350px]">
             {Aspire.hoveerImages.map((img, idx) => (
               <img
                 key={idx}
@@ -212,7 +212,9 @@ ${idx === 2 ? "z-20" : "z-10"}`}
               ))}
             </ul>
 
-            <p className="mt-4 text-body text-primary-navy">{Aspire.outro}</p>
+            <p className="mt-4 text-body text-primary-navy">
+              {Aspire.outro}
+            </p>
           </div>
         </div>
 

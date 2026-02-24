@@ -158,7 +158,7 @@ export default function Story1() {
         </div>
       </div>
 
-      <div className="container mx-auto px-6 md:px-12 py-6">
+      <div className="container mx-auto px-6 md:px-12 py-4">
         <button
           onClick={() => navigate(-1)}
           className="mb-10 px-6 py-2 border border-mauve text-mauve hover:bg-mauve hover:text-white transition-all duration-300 rounded-md"
@@ -166,8 +166,8 @@ export default function Story1() {
           ← Back
         </button>
 
-        <div className="flex flex-col md:flex-row gap-12">
-          <div className="md:w-[40%] flex items-center justify-center relative h-[520px]">
+        <div className="flex flex-col md:flex-row gap-12 md:gap-6">
+          <div className="md:w-[40%] flex items-center justify-center relative min-h-[350px]">
             {LeaderStory.hoveerImages.map((img, idx) => (
               <img
                 key={idx}

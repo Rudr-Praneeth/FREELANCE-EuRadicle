@@ -1,58 +1,19 @@
-import React, { useRef } from "react";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-
-gsap.registerPlugin(useGSAP);
+import React from "react";
 
 const LogoMarqueeColumn = ({ logoIndices, reverse = false }) => {
-  const colRef = useRef(null);
-  const trackRef = useRef(null);
-  const timeline = useRef(null);
-
-  useGSAP(
-    () => {
-      const track = trackRef.current;
-      const height = track.scrollHeight / 2;
-
-      gsap.set(track, { y: reverse ? -height : 0 });
-
-      timeline.current = gsap.to(track, {
-        y: reverse ? 0 : -height,
-        duration: 20,
-        ease: "none",
-        repeat: -1,
-        modifiers: {
-          y: gsap.utils.unitize((y) => {
-            const value = parseFloat(y);
-            return reverse
-              ? ((value + height) % height) - height
-              : value % -height;
-          }),
-        },
-      });
-    },
-    { scope: colRef }
-  );
-
-  const handleMouseEnter = () => timeline.current?.pause();
-  const handleMouseLeave = () => timeline.current?.play();
-
   return (
-    <div
-      ref={colRef}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      className="relative h-[320px] sm:h-[360px] md:h-[420px] lg:h-[480px] overflow-hidden"
-    >
+    <div className="relative h-[320px] sm:h-[360px] md:h-[420px] lg:h-[480px] overflow-hidden group">
       <div
-        ref={trackRef}
-        className="flex flex-col gap-4 md:gap-5 items-center"
+        className={`flex flex-col gap-4 md:gap-5 items-center will-change-transform group-hover:[animation-play-state:paused] ${
+          reverse ? "animate-marquee-reverse" : "animate-marquee"
+        }`}
       >
-        {[...logoIndices, ...logoIndices].map((index, idx) => (
-          <div key={idx} className="w-full flex items-center justify-center">
+        {[...logoIndices, ...logoIndices, ...logoIndices].map((index, idx) => (
+          <div key={idx} className="w-full flex items-center justify-center py-2">
             <img
               src={`/logos/${index}.png`}
               alt={`Partner Logo ${index}`}
+              loading="lazy"
               className="max-w-[170px] sm:max-w-[190px] md:max-w-[210px] lg:max-w-[230px] h-auto transition-transform duration-300 hover:scale-110 object-contain"
             />
           </div>
@@ -63,8 +24,6 @@ const LogoMarqueeColumn = ({ logoIndices, reverse = false }) => {
 };
 
 const LogoSection = () => {
-  const container = useRef(null);
-
   const totalLogos = 34;
   const indices = Array.from({ length: totalLogos }, (_, i) => i + 1).filter(
     (i) => i !== 18
@@ -78,10 +37,7 @@ const LogoSection = () => {
   ];
 
   return (
-    <section
-      ref={container}
-      className="relative flex items-center justify-center py-16 sm:py-20 md:py-24 px-4 bg-bg-muted/30 overflow-hidden"
-    >
+    <section className="relative flex items-center justify-center py-16 sm:py-20 md:py-24 px-4 bg-bg-muted/30 overflow-hidden">
       <div className="w-full max-w-7xl mx-auto">
         <div className="absolute inset-0 pointer-events-none z-20">
           <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-bg-muted/30 to-transparent" />

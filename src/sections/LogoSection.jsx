@@ -91,7 +91,7 @@ const LogoSection = () => {
         <div className="relative z-10 mx-auto">
           <div className="text-center mb-12">
             <h1 className="text-h1 text-primary-navy tracking-tight text-[clamp(28px,5vw,56px)] leading-tight">
-              TRUSTED BY <span className="text-primary-mauve">BIG BRANDS</span>
+              TRUSTED BY THE <span className="text-primary-mauve">BIG BRANDS</span>
               <br />
               AROUND THE WORLD
             </h1>

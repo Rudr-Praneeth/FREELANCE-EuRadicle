@@ -78,7 +78,7 @@ const Hero = () => {
           ref={sublineRef}
           className="text-body-lg mb-6 min-[600px]:mb-8 min-[768px]:mb-10 max-w-full min-[600px]:max-w-xl min-[768px]:max-w-2xl text-bg-muted/90 text-[clamp(14px,2.5vw,20px)] leading-relaxed"
         >
-          We develop talent that performs with purpose and leads with impact , <br/>
+          We develop talent that performs with purpose and leads with impact, <br/>
           turning your people into your most enduring edge.
         </p>
       </div>

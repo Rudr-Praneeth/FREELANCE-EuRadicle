@@ -61,7 +61,7 @@ export default function Story1() {
           duration: 0.8,
           delay: idx * 0.15,
           ease: "power3.out",
-        }
+        },
       );
     });
 
@@ -76,7 +76,7 @@ export default function Story1() {
           duration: 0.8,
           delay: idx * 0.15,
           ease: "power3.out",
-        }
+        },
       );
     });
 
@@ -108,21 +108,29 @@ export default function Story1() {
     };
 
     const reset = () => {
-      imagesRef.current.forEach((img) =>
-        gsap.to(img, {
-          x: 0,
-          y: 0,
-          rotate: 0,
-          scale: 1,
-          duration: 0.5,
-          ease: "power3.out",
-        })
-      );
-    };
+  imagesRef.current.forEach((img, idx) =>
+    gsap.to(img, {
+      x: idx === 0 ? -25 : idx === 1 ? 25 : 0,
+      y: idx === 2 ? 18 : 0,
+      rotate: idx === 0 ? -6 : idx === 1 ? 6 : 0,
+      scale: 0.96,
+      duration: 0.5,
+      ease: "power3.out",
+    }),
+  );
+};
 
     imagesRef.current.forEach((el) => {
       el.addEventListener("mouseenter", spread);
       el.addEventListener("mouseleave", reset);
+    });
+    imagesRef.current.forEach((img, idx) => {
+      gsap.set(img, {
+        x: idx === 0 ? -25 : idx === 1 ? 25 : 0,
+        y: idx === 2 ? 18 : 0,
+        rotate: idx === 0 ? -6 : idx === 1 ? 6 : 0,
+        scale: 0.96,
+      });
     });
   }, []);
 
@@ -165,7 +173,10 @@ export default function Story1() {
                 key={idx}
                 ref={(el) => (imagesRef.current[idx] = el)}
                 src={img}
-                className="absolute w-[140px] h-[200px] md:w-[180px] md:h-[280px] rounded-2xl border border-gray-200 shadow-xl cursor-pointer transition-all duration-500 object-cover"
+                className={`absolute w-[140px] h-[200px] md:w-[180px] md:h-[280px] 
+rounded-2xl border border-gray-200 shadow-xl cursor-pointer 
+transition-transform duration-100 hover:scale-105 object-cover 
+${idx === 2 ? "z-20" : "z-10"}`}
               />
             ))}
           </div>

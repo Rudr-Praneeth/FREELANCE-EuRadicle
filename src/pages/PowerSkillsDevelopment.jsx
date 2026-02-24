@@ -12,7 +12,7 @@ function PowerSkillsDevelopment() {
         {
           heading: "Train the Trainer & Learning Facilitation",
           description:
-            "Impactful learning depends on powerful delivery. We build facilitation excellence grounded in adult learning, presence, and engagement-enabling trainers to spark dialogue and turn learning into action.",
+            "Impactful learning depends on powerful delivery. We build facilitation excellence grounded in adult learning, presence, and engagement - enabling trainers to spark dialogue and turn learning into action.",
         },
         {
           heading: "Communication & Interpersonal Excellence",
@@ -22,7 +22,7 @@ function PowerSkillsDevelopment() {
         {
           heading: "Presentation & Storytelling Skills",
           description:
-            "Influence begins with expression. We help professionals craft compelling narratives and present with confidence and authenticity-so their ideas inspire alignment and action.",
+            "Influence begins with expression. We help professionals craft compelling narratives and present with confidence and authenticity - so their ideas inspire alignment and action.",
         },
         {
           heading: "Negotiation & Stakeholder Management",

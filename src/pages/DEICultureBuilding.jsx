@@ -11,12 +11,12 @@ export default function DEICultureBuilding() {
         {
           heading: "Women in Leadership",
           description:
-            "Advancing women in leadership goes beyond skill-building. We strengthen confidence, visibility, and authentic influence-enabling women leaders to navigate organizational dynamics and lead with clarity, credibility, and purpose.",
+            "Advancing women in leadership goes beyond skill-building. We strengthen confidence, visibility, and authentic influence - enabling women leaders to navigate organizational dynamics and lead with clarity, credibility, and purpose.",
         },
         {
           heading: "Cross-Cultural Effectiveness",
           description:
-            "Diverse teams thrive on cultural intelligence. We strengthen awareness, adaptability, and cross-cultural communication-enabling teams to build trust, collaborate effectively, and perform cohesively across global and diverse environments.",
+            "Diverse teams thrive on cultural intelligence. We strengthen awareness, adaptability, and cross-cultural communication - enabling teams to build trust, collaborate effectively, and perform cohesively across global and diverse environments.",
         },
       ]}
     />

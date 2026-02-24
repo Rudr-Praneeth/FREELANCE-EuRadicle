@@ -51,10 +51,7 @@ const App = () => {
           <Route path="/get-in-touch" element={<GetInTouch />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/blogs/power-skills" element={<BlogPowerSkills />} />
-          <Route
-            path="/blogs/ai-ethics"
-            element={<BlogPsychologicalSafety />}
-          />
+          <Route path="/blogs/ai-ethics" element={<BlogPsychologicalSafety />} />
           <Route path="/blogs/chatai-at" element={<BlogCapabilityBuilding />} />
           <Route
             path="/capabilities/leadership-development"

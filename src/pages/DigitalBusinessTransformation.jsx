@@ -15,7 +15,7 @@ function DigitalBusinessTransformation() {
             "Innovation starts with empathy. We use structured, design-led approaches to spark creative collaboration and build practical solutions grounded in real human needs.",
         },
         {
-          heading: "Gen AI / Generative AI Enablement",
+          heading: "Generative AI Enablement",
           description:
             "AI readiness is a strategic edge. We build digital confidence and responsible adoption, helping teams integrate generative tools to boost efficiency, insight, and innovation while keeping the human touch.",
         },

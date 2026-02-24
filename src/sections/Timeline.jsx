@@ -24,8 +24,10 @@ export default function StoryTimelineSection({ items }) {
       const mm = gsap.matchMedia();
 
       mm.add("(min-width: 768px)", () => {
-        const getTotalScroll = () =>
-          trackRef.current.scrollWidth - window.innerWidth;
+        const getTotalScroll = () => {
+          const END_GAP = 30;
+          return trackRef.current.scrollWidth - window.innerWidth + END_GAP;
+        };
 
         const horizontalTween = gsap.to(trackRef.current, {
           x: () => -getTotalScroll(),
@@ -33,19 +35,25 @@ export default function StoryTimelineSection({ items }) {
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top top",
-            end: () => `+=${getTotalScroll() * (items.length - 3)}`,
+            end: () => `+=${getTotalScroll()}`,
             scrub: 0.3,
             pin: true,
             anticipatePin: 1,
+            // markers: true,
             snap: {
               snapTo: 1 / (items.length - 1),
               duration: 0.4,
               delay: 0,
-              ease: "power3.out",
+              ease: "none",
               inertia: false,
             },
             onUpdate: (self) => {
-              const index = Math.round(self.progress * (items.length - 1));
+              const total = items.length - 1;
+              const rawIndex = self.progress * total;
+              const index = Math.min(
+                total,
+                Math.max(0, Math.floor(rawIndex + 0.5)),
+              );
               setActiveIndex(index);
             },
           },
@@ -62,8 +70,10 @@ export default function StoryTimelineSection({ items }) {
       });
 
       mm.add("(max-width: 767px)", () => {
-        const getTotalScroll = () =>
-          trackRef.current.scrollWidth - window.innerWidth;
+        const getTotalScroll = () => {
+          const END_GAP = 30;
+          return trackRef.current.scrollWidth - window.innerWidth + END_GAP;
+        };
 
         const horizontalTween = gsap.to(trackRef.current, {
           x: () => -getTotalScroll(),
@@ -83,7 +93,12 @@ export default function StoryTimelineSection({ items }) {
               inertia: false,
             },
             onUpdate: (self) => {
-              const index = Math.round(self.progress * (items.length - 1));
+              const total = items.length - 1;
+              const rawIndex = self.progress * total;
+              const index = Math.min(
+                total,
+                Math.max(0, Math.floor(rawIndex + 0.5)),
+              );
               setActiveIndex(index);
             },
           },

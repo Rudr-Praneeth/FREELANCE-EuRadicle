@@ -50,14 +50,13 @@ export default function MindsBehind({ items }) {
       ref={sectionRef}
       className="bg-white pb-12 sm:pb-16 md:pb-20 lg:pb-24"
     >
-      <div className="mx-auto w-full max-w-350 px-4 sm:px-6 md:px-8 lg:px-10">
+      <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 md:px-8 lg:px-10">
         <div className="text-center">
           <h2 className="text-h1 font-bold text-primary-navy leading-tight">
-            OUR CORE{" "}
-            <span className="text-primary-mauve">VERTICALS</span>
+            OUR CORE <span className="text-primary-mauve">VERTICALS</span>
           </h2>
 
-          <p className="italic mx-auto mt-3 sm:mt-4 md:mt-5 max-w-3xl text-xs sm:text-sm md:text-base leading-relaxed">
+          <p className="italic mx-auto mt-3 sm:mt-4 md:mt-5 max-w-5xl text-xs sm:text-sm md:text-base leading-relaxed">
             We combine deep expertise, practical experience, and a
             results-driven approach to deliver transformative solutions for our
             clients. Our versatile pool of consultants brings together diverse
@@ -70,8 +69,8 @@ export default function MindsBehind({ items }) {
           </p>
         </div>
 
-        <div className="mt-8 sm:mt-10 md:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 place-items-center">
-          {items.map((item, i) => (
+        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+          {items.slice(0, 3).map((item, i) => (
             <div
               key={i}
               ref={(el) => (cardsRef.current[i] = el)}
@@ -80,16 +79,8 @@ export default function MindsBehind({ items }) {
                 rounded-2xl
                 bg-white
                 shadow-lg
-                w-full
-                max-w-xs
-                sm:max-w-sm
-                lg:max-w-sm
-                min-h-95
-                ${
-                  i === items.length - 1
-                    ? "sm:col-span-2 sm:col-start-1 sm:justify-self-center lg:col-span-1 lg:col-start-2"
-                    : ""
-                }
+                w-full h-full
+                ${""}
               `}
             >
               <svg
@@ -130,6 +121,99 @@ export default function MindsBehind({ items }) {
               </div>
             </div>
           ))}
+          {items[3] && (
+            <div
+              ref={(el) => (cardsRef.current[3] = el)}
+              className="relative rounded-2xl bg-white shadow-lg w-full h-full"
+            >
+              <svg
+                className="absolute inset-0 h-full w-full"
+                viewBox="0 0 100 100"
+                preserveAspectRatio="none"
+              >
+                <rect
+                  x="0.5"
+                  y="0.5"
+                  width="99"
+                  height="99"
+                  rx="3"
+                  ry="3"
+                  fill="none"
+                  stroke="#9b7ba1"
+                  strokeWidth="0.8"
+                  className="card-border"
+                />
+              </svg>
+
+              <div className="relative z-10 overflow-hidden rounded-2xl p-3 sm:p-4 flex flex-col h-full">
+                <img
+                  src={items[3].img}
+                  alt=""
+                  className="w-full h-40 sm:h-44 md:h-48 object-cover object-top rounded-xl"
+                />
+
+                <div className="mt-4 flex-1 flex flex-col">
+                  <h3 className="text-sm sm:text-base md:text-lg font-semibold text-primary-mauve">
+                    {items[3].title}
+                  </h3>
+
+                  <p className="mt-2 text-xs sm:text-sm leading-relaxed">
+                    {items[3].text}
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
+          <div className="hidden lg:flex items-center justify-center">
+            <img
+              src="/Home/logo.gif"
+              alt="logo"
+              className="h-92 md:h-90 object-contain"
+            />
+          </div>
+          {items[4] && (
+            <div
+              ref={(el) => (cardsRef.current[4] = el)}
+              className="relative rounded-2xl bg-white shadow-lg w-full h-full sm:col-span-2 sm:col-start-1 sm:justify-self-center lg:col-span-1 lg:col-start-auto"
+            >
+              <svg
+                className="absolute inset-0 h-full w-full"
+                viewBox="0 0 100 100"
+                preserveAspectRatio="none"
+              >
+                <rect
+                  x="0.5"
+                  y="0.5"
+                  width="99"
+                  height="99"
+                  rx="3"
+                  ry="3"
+                  fill="none"
+                  stroke="#9b7ba1"
+                  strokeWidth="0.8"
+                  className="card-border"
+                />
+              </svg>
+
+              <div className="relative z-10 overflow-hidden rounded-2xl p-3 sm:p-4 flex flex-col h-full">
+                <img
+                  src={items[4].img}
+                  alt=""
+                  className="w-full h-40 sm:h-44 md:h-48 object-cover object-top rounded-xl"
+                />
+
+                <div className="mt-4 flex-1 flex flex-col">
+                  <h3 className="text-sm sm:text-base md:text-lg font-semibold text-primary-mauve">
+                    {items[4].title}
+                  </h3>
+
+                  <p className="mt-2 text-xs sm:text-sm leading-relaxed">
+                    {items[4].text}
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </section>

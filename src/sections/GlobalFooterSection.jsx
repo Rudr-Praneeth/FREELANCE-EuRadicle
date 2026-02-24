@@ -4,6 +4,7 @@ import gsap from "gsap";
 import { MapContainer, TileLayer, Marker, Tooltip } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
+import { useMediaQuery } from "react-responsive";
 
 const createIcon = () => {
   return new L.DivIcon({
@@ -22,6 +23,7 @@ const locations = [
 
 export default function GlobalFooterSection() {
   const sectionRef = useRef(null);
+  const isMobile = useMediaQuery({ maxWidth: 768 });
 
   useGSAP(
     () => {
@@ -50,7 +52,7 @@ export default function GlobalFooterSection() {
           OUR GLOBAL{" "}
           <span className="text-[var(--color-primary-mauve)]">FOOTPRINTS</span>
         </h1>
-        <p className="italic text-body-md mt-6 max-w-3xl mx-auto gfs-animate">
+        <p className="italic text-body-sm mt-6 max-w-5xl mx-auto gfs-animate">
           Our footprint spans key growth and innovation markets across the U.S.,
           UAE, the Middle East, and India, allowing us to operate with both
           global perspective and local relevance. With our registered office in
@@ -64,8 +66,9 @@ export default function GlobalFooterSection() {
       <div className="w-[80%] h-[420px] mx-auto rounded-xl pb-8 relative z-0">
         <MapContainer
           center={[20, 0]}
-          zoom={2}
+          zoom={isMobile ? 0.5 : 2}
           scrollWheelZoom={false}
+           attributionControl={false} 
           className="w-full h-full rounded-3xl"
         >
           <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />

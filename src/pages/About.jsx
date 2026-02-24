@@ -89,16 +89,6 @@ const About = () => {
       text: "Ensuring seamless execution, our operations team anchors every engagement with strong coordination, governance, and quality oversight. They enable consistency and reliability across programs and geographies.",
       img: "Minds/compressed-Delivery & Governance.jpg",
     },
-    {
-      title: "Financial Stewardship",
-      text: "Providing financial rigor and transparency, our finance team supports informed decision-making and sustainable growth, ensuring operational discipline across the organization.",
-      img: "Minds/compressed-Financial Stewardship.jpg",
-    },
-    {
-      title: "People & Culture",
-      text: "Shaping the foundation of EuRadicle, our HR team focuses on talent development, alignment, and building a culture where individuals and teams grow together.",
-      img: "Minds/compressed-People & Culture.jpg",
-    },
   ];
 
   return (

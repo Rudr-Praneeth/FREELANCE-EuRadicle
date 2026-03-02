@@ -13,19 +13,19 @@ function BlogsSection() {
     {
       title:
         "Why Power Skills are the new Currency of Leadership in the age of AI",
-      imageUrl: "Home/compressed-blog1.jpeg",
+      imageUrl: "Home/compressed-blog1.png",
       path: "power-skills",
     },
     {
       title:
         "From Training Programs to Capability Building: What Organisations must Rethink",
-      imageUrl: "Home/compressed-blog2.jpeg",
+      imageUrl: "Home/compressed-blog2.png",
       path: "chatai-at",
     },
     {
       title:
         "Psychological Safety, Trust and Performance: The Capability Connection",
-      imageUrl: "Home/compressed-blog3.jpeg",
+      imageUrl: "Home/compressed-blog3.png",
       path: "ai-ethics",
     },
   ];

@@ -1,27 +1,27 @@
 const capabilities = [
     {
         title: "Leadership Development",
-        imageUrl: "Capabilities/compressed-Leadership development Card.png",
+        imageUrl: "Capabilities/Leadership Development.png",
         sub: ["Managerial & Leadership Journeys", "Coaching Mindsets & Conversations", "Team Effectiveness & Collaboration", "Leading Through Change & Influence"]
     },
     {
         title: "Consulting & Talent Management",
-        imageUrl: "Capabilities/compressed-Consulting & Talent Management - Card.png",
+        imageUrl: "Capabilities/Cosulting & Talent Management - Card.png",
         sub: ["Internal Consulting & Advisory Skills", "Career & Succession Planning", "Onboarding & Continuous Learning Frameworks"]
     },
     {
         title: "Assessment & Development Centers",
-        imageUrl: "Capabilities/compressed-Assessment & Development Centers - Card.png",
+        imageUrl: "Capabilities/compressed-Assesment & Development Centres - Card.png",
         sub: ["Talent Readiness & Development Diagnostics"]
     },
     {
         title: "Power Skills Development",
-        imageUrl: "Capabilities/compressed-Power Skills Development Card.png",
+        imageUrl: "Capabilities/Power Skills Development.png",
         sub: ["Train the Trainer & Learning Facilitation","Communication & Interpersonal Excellence","Presentation & Storytelling Skills","Negotiation & Stakeholder Management", "Customer Service & Client Experience","Emotional Intelligence & Self-Mastery", "Problem Solving & Decision Making"]
     },
     {
         title: "Digital & Business Transformation",
-        imageUrl: "Capabilities/compressed-DIGITAL & BUSINESS TRANSFORMATION.jpg",
+        imageUrl: "Capabilities/Digital & Business Transformation.png",
         sub: ["Design Thinking", "Generative AI Enablement","Data-Driven Decision Making"]
     },
     {
@@ -31,12 +31,12 @@ const capabilities = [
     },
     {
         title: "DEI & Culture Building",
-        imageUrl: "Capabilities/compressed-DEI & CULTURE BUILDING inside picture.png",
+        imageUrl: "Capabilities/DEI & Culture Building.jpg",
         sub: ["Women in Leadership","Cross-Cultural Effectiveness"]
     },
     {
         title: "Creative Solutions",
-        imageUrl: "Capabilities/compressed-Creative solutions.png",
+        imageUrl: "Capabilities/Creative Solutions.png",
         sub: ["E-Learning & Digital Course Design","Storyboarding & Learning Content Development","Collateral Design & Visual Communication","Program Management & Learning Operations","Learning Analytics & Reporting"]
     },
 ];

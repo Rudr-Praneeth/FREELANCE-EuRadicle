@@ -7,7 +7,7 @@ function BlogCapabilityBuilding() {
       subtitle="Why organizations must move beyond training programs to build real capability."
       date="Jul 31, 2025"
       category="News"
-      image="/Home/compressed-blog2.jpeg"
+      image="/Home/compressed-blog2.png"
       authorName={"Shahnawaz Khan"}
       authorRole={"Founder & Managing Partner"}
     >

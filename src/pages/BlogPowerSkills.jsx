@@ -7,7 +7,7 @@ function BlogPowerSkills() {
       subtitle="Why power skills are the new currency of leadership in the age of AI."
       date="Jan 1, 2026"
       category="News"
-      image="/Home/compressed-blog1.jpeg"
+      image="/Home/compressed-blog1.png"
       authorName={"Atreye Gupta"}
       authorRole={"Manager – Solutioning "}
     >

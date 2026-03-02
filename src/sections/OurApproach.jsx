@@ -8,11 +8,27 @@ gsap.registerPlugin(ScrollTrigger);
 export default function OurApproach({ data }) {
   const sectionRef = useRef(null);
   const introRef = useRef(null);
+  const bgRef = useRef(null);
   const rowsRef = useRef([]);
 
   useGSAP(() => {
     const ctx = gsap.context(() => {
       const isMobile = window.innerWidth < 768;
+
+      gsap.fromTo(
+        bgRef.current,
+        { opacity: 0 },
+        {
+          opacity: 0.08,
+          ease: "none",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top bottom",
+            end: "top 20%",
+            scrub: true,
+          },
+        }
+      );
 
       gsap.from(introRef.current, {
         opacity: 0,
@@ -26,15 +42,12 @@ export default function OurApproach({ data }) {
       });
 
       rowsRef.current.forEach((row) => {
-        const number = row.querySelector(".approach-number");
+        const icon = row.querySelector(".approach-icon");
         const content = row.querySelector(".approach-content");
 
         gsap.fromTo(
-          number,
-          {
-            x: isMobile ? -30 : -60,
-            opacity: 0,
-          },
+          icon,
+          { x: isMobile ? -30 : -60, opacity: 0 },
           {
             x: 0,
             opacity: 1,
@@ -44,15 +57,12 @@ export default function OurApproach({ data }) {
               trigger: row,
               start: "top 85%",
             },
-          },
+          }
         );
 
         gsap.fromTo(
           content,
-          {
-            x: isMobile ? 30 : 60,
-            opacity: 0,
-          },
+          { x: isMobile ? 30 : 60, opacity: 0 },
           {
             x: 0,
             opacity: 1,
@@ -63,7 +73,7 @@ export default function OurApproach({ data }) {
               trigger: row,
               start: "top 85%",
             },
-          },
+          }
         );
       });
     }, sectionRef);
@@ -72,8 +82,17 @@ export default function OurApproach({ data }) {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-white py-24 overflow-hidden">
-      <div className="mx-auto max-w-6xl px-6">
+    <section ref={sectionRef} className="relative bg-white py-24 overflow-hidden">
+      <div
+        ref={bgRef}
+        className="absolute top-50 left-10 right-10 h-1/2 bg-center bg-cover bg-no-repeat pointer-events-none"
+        style={{
+          backgroundImage: "url('/Hands.jpeg')",
+          opacity: 0,
+        }}
+      />
+
+      <div className="relative z-10 mx-auto max-w-6xl px-6">
         <div ref={introRef} className="text-center">
           <h2 className="text-h1 font-bold tracking-tight text-primary-navy">
             OUR <span className="text-primary-mauve">APPROACH</span>
@@ -91,25 +110,14 @@ export default function OurApproach({ data }) {
             <div
               key={i}
               ref={(el) => (rowsRef.current[i] = el)}
-              className="
-              grid
-              grid-cols-[100px_1fr]
-              md:grid-cols-[160px_1fr]
-              gap-6
-              md:gap-12
-              "
+              className="grid grid-cols-[80px_1fr] md:grid-cols-[140px_1fr] gap-6 md:gap-12"
             >
-              <div
-                className="
-              approach-number
-              text-[4rem]
-              md:text-[7rem]
-              font-bold
-              leading-none
-              text-primary-mauve
-              "
-              >
-                {item.number}
+              <div className="approach-icon flex items-center justify-center">
+                <img
+                  src={item.iconUrl}
+                  alt={item.title}
+                  className="w-14 h-14 md:w-24 md:h-24 object-contain rounded-full"
+                />
               </div>
 
               <div className="approach-content">

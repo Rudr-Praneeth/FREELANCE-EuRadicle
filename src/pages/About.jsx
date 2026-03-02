@@ -5,6 +5,7 @@ import OurApproach from '../sections/OurApproach'
 import MindsBehind from '../sections/MindsBehind'
 import GlobalFootprintsSection from '../sections/GlobalFooterSection'
 import BeyondBusiness from '../sections/BeyondBusiness'
+import { icon } from 'leaflet'
 
 const About = () => {
     const items = [
@@ -56,17 +57,19 @@ const About = () => {
               number: "01",
               title: "End-to-End Accountability",
               text: `We own the full capability journey-from business and talent diagnosis through design, delivery, and impact measurement-ensuring learning is embedded into daily work and aligned with business priorities. Through structured governance and analytics, we drive learning transfer, behaviour change, and performance improvement that inform stronger leadership decisions.`,
+              iconUrl: "Approach/1.jpeg"
             },
             {
               number: "02",
               title: "Deep Expertise",
               text: `Grounded in leadership development, organisational development, behavioural science, and talent management, our consultants bring both insight and real-world business experience to every engagement. Drawing on neuroscience and behavioural research, we design role-relevant, context-driven capability solutions that equip leaders and teams with the judgment, influence, and decision-making skills needed to perform in complex environments.`,
+              iconUrl: "Approach/2.jpeg"
             },
             {
               number: "03",
               title: "Agile Co-Created Solutions",
               text: `Every solution is developed in close collaboration with clients-blending consulting expertise with deep contextual insight. Solutions are co-created to align with business realities, leadership expectations, and organizational culture. From enterprise leadership journeys to capability programs for growing organizations, solutions are tailored to reflect each client’s brand, language, and real-world challenges-driving relevance, ownership, and on-the-job application with measurable impact.
-`,
+`,            iconUrl: "Approach/3.jpeg"
             },
     ];
       const minds = [

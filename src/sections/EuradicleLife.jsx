@@ -7,7 +7,7 @@ export default function EuradicleLife() {
 
   const images = [
     "/Celebrations/compressed-celeb3.jpeg",
-    "/Celebrations/compressed-celeb2.jpg",
+    "/Celebrations/Start.jpeg",
     "/Celebrations/compressed-celeb4.jpg",
     "/Celebrations/compressed-celeb5.jpg",
     "/Celebrations/compressed-celeb6.jpg",
@@ -25,7 +25,7 @@ export default function EuradicleLife() {
             <span className="text-[var(--color-primary-mauve)]">EURADICLE</span>
           </h1>
 
-          <p className="italic text-body-sm mt-6 max-w-5xl mx-auto leading-relaxed">
+          <p className="italic text-body-sm mt-6 max-w-6xl mx-auto leading-relaxed">
             We believe great work comes from people who feel valued - not burned
             out. At EuRadicle, impact begins with balance, trust, and belonging.
             Our culture champions curiosity, open dialogue, and individuality

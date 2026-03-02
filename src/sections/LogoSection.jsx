@@ -54,8 +54,9 @@ const LogoSection = () => {
           </div>
 
           <div className="relative rounded-[28px] p-6 md:p-10 shadow-sm border border-brand-400/10">
-            <div className="block lg:hidden">
-              <LogoMarqueeColumn logoIndices={indices} reverse={false} />
+            <div className="grid grid-cols-2 lg:hidden">
+              <LogoMarqueeColumn logoIndices={columns[0]} reverse={false} />
+              <LogoMarqueeColumn logoIndices={columns[1]} reverse={true} />
             </div>
 
             <div className="hidden lg:grid lg:grid-cols-3 gap-6 items-start">

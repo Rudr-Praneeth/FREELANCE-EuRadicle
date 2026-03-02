@@ -49,7 +49,6 @@ export default function Interns({ interns, info }) {
             <span className="text-[var(--color-primary-navy)]">EARLY </span>
             <span className="text-[var(--color-primary-mauve)]">TALENT</span>
           </h1>
-
           <div className="italic text-body-sm mt-6 max-w-5xl mx-auto">
             <p>{info}</p>
           </div>
@@ -61,17 +60,17 @@ export default function Interns({ interns, info }) {
               key={i}
               className="intern-card flex items-center justify-center"
             >
-              <div className="w-full max-w-5xl bg-[var(--color-bg-muted)] rounded-2xl px-6 sm:px-10 py-6 sm:py-8 shadow-md">
-                <div className="flex items-center gap-6">
+              <div className="w-full max-w-5xl bg-[var(--color-bg-muted)] rounded-2xl px-4 sm:px-10 py-6 sm:py-8 shadow-md">
+                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6">
                   <img
                     src={item.url}
                     alt={item.name}
-                    className="w-20 h-20 sm:w-16 sm:h-16 rounded-full object-cover flex-shrink-0"
+                    className="w-20 h-20 rounded-full object-cover flex-shrink-0"
                   />
 
-                  <div className="flex-1">
+                  <div className="flex-1 text-center sm:text-left">
                     <p className="text-body sm:text-body-lg italic text-[var(--color-primary-purple)] leading-relaxed mb-4">
-                      “{item.text}”
+                      "{item.text}"
                     </p>
 
                     <div>
@@ -87,7 +86,7 @@ export default function Interns({ interns, info }) {
               </div>
             </div>
           ))}
-        </div>
+        </div>  
       </div>
     </section>
   );

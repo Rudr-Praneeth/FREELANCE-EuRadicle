@@ -13,41 +13,40 @@ export default function Jobs() {
       title: "Business Development Executive",
       location: "Dallas, Texas",
       description:
-        "Drive strategic growth initiatives, build client relationships, and identify new market opportunities.",
+        "Drive strategic growth initiatives, build client relationships, and identify new market opportunities. You will work closely with leadership to expand market presence, develop new revenue streams, and build long-term enterprise partnerships. The role requires strong communication skills, strategic thinking, and a proactive approach to identifying growth opportunities.",
     },
     {
       id: "ops-hyd",
       title: "Operations - Associate/Sr. Associate",
       location: "Hyderabad, India",
       description:
-        "Manage internal workflows, streamline processes, and ensure operational excellence across teams.",
+        "Manage internal workflows, streamline processes, and ensure operational excellence across teams. You will coordinate cross-functional teams, optimize reporting systems, and implement scalable processes that improve efficiency and performance across departments.",
     },
     {
       id: "content-hyd",
       title: "Content & Solutioning - Associate/Intern",
       location: "Hyderabad, India",
       description:
-        "Develop research-driven content and support consulting solution design for global clients.",
+        "Develop research-driven content and support consulting solution design for global clients. Responsibilities include conducting structured research, synthesizing insights, preparing executive-ready documents, and supporting client-facing solution development initiatives.",
     },
     {
       id: "bde-delhi",
       title: "Business Development Executive",
       location: "Delhi, India",
       description:
-        "Lead regional expansion efforts and manage key enterprise partnerships.",
+        "Lead regional expansion efforts and manage key enterprise partnerships. You will identify new business channels, nurture strategic alliances, and drive revenue growth through consultative selling and strong stakeholder engagement.",
     },
   ];
 
   useGSAP(
     (context) => {
       const q = context.selector;
-
       const cards = q(".jobs-card");
 
       gsap.fromTo(
         cards,
         { y: 40, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.8, stagger: 0.15, ease: "power3.out" },
+        { y: 0, opacity: 1, duration: 0.8, stagger: 0.15, ease: "power3.out" }
       );
 
       cards.forEach((card) => {
@@ -78,7 +77,7 @@ export default function Jobs() {
         });
       });
     },
-    { scope: sectionRef },
+    { scope: sectionRef }
   );
 
   useEffect(() => {
@@ -108,7 +107,7 @@ export default function Jobs() {
           <p className="italic text-body-sm mt-6 max-w-5xl mx-auto jobs-animate">
             Join a global consulting firm where impact is intentional and growth
             is personal. At EuRadicle, curious minds come together in a culture
-            of trust, collaboration, and continuous learning , where high
+            of trust, collaboration, and continuous learning, where high
             performance coexists with balance and authenticity. You’ll be
             encouraged to think deeply, contribute meaningfully, and take
             ownership of the impact you create. This is a place where your ideas
@@ -149,7 +148,7 @@ export default function Jobs() {
             onClick={() => setSelectedRole(null)}
           >
             <div
-              className="bg-[var(--color-bg-white)] w-full max-w-2xl rounded-2xl p-10 relative shadow-xl"
+              className="bg-[var(--color-bg-white)] w-full max-w-5xl rounded-2xl p-10 relative shadow-xl"
               onClick={(e) => e.stopPropagation()}
             >
               <button
@@ -160,62 +159,73 @@ export default function Jobs() {
                 ×
               </button>
 
-              <h2 className="text-h3 text-[var(--color-primary-navy)] mb-2">
-                {selectedRole.title}
-              </h2>
+              <div className="grid md:grid-cols-2 gap-10 max-h-[80vh]">
+                <div className="overflow-y-auto pr-4">
+                  <h2 className="text-h3 text-[var(--color-primary-navy)] mb-2">
+                    {selectedRole.title}
+                  </h2>
 
-              <p className="text-body-sm text-[var(--color-primary-mauve)] mb-6">
-                {selectedRole.location}
-              </p>
+                  <p className="text-body-sm text-[var(--color-primary-mauve)] mb-6">
+                    {selectedRole.location}
+                  </p>
 
-              <p className="text-body-lg mb-8">{selectedRole.description}</p>
+                  <p className="text-body-lg whitespace-pre-line">
+                    {selectedRole.description}
+                  </p>
+                </div>
 
-              <form
-                className="space-y-6"
-                onSubmit={(e) => {
-                  e.preventDefault();
-                }}
-              >
-                <input
-                  type="text"
-                  placeholder="Full Name"
-                  required
-                  className="w-full border border-[var(--color-primary-mauve)] rounded-xl px-4 py-3 bg-transparent focus:outline-none"
-                />
+                <div className="overflow-y-auto">
+                  <form
+                    className="space-y-6"
+                    onSubmit={(e) => {
+                      e.preventDefault();
+                    }}
+                  >
+                    <input
+                      type="text"
+                      placeholder="Full Name"
+                      required
+                      className="w-full border border-[var(--color-primary-mauve)] rounded-xl px-4 py-3 bg-transparent focus:outline-none"
+                    />
 
-                <input
-                  type="email"
-                  placeholder="Email"
-                  required
-                  className="w-full border border-[var(--color-primary-mauve)] rounded-xl px-4 py-3 bg-transparent focus:outline-none"
-                />
+                    <input
+                      type="email"
+                      placeholder="Email"
+                      required
+                      className="w-full border border-[var(--color-primary-mauve)] rounded-xl px-4 py-3 bg-transparent focus:outline-none"
+                    />
 
-                <input
-                  type="tel"
-                  placeholder="Phone number"
-                  required
-                  className="w-full border border-[var(--color-primary-mauve)] rounded-xl px-4 py-3 bg-transparent focus:outline-none"
-                />
+                    <input
+                      type="tel"
+                      placeholder="Phone number"
+                      required
+                      className="w-full border border-[var(--color-primary-mauve)] rounded-xl px-4 py-3 bg-transparent focus:outline-none"
+                    />
 
-                <label className="w-full flex items-center justify-center border border-[var(--color-primary-mauve)] rounded-xl px-4 py-3 cursor-pointer">
-                  <span className="text-gray-400">Attach your resume</span>
-                  <input
-                    type="file"
-                    accept=".pdf,.doc,.docx"
-                    required
-                    className="hidden"
-                  />
-                </label>
-                <button
-                  type="submit"
-                  className="w-full bg-[var(--color-primary-mauve)] text-white py-3 rounded-xl hover:opacity-90 transition"
-                >
-                  APPLY
-                </button>
-              </form>
+                    <label className="w-full flex items-center justify-center border border-[var(--color-primary-mauve)] rounded-xl px-4 py-3 cursor-pointer">
+                      <span className="text-gray-400">
+                        Attach your resume
+                      </span>
+                      <input
+                        type="file"
+                        accept=".pdf,.doc,.docx"
+                        required
+                        className="hidden"
+                      />
+                    </label>
+
+                    <button
+                      type="submit"
+                      className="w-full bg-[var(--color-primary-mauve)] text-white py-3 rounded-xl hover:opacity-90 transition"
+                    >
+                      APPLY
+                    </button>
+                  </form>
+                </div>
+              </div>
             </div>
           </div>,
-          document.body,
+          document.body
         )}
     </>
   );

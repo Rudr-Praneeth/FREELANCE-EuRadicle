@@ -41,22 +41,22 @@ export default function BeyondBusiness() {
         },
       );
 
-      const totalWidth = carouselRef.current.scrollWidth / 2;
+      // const totalWidth = carouselRef.current.scrollWidth / 2;
 
-      const carouselTween = gsap.to(carouselRef.current, {
-        x: -totalWidth,
-        duration: 25,
-        ease: "none",
-        repeat: -1,
-      });
+      // const carouselTween = gsap.to(carouselRef.current, {
+      //   x: -totalWidth,
+      //   duration: 25,
+      //   ease: "none",
+      //   repeat: -1,
+      // });
 
-      carouselRef.current.addEventListener("mouseenter", () => {
-        carouselTween.pause();
-      });
+      // carouselRef.current.addEventListener("mouseenter", () => {
+      //   carouselTween.pause();
+      // });
 
-      carouselRef.current.addEventListener("mouseleave", () => {
-        carouselTween.resume();
-      });
+      // carouselRef.current.addEventListener("mouseleave", () => {
+      //   carouselTween.resume();
+      // });
     },
     { scope: sectionRef },
   );
@@ -65,11 +65,11 @@ export default function BeyondBusiness() {
     "We believe that growth carries a responsibility - to give back to the world that enables it.";
 
   const images = [
-    "https://images.unsplash.com/photo-1469474968028-56623f02e42e",
-    "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
-    "https://images.unsplash.com/photo-1493244040629-496f6d136cc3",
-    "https://images.unsplash.com/photo-1470770841072-f978cf4d019e",
-    "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
+    // "https://images.unsplash.com/photo-1469474968028-56623f02e42e",
+    // "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+    // "https://images.unsplash.com/photo-1493244040629-496f6d136cc3",
+    // "https://images.unsplash.com/photo-1470770841072-f978cf4d019e",
+    // "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
   ];
 
   return (
@@ -113,7 +113,7 @@ export default function BeyondBusiness() {
           </div>
         </div>
 
-        <div className="mt-14 overflow-hidden py-4">
+        {/* <div className="mt-14 overflow-hidden py-4">
           <div ref={carouselRef} className="flex gap-6 w-max">
             {[...images, ...images].map((src, i) => (
               <img
@@ -124,7 +124,7 @@ export default function BeyondBusiness() {
               />
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

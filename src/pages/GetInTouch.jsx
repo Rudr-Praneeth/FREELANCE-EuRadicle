@@ -19,7 +19,7 @@ const GetInTouch = () => {
     {
       name: "PhoneNumber",
       label: "Mobile Number",
-      type: "number",
+      type: "tel",
       placeholder: "Enter your Mobile Number"
     },
     {

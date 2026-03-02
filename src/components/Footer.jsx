@@ -17,12 +17,12 @@ export default function Footer() {
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8">
         
-        <div className="lg:col-span-3 flex flex-col justify-between items-start space-y-12">
+        <div className="lg:col-span-3 flex flex-col justify-between items-center space-y-12">
           <div className="space-y-8">
             <img
               src="/Home/logo.gif"
               alt="EuRadicle Logo"
-              className="w-auto h-20 md:h-24 object-contain"
+              className="w-auto h-28 md:h-32 object-contain"
             />
             <div className="flex gap-5 text-xl text-primary-navy/80">
               <a href="#" className="p-2 rounded-full border border-brand-400/20 hover:bg-white hover:text-[var(--color-primary-mauve)] transition-all duration-300">

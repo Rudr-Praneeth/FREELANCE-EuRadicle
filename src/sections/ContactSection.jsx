@@ -1,4 +1,7 @@
+import { useState } from "react"
 import FlowButton from "../components/FlowButton"
+import PhoneInput from "react-phone-input-2"
+import "react-phone-input-2/lib/style.css"
 import {
   FaLinkedinIn,
   FaFacebookF,
@@ -14,12 +17,21 @@ export default function ContactSection({ imageUrl, fields = [], header, show }) 
     { label: "YouTube", icon: <FaYoutube /> }
   ]
 
+  const [phone, setPhone] = useState("")
+  const [focused, setFocused] = useState(false)
+
   return (
     <section className="w-full bg-[var(--color-bg-white)]">
+      <style>{`
+        .react-tel-input .flag-dropdown { z-index: 9999 !important; }
+        .react-tel-input .country-list { position: absolute !important; z-index: 9999 !important; max-height: 320px !important; overflow: auto !important; }
+        .react-tel-input .country-list .country { padding: 10px 14px !important; }
+        .react-tel-input .search-box { padding: 8px 10px !important; box-sizing: border-box !important; }
+      `}</style>
+
       {header && header}
       <div className="max-w-6xl mx-auto px-4 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
-          
           <div className="w-full h-full overflow-hidden rounded-2xl group order-1 md:order-2">
             <img
               src={imageUrl}
@@ -28,7 +40,7 @@ export default function ContactSection({ imageUrl, fields = [], header, show }) 
             />
           </div>
 
-          <form className="rounded-2xl bg-[var(--color-brand-400)]/10 p-8 space-y-2 w-[100%] order-2 md:order-1">
+          <form className="relative overflow-visible rounded-2xl bg-[var(--color-brand-400)]/10 p-8 space-y-6 w-full order-2 md:order-1">
             {fields.map((fieldGroup, index) => {
               if (Array.isArray(fieldGroup)) {
                 return (
@@ -41,21 +53,39 @@ export default function ContactSection({ imageUrl, fields = [], header, show }) 
                         >
                           {field.label}
                         </label>
+
                         {field.type === "textarea" ? (
                           <textarea
                             id={field.name}
                             name={field.name}
                             rows={field.rows || 5}
                             placeholder={field.placeholder}
-                            className="w-full rounded-lg border border-[var(--color-brand-400)] p-4 text-body bg-white focus:outline-none focus:border-[var(--color-primary-mauve)] transition"
+                            className="w-full rounded-lg border border-[var(--color-brand-400)] p-4 bg-white focus:outline-none focus:border-[var(--color-primary-mauve)] transition"
                           />
+                        ) : field.type === "tel" ? (
+                          <div className={`relative transition-all duration-300 ${focused ? "scale-[1.01]" : ""}`}>
+                            <PhoneInput
+                              country="in"
+                              value={phone}
+                              onChange={setPhone}
+                              enableSearch
+                              onFocus={() => setFocused(true)}
+                              onBlur={() => setFocused(false)}
+                              containerClass="!w-full !relative !overflow-visible"
+                              dropdownClass="!absolute !z-[9999] !max-h-80 !overflow-auto !shadow-2xl !rounded-xl !bg-white"
+                              inputClass={`!w-full !h-[50px] !bg-white !pl-14 !transition-all !duration-300`}
+                              buttonClass=" !rounded-l-xl !bg-white !pointer-events-auto"
+                              searchClass="!w-full !p-2"
+                              inputProps={{ name: field.name, id: field.name, autoComplete: "tel" }}
+                            />
+                          </div>
                         ) : (
                           <input
                             id={field.name}
                             name={field.name}
                             type={field.type || "text"}
                             placeholder={field.placeholder}
-                            className="w-full rounded-lg border border-[var(--color-brand-400)] p-3 text-body bg-white focus:outline-none focus:border-[var(--color-primary-mauve)] transition"
+                            className="w-full rounded-lg border border-[var(--color-brand-400)] p-3 bg-white focus:outline-none focus:border-[var(--color-primary-mauve)] transition"
                           />
                         )}
                       </div>
@@ -71,21 +101,39 @@ export default function ContactSection({ imageUrl, fields = [], header, show }) 
                     >
                       {fieldGroup.label}
                     </label>
+
                     {fieldGroup.type === "textarea" ? (
                       <textarea
                         id={fieldGroup.name}
                         name={fieldGroup.name}
                         rows={fieldGroup.rows || 5}
                         placeholder={fieldGroup.placeholder}
-                        className="w-full rounded-lg border border-[var(--color-brand-400)] p-4 text-body bg-white focus:outline-none focus:border-[var(--color-primary-mauve)] transition"
+                        className="w-full rounded-lg border border-[var(--color-brand-400)] p-4 bg-white focus:outline-none focus:border-[var(--color-primary-mauve)] transition"
                       />
+                    ) : fieldGroup.type === "tel" ? (
+                      <div className={`relative transition-all duration-300 ${focused ? "scale-[1.01]" : ""}`}>
+                        <PhoneInput
+                          country="in"
+                          value={phone}
+                          onChange={setPhone}
+                          enableSearch
+                          onFocus={() => setFocused(true)}
+                          onBlur={() => setFocused(false)}
+                          containerClass="!w-full !relative !overflow-visible"
+                          dropdownClass="!absolute !z-[9999] !max-h-80 !overflow-auto !shadow-2xl !rounded-xl !bg-white"
+                          inputClass={`!w-full !h-[50px] !rounded-xl !border !bg-white !pl-14 !transition-all !duration-300 ${focused ? "!border-[var(--color-primary-mauve)] !shadow-lg" : "!border-[var(--color-brand-400)]"}`}
+                          buttonClass="!border !border-[var(--color-brand-400)] !rounded-l-xl !bg-white !pointer-events-auto"
+                          searchClass="!w-full !border !rounded !p-2"
+                          inputProps={{ name: fieldGroup.name, id: fieldGroup.name, autoComplete: "tel" }}
+                        />
+                      </div>
                     ) : (
                       <input
                         id={fieldGroup.name}
                         name={fieldGroup.name}
                         type={fieldGroup.type || "text"}
                         placeholder={fieldGroup.placeholder}
-                        className="w-full rounded-lg border border-[var(--color-brand-400)] p-3 text-body bg-white focus:outline-none focus:border-[var(--color-primary-mauve)] transition"
+                        className="w-full rounded-lg border border-[var(--color-brand-400)] p-3 bg-white focus:outline-none focus:border-[var(--color-primary-mauve)] transition"
                       />
                     )}
                   </div>
@@ -93,12 +141,14 @@ export default function ContactSection({ imageUrl, fields = [], header, show }) 
               }
             })}
 
-            <FlowButton
-              text="Submit"
-              id="contact"
-              centered
-              className="w-[100%] mt-8 mx-auto"
-            />
+            <div className="relative z-0">
+              <FlowButton
+                text="Submit"
+                id="contact"
+                centered
+                className="w-full mt-6 mx-auto"
+              />
+            </div>
           </form>
         </div>
 
@@ -106,11 +156,7 @@ export default function ContactSection({ imageUrl, fields = [], header, show }) 
           {show &&
             socials.map((item) => (
               <div key={item.label} className="scale-75 md:scale-100">
-                <FlowButton
-                  icon={item.icon}
-                  id="contact"
-                  arrow={false}
-                />
+                <FlowButton icon={item.icon} id="contact" arrow={false} />
               </div>
             ))}
         </div>

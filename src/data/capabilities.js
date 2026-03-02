@@ -1,35 +1,43 @@
 const capabilities = [
     {
         title: "Leadership Development",
-        imageUrl: "Capabilities/compressed-Leadership development Card.png"
+        imageUrl: "Capabilities/compressed-Leadership development Card.png",
+        sub: ["Managerial & Leadership Journeys", "Coaching Mindsets & Conversations", "Team Effectiveness & Collaboration", "Leading Through Change & Influence"]
     },
     {
         title: "Consulting & Talent Management",
-        imageUrl: "Capabilities/compressed-Consulting & Talent Management - Card.png"
+        imageUrl: "Capabilities/compressed-Consulting & Talent Management - Card.png",
+        sub: ["Internal Consulting & Advisory Skills", "Career & Succession Planning", "Onboarding & Continuous Learning Frameworks"]
     },
     {
         title: "Assessment & Development Centers",
-        imageUrl: "Capabilities/compressed-Assessment & Development Centers - Card.png"
+        imageUrl: "Capabilities/compressed-Assessment & Development Centers - Card.png",
+        sub: ["Talent Readiness & Development Diagnostics"]
     },
     {
         title: "Power Skills Development",
-        imageUrl: "Capabilities/compressed-Power Skills Development Card.png"
+        imageUrl: "Capabilities/compressed-Power Skills Development Card.png",
+        sub: ["Train the Trainer & Learning Facilitation","Communication & Interpersonal Excellence","Presentation & Storytelling Skills","Negotiation & Stakeholder Management", "Customer Service & Client Experience","Emotional Intelligence & Self-Mastery", "Problem Solving & Decision Making"]
     },
     {
         title: "Digital & Business Transformation",
-        imageUrl: "Capabilities/compressed-DIGITAL & BUSINESS TRANSFORMATION.jpg"
+        imageUrl: "Capabilities/compressed-DIGITAL & BUSINESS TRANSFORMATION.jpg",
+        sub: ["Design Thinking", "Generative AI Enablement","Data-Driven Decision Making"]
     },
     {
         title: "Commercial & Sales Enablement",
-        imageUrl: "Capabilities/compressed-Commercials & Sales Enablement.png"
+        imageUrl: "Capabilities/compressed-Commercials & Sales Enablement.png",
+        sub: ["Sales & Trade Promotion Excellence","Negotiation & Influence for Sales","Go-to-Market Strategy & Execution","Channel & Retail Effectiveness","Key Account Management Excellence","Solution & Consultative Selling"]
     },
     {
         title: "DEI & Culture Building",
-        imageUrl: "Capabilities/compressed-DEI & CULTURE BUILDING inside picture.png"
+        imageUrl: "Capabilities/compressed-DEI & CULTURE BUILDING inside picture.png",
+        sub: ["Women in Leadership","Cross-Cultural Effectiveness"]
     },
     {
         title: "Creative Solutions",
-        imageUrl: "Capabilities/compressed-Creative solutions.png"
+        imageUrl: "Capabilities/compressed-Creative solutions.png",
+        sub: ["E-Learning & Digital Course Design","Storyboarding & Learning Content Development","Collateral Design & Visual Communication","Program Management & Learning Operations","Learning Analytics & Reporting"]
     },
 ];
 

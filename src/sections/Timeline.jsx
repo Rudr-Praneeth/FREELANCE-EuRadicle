@@ -15,7 +15,29 @@ export default function StoryTimelineSection({ items }) {
   const trackRef = useRef(null);
   const cardsRef = useRef([]);
   const contentRefs = useRef([]);
+  const titleRef = useRef(null);
+  const timelineRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
+
+  useGSAP(
+    () => {
+      gsap.from(titleRef.current, {
+        opacity: 0,
+        y: -30,
+        duration: 0.8,
+        ease: "power3.out",
+      });
+
+      gsap.from(timelineRef.current, {
+        opacity: 0,
+        y: -20,
+        duration: 0.7,
+        ease: "power3.out",
+        delay: 0.3,
+      });
+    },
+    { scope: sectionRef }
+  );
 
   useGSAP(
     () => {
@@ -39,7 +61,6 @@ export default function StoryTimelineSection({ items }) {
             scrub: 0.3,
             pin: true,
             anticipatePin: 1,
-            // markers: true,
             snap: {
               snapTo: 1 / (items.length - 1),
               duration: 0.4,
@@ -50,10 +71,7 @@ export default function StoryTimelineSection({ items }) {
             onUpdate: (self) => {
               const total = items.length - 1;
               const rawIndex = self.progress * total;
-              const index = Math.min(
-                total,
-                Math.max(0, Math.floor(rawIndex + 0.5)),
-              );
+              const index = Math.min(total, Math.max(0, Math.floor(rawIndex + 0.5)));
               setActiveIndex(index);
             },
           },
@@ -95,10 +113,7 @@ export default function StoryTimelineSection({ items }) {
             onUpdate: (self) => {
               const total = items.length - 1;
               const rawIndex = self.progress * total;
-              const index = Math.min(
-                total,
-                Math.max(0, Math.floor(rawIndex + 0.5)),
-              );
+              const index = Math.min(total, Math.max(0, Math.floor(rawIndex + 0.5)));
               setActiveIndex(index);
             },
           },
@@ -121,7 +136,7 @@ export default function StoryTimelineSection({ items }) {
         window.scrollTo(0, 0);
       };
     },
-    { scope: sectionRef, dependencies: [items.length] },
+    { scope: sectionRef, dependencies: [items.length] }
   );
 
   useGSAP(
@@ -134,24 +149,27 @@ export default function StoryTimelineSection({ items }) {
           gsap.to(card, {
             scale: 1,
             opacity: 1,
-            duration: 0.6,
+            rotateY: 0,
+            duration: 0.7,
             ease: "power3.out",
           });
 
           gsap.fromTo(
             content,
-            { height: 0, opacity: 0 },
+            { height: 0, opacity: 0, y: 10 },
             {
               height: "auto",
               opacity: 1,
+              y: 0,
               duration: 0.6,
               ease: "power3.inOut",
-            },
+            }
           );
         } else {
           gsap.to(card, {
-            scale: 0.92,
-            opacity: 0.6,
+            scale: 0.9,
+            opacity: 0.5,
+            rotateY: i < activeIndex ? -5 : 5,
             duration: 0.6,
             ease: "power3.out",
           });
@@ -165,7 +183,7 @@ export default function StoryTimelineSection({ items }) {
         }
       });
     },
-    { dependencies: [activeIndex] },
+    { dependencies: [activeIndex] }
   );
 
   return (
@@ -176,25 +194,43 @@ export default function StoryTimelineSection({ items }) {
         background: "linear-gradient(to bottom right, #E4E7FD, #F4DEF0)",
       }}
     >
-      <h1 className="text-center text-h1 pt-10 min-[600px]:pt-12 min-[768px]:pt-16">
+      <h1
+        ref={titleRef}
+        className="text-center text-h1 pt-10 min-[600px]:pt-12 min-[768px]:pt-16"
+      >
         OUR <span className="text-[var(--color-primary-mauve)]">STORY</span>
       </h1>
 
-      <div className="hidden md:block relative min-[768px]:absolute top-20 min-[768px]:top-32 left-1/2 w-full max-w-[95%] min-[768px]:max-w-6xl -translate-x-1/2 px-4 min-[600px]:px-6 mb-10 min-[768px]:mb-0">
-        <div className="flex items-center overflow-x-auto min-[768px]:overflow-visible">
+      <div
+        ref={timelineRef}
+        className="relative min-[768px]:absolute top-20 min-[768px]:top-32 left-0 right-0 w-full px-4 min-[600px]:px-6 mb-10 min-[768px]:mb-0"
+      >
+        <div className="flex items-center justify-center mx-auto max-w-xs min-[600px]:max-w-lg min-[768px]:max-w-4xl min-[1200px]:max-w-5xl">
           {items.map((item, i) => (
-            <div key={i} className="flex items-center min-w-max flex-1">
-              <div
-                className={`z-10 flex h-9 min-[600px]:h-10 min-w-20 min-[600px]:min-w-24 items-center justify-center rounded-full border text-body-sm font-semibold transition-all duration-500 ${
-                  activeIndex === i
-                    ? "bg-brand-600 text-white border-transparent scale-110"
-                    : "bg-[var(--color-bg-white)] text-[var(--color-primary-mauve)] border-brand-600"
-                }`}
-              >
-                {item.year}
+            <div key={i} className="flex items-center flex-1">
+              <div className="flex flex-col items-center flex-shrink-0">
+                <div
+                  className={`z-10 flex h-8 min-[600px]:h-10 px-3 min-[600px]:px-4 min-w-16 min-[600px]:min-w-24 items-center justify-center rounded-full border text-[10px] min-[600px]:text-body-sm font-semibold transition-all duration-500 ${
+                    activeIndex === i
+                      ? "bg-brand-600 text-white border-transparent scale-110 shadow-lg shadow-brand-600/30"
+                      : "bg-[var(--color-bg-white)] text-[var(--color-primary-mauve)] border-brand-600"
+                  }`}
+                >
+                  {item.year}
+                </div>
+                {activeIndex === i && (
+                  <div className="mt-1 w-1.5 h-1.5 rounded-full bg-brand-600 animate-pulse" />
+                )}
               </div>
               {i !== items.length - 1 && (
-                <div className="h-px w-12 min-[600px]:w-20 min-[768px]:w-full bg-brand-600/40" />
+                <div className="relative h-px flex-1 mx-1 min-[600px]:mx-2 bg-brand-600/20 overflow-hidden">
+                  <div
+                    className="absolute left-0 top-0 h-full bg-brand-600/60 transition-all duration-500"
+                    style={{
+                      width: activeIndex > i ? "100%" : "0%",
+                    }}
+                  />
+                </div>
               )}
             </div>
           ))}
@@ -210,9 +246,29 @@ export default function StoryTimelineSection({ items }) {
             key={i}
             ref={(el) => (cardsRef.current[i] = el)}
             className="shrink-0 w-full max-w-md min-[768px]:w-screen min-[768px]:flex min-[768px]:items-center min-[768px]:justify-center rounded-2xl transition-transform duration-500"
+            style={{ perspective: "1000px" }}
           >
             <div className="w-full max-w-md rounded-2xl bg-[var(--color-bg-white)] shadow-2xl overflow-hidden">
+              <div
+                className="h-1.5 w-full transition-all duration-700"
+                style={{
+                  background:
+                    activeIndex === i
+                      ? "linear-gradient(to right, #8c668b, #F2B2D7)"
+                      : "transparent",
+                }}
+              />
               <div className="relative flex flex-col p-6 min-[600px]:p-7 min-[768px]:p-8">
+                <img
+                  src={item.logo}
+                  alt=""
+                  className={`absolute top-4 right-4 w-auto object-contain ${
+                    item.size === "yes"
+                      ? "h-6 min-[600px]:h-8 min-[768px]:h-10"
+                      : "h-16 min-[600px]:h-20 min-[768px]:h-24"
+                  }`}
+                />
+
                 <p className="text-body-xs font-semibold tracking-wide text-[var(--color-primary-mauve)]">
                   {item.title?.toUpperCase()}
                 </p>
@@ -227,14 +283,7 @@ export default function StoryTimelineSection({ items }) {
                   <p className="mt-4 min-[600px]:mt-5 text-body-sm">
                     {item.text}
                   </p>
-
                   <hr className="my-4 min-[600px]:my-5 border-brand-600" />
-
-                  <img
-                    src={item.logo}
-                    alt=""
-                    className="absolute top-0 right-0 h-22 min-[600px]:h-24 min-[768px]:h-28 w-auto object-contain"
-                  />
                 </div>
               </div>
             </div>

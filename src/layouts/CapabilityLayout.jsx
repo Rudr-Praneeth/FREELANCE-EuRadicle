@@ -1,7 +1,8 @@
-import { useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRef, useState, useMemo, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { capabilities } from "../data/capabilities";
 
 function CapabilityLayout({
   title,
@@ -15,7 +16,36 @@ function CapabilityLayout({
   const titleRef = useRef(null);
   const subtitleRef = useRef(null);
   const navigate = useNavigate();
+  const { slug } = useParams();
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const formatSlug = (str) =>
+    str
+      ?.toLowerCase()
+      .replace(/&/g, "and")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/(^-|-$)/g, "");
+
+  const selectedCapability = useMemo(() => {
+    if (!slug) return null;
+    return capabilities.find((cap) => formatSlug(cap.title) === slug);
+  }, [slug]);
+
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    phone: "",
+    capability: "",
+    subCapability: "",
+  });
+
+  useEffect(() => {
+    setFormData((prev) => ({
+      ...prev,
+      capability: title || "",
+      subCapability: "",
+    }));
+  }, [title]);
 
   useGSAP(
     () => {
@@ -27,7 +57,7 @@ function CapabilityLayout({
         ease: "power3.out",
       });
 
-      if (titleRef.current) {
+      if (titleRef.current && title) {
         const text = title;
         titleRef.current.textContent = "";
         tl.to(
@@ -44,7 +74,7 @@ function CapabilityLayout({
         );
       }
 
-      if (subtitleRef.current) {
+      if (subtitleRef.current && subtitle) {
         const sub = subtitle;
         subtitleRef.current.textContent = "";
         tl.to(
@@ -70,8 +100,18 @@ function CapabilityLayout({
         delay: 0.4,
       });
     },
-    { scope: containerRef }
+    { scope: containerRef, dependencies: [title, subtitle] }
   );
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(formData);
+    setIsModalOpen(false);
+  };
 
   return (
     <section ref={containerRef} className="bg-[var(--color-bg-white)]">
@@ -85,65 +125,53 @@ function CapabilityLayout({
         )}
         <div className="absolute inset-0 bg-[var(--color-primary-navy)]/60"></div>
         <div className="relative z-10 flex flex-col items-center justify-center text-center h-full px-10">
-          <h1
-            ref={titleRef}
-            className="text-h1 text-white mb-6 max-w-4xl"
-          />
-          <p
-            ref={subtitleRef}
-            className="text-body-lg text-white max-w-3xl"
-          />
+          <h1 ref={titleRef} className="text-h1 text-white mb-6 max-w-4xl">
+            {selectedCapability?.title || title}
+          </h1>
+          <p ref={subtitleRef} className="text-body-lg text-white max-w-3xl">
+            {subtitle}
+          </p>
         </div>
       </div>
 
       <div className="max-w-6xl mx-auto px-6 mt-4">
         <button
-          onClick={() => navigate(-1)}
+          onClick={() => navigate("/capabilities")}
           className="inline-flex items-center gap-2 text-body-sm text-[var(--color-primary-navy)] border border-[var(--color-primary-navy)] px-5 py-2 rounded-full transition-all duration-300 hover:bg-[var(--color-primary-navy)] hover:text-white"
         >
           ← Back
         </button>
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 py-10">
-        <div className="cap-content text-body text-[var(--color-primary-navy)] space-y-12">
+      <div className="max-w-7xl mx-auto py-16">
+        <div className="cap-content text-body text-[var(--color-primary-navy)]">
           {intro && (
-            <p className="text-body-lg leading-relaxed max-w-4xl mx-auto text-center">
+            <p className="text-body-lg leading-relaxed max-w-6xl mx-auto text-center mb-28">
               {intro}
             </p>
           )}
 
-          {cards.length > 0 && (
-            <div
-              className="
-                grid 
-                grid-cols-2 
-                sm:grid-cols-2 
-                md:grid-cols-3 
-                lg:grid-cols-4 
-                gap-6
-              "
-            >
+          <div className="flex justify-center items-center mb-28">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {cards.map((card, index) => (
                 <div
                   key={index}
-                  className="group border border-[var(--color-primary-navy)]/10 rounded-2xl overflow-hidden bg-white transition-all duration-500 hover:shadow-xl"
+                  className="group w-64 rounded-4xl overflow-hidden bg-gradient-to-b from-[#2D3047] via-[#8c668b] to-[#F2B2D7] transition-all duration-500 hover:shadow-xl"
                 >
-                  <div className="p-6 cursor-pointer">
-                    <h3 className="text-subheading-lg text-[var(--color-primary-mauve)]">
+                  <div className="p-4 cursor-pointer">
+                    <h3 className="text-subheading text-white text-center">
                       {card.heading}
                     </h3>
                   </div>
-
                   <div className="max-h-0 overflow-hidden transition-all duration-500 ease-in-out group-hover:max-h-[400px]">
-                    <div className="px-6 pb-6 text-body leading-relaxed text-[var(--color-primary-navy)]">
+                    <div className="px-6 pb-6 text-body leading-relaxed text-white">
                       {card.description}
                     </div>
                   </div>
                 </div>
               ))}
             </div>
-          )}
+          </div>
 
           {children}
         </div>
@@ -170,25 +198,55 @@ function CapabilityLayout({
             <h3 className="text-subheading-lg text-[var(--color-primary-mauve)] mb-6">
               Get in Touch
             </h3>
-            <form className="space-y-4">
+            <form className="space-y-4" onSubmit={handleSubmit}>
               <input
                 type="text"
+                name="fullName"
                 placeholder="Full Name"
-                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-purple)]"
+                value={formData.fullName}
+                onChange={handleChange}
                 required
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-purple)]"
               />
               <input
                 type="email"
+                name="email"
                 placeholder="Email Address"
-                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-purple)]"
+                value={formData.email}
+                onChange={handleChange}
                 required
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-purple)]"
               />
               <input
                 type="tel"
+                name="phone"
                 placeholder="Phone Number"
-                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-purple)]"
+                value={formData.phone}
+                onChange={handleChange}
                 required
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-purple)]"
               />
+              <input
+                type="text"
+                name="capability"
+                value={formData.capability}
+                readOnly
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 bg-gray-100 text-gray-600"
+              />
+              <select
+                name="subCapability"
+                value={formData.subCapability}
+                onChange={handleChange}
+                required
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-purple)]"
+              >
+                <option value="">Select Sub Capability</option>
+                {cards.map((card, index) => (
+                  <option key={index} value={card.heading}>
+                    {card.heading}
+                  </option>
+                ))}
+              </select>
               <button
                 type="submit"
                 className="w-full bg-[var(--color-primary-purple)] text-white py-3 rounded-lg transition-all duration-300 hover:scale-105"
@@ -199,7 +257,7 @@ function CapabilityLayout({
           </div>
         </div>
       )}
-    </section>  
+    </section>
   );
 }
 

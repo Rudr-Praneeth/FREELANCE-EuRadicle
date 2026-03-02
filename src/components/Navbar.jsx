@@ -183,12 +183,23 @@ function Navbar({ openModal }) {
     >
       <div className="w-full h-full flex items-center justify-between px-6">
         <div className="flex w-1/2 md:w-1/6 items-center h-full">
-          <Link to="/" onClick={handleNavClick} className="flex items-center">
-            <img
-              src="/Home/logo.gif"
-              alt="Euradicle Logo"
-              className="h-full max-h-28 w-auto"
-            />
+          <Link
+            to="/"
+            onClick={handleNavClick}
+            className="flex items-center group [perspective:1000px]"
+          >
+            <div className="relative h-full max-h-28 w-auto transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateX(180deg)]">
+              <img
+                src="/Home/b4logo.png"
+                alt="Euradicle Alternate Logo"
+                className="absolute inset-0 top-5 left-5 sm:left-20 h-14 w-auto [backface-visibility:hidden]"
+              />
+              <img
+                src="/Home/logo.gif"
+                alt="Euradicle Logo"
+                className="h-full max-h-30 w-auto [backface-visibility:hidden] [transform:rotateX(180deg)]"
+              />
+            </div>
           </Link>
         </div>
 
@@ -310,7 +321,7 @@ function Navbar({ openModal }) {
                           }}
                           className="text-body hover:text-[var(--color-brand-500)] transition-colors duration-300 text-left"
                         >
-                          Download Brochure
+                          Brochure
                         </button>
 
                         <button
@@ -320,7 +331,7 @@ function Navbar({ openModal }) {
                           }}
                           className="text-body hover:text-[var(--color-brand-500)] transition-colors duration-300 text-left"
                         >
-                          Download E-Certificates
+                          E-Certificates
                         </button>
                       </div>
                     </div>

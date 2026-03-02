@@ -42,7 +42,7 @@ const Contact = () => {
     {
       name: "PhoneNumber",
       label: "Mobile Number",
-      type: "number",
+      type: "tel",
       placeholder: "Enter your mobile number"
     },
   ]

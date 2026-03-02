@@ -53,13 +53,10 @@ export default function GlobalFooterSection() {
           <span className="text-[var(--color-primary-mauve)]">FOOTPRINTS</span>
         </h1>
         <p className="italic text-body-sm mt-6 max-w-5xl mx-auto gfs-animate">
-          Our footprint spans key growth and innovation markets across the U.S.,
-          UAE, the Middle East, and India, allowing us to operate with both
-          global perspective and local relevance. With our registered office in
-          Texas and our headquarters in Hyderabad, we are strategically
-          positioned at the intersection of global capability design and
-          on-ground execution-partnering with organizations across geographies
-          to build talent systems that perform, scale, and endure.
+          Our footprint spans the U.S., UAE, and India - blending global
+          perspective with local relevance. With our registered office in Texas
+          and headquarters in Hyderabad, we design and deliver scalable talent
+          systems that drive lasting impact across geographies.
         </p>
       </div>
 
@@ -68,7 +65,7 @@ export default function GlobalFooterSection() {
           center={[0, 0]}
           zoom={isMobile ? 0.4 : 2}
           scrollWheelZoom={false}
-           attributionControl={false} 
+          attributionControl={false}
           className="w-full h-full rounded-3xl"
         >
           <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />

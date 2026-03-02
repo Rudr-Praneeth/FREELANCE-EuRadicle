@@ -82,7 +82,7 @@ export default function WhyEuradicle({ items }) {
           <span className="text-[var(--color-primary-mauve)]">
             EURADICLE 
           </span>
-          {" "}?
+          ?
         </h1>
       </div>
 

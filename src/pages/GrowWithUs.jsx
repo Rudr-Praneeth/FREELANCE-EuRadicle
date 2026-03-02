@@ -38,7 +38,7 @@ const GrowWithUs = () => {
     },
     {
       title: "A Consulting Mindset from Day One",
-      text: "You don’t just execute, you think, question, and co-create. We operate like a consulting firm, encouraging structured thinking, client empathy, and outcome-driven solutions. From strategy discussions to delivery, you’re treated as a problem-solver, not just a role-holder."
+      text: "You don’t just execute - you think, question, and co-create. We function with a true consulting mindset, encouraging structured thinking, client empathy, and outcome-driven solutions. From strategy discussions to delivery, you’re treated as a problem-solver, not just a role-holder."
     },
     {
       title: "Learn Fast, Grow Faster",

@@ -176,7 +176,7 @@ export default function StoryTimelineSection({ items }) {
         background: "linear-gradient(to bottom right, #E4E7FD, #F4DEF0)",
       }}
     >
-      <h1 className="text-center text-h1 pt-10 min-[600px]:pt-12 min-[768px]:pt-16 text-[clamp(28px,5vw,56px)]">
+      <h1 className="text-center text-h1 pt-10 min-[600px]:pt-12 min-[768px]:pt-16">
         OUR <span className="text-[var(--color-primary-mauve)]">STORY</span>
       </h1>
 

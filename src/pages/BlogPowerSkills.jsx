@@ -8,6 +8,8 @@ function BlogPowerSkills() {
       date="Jan 1, 2026"
       category="News"
       image="/Home/compressed-blog1.jpeg"
+      authorName={"Atreye Gupta"}
+      authorRole={"Manager – Solutioning "}
     >
       <h2 className="text-2xl font-semibold text-[var(--color-primary-mauve)]">
         The paradox shaping leadership today

@@ -99,20 +99,16 @@ export default function BeyondBusiness() {
 
           <div className="bb-fade italic">
             <p className="text-body mb-4">
-              At EuRadicle, every program we deliver is tied to a simple yet
-              powerful commitment. As we work with organizations to build
-              capability and leadership, we invest in nurturing life beyond the
-              workplace. This means planting trees to support environmental
-              sustainability, while also extending care to old age homes and
-              orphanages through food, clothing, and essential support.
-            </p>
-            <p className="text-body">
-              For us, impact is both long-term and immediate. It’s about
-              creating a greener tomorrow while standing beside those who need
-              care and dignity today. These actions reflect who we are - a firm
-              that believes progress is most meaningful when it is shared. It is
-              embedded in how we grow, partner, and contribute -with empathy,
-              intention, and purpose.
+              At EuRadicle, every program we deliver carries a commitment beyond
+              business impact. As we help organisations build capability and
+              leadership, we also invest in life beyond the workplace -
+              supporting environmental sustainability through tree plantation
+              and extending care to old age homes and orphanages through
+              essential contributions. For us, impact is both immediate and
+              long-term: creating a greener tomorrow while standing with those
+              who need support today. It reflects who we are - a firm that
+              believes progress matters most when it is shared, intentional, and
+              rooted in empathy.
             </p>
           </div>
         </div>

@@ -310,7 +310,7 @@ function Navbar({ openModal }) {
                           }}
                           className="text-body hover:text-[var(--color-brand-500)] transition-colors duration-300 text-left"
                         >
-                          Download Brochures
+                          Download Brochure
                         </button>
 
                         <button

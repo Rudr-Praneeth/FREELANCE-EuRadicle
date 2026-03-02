@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { Link } from "react-router-dom";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -6,12 +6,20 @@ import Navbar from "../components/Navbar";
 
 gsap.registerPlugin(useGSAP);
 
-function BlogLayout({ children, title, subtitle, date, category, image }) {
-  const containerRef = useRef(null); 
+function BlogLayout({
+  children,
+  title,
+  subtitle,
+  date,
+  category,
+  image,
+  authorName,
+  authorRole,
+  authorImage,
+}) {
+  const containerRef = useRef(null);
   const heroRef = useRef(null);
   const contentRef = useRef(null);
-  const ctaRef = useRef(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useGSAP(
     () => {
@@ -69,7 +77,7 @@ function BlogLayout({ children, title, subtitle, date, category, image }) {
           "-=0.6"
         )
         .from(
-          ctaRef.current,
+          ".blog-author",
           {
             y: 30,
             opacity: 0,
@@ -89,22 +97,6 @@ function BlogLayout({ children, title, subtitle, date, category, image }) {
       });
       img.addEventListener("mouseleave", () => {
         gsap.to(img, { scale: 1, duration: 0.6, ease: "power3.out" });
-      });
-
-      const btn = ctaRef.current;
-      btn.addEventListener("mouseenter", () => {
-        gsap.to(btn, {
-          y: -4,
-          boxShadow: "0 10px 30px rgba(0,0,0,0.2)",
-          duration: 0.3,
-        });
-      });
-      btn.addEventListener("mouseleave", () => {
-        gsap.to(btn, {
-          y: 0,
-          boxShadow: "0 0 0 rgba(0,0,0,0)",
-          duration: 0.3,
-        });
       });
     },
     { scope: containerRef }
@@ -135,11 +127,7 @@ function BlogLayout({ children, title, subtitle, date, category, image }) {
               ← Back
             </Link>
 
-            <div className="blog-meta flex items-center gap-4 mb-2">
-              {/* <span className="px-4 py-1 rounded-full bg-gray-100 text-sm text-gray-600">
-                {category}
-              </span> */}
-            </div>
+            <div className="blog-meta flex items-center gap-4 mb-2"></div>
 
             <h1 className="blog-title text-4xl md:text-5xl font-semibold text-[var(--color-primary-navy)] leading-tight">
               {title}
@@ -165,60 +153,17 @@ function BlogLayout({ children, title, subtitle, date, category, image }) {
               {children}
             </div>
 
-            <div className="mt-16 flex justify-center">
-              <button
-                ref={ctaRef}
-                onClick={() => setIsModalOpen(true)}
-                className="px-8 py-4 rounded-full bg-[var(--color-primary-mauve)] text-white font-semibold"
-              >
-                Get in Touch
-              </button>
+            <div className="blog-author mt-16 flex justify-end gap-4 border-t pt-8">
+              <div>
+                <h4 className="text-lg font-semibold text-[var(--color-primary-navy)]">
+                  {authorName}
+                </h4>
+                <p className="text-sm text-gray-500">{authorRole}</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
-
-      {isModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-6">
-          <div className="bg-white rounded-2xl w-full max-w-md p-8 relative">
-            <button
-              onClick={() => setIsModalOpen(false)}
-              className="absolute top-4 right-4 text-[var(--color-primary-navy)] text-xl"
-            >
-              ×
-            </button>
-            <h3 className="text-xl font-semibold text-[var(--color-primary-mauve)] mb-6">
-              Get in Touch
-            </h3>
-            <form className="space-y-4">
-              <input
-                type="text"
-                placeholder="Full Name"
-                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-mauve)]"
-                required
-              />
-              <input
-                type="email"
-                placeholder="Email Address"
-                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-mauve)]"
-                required
-              />
-              <input
-                type="tel"
-                placeholder="Phone Number"
-                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-mauve)]"
-                required
-              />
-              <button
-                type="submit"
-                className="w-full bg-[var(--color-primary-mauve)] text-white py-3 rounded-lg transition-all duration-300 hover:scale-105"
-              >
-                Submit
-              </button>
-            </form>
-          </div>
-        </div>
-      )}
     </section>
   );
 }

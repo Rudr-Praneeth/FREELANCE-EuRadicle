@@ -81,7 +81,7 @@ const Aspire = {
   "Improved ability to balance leadership demands across work, family, and personal identity",
   "Stronger sense of agency, presence, and long-term leadership direction"
  ],
- outro: "The journey created a supportive yet challenging space for women leaders to reflect, recalibrate, and lead with greater intention and confidence. At EuRadicle, we believe leadership development must address both performance and sustainability. ASCENT reflects our philosophy of designing leadership journeys that are deeply personalized, context-aware, and human, while being delivered with strong journey governance and execution excellence.",
+ outro: "The journey created a supportive yet challenging space for women leaders to reflect, recalibrate, and lead with greater intention and confidence. At EuRadicle, we believe leadership development must address both performance and sustainability. Aspire reflects our philosophy of designing leadership journeys that are deeply personalized, context-aware, and human, while being delivered with strong journey governance and execution excellence.",
 bannerUrl: "/Home/compressed-AspireBanner.png",
 hoveerImages: ["/Home/compressed-AspireHover1.jpeg", "/Home/compressed-AspireHover2.jpeg", "/Home/compressed-AspireHover3.jpeg"]
 }
@@ -104,7 +104,7 @@ const Catalyst = {
   ],
   outro: "Participants demonstrated a visible movement from solution execution to consultative ownership, along with tangible improvements in decision speed, stakeholder trust, collaboration, and clarity of thinking.At EuRadicle, we view professional readiness as a mindset shift, not a skill checklist. Enterprise Consulting reflects our belief that future-ready leaders create sustained business value by combining structured thinking, emotional intelligence, and consultative influence.",
 bannerUrl: "/Home/compressed-PrysmBanner.jpeg",
-hoveerImages: ["/Home/compressed-PrysmCard.jpeg", "/Home/compressed-PrysmHover2.jpeg", "/Home/compressed-PrysmHover3.jpg"]
+hoveerImages: ["/Home/compressed-PrysmCard.jpeg", "/Home/compressed-PrysmHover2.jpeg", "/Home/PrysmHover1.jpeg",]
 }
 
 const Testimonials = [

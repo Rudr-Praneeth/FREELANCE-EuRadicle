@@ -105,7 +105,7 @@ export default function Jobs() {
             Work That Shapes You - and the World
           </p>
 
-          <p className="text-body-lg italic jobs-animate">
+          <p className="italic text-body-sm mt-6 max-w-5xl mx-auto jobs-animate">
             Join a global consulting firm where impact is intentional and growth
             is personal. At EuRadicle, curious minds come together in a culture
             of trust, collaboration, and continuous learning , where high

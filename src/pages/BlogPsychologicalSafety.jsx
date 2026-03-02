@@ -8,6 +8,8 @@ function BlogPsychologicalSafety() {
       // date="Aug 4, 2025"
       category="News"
       image="/Home/compressed-blog3.jpeg"
+      authorName={"Shahnawaz Khan"}
+      authorRole={"Founder & Managing Partner"}
     >
       <p>
         Why do capable teams stay silent in critical moments? Why do

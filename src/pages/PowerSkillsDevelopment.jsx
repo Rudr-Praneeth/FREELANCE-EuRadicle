@@ -42,7 +42,7 @@ function PowerSkillsDevelopment() {
         {
           heading: "Problem Solving & Decision Making",
           description:
-            "Complexity demands clarity. We sharpen problem framing and decision-making under pressure-empowering professionals to move from reactive thinking to confident, well-judged action.",
+            "Complexity demands clarity. We sharpen problem framing and decision-making under pressure - empowering professionals to move from reactive thinking to confident, well-judged action.",
         },
       ]}
     />

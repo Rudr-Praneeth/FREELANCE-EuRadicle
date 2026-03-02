@@ -25,17 +25,13 @@ export default function EuradicleLife() {
             <span className="text-[var(--color-primary-mauve)]">EURADICLE</span>
           </h1>
 
-          <p className="italic text-body-lg lg:text-xl max-w-5xl mx-auto leading-relaxed">
-            We believe the best work comes from people who feel valued,
-            supported, and truly seen-not from burnout. We believe meaningful
-            impact begins with balance, trust, and a deep sense of belonging.
-            Our culture is rooted in curiosity, kindness, and open
-            conversations, where ideas matter more than hierarchy and
-            individuality is celebrated. We make space for growth, honest
-            dialogue, shared wins, and personal pauses-because success should
-            feel fulfilling, not draining. Here, you can build leaders, shape
-            organizations, and create real change-while staying connected to who
-            you are.
+          <p className="italic text-body-sm mt-6 max-w-5xl mx-auto leading-relaxed">
+            We believe great work comes from people who feel valued - not burned
+            out. At EuRadicle, impact begins with balance, trust, and belonging.
+            Our culture champions curiosity, open dialogue, and individuality
+            over hierarchy. We create space for growth, shared wins, and
+            meaningful pauses - so you can shape leaders and organisations while
+            staying true to yourself.
           </p>
         </div>
 

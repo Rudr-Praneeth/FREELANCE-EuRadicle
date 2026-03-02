@@ -14,7 +14,7 @@ const LogoMarqueeColumn = ({ logoIndices, reverse = false }) => {
               src={`/logos/${index}.png`}
               alt={`Partner Logo ${index}`}
               loading="lazy"
-              className="max-w-[170px] sm:max-w-[190px] md:max-w-[210px] lg:max-w-[230px] h-auto transition-transform duration-300 hover:scale-110 object-contain"
+              className="max-w-[100px] sm:max-w-[150px] md:max-w-[180px] lg:max-w-[200px] h-auto transition-transform duration-300 hover:scale-110 object-contain"
             />
           </div>
         ))}
@@ -24,7 +24,7 @@ const LogoMarqueeColumn = ({ logoIndices, reverse = false }) => {
 };
 
 const LogoSection = () => {
-  const totalLogos = 34;
+  const totalLogos = 33;
   const indices = Array.from({ length: totalLogos }, (_, i) => i + 1).filter(
     (i) => i !== 18
   );

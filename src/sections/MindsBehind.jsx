@@ -56,7 +56,7 @@ export default function MindsBehind({ items }) {
             OUR CORE <span className="text-primary-mauve">VERTICALS</span>
           </h2>
 
-          <p className="italic mx-auto mt-3 sm:mt-4 md:mt-5 max-w-5xl text-xs sm:text-sm md:text-base leading-relaxed">
+          <p className="italic text-body-sm mt-6 max-w-5xl mx-auto leading-relaxed">
             We combine deep expertise, practical experience, and a
             results-driven approach to deliver transformative solutions for our
             clients. Our versatile pool of consultants brings together diverse

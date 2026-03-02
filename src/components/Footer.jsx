@@ -45,7 +45,9 @@ export default function Footer() {
         </div>
 
         <div className="lg:col-span-3">
-          <h3 className="text-subheading mb-8 pb-3 border-b border-brand-400/10 w-full">Our Capabilities</h3>
+          <h3 className="text-subheading mb-8 pb-3 border-b border-brand-400/10 w-full">
+            Our Capabilities
+          </h3>
           <nav className="flex flex-col space-y-4 text-body-sm text-primary-navy/80">
             <Link to="/capabilities/leadership-development" className="hover:text-[var(--color-primary-mauve)] transition-colors w-fit">Leadership Development</Link>
             <Link to="/capabilities/consulting-talent-management" className="hover:text-[var(--color-primary-mauve)] transition-colors w-fit">Consulting & Talent Management</Link>
@@ -59,33 +61,90 @@ export default function Footer() {
         </div>
 
         <div className="lg:col-span-3">
-          <h3 className="text-subheading mb-8 pb-3 border-b border-brand-400/10 w-full">Contact Details</h3>
+          <h3 className="text-subheading mb-8 pb-3 border-b border-brand-400/10 w-full">
+            Contact Details
+          </h3>
+
           <div className="flex flex-col space-y-6 text-body-sm text-primary-navy/80">
+            
             <div className="space-y-1">
-              <p className="text-[10px] uppercase tracking-widest opacity-40 font-bold mb-2">Email</p>
-              <a href="mailto:info@euradicle.com" className="hover:text-[var(--color-primary-mauve)] transition-colors block text-base font-medium">info@euradicle.com</a>
+              <p className="text-[10px] uppercase tracking-widest opacity-40 font-bold mb-2">
+                Email
+              </p>
+              <a
+                href="mailto:info@euradicle.com"
+                className="hover:text-[var(--color-primary-mauve)] transition-colors block text-base font-medium"
+              >
+                info@euradicle.com
+              </a>
             </div>
-            <div className="space-y-1">
-              <p className="text-[10px] uppercase tracking-widest opacity-40 font-bold mb-2">Inquiries</p>
-              <a href="tel:+914031003306" className="hover:text-[var(--color-primary-mauve)] transition-colors block">+91 40 3100 3306</a>
-              <a href="tel:+919661188313" className="hover:text-[var(--color-primary-mauve)] transition-colors block">+91 966 118 8313</a>
+
+            <div className="space-y-3">
+              <p className="text-[10px] uppercase tracking-widest opacity-40 font-bold mb-2">
+                Inquiries
+              </p>
+
+              <a
+                href="tel:+914031003306"
+                className="flex items-center gap-3 hover:text-[var(--color-primary-mauve)] transition-colors"
+              >
+                <img
+                  src="https://flagcdn.com/in.svg"
+                  alt="India Flag"
+                  className="w-5 h-4 object-cover rounded-sm"
+                />
+                <span>+91 40 3100 3306</span>
+              </a>
+
+              <a
+                href="tel:+919661188313"
+                className="flex items-center gap-3 hover:text-[var(--color-primary-mauve)] transition-colors"
+              >
+                <img
+                  src="https://flagcdn.com/in.svg"
+                  alt="India Flag"
+                  className="w-5 h-4 object-cover rounded-sm"
+                />
+                <span>+91 966 118 8313</span>
+              </a>
+
+              <a
+                href="tel:+17134293753"
+                className="flex items-center gap-3 hover:text-[var(--color-primary-mauve)] transition-colors"
+              >
+                <img
+                  src="https://flagcdn.com/us.svg"
+                  alt="USA Flag"
+                  className="w-5 h-4 object-cover rounded-sm"
+                />
+                <span>+1 (713) 429-3753</span>
+              </a>
+
             </div>
           </div>
         </div>
 
         <div className="lg:col-span-3">
-          <h3 className="text-subheading mb-8 pb-3 border-b border-brand-400/10 w-full">Global Presence</h3>
+          <h3 className="text-subheading mb-8 pb-3 border-b border-brand-400/10 w-full">
+            Global Presence
+          </h3>
+
           <div className="space-y-8 text-body-sm text-primary-navy/80">
             <div className="space-y-2">
-              <p className="font-bold text-primary-navy text-[10px] uppercase tracking-[0.2em] opacity-40">India Hub</p>
+              <p className="font-bold text-primary-navy text-[10px] uppercase tracking-[0.2em] opacity-40">
+                India Hub
+              </p>
               <p className="leading-relaxed">
                 2nd floor Building no: 8-2-120/86/5/B<br />
                 Road No 3, Banjara Hills, Hyderabad<br />
                 Telangana - 500034
               </p>
             </div>
+
             <div className="space-y-2">
-              <p className="font-bold text-primary-navy text-[10px] uppercase tracking-[0.2em] opacity-40">USA Office</p>
+              <p className="font-bold text-primary-navy text-[10px] uppercase tracking-[0.2em] opacity-40">
+                USA Office
+              </p>
               <p className="leading-relaxed">
                 EuRadicle Learning Inc<br />
                 10301 Northwest Freeway, Suite 314<br />

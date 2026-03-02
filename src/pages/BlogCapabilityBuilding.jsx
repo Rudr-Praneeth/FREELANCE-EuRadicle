@@ -8,6 +8,8 @@ function BlogCapabilityBuilding() {
       date="Jul 31, 2025"
       category="News"
       image="/Home/compressed-blog2.jpeg"
+      authorName={"Shahnawaz Khan"}
+      authorRole={"Founder & Managing Partner"}
     >
       <p>
         For decades, organizations have invested heavily in training programs,

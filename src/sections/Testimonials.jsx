@@ -27,7 +27,7 @@ const TestimonialCard = ({ data }) => (
         <img
           src={data.logoUrl}
           alt={data.org}
-          className={`h-12 min-[600px]:h-14 min-[768px]:h-16 object-contain flex-shrink-0 ${
+          className={`h-14 min-[600px]:h-16 min-[768px]:h-20 object-contain flex-shrink-0 ${
       data.logoUrl === "/logos/peepalco.png" ? "w-24" : "w-auto" }`}
        />
       )}

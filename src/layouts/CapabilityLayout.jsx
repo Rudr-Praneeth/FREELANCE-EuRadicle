@@ -105,28 +105,38 @@ function CapabilityLayout({
         </button>
       </div>
 
-      <div className="max-w-4xl mx-auto px-6 py-10">
+      <div className="max-w-6xl mx-auto px-6 py-10">
         <div className="cap-content text-body text-[var(--color-primary-navy)] space-y-12">
           {intro && (
-            <p className="text-body-lg leading-relaxed">
+            <p className="text-body-lg leading-relaxed max-w-4xl mx-auto text-center">
               {intro}
             </p>
           )}
 
           {cards.length > 0 && (
-            <div className="space-y-6">
+            <div
+              className="
+                grid 
+                grid-cols-2 
+                sm:grid-cols-2 
+                md:grid-cols-3 
+                lg:grid-cols-4 
+                gap-6
+              "
+            >
               {cards.map((card, index) => (
                 <div
                   key={index}
                   className="group border border-[var(--color-primary-navy)]/10 rounded-2xl overflow-hidden bg-white transition-all duration-500 hover:shadow-xl"
                 >
-                  <div className="p-8 cursor-pointer">
+                  <div className="p-6 cursor-pointer">
                     <h3 className="text-subheading-lg text-[var(--color-primary-mauve)]">
                       {card.heading}
                     </h3>
                   </div>
-                  <div className="max-h-0 overflow-hidden transition-all duration-500 ease-in-out group-hover:max-h-[500px]">
-                    <div className="px-8 pb-8 text-body leading-relaxed text-[var(--color-primary-navy)]">
+
+                  <div className="max-h-0 overflow-hidden transition-all duration-500 ease-in-out group-hover:max-h-[400px]">
+                    <div className="px-6 pb-6 text-body leading-relaxed text-[var(--color-primary-navy)]">
                       {card.description}
                     </div>
                   </div>
@@ -189,7 +199,7 @@ function CapabilityLayout({
           </div>
         </div>
       )}
-    </section>
+    </section>  
   );
 }
 

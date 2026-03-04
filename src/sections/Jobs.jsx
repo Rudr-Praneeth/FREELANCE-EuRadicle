@@ -6,35 +6,32 @@ import { useGSAP } from "@gsap/react";
 export default function Jobs() {
   const sectionRef = useRef(null);
   const [selectedRole, setSelectedRole] = useState(null);
+  const [isPdfExpanded, setIsPdfExpanded] = useState(false);
 
   const roles = [
     {
       id: "bde-dallas",
       title: "Business Development Executive",
       location: "Dallas, Texas",
-      description:
-        "Drive strategic growth initiatives, build client relationships, and identify new market opportunities. You will work closely with leadership to expand market presence, develop new revenue streams, and build long-term enterprise partnerships. The role requires strong communication skills, strategic thinking, and a proactive approach to identifying growth opportunities.",
+      pdfPath: "/JDs/Business Development Executive.pdf",
     },
     {
       id: "ops-hyd",
       title: "Operations - Associate/Sr. Associate",
       location: "Hyderabad, India",
-      description:
-        "Manage internal workflows, streamline processes, and ensure operational excellence across teams. You will coordinate cross-functional teams, optimize reporting systems, and implement scalable processes that improve efficiency and performance across departments.",
+      pdfPath: "/JDs/Operations Associate.pdf",
     },
     {
       id: "content-hyd",
       title: "Content & Solutioning - Associate/Intern",
       location: "Hyderabad, India",
-      description:
-        "Develop research-driven content and support consulting solution design for global clients. Responsibilities include conducting structured research, synthesizing insights, preparing executive-ready documents, and supporting client-facing solution development initiatives.",
+      pdfPath: "/JDs/Content & Solutioning Associate.pdf",
     },
     {
       id: "bde-delhi",
       title: "Business Development Executive",
       location: "Delhi, India",
-      description:
-        "Lead regional expansion efforts and manage key enterprise partnerships. You will identify new business channels, nurture strategic alliances, and drive revenue growth through consultative selling and strong stakeholder engagement.",
+      pdfPath: "/JDs/Business Development Executive.pdf",
     },
   ];
 
@@ -51,26 +48,13 @@ export default function Jobs() {
 
       cards.forEach((card) => {
         const enter = () => {
-          gsap.to(card, {
-            y: -10,
-            scale: 1.03,
-            duration: 0.4,
-            ease: "power3.out",
-          });
+          gsap.to(card, { y: -10, scale: 1.03, duration: 0.4, ease: "power3.out" });
         };
-
         const leave = () => {
-          gsap.to(card, {
-            y: 0,
-            scale: 1,
-            duration: 0.4,
-            ease: "power3.out",
-          });
+          gsap.to(card, { y: 0, scale: 1, duration: 0.4, ease: "power3.out" });
         };
-
         card.addEventListener("mouseenter", enter);
         card.addEventListener("mouseleave", leave);
-
         context.add(() => {
           card.removeEventListener("mouseenter", enter);
           card.removeEventListener("mouseleave", leave);
@@ -82,7 +66,10 @@ export default function Jobs() {
 
   useEffect(() => {
     const handleEsc = (e) => {
-      if (e.key === "Escape") setSelectedRole(null);
+      if (e.key === "Escape") {
+        setSelectedRole(null);
+        setIsPdfExpanded(false);
+      }
     };
     window.addEventListener("keydown", handleEsc);
     return () => window.removeEventListener("keydown", handleEsc);
@@ -108,7 +95,7 @@ export default function Jobs() {
             Join a global consulting firm where impact is intentional and growth
             is personal. At EuRadicle, curious minds come together in a culture
             of trust, collaboration, and continuous learning, where high
-            performance coexists with balance and authenticity. You’ll be
+            performance coexists with balance and authenticity. You'll be
             encouraged to think deeply, contribute meaningfully, and take
             ownership of the impact you create. This is a place where your ideas
             matter, your growth is supported, and your individuality is
@@ -120,17 +107,18 @@ export default function Jobs() {
           {roles.map((role) => (
             <div
               key={role.id}
-              onClick={() => setSelectedRole(role)}
+              onClick={() => {
+                setSelectedRole(role);
+                setIsPdfExpanded(false);
+              }}
               className="jobs-card jobs-animate bg-[var(--color-bg-white)] rounded-2xl p-8 shadow-lg cursor-pointer transition-all duration-500 border border-transparent hover:border-brand-600"
             >
               <p className="text-subheading text-[var(--color-primary-mauve)] mb-3">
                 Open Role
               </p>
-
               <h3 className="text-h5 text-[var(--color-primary-navy)]">
                 {role.title}
               </h3>
-
               {role.location && (
                 <p className="mt-4 text-body-sm text-[var(--color-primary-mauve)]">
                   {role.location}
@@ -144,108 +132,133 @@ export default function Jobs() {
       {selectedRole &&
         createPortal(
           <div
-            className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 px-6"
-            onClick={() => setSelectedRole(null)}
+            className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 px-4 py-6"
+            onClick={() => {
+              setSelectedRole(null);
+              setIsPdfExpanded(false);
+            }}
           >
             <div
-              className="bg-[var(--color-bg-white)] w-full max-w-5xl rounded-2xl p-10 relative shadow-xl flex flex-col max-h-[100vh]"
+              className="bg-[var(--color-bg-white)] w-full max-w-6xl rounded-2xl p-6 md:p-10 relative shadow-xl flex flex-col max-h-[95vh] overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
             >
               <button
-                onClick={() => setSelectedRole(null)}
-                className="absolute top-6 right-6 text-[var(--color-primary-navy)] text-2xl"
+                onClick={() => {
+                  setSelectedRole(null);
+                  setIsPdfExpanded(false);
+                }}
+                className="absolute top-4 right-6 text-[var(--color-primary-navy)] text-3xl font-light hover:rotate-90 transition-transform duration-300"
                 aria-label="Close"
               >
                 ×
               </button>
 
-              <div className="grid md:grid-cols-2 gap-10 overflow-y-auto">
-                <div className="pr-4">
-                  <h2 className="text-h3 text-[var(--color-primary-navy)] mb-2">
+              <div className="grid lg:grid-cols-12 gap-10">
+                <div className="lg:col-span-7 flex flex-col">
+                  <h2 className="text-h3 text-[var(--color-primary-navy)] mb-1">
                     {selectedRole.title}
                   </h2>
-
                   <p className="text-body-sm text-[var(--color-primary-mauve)] mb-6">
                     {selectedRole.location}
                   </p>
+                  
+                  <div className="block lg:hidden mb-4">
+                    <button 
+                      onClick={() => setIsPdfExpanded(!isPdfExpanded)}
+                      className="w-full flex items-center justify-between px-5 py-3 bg-gray-50 border border-[var(--color-primary-mauve)] rounded-xl text-[var(--color-primary-navy)] font-medium"
+                    >
+                      <span>{isPdfExpanded ? "Close Job Description" : "View Job Description"}</span>
+                      <span className={`transition-transform duration-300 ${isPdfExpanded ? 'rotate-180' : ''}`}>↓</span>
+                    </button>
+                  </div>
 
-                  <p className="text-body-lg whitespace-pre-line">
-                    {selectedRole.description}
-                  </p>
+                  <div className={`
+                    w-full border border-[var(--color-primary-mauve)] rounded-xl overflow-hidden transition-all duration-500 ease-in-out
+                    ${isPdfExpanded ? 'h-[60vh] opacity-100 mt-2' : 'h-0 lg:h-[60vh] opacity-0 lg:opacity-100 lg:mt-0'}
+                  `}>
+                    <iframe 
+                      src={selectedRole.pdfPath} 
+                      className="w-full h-full"
+                      title={`${selectedRole.title} Job Description`}
+                    />
+                  </div>
                 </div>
 
-                <div>
-                  <form
-                    className="space-y-6"
-                    onSubmit={(e) => {
-                      e.preventDefault();
-                    }}
-                  >
-                    <input
-                      type="text"
-                      placeholder="Full Name"
-                      required
-                      className="w-full border border-[var(--color-primary-mauve)] rounded-xl px-4 py-3 bg-transparent focus:outline-none"
-                    />
-
-                    <input
-                      type="email"
-                      placeholder="Email"
-                      required
-                      className="w-full border border-[var(--color-primary-mauve)] rounded-xl px-4 py-3 bg-transparent focus:outline-none"
-                    />
-
-                    <input
-                      type="tel"
-                      placeholder="Phone number"
-                      required
-                      className="w-full border border-[var(--color-primary-mauve)] rounded-xl px-4 py-3 bg-transparent focus:outline-none"
-                    />
-
-                    <label className="w-full flex items-center justify-center border border-[var(--color-primary-mauve)] rounded-xl px-4 py-3 cursor-pointer">
-                      <span className="text-gray-400">
-                        Attach your resume
-                      </span>
-                      <input
-                        type="file"
-                        accept=".pdf,.doc,.docx"
-                        required
-                        className="hidden"
-                      />
-                    </label>
-
-                    <button
-                      type="submit"
-                      className="w-full bg-[var(--color-primary-mauve)] text-white py-3 rounded-xl hover:opacity-90 transition"
+                <div className="lg:col-span-5 flex flex-col justify-start pt-2">
+                  <div className="bg-gray-50/50 p-6 rounded-2xl border border-gray-100">
+                    <h4 className="text-lg font-semibold text-[var(--color-primary-navy)] mb-6">Apply for this position</h4>
+                    <form
+                      className="space-y-5"
+                      onSubmit={(e) => e.preventDefault()}
                     >
-                      APPLY
-                    </button>
-                  </form>
+                      <div className="space-y-1">
+                        <input
+                          type="text"
+                          placeholder="Full Name"
+                          required
+                          className="w-full border border-gray-300 rounded-xl px-4 py-3.5 bg-white focus:border-[var(--color-primary-mauve)] focus:outline-none transition-colors"
+                        />
+                      </div>
+                      <div className="space-y-1">
+                        <input
+                          type="email"
+                          placeholder="Email Address"
+                          required
+                          className="w-full border border-gray-300 rounded-xl px-4 py-3.5 bg-white focus:border-[var(--color-primary-mauve)] focus:outline-none transition-colors"
+                        />
+                      </div>
+                      <div className="space-y-1">
+                        <input
+                          type="tel"
+                          placeholder="Phone Number"
+                          required
+                          className="w-full border border-gray-300 rounded-xl px-4 py-3.5 bg-white focus:border-[var(--color-primary-mauve)] focus:outline-none transition-colors"
+                        />
+                      </div>
+                      <div className="space-y-1">
+                        <label className="w-full flex items-center justify-between border border-dashed border-gray-400 rounded-xl px-4 py-3.5 bg-white cursor-pointer hover:bg-gray-50 transition-colors">
+                          <span className="text-gray-500 text-sm">Upload Resume (PDF/DOC)</span>
+                          <span className="text-xs bg-gray-100 px-2 py-1 rounded">Browse</span>
+                          <input
+                            type="file"
+                            accept=".pdf,.doc,.docx"
+                            required
+                            className="hidden"
+                          />
+                        </label>
+                      </div>
+                      <button
+                        type="submit"
+                        className="w-full bg-[var(--color-primary-mauve)] text-white py-4 rounded-xl font-bold tracking-wide hover:shadow-lg hover:brightness-110 transition-all active:scale-[0.98]"
+                      >
+                        SUBMIT APPLICATION
+                      </button>
+                    </form>
+                  </div>
                 </div>
               </div>
 
-              <div className="mt-10 border-t pt-6 flex items-start gap-6">
+              <div className="mt-10 border-t border-gray-100 pt-6 flex flex-wrap items-center gap-4">
                 <img
                   src="/Approach/SK.png"
                   alt="Mr. Shahnawaz Khan"
-                  className="w-24 h-24 object-cover rounded-full"
+                  className="w-16 h-16 object-cover rounded-full flex-shrink-0 border-2 border-[var(--color-primary-mauve)]/20 shadow-sm"
                 />
-                <div>
-                  <p className="text-lg font-semibold text-[var(--color-primary-navy)]">
+                <div className="min-w-0">
+                  <p className="text-md font-bold text-[var(--color-primary-navy)] leading-snug">
                     Mr. Shahnawaz Khan
                   </p>
-                  <p className="text-sm text-[var(--color-primary-mauve)]">
+                  <p className="text-xs font-medium text-[var(--color-primary-mauve)] uppercase tracking-wider">
                     Founder & Managing Partner
                   </p>
-                  <p className="text-sm mt-2">
-                    shahnawaz.khan@euradicle.com
-                  </p>
-                  <p className="text-sm">
-                    India: +91 966 118 8313
-                  </p>
-                  <p className="text-sm">
-                    USA: +1 (713) 429-3753 (Whatsapp)
-                  </p>
+                  <div className="flex flex-col sm:flex-row sm:gap-4 mt-2">
+                    <p className="text-xs text-gray-500 flex items-center gap-1">
+                      <span>✉</span> shahnawaz.khan@euradicle.com
+                    </p>
+                    <p className="text-xs text-gray-500 flex items-center gap-1">
+                      <span>📞</span> India: +91 966 118 8313
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

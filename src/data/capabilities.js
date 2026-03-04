@@ -2,42 +2,42 @@ const capabilities = [
     {
         title: "Leadership Development",
         imageUrl: "Capabilities/Leadership Development.png",
-        sub: ["Managerial & Leadership Journeys", "Coaching Mindsets & Conversations", "Team Effectiveness & Collaboration", "Leading Through Change & Influence"]
+        sub: ["Managerial & Leadership Journeys", "Coaching Mindsets & Conversations", "Team Effectiveness & Collaboration", "Leading Through Change & Influence", "Other"]
     },
     {
         title: "Consulting & Talent Management",
         imageUrl: "Capabilities/Cosulting & Talent Management - Card.png",
-        sub: ["Internal Consulting & Advisory Skills", "Career & Succession Planning", "Onboarding & Continuous Learning Frameworks"]
+        sub: ["Internal Consulting & Advisory Skills", "Career & Succession Planning", "Onboarding & Continuous Learning Frameworks", "Other"]
     },
     {
         title: "Assessment & Development Centers",
         imageUrl: "Capabilities/compressed-Assesment & Development Centres - Card.png",
-        sub: ["Talent Readiness & Development Diagnostics"]
+        sub: ["Talent Readiness & Development Diagnostics", "Other"]
     },
     {
         title: "Power Skills Development",
         imageUrl: "Capabilities/Power Skills Development.png",
-        sub: ["Train the Trainer & Learning Facilitation","Communication & Interpersonal Excellence","Presentation & Storytelling Skills","Negotiation & Stakeholder Management", "Customer Service & Client Experience","Emotional Intelligence & Self-Mastery", "Problem Solving & Decision Making"]
+        sub: ["Train the Trainer & Learning Facilitation","Communication & Interpersonal Excellence","Presentation & Storytelling Skills","Negotiation & Stakeholder Management", "Customer Service & Client Experience","Emotional Intelligence & Self-Mastery", "Problem Solving & Decision Making", "Other"]
     },
     {
         title: "Digital & Business Transformation",
         imageUrl: "Capabilities/Digital & Business Transformation.png",
-        sub: ["Design Thinking", "Generative AI Enablement","Data-Driven Decision Making"]
+        sub: ["Design Thinking", "Generative AI Enablement","Data-Driven Decision Making", "Other"]
     },
     {
         title: "Commercial & Sales Enablement",
         imageUrl: "Capabilities/compressed-Commercials & Sales Enablement.png",
-        sub: ["Sales & Trade Promotion Excellence","Negotiation & Influence for Sales","Go-to-Market Strategy & Execution","Channel & Retail Effectiveness","Key Account Management Excellence","Solution & Consultative Selling"]
+        sub: ["Sales & Trade Promotion Excellence","Negotiation & Influence for Sales","Go-to-Market Strategy & Execution","Channel & Retail Effectiveness","Key Account Management Excellence","Solution & Consultative Selling", "Other"]
     },
     {
         title: "DEI & Culture Building",
         imageUrl: "Capabilities/DEI & Culture Building.jpg",
-        sub: ["Women in Leadership","Cross-Cultural Effectiveness"]
+        sub: ["Women in Leadership","Cross-Cultural Effectiveness", "Other"]
     },
     {
         title: "Creative Solutions",
         imageUrl: "Capabilities/Creative Solutions.png",
-        sub: ["E-Learning & Digital Course Design","Storyboarding & Learning Content Development","Collateral Design & Visual Communication","Program Management & Learning Operations","Learning Analytics & Reporting"]
+        sub: ["E-Learning & Digital Course Design","Storyboarding & Learning Content Development","Collateral Design & Visual Communication","Program Management & Learning Operations","Learning Analytics & Reporting", "Other"]
     },
 ];
 

@@ -1,44 +1,56 @@
 import React from 'react';
 import { Testimonials } from '../data/home';
 
-const TestimonialCard = ({ data }) => (
-  <div className="testimonial-card flex-shrink-0 w-[85vw] sm:w-full max-w-[380px] sm:max-w-none bg-bg-white rounded-2xl p-4 sm:p-6 min-[768px]:p-7 min-[992px]:p-8 border border-brand-400/20 shadow-[0_10px_30px_-15px_rgba(45,48,71,0.1)] flex flex-col gap-2 sm:gap-4 mb-0 sm:mb-6">
-    <div className="flex gap-1">
-      {[...Array(5)].map((_, i) => (
-        <span key={i} className="text-brand-500 text-base sm:text-xl">★</span>
-      ))}
-    </div>
+const TestimonialCard = ({ data }) => {
+  const isParticipantVoice = !data.by && !data.designation;
 
-    <h4 className="text-primary-navy leading-tight text-[clamp(15px,4vw,20px)] sm:text-[clamp(16px,2.5vw,22px)] font-semibold">
-      {data.designation}
-    </h4>
-
-    <p className="text-primary-navy/70 italic leading-relaxed text-[clamp(13px,3.8vw,16px)] sm:text-[clamp(14px,2.5vw,18px)] line-clamp-3 sm:line-clamp-none">
-      "{data.testimonial}"
-    </p>
-
-    <div className="mt-2 sm:mt-4 pt-3 sm:pt-6 border-t border-bg-muted flex items-center justify-between gap-3 sm:gap-4">
-      <div className="flex flex-col">
-        <span className="text-primary-navy text-xs sm:text-base font-medium">
-          {data.by}
-        </span>
-        <span className="text-brand-600 font-semibold uppercase tracking-wider text-[10px] sm:text-sm">
-          {data.org}
-        </span>
-      </div>
-
-      {data.logoUrl && (
-        <img
-          src={data.logoUrl}
-          alt={data.org}
-          className={`h-14 sm:h-24 object-contain flex-shrink-0 ${
-            data.logoUrl === "/logos/peepalco.svg" ? "w-18 sm:w-23" : "w-auto"
-          }`}
+  return (
+    <div className="testimonial-card relative flex-shrink-0 w-[85vw] sm:w-full max-w-[380px] sm:max-w-none bg-bg-white rounded-2xl p-4 sm:p-5 md:p-5 lg:p-6 border border-brand-400/20 shadow-[0_10px_30px_-15px_rgba(45,48,71,0.1)] flex flex-col gap-2 sm:gap-3 mb-0 sm:mb-4">
+      {isParticipantVoice && (
+        <img 
+          src="/ParticipantsVoices.png" 
+          alt="Participant Voice Logo" 
+          className="absolute top-4 right-4 w-8 h-8 sm:w-9 sm:h-9 object-contain opacity-80"
         />
       )}
+
+      <div className="flex gap-1">
+        {[...Array(5)].map((_, i) => (
+          <span key={i} className="text-brand-500 text-base sm:text-lg">★</span>
+        ))}
+      </div>
+
+      <h4 className="text-primary-navy leading-tight text-[clamp(15px,4vw,20px)] sm:text-[clamp(15px,2vw,20px)] font-semibold">
+        {isParticipantVoice ? "Participant Voices" : data.designation}
+      </h4>
+
+      <p className="text-primary-navy/70 italic leading-relaxed text-[clamp(13px,3.8vw,16px)] sm:text-[clamp(13px,1.6vw,16px)] line-clamp-4 sm:line-clamp-3">
+        "{data.testimonial}"
+      </p>
+
+      <div className="mt-2 sm:mt-3 pt-3 sm:pt-4 border-t border-bg-muted flex items-center justify-between gap-3">
+        <div className="flex flex-col">
+          <span className="text-primary-navy text-xs sm:text-sm font-medium">
+            {isParticipantVoice ? "Anonymous Contributor" : data.by}
+          </span>
+          <span className="text-brand-600 font-semibold uppercase tracking-wider text-[10px] sm:text-xs">
+            {data.org}
+          </span>
+        </div>
+
+        {data.logoUrl && (
+          <img
+            src={data.logoUrl}
+            alt={data.org}
+            className={`h-12 sm:h-16 md:h-18 object-contain flex-shrink-0 ${
+              data.logoUrl === "/logos/peepalco.svg" ? "w-16 sm:w-20" : "w-auto"
+            }`}
+          />
+        )}
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 const MarqueeRow = ({ items }) => (
   <div className="relative w-full overflow-hidden sm:hidden py-2">
@@ -51,7 +63,7 @@ const MarqueeRow = ({ items }) => (
 );
 
 const MarqueeColumn = ({ items, reverse = false }) => (
-  <div className="relative h-[600px] min-[600px]:h-[700px] min-[768px]:h-[800px] overflow-hidden px-2 hidden sm:block">
+  <div className="relative h-[520px] md:h-[600px] lg:h-[650px] overflow-hidden px-2 hidden sm:block">
     <div className={`flex flex-col ${reverse ? 'animate-marquee-reverse' : 'animate-marquee'}`}>
       {[...items, ...items].map((item, idx) => (
         <TestimonialCard key={idx} data={item} />
@@ -80,9 +92,9 @@ const TestimonialsSection = () => {
           from { transform: translateX(0); }
           to { transform: translateX(-50%); }
         }
-        .animate-marquee { animation: marquee 60s linear infinite; }
-        .animate-marquee-reverse { animation: marquee-reverse 60s linear infinite; }
-        .animate-marquee-x { animation: marquee-x 45s linear infinite; }
+        .animate-marquee { animation: marquee 80s linear infinite; }
+        .animate-marquee-reverse { animation: marquee-reverse 80s linear infinite; }
+        .animate-marquee-x { animation: marquee-x 65s linear infinite; }
         .animate-marquee:hover, .animate-marquee-reverse:hover, .animate-marquee-x:hover {
           animation-play-state: paused;
         }

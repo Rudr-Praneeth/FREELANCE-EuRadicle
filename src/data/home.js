@@ -109,12 +109,12 @@ hoveerImages: ["/Home/compressed-PrysmCard.jpeg", "/Home/compressed-PrysmHover2.
 
 const Testimonials = [
   {
-    org: "Ashiana",
+    org: "Ashiana Housing Ltd",
     logoUrl: "logos/11.png",
     by: "Surbhi Dewaan",
     designation: "Vice President & Head HR",
     testimonial:
-      "What truly sets EuRadicle apart is not just the breadth of its programs, from FTM and negotiation to delegation and customer service, but the depth of customization and ownership they bring to every engagement. Over our six-year association, EuRadicle has consistently approached learning as a long-term capability-building partnership rather than a one-time training intervention. The sustained Net Promoter Score of 90% reflects the trust, relevance, and measurable impact they have built with our teams over time."
+      "What truly sets EuRadicle apart is not just the breadth of its programs-from FTM and negotiation to delegation and customer service-but the depth of customization and ownership they bring to every engagement. Over our six-year association, EuRadicle has consistently approached learning as a long-term capability-building partnership rather than a one-time training intervention. The sustained Net Promoter Score of 90% reflects the trust, relevance, and measurable impact they have built with our teams over time."
   },
   {
     org: "LG",
@@ -133,7 +133,7 @@ const Testimonials = [
       "Participants highly valued the discussion-led approach and personalized focus of the sessions. The facilitators’ contribution to participant development was deeply appreciated and generated strong interest in future interventions. Societe Generale looks forward to continuing its collaboration with EuRadicle."
   },
   {
-    org: "Arcesium",
+    org: "Arcesium India Pvt Ltd",
     logoUrl: "logos/4.png",
     by: "Rachel Mathew",
     designation: "Senior Manager L&D",
@@ -141,7 +141,7 @@ const Testimonials = [
       "The detailed Program Impact Report clearly demonstrated the tangible outcomes of the initiative and helped build strong leadership buy-in. The sessions were thoughtfully facilitated, with strong rapport established with participants, and supported by seamless logistics and governance that ensured smooth execution. As learning is a continuous journey, we look forward to conducting a refresher in the coming months and to continued engagements with EuRadicle in 2026."
   },
   {
-    org: "Air India",
+    org: "Air India Ltd",
     logoUrl: "logos/13.png",
     by: "",
     designation: "",
@@ -165,7 +165,7 @@ const Testimonials = [
       "The program created an engaging and motivating learning environment, making concepts easy to understand and apply. Participants valued the practical insights and real-world relevance, and many expressed the need for such trainings to be conducted regularly and extended to more team members. Overall, the experience was insightful, enriching, and highly appreciated."
   },
   {
-    org: "Coca Cola",
+    org: "The Coca Cola Company",
     logoUrl: "logos/31.png",
     by: "",
     designation: "",
@@ -190,12 +190,60 @@ const Testimonials = [
       "An engaging and well-delivered session that provided practical frameworks directly applicable at work. Participants appreciated the structured approach, constructive insights, and overall clarity of the program. The experience was both valuable and impactful, reinforcing key concepts in a meaningful way."
   },
   {
-    org: "Zscaler",
+    org: "Zscaler Inc",
     logoUrl: "logos/12.png",
     by: "",
     designation: "",
     testimonial:
       "The program delivered a highly beneficial and enjoyable learning experience. Participants described it as a great overall experience and expressed interest in extending the training across the organization. The session was well received, reinforcing its value and positive impact."
+  },
+  {
+    org: "Pidilite Industries Ltd",
+    logoUrl: "logos/10.png",
+    by: "",
+    designation: "",
+    testimonial: 
+    "The session was well-organized, engaging, and highly relevant to real workplace scenarios. The practical examples and clear demonstrations made the concepts easy to apply. It offered valuable insights into becoming a better manager and leader. I would highly recommend this training and believe it should be conducted regularly."
+  },
+  {
+    org: "Aditya Birla Group",
+    logoUrl: "logos/3.png",
+    by: "",
+    designation: "",
+    testimonial: 
+    "The session was highly interactive, well-structured, and professionally delivered. I appreciated the structured frameworks and practical insights that helped me think more like an internal consultant. The content and reference materials were clear and useful, making the learning meaningful and engaging. Overall, it was a great session that added real value"
+  },
+  {
+    org: "We Hub Foundation- Govt. of Telegana",
+    logoUrl: "logos/2.png",
+    by: "",
+    designation: "",
+    testimonial: 
+    "The workshop truly opened the world of funding for us and made the fundamentals of fundraising much easier to understand and apply. I found the session highly useful, interactive, and well-organized - especially for founders beginning their fundraising journey. It shifted our mindset toward approaching negotiations with greater clarity and helped us realize the importance of having clear ownership of the fundraising process within the team. Overall, it was a very valuable experience, and I only wish we had more time."
+  },
+  {
+    org: "Cisco Systems Inc",
+    logoUrl: "logos/23.png",
+    by: "",
+    designation: "",
+    testimonial: 
+    "I would describe the experience as well-planned, welcoming, thoughtful, and systematic - brought to life through engaging storytelling. The program was structured in a way that made the learning both meaningful and inspiring. I truly hope we all emerge as transformative leaders after this journey."
+  },
+  {
+    org: "DBS Bank Ltd",
+    logoUrl: "logos/1.png",
+    by: "",
+    designation: "",
+    testimonial: 
+    "The program was well-structured and engaging, and it truly enhanced our skills. The flow of the training was seamless, with practical insights that we could immediately apply. It was a highly valuable experience, and I would confidently recommend it to our teams."
+  },
+  {
+    org: "Alfred Karcher SE & Co.KG:",
+    logoUrl: "logos/6.png",
+    by: "",
+    designation: "",
+    testimonial: 
+    "The culture change programs have left a lasting impact on me and provided pathways to bring alignment within my teams."
   }
 ];
 

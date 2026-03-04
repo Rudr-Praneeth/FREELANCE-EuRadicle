@@ -98,7 +98,7 @@ const OurServices = () => {
       <div className="max-w-6xl mx-auto px-10">
         <div className="mb-8">
           <h1 className="text-h2 text-primary-navy tracking-tight text-center">
-            OUR SERVICE <span className="text-brand-600">CATEGORIES</span>
+            OUR SERVICE <span className="text-primary-mauve">CATEGORIES</span>
           </h1>
         </div>
         

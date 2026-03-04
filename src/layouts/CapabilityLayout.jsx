@@ -246,6 +246,7 @@ function CapabilityLayout({
                     {card.heading}
                   </option>
                 ))}
+                <option value="Others">Others</option>
               </select>
               <button
                 type="submit"

@@ -107,15 +107,15 @@ const TestimonialsSection = () => {
       `}</style>
 
       <div className="absolute inset-0 pointer-events-none z-30">
-        <div className="absolute top-0 left-0 w-full h-16 sm:h-24 bg-gradient-to-b from-bg-white via-bg-white/80 to-transparent" />
+        {/* <div className="absolute top-0 left-0 w-full h-16 sm:h-24 bg-gradient-to-b from-bg-white via-bg-white/80 to-transparent" /> */}
         <div className="absolute bottom-0 left-0 w-full h-16 sm:h-24 bg-gradient-to-t from-bg-white via-bg-white/80 to-transparent" />
       </div>
 
       <div className="relative z-20 max-w-7xl mx-auto">
         <div className="text-center mb-8 sm:mb-16">
-          <h1 className="text-primary-navy text-[clamp(24px,6vw,36px)] sm:text-[clamp(28px,5vw,56px)] leading-tight font-bold">
+          <h1 className="text-primary-navy text-h1">
             Trusted by Leaders{' '}
-            <span className="text-brand-600 block">Across Organizations</span>
+            <span className="text-primary-mauve block">Across Organizations</span>
           </h1>
         </div>
 

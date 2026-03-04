@@ -32,7 +32,7 @@ const GetInTouch = () => {
   return (
     <div>
       <Journey />
-      <ContactSection imageUrl={"https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg"} fields={fields} show={true}/>
+      <ContactSection imageUrl="/Home/Getintouch.jpg"  fields={fields} show={true}/>
     </div>
   )
 }

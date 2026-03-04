@@ -48,7 +48,7 @@ const Contact = () => {
   ]
   return (
     <div className='mt-24'>
-        <ContactSection imageUrl={"https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg"} fields={fields} header={<div className='text-h2 text-primary-navy text-center mb-4'>CONTACT <span className='text-primary-mauve'>US</span></div>}/>
+        <ContactSection imageUrl="/Home/Getintouch.jpg"  fields={fields} header={<div className='text-h2 text-primary-navy text-center mb-4'>CONTACT <span className='text-primary-mauve'>US</span></div>}/>
     </div>
   )
 }

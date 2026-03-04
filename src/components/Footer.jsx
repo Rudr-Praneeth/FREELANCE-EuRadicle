@@ -108,17 +108,17 @@ export default function Footer() {
                 <span>+91 966 118 8313</span>
               </a>
 
-              <a
-                href="tel:+17134293753"
+              <div
                 className="flex items-center gap-3 hover:text-[var(--color-primary-mauve)] transition-colors"
               >
                 <img
                   src="https://flagcdn.com/us.svg"
                   alt="USA Flag"
                   className="w-5 h-4 object-cover rounded-sm"
-                />
+                />  
                 <span>+1 (713) 429-3753</span>
-              </a>
+                <span className="text-black/30 text-xs">WhatsApp</span>
+              </div>
 
             </div>
           </div>

@@ -117,8 +117,8 @@ const ImpactStories = () => {
       />
 
       <div className="relative z-10 text-center mb-12">
-        <h2 className="text-[clamp(32px,5vw,56px)] font-bold text-primary-navy tracking-tight">
-          Impact <span className="text-brand-600">Stories</span>
+        <h2 className="text-h1 text-primary-navy">
+          Impact <span className="text-primary-mauve">Stories</span>
         </h2>
       </div>
 

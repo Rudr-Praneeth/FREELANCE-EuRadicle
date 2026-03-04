@@ -46,9 +46,10 @@ export default function Journey() {
 
         <div className="jr-cards grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="jr-card rounded-2xl border border-2 border-[var(--color-bg-muted)] bg-[var(--color-bg-white)] p-8 text-center">
-            <h3 className="text-h6 mb-4">Call us on</h3>
+            <h3 className="text-h6 mb-4">Connect With Us</h3>
             <p className="text-body-sm">+91 40310 03306</p>
             <p className="text-body-sm">+91 96611 88313</p>
+            <p className="text-body-sm">+1 (713) 429-3753</p>
           </div>
 
           <div className="jr-card rounded-2xl border border-2 border-[var(--color-bg-muted)] bg-[var(--color-bg-white)] p-8 text-center">

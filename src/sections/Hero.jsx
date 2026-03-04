@@ -1,6 +1,8 @@
 import React, { useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const Hero = () => {
   const container = useRef(null);
@@ -24,9 +26,20 @@ const Hero = () => {
     },
     { scope: container },
   );
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash === "#hero") {
+      const hero = document.getElementById("hero");
+      if (hero) {
+        hero.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
 
   return (
     <section
+    id="hero"
       ref={container}
       className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-bg-dark text-bg-white mt-6 min-[600px]:mt-8 min-[768px]:mt-10 min-[992px]:mt-12"
     >

@@ -2,6 +2,7 @@ import { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const NavLinks = [
   "HOME",
@@ -137,6 +138,24 @@ function Navbar({ openModal }) {
     { scope: navRef },
   );
 
+  const location = useLocation();
+const navigate = useNavigate();
+
+const handleHomeClick = (e) => {
+  e.preventDefault();
+
+  if (location.pathname === "/") {
+    const hero = document.getElementById("hero");
+    if (hero) {
+      hero.scrollIntoView({ behavior: "smooth" });
+    }
+  } else {
+    navigate("/#hero");
+  }
+
+  handleNavClick();
+};
+
   const handleNavClick = () => {
     setOpenMobile(false);
     setOpenDropdown(false);
@@ -184,7 +203,7 @@ function Navbar({ openModal }) {
       <div className="w-full h-full flex items-center justify-between px-6">
         <div className="flex w-1/2 md:w-1/6 items-center h-full">
           <Link
-            to="/"
+            to="/#hero"
             onClick={handleNavClick}
             className="flex items-center group [perspective:1000px]"
           >
@@ -210,7 +229,7 @@ function Navbar({ openModal }) {
 
             const to =
               item === "HOME"
-                ? "/"
+                ? "/#hero"
                 : item === "WHY EURADICLE"
                   ? "/why-euradicle"
                   : item === "OUR CAPABILITIES"

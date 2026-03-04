@@ -237,6 +237,7 @@ ${idx === 2 ? "z-20" : "z-10"}`}
             >
               ×
             </button>
+            
             <form onSubmit={handleSubmit} className="flex flex-col gap-4 mt-8">
               <input
                 type="text"

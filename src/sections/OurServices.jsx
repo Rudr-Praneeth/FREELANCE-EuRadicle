@@ -53,17 +53,25 @@ const ServiceCard = ({ service, index }) => {
       className="group relative w-full border border-brand-400/20 bg-bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-500 overflow-hidden mb-4"
     >
       <div className="px-8 py-6 flex flex-col md:flex-row md:items-center justify-between gap-4 cursor-pointer">
-        <div className="relative pl-5">
-          <div className="scan-line absolute left-0 top-0 h-full w-px bg-brand-500 z-20" />
-          <div className="line-glow absolute left-0 top-0 h-full w-[2px] bg-brand-500 blur-[4px] shadow-[0_0_15px_1px_rgba(198,150,189,0.8)] z-10" />
+        <div className="flex items-center gap-6">
+          <img 
+            src={`/Services/${index + 1}.png`} 
+            alt={service.title} 
+            className="w-14 h-14 md:w-16 md:h-16 rounded-full object-cover shrink-0 border border-brand-400/20 shadow-sm"
+          />
           
-          <div className="stat-content">
-            <h3 className="text-h6 text-primary-navy uppercase tracking-tight">
-              {service.title}
-            </h3>
-            <p className="text-body-xs text-brand-600 font-semibold mt-0.5">
-              {service.tagline}
-            </p>
+          <div className="relative pl-5">
+            <div className="scan-line absolute left-0 top-0 h-full w-px bg-brand-500 z-20" />
+            <div className="line-glow absolute left-0 top-0 h-full w-[2px] bg-brand-500 blur-[4px] shadow-[0_0_15px_1px_rgba(198,150,189,0.8)] z-10" />
+            
+            <div className="stat-content">
+              <h3 className="text-h6 text-primary-navy uppercase tracking-tight">
+                {service.title}
+              </h3>
+              <p className="text-body-xs text-brand-600 font-semibold mt-0.5">
+                {service.tagline}
+              </p>
+            </div>
           </div>
         </div>
         

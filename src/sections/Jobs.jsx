@@ -148,7 +148,7 @@ export default function Jobs() {
             onClick={() => setSelectedRole(null)}
           >
             <div
-              className="bg-[var(--color-bg-white)] w-full max-w-5xl rounded-2xl p-10 relative shadow-xl"
+              className="bg-[var(--color-bg-white)] w-full max-w-5xl rounded-2xl p-10 relative shadow-xl flex flex-col max-h-[100vh]"
               onClick={(e) => e.stopPropagation()}
             >
               <button
@@ -159,8 +159,8 @@ export default function Jobs() {
                 ×
               </button>
 
-              <div className="grid md:grid-cols-2 gap-10 max-h-[80vh]">
-                <div className="overflow-y-auto pr-4">
+              <div className="grid md:grid-cols-2 gap-10 overflow-y-auto">
+                <div className="pr-4">
                   <h2 className="text-h3 text-[var(--color-primary-navy)] mb-2">
                     {selectedRole.title}
                   </h2>
@@ -174,7 +174,7 @@ export default function Jobs() {
                   </p>
                 </div>
 
-                <div className="overflow-y-auto">
+                <div>
                   <form
                     className="space-y-6"
                     onSubmit={(e) => {
@@ -221,6 +221,31 @@ export default function Jobs() {
                       APPLY
                     </button>
                   </form>
+                </div>
+              </div>
+
+              <div className="mt-10 border-t pt-6 flex items-start gap-6">
+                <img
+                  src="/Approach/SK.png"
+                  alt="Mr. Shahnawaz Khan"
+                  className="w-24 h-24 object-cover rounded-full"
+                />
+                <div>
+                  <p className="text-lg font-semibold text-[var(--color-primary-navy)]">
+                    Mr. Shahnawaz Khan
+                  </p>
+                  <p className="text-sm text-[var(--color-primary-mauve)]">
+                    Founder & Managing Partner
+                  </p>
+                  <p className="text-sm mt-2">
+                    shahnawaz.khan@euradicle.com
+                  </p>
+                  <p className="text-sm">
+                    India: +91 966 118 8313
+                  </p>
+                  <p className="text-sm">
+                    USA: +1 (713) 429-3753 (Whatsapp)
+                  </p>
                 </div>
               </div>
             </div>

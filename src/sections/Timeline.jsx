@@ -189,7 +189,7 @@ export default function StoryTimelineSection({ items }) {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full overflow-hidden min-[768px]:h-screen py-16 min-[768px]:py-0"
+      className="relative w-full overflow-hidden min-[768px]:h-screen pt-16  pb-28 min-[768px]:py-0"
       style={{
         background: "linear-gradient(to bottom right, #E4E7FD, #F4DEF0)",
       }}
@@ -262,10 +262,10 @@ export default function StoryTimelineSection({ items }) {
                 <img
                   src={item.logo}
                   alt=""
-                  className={`absolute top-4 right-4 w-auto object-contain ${
+                  className={`absolute w-auto object-contain ${
                     item.size === "yes"
-                      ? "h-6 min-[600px]:h-8 min-[768px]:h-10"
-                      : "h-16 min-[600px]:h-20 min-[768px]:h-24"
+                      ? "top-12 right-10 h-6 min-[600px]:h-8 min-[768px]:h-10"
+                      : "top-0 right-[-20px] h-20 min-[600px]:h-30 min-[768px]:h-32"
                   }`}
                 />
 

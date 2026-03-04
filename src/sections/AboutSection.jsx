@@ -56,7 +56,7 @@ export default function AboutSection() {
         About <span className="text-primary-mauve">Us</span>
       </h1>
 
-      <p className="text-center italic text-body-lg text-primary-navy text-[clamp(16px,2.5vw,22px)] leading-relaxed px-1 min-[600px]:px-2">
+      <p className="italic mx-auto mt-2 max-w-5xl text-sm text-primary-navy text-center">
         {words.map((word, i) => (
           <span
             key={i}

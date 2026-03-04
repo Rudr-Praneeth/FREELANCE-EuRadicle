@@ -57,7 +57,7 @@ const ServiceCard = ({ service, index }) => {
           <img 
             src={`/Services/${index + 1}.png`} 
             alt={service.title} 
-            className="w-14 h-14 md:w-16 md:h-16 rounded-full object-cover shrink-0 border border-brand-400/20 shadow-sm"
+            className="w-14 h-14 md:w-16 md:h-16 object-cover shrink-0"
           />
           
           <div className="relative pl-5">

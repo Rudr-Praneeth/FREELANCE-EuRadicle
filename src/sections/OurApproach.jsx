@@ -112,11 +112,11 @@ export default function OurApproach({ data }) {
               ref={(el) => (rowsRef.current[i] = el)}
               className="grid grid-cols-[80px_1fr] md:grid-cols-[140px_1fr] gap-6 md:gap-12"
             >
-              <div className="approach-icon flex items-center justify-center">
+              <div className="approach-icon flex items-center justify-center bg-transparent">
                 <img
                   src={item.iconUrl}
                   alt={item.title}
-                  className="w-14 h-14 md:w-24 md:h-24 object-contain rounded-full"
+                  className="w-14 h-14 md:w-24 md:h-24 object-contain object-center rounded-xl"
                 />
               </div>
 

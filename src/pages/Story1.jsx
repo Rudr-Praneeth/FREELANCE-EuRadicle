@@ -237,7 +237,7 @@ ${idx === 2 ? "z-20" : "z-10"}`}
             >
               ×
             </button>
-            
+            <p className="text-primary-navy text-h4">Enquire <span className="text-primary-mauve">Us</span></p>
             <form onSubmit={handleSubmit} className="flex flex-col gap-4 mt-8">
               <input
                 type="text"

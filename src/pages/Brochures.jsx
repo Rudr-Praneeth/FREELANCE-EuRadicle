@@ -67,8 +67,7 @@ export default function ResourcesSection({ openModal }) {
             <div>
               <h2 className="text-h3 mb-4">E-Certificates</h2>
               <p className="text-body-lg text-primary-navy mb-6 leading-relaxed">
-                Access your program completion certificates issued after
-                successful participation in our engagements.
+                Access and download your certificate issued upon successful completion of our programs.
               </p>
             </div>
             <button

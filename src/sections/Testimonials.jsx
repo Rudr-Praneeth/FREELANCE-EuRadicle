@@ -19,11 +19,6 @@ const TestimonialCard = ({ data }) => {
           <span key={i} className="text-brand-500 text-base sm:text-lg">★</span>
         ))}
       </div>
-
-      <h4 className="text-primary-navy leading-tight text-[clamp(15px,4vw,20px)] sm:text-[clamp(15px,2vw,20px)] font-semibold">
-        {isParticipantVoice ? "Participant Voices" : data.designation}
-      </h4>
-
       <p className="text-primary-navy/70 italic leading-relaxed text-[clamp(13px,3.8vw,16px)] sm:text-[clamp(13px,1.6vw,16px)] line-clamp-4 sm:line-clamp-3">
         "{data.testimonial}"
       </p>
@@ -31,7 +26,10 @@ const TestimonialCard = ({ data }) => {
       <div className="mt-2 sm:mt-3 pt-3 sm:pt-4 border-t border-bg-muted flex items-center justify-between gap-3">
         <div className="flex flex-col">
           <span className="text-primary-navy text-xs sm:text-sm font-medium">
-            {isParticipantVoice ? "Anonymous Contributor" : data.by}
+            {isParticipantVoice ? "Participant Voices" : data.by}
+          </span>
+          <span className="text-primary-navy text-xs sm:text-sm font-medium">
+              {isParticipantVoice ? "" : data.designation}
           </span>
           <span className="text-brand-600 font-semibold uppercase tracking-wider text-[10px] sm:text-xs">
             {data.org}

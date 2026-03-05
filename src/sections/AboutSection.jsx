@@ -7,12 +7,10 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function AboutSection() {
   const sectionRef = useRef(null);
-  const wordsRef = useRef([]);
   const titleRef = useRef(null);
+  const textRef = useRef(null);
 
   const text = "EuRadicle is a global talent and capability consulting firm that partners with organizations to build leadership depth, accelerate performance, and enable sustainable transformation. We work at the intersection of strategy, leadership, and human capability, helping enterprises translate intent into execution through consulting-led learning journeys, assessments, and culture-shaping interventions. With consultants and delivery capabilities across India, the United States, and the Middle East, we support organizations across industries in solving complex people and performance challenges. Our work is grounded in real business contexts, driven by data and insight, and designed to create measurable impact by building leaders, teams, and systems that are future-ready, resilient, and aligned to organizational goals."
-  const words = text.split(" ");
-
   useGSAP(
     () => {
       const tl = gsap.timeline({
@@ -24,21 +22,30 @@ export default function AboutSection() {
 
       tl.from(titleRef.current, {
         opacity: 0,
-        y: 30,
-        duration: 0.7,
-        ease: "power3.out",
+        y: 60,
+        duration: 1,
+        ease: "power4.out",
       });
 
-      tl.from(
-        wordsRef.current,
+      tl.from(textRef.current, {
+        opacity: 0,
+        y: 40,
+        duration: 1.2,
+        ease: "power4.out",
+      });
+
+      gsap.fromTo(
+        textRef.current,
+        { backgroundPosition: "200% 0%" },
         {
-          opacity: 0,
-          y: 20,
-          duration: 0.5,
+          backgroundPosition: "0% 0%",
+          duration: 2,
           ease: "power2.out",
-          stagger: 0.03,
-        },
-        "-=0.3"
+          scrollTrigger: {
+            trigger: textRef.current,
+            start: "top 80%",
+          },
+        }
       );
     },
     { scope: sectionRef }
@@ -56,16 +63,11 @@ export default function AboutSection() {
         About <span className="text-primary-mauve">Us</span>
       </h1>
 
-      <p className="italic mx-auto mt-2 max-w-5xl text-sm text-primary-navy text-center">
-        {words.map((word, i) => (
-          <span
-            key={i}
-            ref={(el) => (wordsRef.current[i] = el)}
-            className="inline-block mr-[0.3em]"
-          >
-            {word}
-          </span>
-        ))}
+      <p
+        ref={textRef}
+        className="italic mx-auto mt-2 max-w-5xl text-sm text-center leading-relaxed text-transparent bg-clip-text bg-gradient-to-r from-primary-navy via-primary-navy to-primary-navy bg-[length:200%_100%]"
+      >
+        {text}
       </p>
     </section>
   );

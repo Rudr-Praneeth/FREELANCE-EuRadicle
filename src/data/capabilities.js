@@ -11,7 +11,7 @@ const capabilities = [
     },
     {
         title: "Assessment & Development Centers",
-        imageUrl: "Capabilities/compressed-Assesment & Development Centres - Card.jpg",
+        imageUrl: "Capabilities/compressed-Assesment & Development Centres - Card.png",
         sub: ["Talent Readiness & Development Diagnostics", "Other"]
     },
     {

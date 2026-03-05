@@ -47,9 +47,9 @@ export default function ResourcesSection({ openModal }) {
             <div>
               <h2 className="text-h3 mb-4">Brochure</h2>
               <p className="text-body-lg text-primary-navy mb-6 leading-relaxed">
-                Explore our detailed brochure to understand our consulting
-                solutions, leadership programs, capability-building frameworks,
-                and transformation journeys.
+                Get an overview of our consulting solutions,
+                leadership programs, and transformation initiatives.
+                Download the brochure to learn more.
               </p>
             </div>
             <button

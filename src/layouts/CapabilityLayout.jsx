@@ -156,7 +156,7 @@ function CapabilityLayout({
               {cards.map((card, index) => (
                 <div
                   key={index}
-                  className="h-[20vh] group w-64 rounded-4xl overflow-hidden bg-gradient-to-b from-[#2D3047] via-[#8c668b] to-[#F2B2D7] transition-all duration-500 hover:shadow-xl"
+                  className="group w-64 rounded-4xl overflow-hidden bg-gradient-to-b from-[#2D3047] via-[#8c668b] to-[#F2B2D7] transition-all duration-500 hover:shadow-xl"
                 >
                   <div className="p-4 cursor-pointer">
                     <h3 className="text-subheading text-white text-center">

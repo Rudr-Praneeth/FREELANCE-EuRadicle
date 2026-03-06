@@ -1,6 +1,9 @@
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Journey() {
   const sectionRef = useRef(null);
@@ -30,8 +33,20 @@ export default function Journey() {
           start: "top 80%",
         },
       });
+
+      gsap.from(".jr-location", {
+        y: 20,
+        opacity: 0,
+        duration: 0.7,
+        ease: "power2.out",
+        stagger: 0.25,
+        scrollTrigger: {
+          trigger: ".jr-location-wrap",
+          start: "top 85%",
+        },
+      });
     },
-    { scope: sectionRef },
+    { scope: sectionRef }
   );
 
   return (
@@ -58,14 +73,33 @@ export default function Journey() {
           </div>
 
           <div className="jr-card rounded-2xl border border-2 border-[var(--color-bg-muted)] bg-[var(--color-bg-white)] p-8 text-center">
-            <h3 className="text-h6 mb-4">Find us</h3>
-            <p className="text-body-sm">
-              2nd floor, Building no: 8-2-120/86/5/B,
-              <br />
-              Road No.3, Banjara Hills, Hyderabad,
-              <br />
-              Telangana – 500034
-            </p>
+            <h3 className="text-h6 mb-6">Find us</h3>
+
+            <div className="jr-location-wrap flex flex-col gap-6">
+              <div className="jr-location">
+                <p className="font-semibold text-xs mb-2">India Hub</p>
+                <p className="text-body-sm">
+                  2nd floor Building no: 8-2-120/86/5/B
+                  <br />
+                  Road No 3, Banjara Hills
+                  <br />
+                  Hyderabad, Telangana - 500034
+                </p>
+              </div>
+
+              <div className="w-full h-px bg-[var(--color-bg-muted)]"></div>
+
+              <div className="jr-location">
+                <p className="font-semibold text-xs mb-2">USA Office</p>
+                <p className="text-body-sm">
+                  EuRadicle Learning Inc
+                  <br />
+                  10301 Northwest Freeway
+                  <br />
+                  Suite 314, Houston Texas - 77092
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

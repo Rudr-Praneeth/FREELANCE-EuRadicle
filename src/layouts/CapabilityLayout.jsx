@@ -18,6 +18,7 @@ function CapabilityLayout({
   const navigate = useNavigate();
   const { slug } = useParams();
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [activeCard, setActiveCard] = useState(null);
 
   const formatSlug = (str) =>
     str
@@ -113,6 +114,10 @@ function CapabilityLayout({
     setIsModalOpen(false);
   };
 
+  const toggleCard = (index) => {
+    setActiveCard(activeCard === index ? null : index);
+  };
+
   return (
     <section ref={containerRef} className="bg-[var(--color-bg-white)]">
       <div className="cap-banner relative w-full h-[70vh] overflow-hidden">
@@ -156,14 +161,22 @@ function CapabilityLayout({
               {cards.map((card, index) => (
                 <div
                   key={index}
-                  className="group w-64 rounded-4xl overflow-hidden bg-gradient-to-b from-[#2D3047] via-[#8c668b] to-[#F2B2D7] transition-all duration-500 hover:shadow-xl"
+                  onClick={() => toggleCard(index)}
+                  className="group w-64 rounded-4xl overflow-hidden bg-gradient-to-b from-[#2D3047] via-[#8c668b] to-[#F2B2D7] transition-all duration-500 hover:shadow-xl cursor-pointer"
                 >
-                  <div className="p-4 cursor-pointer">
+                  <div className="p-4">
                     <h3 className="text-subheading text-white text-center">
                       {card.heading}
                     </h3>
                   </div>
-                  <div className="max-h-0 overflow-hidden transition-all duration-500 ease-in-out group-hover:max-h-[400px]">
+
+                  <div
+                    className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                      activeCard === index
+                        ? "max-h-[400px]"
+                        : "max-h-0 group-hover:max-h-[400px]"
+                    }`}
+                  >
                     <div className="px-6 pb-6 text-body leading-relaxed text-white">
                       {card.description}
                     </div>

@@ -36,7 +36,7 @@ const capabilities = [
     },
     {
         title: "Creative Solutions",
-        imageUrl: "Capabilities/Creative Solutions.png",
+        imageUrl: "Capabilities/Creative solutions.png",
         sub: ["E-Learning & Digital Course Design","Storyboarding & Learning Content Development","Collateral Design & Visual Communication","Program Management & Learning Operations","Learning Analytics & Reporting", "Other"]
     },
 ];

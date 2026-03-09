@@ -49,7 +49,7 @@ const LogoSection = () => {
             <h1 className="text-h1 text-primary-navy tracking-tight text-[clamp(28px,5vw,56px)] leading-tight">
               TRUSTED BY <span className="text-primary-mauve"><br className="block sm:hidden"/>BRANDS </span>
               <br className="hidden sm:block"/>
-              ACROSS INDUSTRIES <br className="block sm:hidden"/>WORLDWWIDE
+              ACROSS INDUSTRIES <br className="block sm:hidden"/>THE WORLD
             </h1>
           </div>
 

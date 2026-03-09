@@ -237,30 +237,6 @@ export default function Jobs() {
                   </div>
                 </div>
               </div>
-
-              <div className="mt-10 border-t border-gray-100 pt-6 flex flex-wrap items-center gap-4">
-                <img
-                  src="/Approach/SK.png"
-                  alt="Mr. Shahnawaz Khan"
-                  className="w-16 h-16 object-cover rounded-full flex-shrink-0 border-2 border-[var(--color-primary-mauve)]/20 shadow-sm"
-                />
-                <div className="min-w-0">
-                  <p className="text-md font-bold text-[var(--color-primary-navy)] leading-snug">
-                    Mr. Shahnawaz Khan
-                  </p>
-                  <p className="text-xs font-medium text-[var(--color-primary-mauve)] uppercase tracking-wider">
-                    Founder & Managing Partner
-                  </p>
-                  <div className="flex flex-col sm:flex-row sm:gap-4 mt-2">
-                    <p className="text-xs text-gray-500 flex items-center gap-1">
-                      <span>✉</span> shahnawaz.khan@euradicle.com
-                    </p>
-                    <p className="text-xs text-gray-500 flex items-center gap-1">
-                      <span>📞</span> India: +91 966 118 8313
-                    </p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>,
           document.body

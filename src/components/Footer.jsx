@@ -5,6 +5,7 @@ import {
   FaInstagram,
   FaFacebookF,
   FaYoutube,
+  FaWhatsapp,
 } from "react-icons/fa";
 
 export default function Footer() {
@@ -117,7 +118,7 @@ export default function Footer() {
                   className="w-5 h-4 object-cover rounded-sm"
                 />  
                 <span>+1 (713) 429-3753</span>
-                <span className="text-black/30 text-xs">WhatsApp</span>
+                <FaWhatsapp className="text-green-500 text-sm ml-1" />
               </div>
 
             </div>

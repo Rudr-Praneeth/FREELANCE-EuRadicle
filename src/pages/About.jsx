@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useLayoutEffect} from 'react'
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import AboutSection from '../sections/AboutSection'
 import Timeline from '../sections/Timeline'
@@ -9,22 +9,23 @@ import BeyondBusiness from '../sections/BeyondBusiness'
 import { icon } from 'leaflet'
 
 const About = () => {
-  useEffect(() => {
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+    
+    if ('scrollRestoration' in window.history) {
+        window.history.scrollRestoration = 'manual';
+    }
+
+    const timer = setTimeout(() => {
+        ScrollTrigger.refresh();
+    }, 500);
+
+    return () => {
         if ('scrollRestoration' in window.history) {
-            window.history.scrollRestoration = 'manual'
+            window.history.scrollRestoration = 'auto';
         }
-
-        const timer = setTimeout(() => {
-            ScrollTrigger.refresh()
-        }, 1000)
-
-        return () => {
-            clearTimeout(timer)
-            if ('scrollRestoration' in window.history) {
-                window.history.scrollRestoration = 'auto'
-            }
-        }
-    }, [])
+    };
+}, []);
     const items = [
       {
         year: "2020",

@@ -156,15 +156,15 @@ function CapabilityLayout({
             </p>
           )}
 
-          <div className="flex justify-center items-center mb-28">
-            <div className="flex flex-wrap justify-center gap-6 max-w-7xl">
+          <div className="flex justify-center items-start mb-28">
+            <div className="flex flex-wrap justify-center items-start gap-6 max-w-7xl">
               {cards.map((card, index) => (
                 <div
                   key={index}
                   onClick={() => toggleCard(index)}
                   className="group w-64 rounded-4xl overflow-hidden bg-gradient-to-b from-[#2D3047] via-[#8c668b] to-[#F2B2D7] transition-all duration-500 hover:shadow-xl cursor-pointer"
                 >
-                  <div className="p-4">
+                  <div className="p-4 h-[120px] flex items-center justify-center">
                     <h3 className="text-subheading text-white text-center">
                       {card.heading}
                     </h3>

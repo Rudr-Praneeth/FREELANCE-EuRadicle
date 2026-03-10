@@ -26,7 +26,7 @@ const LogoMarqueeColumn = ({ logoIndices, reverse = false }) => {
 const LogoSection = () => {
   const totalLogos = 33;
   const indices = Array.from({ length: totalLogos }, (_, i) => i + 1).filter(
-    (i) => i !== 18
+    (i) => i !== 18 && i !== 19
   );
 
   const colSize = Math.ceil(indices.length / 3);
@@ -49,7 +49,7 @@ const LogoSection = () => {
             <h1 className="text-h1 text-primary-navy tracking-tight text-[clamp(28px,5vw,56px)] leading-tight">
               TRUSTED BY THE <span className="text-primary-mauve"><br className="block sm:hidden"/>BIG BRANDS </span>
               <br className="hidden sm:block"/>
-              AROUND <br className="block sm:hidden"/>THE WORLD
+              INDUSTRIES <br className="block sm:hidden"/>WORLDWIDE
             </h1>
           </div>
 

@@ -223,7 +223,7 @@ ${idx === 2 ? "z-20" : "z-10"}`}
             onClick={() => setIsModalOpen(true)}
             className="px-8 py-3 bg-primary-mauve text-white rounded-md hover:bg-[var(--color-primary-mauve)]/80 transition-all duration-300"
           >
-            Enquire Us
+            Start a Conversation
           </button>
         </div>
       </div>
@@ -231,7 +231,7 @@ ${idx === 2 ? "z-20" : "z-10"}`}
       {isModalOpen && (
         <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 px-4">
           <div className="bg-white w-full max-w-md rounded-2xl p-8 relative">
-            <p className="text-primary-navy text-h4">Enquire <span className="text-primary-mauve">Us</span></p>
+            <p className="text-primary-navy text-h4">Start a <span className="text-primary-mauve">Conversation</span></p>
             <button
               onClick={() => setIsModalOpen(false)}
               className="absolute top-4 right-4 text-gray-500 hover:text-black text-xl"

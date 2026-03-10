@@ -26,11 +26,11 @@ export default function EuradicleLife() {
           </h1>
 
           <p className="italic text-body-sm mt-6 max-w-6xl mx-auto leading-relaxed">
-            We believe great work comes from people who feel valued - not burned
+            We believe great work comes from people who feel valued, not burned
             out. At EuRadicle, impact begins with balance, trust, and belonging.
             Our culture champions curiosity, open dialogue, and individuality
             over hierarchy. We create space for growth, shared wins, and
-            meaningful pauses - so you can shape leaders and organisations while
+            meaningful pauses, so you can shape leaders and organisations while
             staying true to yourself.
           </p>
         </div>

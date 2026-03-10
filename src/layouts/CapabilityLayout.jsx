@@ -177,7 +177,7 @@ function CapabilityLayout({
                         : "max-h-0 group-hover:max-h-[400px]"
                     }`}
                   >
-                    <div className="px-6 pb-6 text-body leading-relaxed text-white">
+                    <div className="px-6 pb-6 text-sm leading-relaxed text-white text-center">
                       {card.description}
                     </div>
                   </div>
@@ -194,7 +194,7 @@ function CapabilityLayout({
             onClick={() => setIsModalOpen(true)}
             className="inline-flex items-center justify-center px-10 py-4 rounded-full bg-[var(--color-primary-purple)] text-white text-subheading-sm transition-all duration-300 hover:scale-105 hover:shadow-lg"
           >
-            Get in Touch
+            Start a Conversation
           </button>
         </div>
       </div>
@@ -209,7 +209,7 @@ function CapabilityLayout({
               ×
             </button>
             <h3 className="text-subheading-lg text-[var(--color-primary-mauve)] mb-6">
-              Get in Touch
+              <span className="text-primary-navy">Start a </span>Conversation
             </h3>
             <form className="space-y-4" onSubmit={handleSubmit}>
               <input

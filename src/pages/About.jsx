@@ -33,7 +33,7 @@ const About = () => {
       {
         year: "2023",
         title: "The Strategic Shift",
-        text: "Transitioned into a capability consulting model, building specialized teams across consulting, creative solutions, content development, and research in Hyderabad to support global operations and enable long-term enterprise engagements beyond standalone engagements.",
+        text: "Transitioned into a capability consulting model. Building specialized teams across consulting, creative solutions, content development, and research in Hyderabad, India to support global operations and enable long-term enterprise engagements beyond standalone engagements.",
         logo: "Timeline Logo/2021 - 2023.png",
         size: "no"
       },
@@ -47,7 +47,7 @@ const About = () => {
       {
         year: "2025–26",
         title: "Where We Are Today",
-        text: "A global talent and capability consulting firm with consultants and delivery capabilities across India, the USA, and the UAE. Work with organizations across industries-including enterprises with Fortune 500 footprints-is guided by three core commitments: end-to-end accountability, deep expertise, and agile, co-created solutions.",
+        text: "A global talent and capability consulting firm with consultants and delivery capabilities across India, the USA, and the UAE. Work with organizations across industries-including enterprises with Fortune 500 footprints, is guided by three core commitments: End-to-end accountability, deep expertise, and agile, co-created solutions.",
         logo: "Timeline Logo/2023 - 2025.png",
         size: "no"
       },
@@ -95,7 +95,7 @@ const About = () => {
     },
     {
       title: "Delivery & Governance",
-      text: "Ensuring seamless execution, our operations team anchors every engagement with strong coordination, governance, and quality oversight. They enable consistency and reliability across programs and geographies.",
+      text: "Ensuring seamless execution, our operations team anchors every engagement with strong coordination, governance, and quality oversight. They enable consistency and reliability across programs.",
       img: "Minds/compressed-Delivery & Governance.jpg",
     },
   ];

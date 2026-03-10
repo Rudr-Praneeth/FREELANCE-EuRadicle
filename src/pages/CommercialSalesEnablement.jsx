@@ -7,7 +7,7 @@ function CommercialSalesEnablement() {
       title="Commercial & Sales Enablement"
       subtitle="Developing commercial acumen that converts relationships into measurable growth."
       image="/Capabilities/compressed-Commercials & Sales Enablement.png"
-      intro="Sustainable growth requires more than sales targets - it demands strong commercial thinking, disciplined execution, and value-driven customer engagement. EuRadicle’s Commercial & Sales Enablement capability strengthens how sales teams, account managers, and commercial leaders approach markets, customers, and channels. By enhancing consultative selling skills, negotiation capability, and go-to-market effectiveness, organizations build commercially agile teams that consistently deliver results in competitive environments."
+      intro="Sustainable growth requires more than sales targets. It demands strong commercial thinking, disciplined execution, and value-driven customer engagement. EuRadicle’s Commercial & Sales Enablement capability strengthens how sales teams, account managers, and commercial leaders approach markets, customers, and channels. By enhancing consultative selling skills, negotiation capability, and go-to-market effectiveness, organizations build commercially agile teams that consistently deliver results in competitive environments."
       cards={[
         {
           heading: "Sales & Trade Promotion Excellence",
@@ -27,7 +27,7 @@ function CommercialSalesEnablement() {
         {
           heading: "Channel & Retail Effectiveness",
           description:
-            "Strong channels deliver strong results. We enhance coordination and ownership across distributors and retailers, driving visibility, reach, and measurable on-ground impact.",
+            "Strong channels deliver strong results. We enhance coordination and ownership across distributors and retailers, driving visibility, reach, and measurable from Ground impact.",
         },
         {
           heading: "Key Account Management Excellence",

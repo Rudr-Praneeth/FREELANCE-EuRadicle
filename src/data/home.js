@@ -62,7 +62,7 @@ outcomes : [
   "Greater readiness to lead AI-enabled change and address resistance within teams",
   "A more responsible, bias-aware approach to AI adoption in day-to-day leadership practice"
 ],
-outro: "The pathway enabled leaders to move from awareness to ownership, equipping them to guide AI conversations and initiatives with credibility, judgment, and intent. At EuRadicle, we believe AI awareness is not about mastering tools it is about developing the judgement to lead responsibly in complexity. This program reflected that belief through its design, facilitation, and outcomes.",
+outro: "The pathway enabled leaders to move from awareness to ownership, equipping them to guide AI conversations and initiatives with credibility, judgment, and intent. At EuRadicle, we believe AI awareness is not about mastering tools but it is about developing the judgement to lead responsibly in complexity. This program reflected that belief through its design, facilitation, and outcomes.",
 bannerUrl: "/Home/compressed-AwarenessBanner.jpg",
 hoveerImages: ["/Home/compressed-AwarenessHover1.jpg", "/Home/compressed-AwarenessHover2.jpg", "/Home/compressed-AwarenessHover3.jpg"]
 }

@@ -55,7 +55,7 @@ export default function AboutSection() {
 
       <p
         ref={textRef}
-        className="italic mx-auto mt-2 max-w-5xl text-sm text-center leading-relaxed text-primary-navy"
+        className="italic mx-auto mt-2 max-w-5xl text-md text-center leading-relaxed text-primary-navy"
       >
         {text}
       </p>

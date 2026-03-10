@@ -1,4 +1,5 @@
-import React from 'react'
+import React, {useEffect} from 'react'
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 import AboutSection from '../sections/AboutSection'
 import Timeline from '../sections/Timeline'
 import OurApproach from '../sections/OurApproach'
@@ -8,6 +9,22 @@ import BeyondBusiness from '../sections/BeyondBusiness'
 import { icon } from 'leaflet'
 
 const About = () => {
+  useEffect(() => {
+        if ('scrollRestoration' in window.history) {
+            window.history.scrollRestoration = 'manual'
+        }
+
+        const timer = setTimeout(() => {
+            ScrollTrigger.refresh()
+        }, 1000)
+
+        return () => {
+            clearTimeout(timer)
+            if ('scrollRestoration' in window.history) {
+                window.history.scrollRestoration = 'auto'
+            }
+        }
+    }, [])
     const items = [
       {
         year: "2020",

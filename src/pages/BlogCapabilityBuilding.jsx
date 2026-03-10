@@ -88,11 +88,11 @@ function BlogCapabilityBuilding() {
         Rethinking the Shift: From Learning to Capability
       </h2>
 
-      <pre>
+      <p>
         Capability building demands a fundamental reframing, from What programs
         do we run? to What must people reliably be able to do in real work?
         This shift rests on three principles.
-      </pre>
+      </p>
 
       <h3 className="text-xl font-semibold text-[var(--color-primary-navy)]">
         1. Capability Is About Judgment, Not Just Skill

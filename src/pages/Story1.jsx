@@ -20,6 +20,9 @@ export default function Story1() {
     number: "",
   });
 
+  const [status, setStatus] = useState(null);
+  const [loading, setLoading] = useState(false);
+
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -108,17 +111,17 @@ export default function Story1() {
     };
 
     const reset = () => {
-  imagesRef.current.forEach((img, idx) =>
-    gsap.to(img, {
-      x: idx === 0 ? -25 : idx === 1 ? 25 : 0,
-      y: idx === 2 ? 18 : 0,
-      rotate: idx === 0 ? -6 : idx === 1 ? 6 : 0,
-      scale: 0.96,
-      duration: 0.5,
-      ease: "power3.out",
-    }),
-  );
-};
+      imagesRef.current.forEach((img, idx) =>
+        gsap.to(img, {
+          x: idx === 0 ? -25 : idx === 1 ? 25 : 0,
+          y: idx === 2 ? 18 : 0,
+          rotate: idx === 0 ? -6 : idx === 1 ? 6 : 0,
+          scale: 0.96,
+          duration: 0.5,
+          ease: "power3.out",
+        }),
+      );
+    };
 
     imagesRef.current.forEach((el) => {
       el.addEventListener("mouseenter", spread);
@@ -138,10 +141,53 @@ export default function Story1() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsModalOpen(false);
-    setFormData({ name: "", email: "", number: "" });
+
+    setLoading(true);
+    setStatus(null);
+
+    try {
+      const res = await fetch(
+        "https://backend.euradicle.com/wp-json/custom/v1/conversation",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        },
+      );
+
+      const data = await res.json();
+
+      if (res.ok && data.success) {
+        setStatus({ type: "success", message: "Message sent successfully." });
+
+        setFormData({
+          name: "",
+          email: "",
+          number: "",
+        });
+
+        setTimeout(() => {
+          setIsModalOpen(false);
+          setStatus(null);
+        }, 1500);
+      } else {
+        setStatus({
+          type: "error",
+          message: data.message || "Submission failed",
+        });
+      }
+    } catch (err) {
+      setStatus({
+        type: "error",
+        message: "Network error. Please try again.",
+      });
+    }
+
+    setLoading(false);
   };
 
   return (
@@ -237,8 +283,21 @@ ${idx === 2 ? "z-20" : "z-10"}`}
             >
               ×
             </button>
-            <p className="text-primary-navy text-h4">Start a <span className="text-primary-mauve">Conversation</span></p>
+            <p className="text-primary-navy text-h4">
+              Start a <span className="text-primary-mauve">Conversation</span>
+            </p>
             <form onSubmit={handleSubmit} className="flex flex-col gap-4 mt-8">
+              {status && (
+                <div
+                  className={`p-3 rounded-md text-sm ${
+                    status.type === "success"
+                      ? "bg-green-100 text-green-700"
+                      : "bg-red-100 text-red-700"
+                  }`}
+                >
+                  {status.message}
+                </div>
+              )}
               <input
                 type="text"
                 name="name"
@@ -268,9 +327,10 @@ ${idx === 2 ? "z-20" : "z-10"}`}
               />
               <button
                 type="submit"
-                className="mt-4 bg-primary-mauve text-white py-2 rounded-md hover:bg-[var(--color-primary-mauve)]/80 transition-all duration-300"
+                disabled={loading}
+                className="mt-4 bg-primary-mauve text-white py-2 rounded-md hover:bg-[var(--color-primary-mauve)]/80 transition-all duration-300 disabled:opacity-60"
               >
-                Submit
+                {loading ? "Sending..." : "Submit"}
               </button>
             </form>
           </div>

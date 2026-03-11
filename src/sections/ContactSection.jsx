@@ -12,15 +12,15 @@ import {
 export default function ContactSection({
   imageUrl,
   fields = [],
-  header,
-  show,
-  handleSubmit,
-  handleChange,
-  phone,
-  setPhone,
-  formData,
-  status,
-  loading
+  header = null,
+  show = false,
+  handleSubmit = () => {},
+  handleChange = () => {},
+  phone = "",
+  setPhone = () => {},
+  formData = {},
+  status = { type: "", message: "" },
+  loading = false,
 }) {
   const socials = [
     { label: "LinkedIn", icon: <FaLinkedinIn /> },
@@ -49,7 +49,7 @@ export default function ContactSection({
         <textarea
           id={field.name}
           name={field.name}
-          value={formData[field.name] || ""}
+          value={formData?.[field.name] || ""}
           rows={field.rows || 5}
           placeholder={field.placeholder}
           onChange={handleChange}
@@ -61,7 +61,11 @@ export default function ContactSection({
 
     if (field.type === "tel") {
       return (
-        <div className={`relative transition-all duration-300 ${focused ? "scale-[1.01]" : ""}`}>
+        <div
+          className={`relative transition-all duration-300 ${
+            focused ? "scale-[1.01]" : ""
+          }`}
+        >
           <PhoneInput
             country="in"
             value={phone}
@@ -89,7 +93,7 @@ export default function ContactSection({
         id={field.name}
         name={field.name}
         type={field.type || "text"}
-        value={formData[field.name] || ""}
+        value={formData?.[field.name] || ""}
         placeholder={field.placeholder}
         onChange={handleChange}
         required={isRequired(field)}
@@ -116,10 +120,10 @@ export default function ContactSection({
             onSubmit={handleSubmit}
             className="relative overflow-visible rounded-2xl bg-[var(--color-brand-400)]/10 p-8 space-y-6 w-full order-2 md:order-1"
           >
-            {status.message && (
+            {status?.message && (
               <div
                 className={`p-4 rounded-lg text-sm font-medium ${
-                  status.type === "success"
+                  status?.type === "success"
                     ? "bg-green-100 text-green-700"
                     : "bg-red-100 text-red-700"
                 }`}
@@ -131,7 +135,10 @@ export default function ContactSection({
             {fields.map((group, index) => {
               if (Array.isArray(group)) {
                 return (
-                  <div key={index} className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div
+                    key={index}
+                    className="grid grid-cols-1 sm:grid-cols-2 gap-6"
+                  >
                     {group.map((field) => (
                       <div key={field.name}>
                         {renderLabel(field)}
@@ -161,14 +168,15 @@ export default function ContactSection({
           </form>
         </div>
 
-        <div className="mt-8 flex justify-center gap-2 md:grid md:grid-cols-4 px-4 md:px-12 w-full md:w-max mx-auto">
-          {show &&
-            socials.map((item) => (
+        {show && (
+          <div className="mt-8 flex justify-center gap-2 md:grid md:grid-cols-4 px-4 md:px-12 w-full md:w-max mx-auto">
+            {socials.map((item) => (
               <div key={item.label} className="scale-75 md:scale-100">
                 <FlowButton icon={item.icon} id="contact" arrow={false} />
               </div>
             ))}
-        </div>
+          </div>
+        )}
       </div>
     </section>
   );

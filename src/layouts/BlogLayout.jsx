@@ -148,7 +148,7 @@ function BlogLayout({
 
             <div
               ref={contentRef}
-              className="blog-content mt-12 space-y-8 text-gray-700 text-lg leading-relaxed"
+              className="blog-content mt-12 space-y-8 text-gray-700 text-lg leading-relaxed text-justify"
             >
               {children}
             </div>

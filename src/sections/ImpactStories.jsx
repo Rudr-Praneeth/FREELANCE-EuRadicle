@@ -17,12 +17,12 @@ const StoryCard = ({ story, index, isHovered, onHover, onLeave, image, slug }) =
     const tl = gsap.timeline({ defaults: { ease: 'power3.out', duration: 0.5 } })
 
     if (isHovered) {
-      tl.to(imageRef.current, { scale: 1.08, duration: 0.7, ease: 'power2.out' }, 0)
+      tl.to(imageRef.current, { scale: index === 1 ? 1 : 1.5, rotation: index === 1 ? 0 : 1, duration: 0.9, ease: 'power2.out' }, 0)
         .to(titleRef.current, { y: -20 }, 0)
         .to(contentRef.current, { autoAlpha: 1, y: 0 }, 0.05)
         .to(cardRef.current, { scale: 1.02 }, 0)
     } else {
-      tl.to(imageRef.current, { scale: 1, duration: 0.7, ease: 'power2.out' }, 0)
+      tl.to(imageRef.current, { scale: 1, rotation: 0, duration: 0.9, ease: 'power2.out' }, 0)
         .to(titleRef.current, { y: 0 }, 0)
         .to(contentRef.current, { autoAlpha: 0, y: 20 }, 0)
         .to(cardRef.current, { scale: 1 }, 0)

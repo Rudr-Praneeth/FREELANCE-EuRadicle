@@ -52,7 +52,7 @@ const LeaderStory ={
   subtag: "A curated leadership experience designed to build clarity, judgement, and readiness for responsible AI adoption.",
   paras: [
   "As AI continues to reshape industries, particularly in highly regulated and decision-intensive sectors, senior leaders are increasingly required to take informed positions on AI, often without the time or space to fully explore its implications. EuRadicle designed this leadership pathway to help leaders build clarity, confidence, and perspective while navigating AI-led change.",
-  "The engagement focused on AI not as a technology topic, but as a leadership and decision-making challenge. Through contextual discussions and real-world scenarios drawn from the financial services environment, leaders explored how AI influences strategy, risk, ethics, governance, and organizational culture.",
+  "Rewrite - The engagement focused on AI as a leadership and decision-making challenge, not as a technology topic. Through contextual discussions and real-world scenarios drawn from the financial services environment, leaders explored how AI influences strategy, risk, ethics, governance, and organizational culture.",
   "As part of this pathway, EuRadicle recently delivered a customized leadership intervention for senior leaders that centered on building AI awareness, interpretability, and decision confidence. The learning journey combined virtual and in-person experiences and was shaped entirely around the organization’s industry context and leadership realities.",
   "What set this engagement apart was EuRadicle’s deep customization approach. Case studies, scenarios, and discussions were tailored to the organization’s operating environment, regulatory landscape, and participant roles, ensuring relevance, depth, and application without unnecessary technical complexity.",
 ],
@@ -63,6 +63,7 @@ outcomes : [
   "A more responsible, bias-aware approach to AI adoption in day-to-day leadership practice"
 ],
 outro: "The pathway enabled leaders to move from awareness to ownership, equipping them to guide AI conversations and initiatives with credibility, judgement, and intent. At EuRadicle, we believe AI awareness is not about mastering tools-it is about developing the judgement to lead responsibly in complexity. This program reflected that belief through its design, facilitation, and outcomes.",
+outro: "The pathway enabled leaders to move from awareness to ownership, equipping them to guide AI conversations and initiatives with credibility, judgment, and intent. At EuRadicle, we believe AI awareness is not about mastering tools but it is about developing the judgement to lead responsibly in complexity. This program reflected that belief through its design, facilitation, and outcomes.",
 bannerUrl: "/Home/compressed-AwarenessBanner.jpg",
 hoveerImages: ["/Home/compressed-AwarenessHover1.jpg", "/Home/compressed-AwarenessHover2.jpg", "/Home/compressed-AwarenessHover3.jpg"]
 }
@@ -102,7 +103,7 @@ const Catalyst = {
  "Stronger consultative presence rooted in empathy, insight, and trust",   
  "Enhanced capability to navigate complexity and drive alignment in diverse teams",   
   ],
-  outro: "Participants demonstrated a visible movement from solution execution to consultative ownership, along with tangible improvements in decision speed, stakeholder trust, collaboration, and clarity of thinking.At EuRadicle, we view professional readiness as a mindset shift, not a skill checklist. Enterprise Consulting reflects our belief that future-ready leaders create sustained business value by combining structured thinking, emotional intelligence, and consultative influence.",
+  outro: "Participants demonstrated a visible movement from solution execution to consultative ownership, along with tangible improvements in decision speed, stakeholder trust, collaboration, and clarity of thinking. At EuRadicle, we view professional readiness as a mindset shift, not a skill checklist. Enterprise Consulting reflects our belief that future-ready leaders create sustained business value by combining structured thinking, emotional intelligence, and consultative influence.",
 bannerUrl: "/Home/compressed-PrysmBanner.jpeg",
 hoveerImages: ["/Home/compressed-PrysmCard.jpeg", "/Home/compressed-PrysmHover2.jpeg", "/Home/PrysmHover1.jpeg",]
 }

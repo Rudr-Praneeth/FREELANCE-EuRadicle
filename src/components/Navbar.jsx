@@ -139,22 +139,22 @@ function Navbar({ openModal }) {
   );
 
   const location = useLocation();
-const navigate = useNavigate();
+  const navigate = useNavigate();
 
-const handleHomeClick = (e) => {
-  e.preventDefault();
+  const handleHomeClick = (e) => {
+    e.preventDefault();
 
-  if (location.pathname === "/") {
-    const hero = document.getElementById("hero");
-    if (hero) {
-      hero.scrollIntoView({ behavior: "smooth" });
+    if (location.pathname === "/") {
+      const hero = document.getElementById("hero");
+      if (hero) {
+        hero.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      navigate("/#hero");
     }
-  } else {
-    navigate("/#hero");
-  }
 
-  handleNavClick();
-};
+    handleNavClick();
+  };
 
   const handleNavClick = () => {
     setOpenMobile(false);
@@ -250,7 +250,14 @@ const handleHomeClick = (e) => {
                   >
                     {item === "WHY EURADICLE"
                       ? "Why EuRadicle"
-                      : item.slice(0, 1) + item.slice(1).toLowerCase()}
+                      : item
+                          .toLowerCase()
+                          .split(" ")
+                          .map(
+                            (word) =>
+                              word.charAt(0).toUpperCase() + word.slice(1),
+                          )
+                          .join(" ")}
                     <span className="underline absolute left-0 -bottom-1 h-[2px] w-full bg-[var(--color-primary-mauve)] scale-x-0"></span>
                   </Link>
                 </div>

@@ -6,7 +6,7 @@ function LeadershipDevelopment() {
       title="Leadership Development"
       subtitle="Building leaders who think strategically, decide with clarity, and lead through complexity."
       image="/Capabilities/compressed-Leadership development inside picture.png"
-      intro="Leadership today requires far more than positional authority-it demands clarity of thought, emotional intelligence, and the ability to engage people through change and complexity. EuRadicle’s Leadership Development offerings are designed to enhance leadership effectiveness across levels by building self-aware, people-centric, and performance-driven leaders. Through leadership development programs, structured leadership journeys, experiential workshops, and coaching interventions, leaders develop practical capabilities that translate directly into improved team performance, stronger engagement, and sustained behavioral change in real business contexts."
+      intro="Leadership today requires far more than positional authority. It demands clarity of thought, emotional intelligence, and the ability to engage people through change and complexity. EuRadicle’s Leadership Development offerings are designed to enhance leadership effectiveness across levels by building self-aware, people-centric, and performance-driven leaders. Through leadership development programs, structured leadership journeys, experiential workshops, and coaching interventions, leaders develop practical capabilities that translate directly into improved team performance, stronger engagement, and sustained behavioral change in real business contexts."
       cards={[
         {
           heading: "Managerial & Leadership Journeys",

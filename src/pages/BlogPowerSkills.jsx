@@ -28,9 +28,9 @@ function BlogPowerSkills() {
       </h2>
 
       <p>
-        Power skills are often mistaken as interpersonal traits. Leading human-capital research increasingly reframes these skills not as “soft,” but as enduring capabilities that drive performance, trust, and execution quality across the workforce. They show up in how professionals exercise judgment and make decisions when information is incomplete, how they think strategically amid competing priorities, and how they influence outcomes without relying on authority. Power skills are equally evident in a leader’s ability to regulate emotion under pressure, communicate with clarity across stakeholders, navigate conflict constructively, and lead critical conversations during moments of uncertainty and change. Together, these capabilities shape how leaders think, relate, and act when processes fall short and answers are unclear.
+        Power skills are often mistaken as interpersonal traits. Leading human-capital research increasingly reframes these skills not as <i>soft,</i> but as enduring capabilities that drive performance, trust, and execution quality across the workforce. They show up in how professionals exercise judgment and make decisions when information is incomplete, how they think strategically amid competing priorities, and how they influence outcomes without relying on authority. Power skills are equally evident in a leader’s ability to regulate emotion under pressure, communicate with clarity across stakeholders, navigate conflict constructively, and lead critical conversations during moments of uncertainty and change. Together, these capabilities shape how leaders think, relate, and act when processes fall short and answers are unclear.
       </p>
-      <p>
+      <p className="italic">
         Unlike technical skills, power skills do not depreciate with technological change. Power skills are not about personality or style. They are about performance in moments that matter. As AI accelerates complexity and compresses decision cycles, their relevance only intensifies. 
       </p>
 
@@ -58,8 +58,8 @@ function BlogPowerSkills() {
       </h2>
 
       <p>
-        Currencies derive value because they are transferable, scalable, trusted
-        , and power skills share these properties. They travel across roles,
+        Currencies derive value because they are transferable, scalable, trusted 
+        and power skills share these properties. They travel across roles,
         functions, and contexts, shape culture through everyday behaviours, and
         compound in impact as they are practiced at scale.
       </p>

@@ -88,7 +88,7 @@ export default function Jobs() {
           </h1>
 
           <p className="text-subheading-lg italic mb-4 jobs-animate">
-            Work That Shapes You - and the World
+            Work That Shapes You, and the World
           </p>
 
           <p className="italic text-body-sm mt-6 max-w-5xl mx-auto jobs-animate">

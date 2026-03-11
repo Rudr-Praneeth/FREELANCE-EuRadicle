@@ -1,55 +1,45 @@
 import { useRef } from "react";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-
-gsap.registerPlugin(ScrollTrigger);
 
 export default function AboutSection() {
   const sectionRef = useRef(null);
   const titleRef = useRef(null);
   const textRef = useRef(null);
 
-  const text = "EuRadicle is a global talent and capability consulting firm that partners with organizations to build leadership depth, accelerate performance, and enable sustainable transformation. We work at the intersection of strategy, leadership, and human capability, helping enterprises translate intent into execution through consulting-led learning journeys, assessments, and culture-shaping interventions. With consultants and delivery capabilities across India, the United States, and the Middle East, we support organizations across industries in solving complex people and performance challenges. Our work is grounded in real business contexts, driven by data and insight, and designed to create measurable impact by building leaders, teams, and systems that are future-ready, resilient, and aligned to organizational goals."
-  useGSAP(
-    () => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 75%",
-        },
-      });
+  const text =
+    "EuRadicle is a global talent and capability consulting firm that partners with organizations to build leadership depth, accelerate performance, and enable sustainable transformation. We work at the intersection of strategy, leadership, and human capability, helping enterprises translate intent into execution through consulting-led learning journeys, assessments, and culture-shaping interventions. With consultants and delivery capabilities across the globe, we support organizations across industries in solving complex people and performance challenges. Our work is grounded in real business contexts, driven by data and insight, and designed to create measurable impact by building leaders, teams, and systems that are future-ready, resilient, and aligned to organizational goals.";
 
-      tl.from(titleRef.current, {
+  useGSAP(() => {
+    const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+    tl.from(titleRef.current, {
+      opacity: 0,
+      y: 50,
+      duration: 0.9,
+    });
+
+    tl.from(
+      textRef.current,
+      {
         opacity: 0,
-        y: 60,
+        y: 30,
         duration: 1,
-        ease: "power4.out",
-      });
+      },
+      "-=0.4"
+    );
 
-      tl.from(textRef.current, {
-        opacity: 0,
-        y: 40,
+    gsap.fromTo(
+      textRef.current,
+      { clipPath: "inset(0 100% 0 0)" },
+      {
+        clipPath: "inset(0 0% 0 0)",
         duration: 1.2,
-        ease: "power4.out",
-      });
-
-      gsap.fromTo(
-        textRef.current,
-        { backgroundPosition: "200% 0%" },
-        {
-          backgroundPosition: "0% 0%",
-          duration: 2,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: textRef.current,
-            start: "top 80%",
-          },
-        }
-      );
-    },
-    { scope: sectionRef }
-  );
+        ease: "power2.out",
+        delay: 0.3,
+      }
+    );
+  }, { scope: sectionRef });
 
   return (
     <section
@@ -65,7 +55,7 @@ export default function AboutSection() {
 
       <p
         ref={textRef}
-        className="italic mx-auto mt-2 max-w-5xl text-sm text-center leading-relaxed text-transparent bg-clip-text bg-gradient-to-r from-primary-navy via-primary-navy to-primary-navy bg-[length:200%_100%]"
+        className="italic mx-auto mt-2 max-w-5xl text-md text-center leading-relaxed text-primary-navy"
       >
         {text}
       </p>

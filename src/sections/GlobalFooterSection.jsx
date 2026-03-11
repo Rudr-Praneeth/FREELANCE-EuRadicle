@@ -56,7 +56,7 @@ export default function GlobalFooterSection() {
           Our footprint spans the U.S., UAE, and India - blending global
           perspective with local relevance. With our registered office in Texas
           and headquarters in Hyderabad, we design and deliver scalable talent
-          systems that drive lasting impact across geographies.
+          systems that drive lasting impact across globe.
         </p>
       </div>
 

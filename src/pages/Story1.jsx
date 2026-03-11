@@ -223,7 +223,7 @@ ${idx === 2 ? "z-20" : "z-10"}`}
             onClick={() => setIsModalOpen(true)}
             className="px-8 py-3 bg-primary-mauve text-white rounded-md hover:bg-[var(--color-primary-mauve)]/80 transition-all duration-300"
           >
-            Enquire Us
+            Start a Conversation
           </button>
         </div>
       </div>
@@ -237,7 +237,7 @@ ${idx === 2 ? "z-20" : "z-10"}`}
             >
               ×
             </button>
-            <p className="text-primary-navy text-h4">Enquire <span className="text-primary-mauve">Us</span></p>
+            <p className="text-primary-navy text-h4">Start a <span className="text-primary-mauve">Conversation</span></p>
             <form onSubmit={handleSubmit} className="flex flex-col gap-4 mt-8">
               <input
                 type="text"

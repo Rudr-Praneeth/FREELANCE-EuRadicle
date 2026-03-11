@@ -13,7 +13,7 @@ const GrowWithUs = () => {
   })
     const interns = [
       {
-        text: "“What really stood out to me at EuRadicle is how people-focused the culture is. Even during my internship, I never felt like I was “just an intern.” My ideas were heard, my suggestions were considered, and I was included in real discussions. The team is very open and supportive, which made it easy for me to learn and try new things without being afraid of making mistakes. With the guidance and encouragement, I received, I slowly moved from just learning to actually taking ownership of my work. Because of that trust and support, becoming a full-time team member felt like a natural step, and it continues to motivate me to grow and do better every day.",
+        text: "What really stood out to me at EuRadicle is how people-focused the culture is. Even during my internship, I never felt like I was “just an intern.” My ideas were heard, my suggestions were considered, and I was included in real discussions. The team is very open and supportive, which made it easy for me to learn and try new things without being afraid of making mistakes. With the guidance and encouragement, I received, I slowly moved from just learning to actually taking ownership of my work. Because of that trust and support, becoming a full-time team member felt like a natural step, and it continues to motivate me to grow and do better every day.",
         name: "Maturi Sevitha",
         role: "Associate - Creative Solutions",
         url: "/Interns/1.png"

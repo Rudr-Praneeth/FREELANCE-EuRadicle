@@ -194,7 +194,7 @@ function CapabilityLayout({
             onClick={() => setIsModalOpen(true)}
             className="inline-flex items-center justify-center px-10 py-4 rounded-full bg-[var(--color-primary-purple)] text-white text-subheading-sm transition-all duration-300 hover:scale-105 hover:shadow-lg"
           >
-            Start a Conversation
+            Start A Conversation
           </button>
         </div>
       </div>

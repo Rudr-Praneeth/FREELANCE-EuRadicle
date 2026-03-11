@@ -17,15 +17,15 @@ export default function Jobs() {
     },
     {
       id: "ops-hyd",
-      title: "Operations - Associate/Sr. Associate",
+      title: "Operations - Analyst/Sr. Analyst",
       location: "Hyderabad, India",
-      pdfPath: "/JDs/Operations Associate.pdf",
+      pdfPath: "/JDs/Operations Analyst.pdf",
     },
     {
       id: "content-hyd",
-      title: "Content & Solutioning - Associate/Intern",
+      title: "Content & Solutioning - Analyst/Intern",
       location: "Hyderabad, India",
-      pdfPath: "/JDs/Content & Solutioning Associate.pdf",
+      pdfPath: "/JDs/Content & Solutioning Analyst.pdf",
     },
     {
       id: "bde-delhi",

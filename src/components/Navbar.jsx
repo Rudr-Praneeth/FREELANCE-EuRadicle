@@ -15,10 +15,10 @@ const NavLinks = [
 const capabilities = [
   "Leadership Development",
   "Consulting & Talent Management",
-  "Assessment Development Centers",
+  "Assessment & Development Centers",
   "Power Skills Development",
   "Digital & Business Transformation",
-  "Commercial Sales Enablement",
+  "Commercial & Sales Enablement",
   "DEI & Culture Building",
   "Creative Solutions",
 ];

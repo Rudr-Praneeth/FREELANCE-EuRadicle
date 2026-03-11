@@ -76,7 +76,7 @@ export default function Journey() {
             <h3 className="text-h6 mb-6">Find us</h3>
             <div className="jr-location-wrap flex flex-col items-center gap-6 w-full">
               <div className="jr-location">
-                <p className="font-semibold text-xs mb-2">India Hub</p>
+                {/* <p className="font-semibold text-xs mb-2">India Hub</p> */}
                 <p className="text-body-sm">
                   2nd floor Building no: 8-2-120/86/5/B
                   <br />
@@ -89,7 +89,7 @@ export default function Journey() {
               <div className="w-full h-px bg-[var(--color-bg-muted)]"></div>
 
               <div className="jr-location">
-                <p className="font-semibold text-xs mb-2">USA Office</p>
+                {/* <p className="font-semibold text-xs mb-2">USA Office</p> */}
                 <p className="text-body-sm">
                   EuRadicle Learning Inc
                   <br />

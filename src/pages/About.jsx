@@ -108,7 +108,7 @@ const About = () => {
     },
     {
       title: "Experience Design Studio",
-      text: "Bringing learning to life, our creative solutions team crafts engaging experiences through thoughtful design, formats, and visual storytelling-enhancing participation and reinforcing impact.",
+      text: "Bringing learning to life, our creative solutions team crafts engaging experiences through thoughtful design, formats, and visual storytelling, enhancing participation and reinforcing impact.",
       img: "Minds/compressed-Experience Design Studio.jpg",
     },
     {

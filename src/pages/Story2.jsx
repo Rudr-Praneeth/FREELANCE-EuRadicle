@@ -269,7 +269,7 @@ ${idx === 2 ? "z-20" : "z-10"}`}
             onClick={() => setIsModalOpen(true)}
             className="px-8 py-3 bg-primary-mauve text-white rounded-md hover:bg-[var(--color-primary-mauve)]/80 transition-all duration-300"
           >
-            Start a Conversation
+            Start A Conversation
           </button>
         </div>
       </div>

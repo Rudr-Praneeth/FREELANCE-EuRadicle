@@ -5,33 +5,40 @@ const TestimonialCard = ({ data }) => {
   const isParticipantVoice = !data.by && !data.designation;
 
   return (
-    <div className="testimonial-card relative flex-shrink-0 w-[85vw] sm:w-full max-w-[380px] sm:max-w-none bg-bg-white rounded-2xl p-4 sm:p-5 md:p-5 lg:p-6 border border-brand-400/20 shadow-[0_10px_30px_-15px_rgba(45,48,71,0.1)] flex flex-col gap-2 sm:gap-3 mb-0 sm:mb-4">
-      {isParticipantVoice && (
-        <img 
-          src="/ParticipantsVoices.png" 
-          alt="Participant Voice Logo" 
-          className="absolute top-4 right-4 w-8 h-8 sm:w-9 sm:h-9 object-contain opacity-80"
+    <div className="testimonial-card relative flex-shrink-0 w-[85vw] min-[500px]:w-[70vw] min-[650px]:w-[55vw] min-[800px]:w-full max-w-[420px] min-[800px]:max-w-none bg-bg-white rounded-2xl p-5 sm:p-6 border border-brand-400/20 shadow-[0_10px_30px_-15px_rgba(45,48,71,0.1)] h-[400px] flex flex-col gap-3">
+
+      {/* {isParticipantVoice && (
+        <img
+          src="/ParticipantsVoices.png"
+          alt="Participant Voice Logo"
+          className="absolute top-4 right-4 w-8 h-8 object-contain opacity-80"
         />
-      )}
+      )} */}
 
       <div className="flex gap-1">
         {[...Array(5)].map((_, i) => (
-          <span key={i} className="text-brand-500 text-base sm:text-lg">★</span>
+          <span key={i} className="text-brand-500 text-base">★</span>
         ))}
       </div>
-      <p className="text-primary-navy/70 italic leading-relaxed text-[clamp(13px,3.8vw,16px)] sm:text-[clamp(13px,1.6vw,16px)] line-clamp-4 sm:line-clamp-3">
+
+      <p className="text-primary-navy/70 italic leading-relaxed text-sm sm:text-base">
         "{data.testimonial}"
       </p>
 
-      <div className="mt-2 sm:mt-3 pt-3 sm:pt-4 border-t border-bg-muted flex items-center justify-between gap-3">
+      <div className="mt-auto pt-4 border-t border-bg-muted flex items-center justify-between gap-3">
+
         <div className="flex flex-col">
           <span className="text-primary-navy text-xs sm:text-sm font-medium">
-            {isParticipantVoice ? "Participant Voices" : data.by}
+            {isParticipantVoice ? "Participant Voice" : data.by}
           </span>
-          <span className="text-primary-navy text-xs sm:text-sm font-medium">
-              {isParticipantVoice ? "" : data.designation}
-          </span>
-          <span className="text-brand-600 font-semibold uppercase tracking-wider text-[10px] sm:text-xs">
+
+          {!isParticipantVoice && (
+            <span className="text-primary-navy text-xs sm:text-sm font-medium">
+              {data.designation}
+            </span>
+          )}
+
+          <span className="text-brand-600 font-semibold uppercase tracking-wider text-[11px] sm:text-xs">
             {data.org}
           </span>
         </div>
@@ -40,7 +47,7 @@ const TestimonialCard = ({ data }) => {
           <img
             src={data.logoUrl}
             alt={data.org}
-            className={`h-12 sm:h-16 md:h-18 object-contain flex-shrink-0 ${
+            className={`h-18 sm:h-20 object-contain flex-shrink-0 ${
               data.logoUrl === "/logos/peepalco.svg" ? "w-16 sm:w-20" : "w-auto"
             }`}
           />
@@ -51,8 +58,8 @@ const TestimonialCard = ({ data }) => {
 };
 
 const MarqueeRow = ({ items }) => (
-  <div className="relative w-full overflow-hidden sm:hidden py-2">
-    <div className="flex gap-4 animate-marquee-x w-max">
+  <div className="relative w-full overflow-hidden min-[800px]:hidden py-6">
+    <div className="flex gap-6 animate-marquee-x w-max">
       {[...items, ...items].map((item, idx) => (
         <TestimonialCard key={idx} data={item} />
       ))}
@@ -61,8 +68,8 @@ const MarqueeRow = ({ items }) => (
 );
 
 const MarqueeColumn = ({ items, reverse = false }) => (
-  <div className="relative h-[520px] md:h-[600px] lg:h-[650px] overflow-hidden px-2 hidden sm:block">
-    <div className={`flex flex-col ${reverse ? 'animate-marquee-reverse' : 'animate-marquee'}`}>
+  <div className="relative h-[560px] md:h-[640px] lg:h-[680px] overflow-hidden hidden min-[800px]:block">
+    <div className={`flex flex-col gap-6 ${reverse ? 'animate-marquee-reverse' : 'animate-marquee'}`}>
       {[...items, ...items].map((item, idx) => (
         <TestimonialCard key={idx} data={item} />
       ))}
@@ -76,7 +83,8 @@ const TestimonialsSection = () => {
   const rightCol = Testimonials.slice(midPoint);
 
   return (
-    <section className="relative w-full py-10 sm:py-14 px-4 bg-bg-white overflow-hidden">
+    <section className="relative w-full py-12 sm:py-16 px-4 bg-bg-white overflow-hidden">
+
       <style>{`
         @keyframes marquee {
           from { transform: translateY(0); }
@@ -90,39 +98,50 @@ const TestimonialsSection = () => {
           from { transform: translateX(0); }
           to { transform: translateX(-50%); }
         }
+
         .animate-marquee { animation: marquee 80s linear infinite; }
         .animate-marquee-reverse { animation: marquee-reverse 80s linear infinite; }
         .animate-marquee-x { animation: marquee-x 65s linear infinite; }
-        .animate-marquee:hover, .animate-marquee-reverse:hover, .animate-marquee-x:hover {
+
+        .animate-marquee:hover,
+        .animate-marquee-reverse:hover,
+        .animate-marquee-x:hover {
           animation-play-state: paused;
         }
-        .testimonial-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+
+        .testimonial-card {
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
         .testimonial-card:hover {
-          transform: translateY(-5px);
+          transform: translateY(-6px);
           box-shadow: 0 20px 40px -15px rgba(45,48,71,0.2);
           z-index: 10;
         }
       `}</style>
 
       <div className="absolute inset-0 pointer-events-none z-30">
-        {/* <div className="absolute top-0 left-0 w-full h-16 sm:h-24 bg-gradient-to-b from-bg-white via-bg-white/80 to-transparent" /> */}
-        <div className="absolute bottom-0 left-0 w-full h-16 sm:h-24 bg-gradient-to-t from-bg-white via-bg-white/80 to-transparent" />
+        <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-bg-white via-bg-white/80 to-transparent" />
       </div>
 
       <div className="relative z-20 max-w-7xl mx-auto">
-        <div className="text-center mb-8 sm:mb-16">
+
+        <div className="text-center mb-10 sm:mb-16">
           <h1 className="text-primary-navy text-h1">
-            Trusted by Leaders{' '}
-            <span className="text-primary-mauve block">Across Organizations</span>
+            Trusted by Leaders
+            <span className="text-primary-mauve block">
+              Across Organizations
+            </span>
           </h1>
         </div>
 
         <MarqueeRow items={Testimonials} />
 
-        <div className="hidden sm:grid grid-cols-1 md:grid-cols-2 gap-6 px-10">
+        <div className="hidden min-[800px]:grid grid-cols-1 md:grid-cols-2 gap-8 px-6 lg:px-10">
           <MarqueeColumn items={leftCol} />
           <MarqueeColumn items={rightCol} reverse />
         </div>
+
       </div>
     </section>
   );

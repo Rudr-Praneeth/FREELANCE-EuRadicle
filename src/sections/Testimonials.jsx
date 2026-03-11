@@ -22,7 +22,7 @@ const TestimonialCard = ({ data }) => {
       </div>
 
       <p className="text-primary-navy/70 italic leading-relaxed text-sm sm:text-base">
-        "{data.testimonial}"
+        {data.testimonial}
       </p>
 
       <div className="mt-auto pt-4 border-t border-bg-muted flex items-center justify-between gap-3">

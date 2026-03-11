@@ -36,12 +36,13 @@ export default function WhyEuradicle({ items }) {
           ScrollTrigger.create({
             animation: tween,
             trigger: section,
-            start: "top top",
+            start: "top-=60 top",
             end: () => `+=${getScrollAmount()}`,
             scrub: 1,
             pin: true,
             anticipatePin: 1,
             invalidateOnRefresh: true,
+            markers: true
           });
 
           gsap.fromTo(
@@ -52,7 +53,7 @@ export default function WhyEuradicle({ items }) {
               ease: "none",
               scrollTrigger: {
                 trigger: section,
-                start: "top top",
+                start: "top-=60 top",
                 end: () => `+=${getScrollAmount()}`,
                 scrub: 1,
                 invalidateOnRefresh: true,
@@ -72,7 +73,7 @@ export default function WhyEuradicle({ items }) {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full bg-[var(--color-bg-white)] px-6 sm:px-12 py-20 overflow-hidden"
+      className="relative w-full bg-[var(--color-bg-white)] px-6 sm:px-12 py-20 overflow-hidden pb-40"
     >
       <div className="text-center mb-16">
         <h1 className="text-h1">
@@ -107,7 +108,7 @@ export default function WhyEuradicle({ items }) {
         </div>
       </div>
 
-      <div className="hidden sm:block absolute bottom-8 left-1/2 -translate-x-1/2 w-1/2 h-1 bg-[var(--color-primary-mauve)]/20 rounded-full overflow-hidden">
+      <div className="hidden sm:block absolute bottom-18 left-1/2 -translate-x-1/2 w-1/2 h-1 bg-[var(--color-primary-mauve)]/20 rounded-full overflow-hidden">
         <div
           ref={progressRef}
           className="h-full bg-[var(--color-primary-mauve)] origin-left scale-x-0"

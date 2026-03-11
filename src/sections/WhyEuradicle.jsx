@@ -42,7 +42,7 @@ export default function WhyEuradicle({ items }) {
             pin: true,
             anticipatePin: 1,
             invalidateOnRefresh: true,
-            markers: true
+            // markers: true
           });
 
           gsap.fromTo(

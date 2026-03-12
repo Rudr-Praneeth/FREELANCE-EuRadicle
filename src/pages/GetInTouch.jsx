@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import Journey from "../sections/Journey"
 import ContactSection from "../sections/ContactSection"
+import emailjs from "@emailjs/browser"
 
 const GetInTouch = () => {
 
@@ -57,58 +58,47 @@ const GetInTouch = () => {
     setLoading(true)
     setStatus({ type: "", message: "" })
 
-    const payload = {
-      ...formData,
-      PhoneNumber: phone
-    }
-
     try {
-
-      const res = await fetch(
-        "https://backend.euradicle.com/wp-json/custom/v1/get-in-touch",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(payload)
-        }
-      )
-
-      const data = await res.json()
-
-      if (res.ok && data.success) {
-
-        setStatus({
-          type: "success",
-          message: "Message sent successfully"
+      await fetch("https://backend.euradicle.com/wp-json/custom/v1/getintouch", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          title: formData.Name,
+          meta: {
+            full_name: formData.Name,
+            email: formData.Email,
+            phone_number: phone,
+            message: formData.Message
+          }
         })
-
-        setFormData({
-          Name: "",
-          Email: "",
-          PhoneNumber: "",
-          Message: ""
-        })
-
-        setPhone("")
-
-      } else {
-
-        setStatus({
-          type: "error",
-          message: data.message || "Submission failed"
-        })
-
-      }
-
-    } catch {
-
-      setStatus({
-        type: "error",
-        message: "Network error"
       })
 
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          name: formData.Name,
+          email: formData.Email,
+          phone: phone,
+          message: formData.Message
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+
+      setStatus({ type: "success", message: "Form submitted successfully" })
+
+      setFormData({
+        Name: "",
+        Email: "",
+        PhoneNumber: "",
+        Message: ""
+      })
+
+      setPhone("")
+    } catch (error) {
+      setStatus({ type: "error", message: "Something went wrong" })
     }
 
     setLoading(false)

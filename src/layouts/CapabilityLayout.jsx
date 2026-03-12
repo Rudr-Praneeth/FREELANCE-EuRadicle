@@ -2,6 +2,7 @@ import { useRef, useState, useMemo, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import emailjs from "@emailjs/browser";
 import { capabilities } from "../data/capabilities";
 
 function CapabilityLayout({
@@ -19,6 +20,8 @@ function CapabilityLayout({
   const { slug } = useParams();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeCard, setActiveCard] = useState(null);
+  const [status, setStatus] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const formatSlug = (str) =>
     str
@@ -108,10 +111,77 @@ function CapabilityLayout({
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
-    setIsModalOpen(false);
+
+    setLoading(true);
+    setStatus(null);
+
+    try {
+      const res = await fetch(
+        "https://backend.euradicle.com/wp-json/custom/v1/capability",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            title: formData.fullName,
+            meta: {
+              full_name: formData.fullName,
+              email: formData.email,
+              phone_number: formData.phone,
+              capability: formData.capability,
+              sub_capability: formData.subCapability,
+            },
+          }),
+        }
+      );
+
+      const data = await res.json();
+
+      if (res.ok && data.success) {
+        await emailjs.send(
+          import.meta.env.VITE_EMAILJS_SERVICE_ID,
+          import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+          {
+            name: formData.fullName,
+            email: formData.email,
+            phone: formData.phone,
+            capability: formData.capability,
+            sub_capability: formData.subCapability,
+          },
+          import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        );
+
+        setStatus({ type: "success", message: "Message sent successfully." });
+
+        setFormData({
+          fullName: "",
+          email: "",
+          phone: "",
+          capability: title || "",
+          subCapability: "",
+        });
+
+        setTimeout(() => {
+          setIsModalOpen(false);
+          setStatus(null);
+        }, 1500);
+      } else {
+        setStatus({
+          type: "error",
+          message: data.message || "Submission failed",
+        });
+      }
+    } catch (err) {
+      setStatus({
+        type: "error",
+        message: "Network error. Please try again.",
+      });
+    }
+
+    setLoading(false);
   };
 
   const toggleCard = (index) => {
@@ -212,6 +282,17 @@ function CapabilityLayout({
               <span className="text-primary-navy">Start a </span>Conversation
             </h3>
             <form className="space-y-4" onSubmit={handleSubmit}>
+              {status && (
+                <div
+                  className={`p-3 rounded-md text-sm ${
+                    status.type === "success"
+                      ? "bg-green-100 text-green-700"
+                      : "bg-red-100 text-red-700"
+                  }`}
+                >
+                  {status.message}
+                </div>
+              )}
               <input
                 type="text"
                 name="fullName"
@@ -263,9 +344,10 @@ function CapabilityLayout({
               </select>
               <button
                 type="submit"
-                className="w-full bg-[var(--color-primary-purple)] text-white py-3 rounded-lg transition-all duration-300 hover:scale-105"
+                disabled={loading}
+                className="w-full bg-[var(--color-primary-purple)] text-white py-3 rounded-lg transition-all duration-300 hover:scale-105 disabled:opacity-60"
               >
-                Submit
+                {loading ? "Sending..." : "Submit"}
               </button>
               <div className="mt-2 border-t border-gray-100 pt-6 flex flex-wrap items-center gap-4">
                 <img

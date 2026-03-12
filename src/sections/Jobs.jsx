@@ -2,11 +2,24 @@ import { useRef, useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
+import emailjs from "@emailjs/browser";
 
 export default function Jobs() {
   const sectionRef = useRef(null);
+  const fileRef = useRef(null);
+
   const [selectedRole, setSelectedRole] = useState(null);
   const [isPdfExpanded, setIsPdfExpanded] = useState(false);
+
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    phone: "",
+  });
+
+  const [resumeFile, setResumeFile] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState(null);
 
   const roles = [
     {
@@ -48,10 +61,20 @@ export default function Jobs() {
 
       cards.forEach((card) => {
         const enter = () => {
-          gsap.to(card, { y: -10, scale: 1.03, duration: 0.4, ease: "power3.out" });
+          gsap.to(card, {
+            y: -10,
+            scale: 1.03,
+            duration: 0.4,
+            ease: "power3.out",
+          });
         };
         const leave = () => {
-          gsap.to(card, { y: 0, scale: 1, duration: 0.4, ease: "power3.out" });
+          gsap.to(card, {
+            y: 0,
+            scale: 1,
+            duration: 0.4,
+            ease: "power3.out",
+          });
         };
         card.addEventListener("mouseenter", enter);
         card.addEventListener("mouseleave", leave);
@@ -74,6 +97,81 @@ export default function Jobs() {
     window.addEventListener("keydown", handleEsc);
     return () => window.removeEventListener("keydown", handleEsc);
   }, []);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    setResumeFile(file);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!resumeFile) return;
+
+    setLoading(true);
+    setStatus(null);
+
+    try {
+      const form = new FormData();
+
+      form.append("file", resumeFile);
+      form.append("title", formData.fullName);
+      form.append("full_name", formData.fullName);
+      form.append("email", formData.email);
+      form.append("phone_number", formData.phone);
+      form.append("role", selectedRole.title);
+
+      const res = await fetch(
+        "https://backend.euradicle.com/wp-json/custom/v1/job",
+        {
+          method: "POST",
+          body: form,
+        }
+      );
+
+      const data = await res.json();
+
+      if (res.ok && data.success) {
+        await emailjs.send(
+          import.meta.env.VITE_EMAILJS_SERVICE_ID,
+          import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+          {
+            name: formData.fullName,
+            email: formData.email,
+            phone: formData.phone,
+            role: selectedRole.title,
+          },
+          import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        );
+
+        setStatus({ type: "success", message: "Application submitted." });
+
+        setFormData({
+          fullName: "",
+          email: "",
+          phone: "",
+        });
+
+        setResumeFile(null);
+        fileRef.current.value = "";
+
+        setTimeout(() => {
+          setSelectedRole(null);
+          setStatus(null);
+        }, 1500);
+      } else {
+        setStatus({ type: "error", message: "Submission failed." });
+      }
+    } catch (err) {
+      setStatus({ type: "error", message: "Network error." });
+    }
+
+    setLoading(false);
+  };
 
   return (
     <>
@@ -148,7 +246,6 @@ export default function Jobs() {
                   setIsPdfExpanded(false);
                 }}
                 className="absolute top-4 right-6 text-[var(--color-primary-navy)] text-3xl font-light hover:rotate-90 transition-transform duration-300"
-                aria-label="Close"
               >
                 ×
               </button>
@@ -161,23 +258,36 @@ export default function Jobs() {
                   <p className="text-body-sm text-[var(--color-primary-mauve)] mb-6">
                     {selectedRole.location}
                   </p>
-                  
+
                   <div className="block lg:hidden mb-4">
-                    <button 
+                    <button
                       onClick={() => setIsPdfExpanded(!isPdfExpanded)}
                       className="w-full flex items-center justify-between px-5 py-3 bg-gray-50 border border-[var(--color-primary-mauve)] rounded-xl text-[var(--color-primary-navy)] font-medium"
                     >
-                      <span>{isPdfExpanded ? "Close Job Description" : "View Job Description"}</span>
-                      <span className={`transition-transform duration-300 ${isPdfExpanded ? 'rotate-180' : ''}`}>↓</span>
+                      <span>
+                        {isPdfExpanded
+                          ? "Close Job Description"
+                          : "View Job Description"}
+                      </span>
+                      <span
+                        className={`transition-transform duration-300 ${
+                          isPdfExpanded ? "rotate-180" : ""
+                        }`}
+                      >
+                        ↓
+                      </span>
                     </button>
                   </div>
 
-                  <div className={`
-                    w-full border border-[var(--color-primary-mauve)] rounded-xl overflow-hidden transition-all duration-500 ease-in-out
-                    ${isPdfExpanded ? 'h-[60vh] opacity-100 mt-2' : 'h-0 lg:h-[60vh] opacity-0 lg:opacity-100 lg:mt-0'}
-                  `}>
-                    <iframe 
-                      src={selectedRole.pdfPath} 
+                  <div
+                    className={`w-full border border-[var(--color-primary-mauve)] rounded-xl overflow-hidden transition-all duration-500 ${
+                      isPdfExpanded
+                        ? "h-[60vh] opacity-100 mt-2"
+                        : "h-0 lg:h-[60vh] opacity-0 lg:opacity-100 lg:mt-0"
+                    }`}
+                  >
+                    <iframe
+                      src={selectedRole.pdfPath}
                       className="w-full h-full"
                       title={`${selectedRole.title} Job Description`}
                     />
@@ -186,52 +296,76 @@ export default function Jobs() {
 
                 <div className="lg:col-span-5 flex flex-col justify-start pt-2">
                   <div className="bg-gray-50/50 p-6 rounded-2xl border border-gray-100">
-                    <h4 className="text-lg font-semibold text-[var(--color-primary-navy)] mb-6">Apply for this position</h4>
-                    <form
-                      className="space-y-5"
-                      onSubmit={(e) => e.preventDefault()}
-                    >
-                      <div className="space-y-1">
+                    <h4 className="text-lg font-semibold text-[var(--color-primary-navy)] mb-6">
+                      Apply for this position
+                    </h4>
+
+                    {status && (
+                      <div
+                        className={`mb-4 p-3 rounded text-sm ${
+                          status.type === "success"
+                            ? "bg-green-100 text-green-700"
+                            : "bg-red-100 text-red-700"
+                        }`}
+                      >
+                        {status.message}
+                      </div>
+                    )}
+
+                    <form className="space-y-5" onSubmit={handleSubmit}>
+                      <input
+                        type="text"
+                        name="fullName"
+                        value={formData.fullName}
+                        onChange={handleChange}
+                        placeholder="Full Name"
+                        required
+                        className="w-full border border-gray-300 rounded-xl px-4 py-3.5 bg-white"
+                      />
+
+                      <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        placeholder="Email Address"
+                        required
+                        className="w-full border border-gray-300 rounded-xl px-4 py-3.5 bg-white"
+                      />
+
+                      <input
+                        type="tel"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        placeholder="Phone Number"
+                        required
+                        className="w-full border border-gray-300 rounded-xl px-4 py-3.5 bg-white"
+                      />
+
+                      <label className="w-full flex items-center justify-between border border-dashed border-gray-400 rounded-xl px-4 py-3.5 bg-white cursor-pointer">
+                        <span className="text-gray-500 text-sm">
+                          Upload Resume (PDF/DOC)
+                        </span>
+                        <span className="text-xs bg-gray-100 px-2 py-1 rounded">
+                          Browse
+                        </span>
                         <input
-                          type="text"
-                          placeholder="Full Name"
+                          ref={fileRef}
+                          type="file"
+                          accept=".pdf,.doc,.docx"
+                          onChange={handleFileChange}
                           required
-                          className="w-full border border-gray-300 rounded-xl px-4 py-3.5 bg-white focus:border-[var(--color-primary-mauve)] focus:outline-none transition-colors"
+                          className="hidden"
                         />
-                      </div>
-                      <div className="space-y-1">
-                        <input
-                          type="email"
-                          placeholder="Email Address"
-                          required
-                          className="w-full border border-gray-300 rounded-xl px-4 py-3.5 bg-white focus:border-[var(--color-primary-mauve)] focus:outline-none transition-colors"
-                        />
-                      </div>
-                      <div className="space-y-1">
-                        <input
-                          type="tel"
-                          placeholder="Phone Number"
-                          required
-                          className="w-full border border-gray-300 rounded-xl px-4 py-3.5 bg-white focus:border-[var(--color-primary-mauve)] focus:outline-none transition-colors"
-                        />
-                      </div>
-                      <div className="space-y-1">
-                        <label className="w-full flex items-center justify-between border border-dashed border-gray-400 rounded-xl px-4 py-3.5 bg-white cursor-pointer hover:bg-gray-50 transition-colors">
-                          <span className="text-gray-500 text-sm">Upload Resume (PDF/DOC)</span>
-                          <span className="text-xs bg-gray-100 px-2 py-1 rounded">Browse</span>
-                          <input
-                            type="file"
-                            accept=".pdf,.doc,.docx"
-                            required
-                            className="hidden"
-                          />
-                        </label>
-                      </div>
+                      </label>
+
                       <button
                         type="submit"
-                        className="w-full bg-[var(--color-primary-mauve)] text-white py-4 rounded-xl font-bold tracking-wide hover:shadow-lg hover:brightness-110 transition-all active:scale-[0.98]"
+                        disabled={loading}
+                        className="w-full bg-[var(--color-primary-mauve)] text-white py-4 rounded-xl font-bold tracking-wide hover:shadow-lg"
                       >
-                        SUBMIT APPLICATION
+                        {loading ? "Submitting..." : "SUBMIT APPLICATION"}
                       </button>
                     </form>
                   </div>

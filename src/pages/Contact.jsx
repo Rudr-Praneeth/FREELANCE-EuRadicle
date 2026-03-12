@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ContactSection from "../sections/ContactSection";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   useEffect(() => {
@@ -81,51 +82,51 @@ const Contact = () => {
     setLoading(true);
     setStatus({ type: "", message: "" });
 
-    const payload = {
-      ...formData,
-      PhoneNumber: phone,
-    };
-
     try {
-      const res = await fetch(
-        "https://backend.euradicle.com/wp-json/custom/v1/contact",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
+      await fetch("https://backend.euradicle.com/wp-json/custom/v1/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          title: `${formData.FirstName} ${formData.LastName}`,
+          meta: {
+            first_name: formData.FirstName,
+            last_name: formData.LastName,
+            company: formData.Company,
+            organisation: formData.Designation,
+            email: formData.Email,
+            phone_number: phone,
           },
-          body: JSON.stringify(payload),
-        }
+        }),
+      });
+
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          name: `${formData.FirstName} ${formData.LastName}`,
+          email: formData.Email,
+          phone: phone,
+          company: formData.Company,
+          organisation: formData.Designation,
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
 
-      const data = await res.json();
+      setStatus({ type: "success", message: "Form submitted successfully" });
 
-      if (res.ok && data.success) {
-        setStatus({
-          type: "success",
-          message: "Your message has been sent successfully.",
-        });
-
-        setFormData({
-          FirstName: "",
-          LastName: "",
-          Company: "",
-          Designation: "",
-          Email: "",
-        });
-
-        setPhone("");
-      } else {
-        setStatus({
-          type: "error",
-          message: data.message || "Submission failed",
-        });
-      }
-    } catch (error) {
-      setStatus({
-        type: "error",
-        message: "Network error. Please try again.",
+      setFormData({
+        FirstName: "",
+        LastName: "",
+        Company: "",
+        Designation: "",
+        Email: "",
       });
+
+      setPhone("");
+    } catch (error) {
+      setStatus({ type: "error", message: "Something went wrong" });
     }
 
     setLoading(false);

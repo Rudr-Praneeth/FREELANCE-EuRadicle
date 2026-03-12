@@ -6,6 +6,7 @@ import ImpactStories from "../sections/ImpactStories";
 import BlogsSection from "../sections/BlogsSection";
 import Testimonials from "../sections/Testimonials";
 import LogoSection from "../sections/LogoSection";
+import VideoTestimonials from "../sections/VideoTestimonials"
 
 const Home = () => { 
   useEffect(() => {
@@ -24,6 +25,7 @@ const Home = () => {
       <Testimonials />
       <BlogsSection />
       <LogoSection />
+      <VideoTestimonials />
     </div>
   );
 };

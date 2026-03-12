@@ -12,8 +12,23 @@ function AssessmentDevelopmentCenters() {
         {
           heading: "Talent Readiness & Development Diagnostics",
           description:
-            "Strong talent decisions begin with clear insight. We use structured diagnostics, behavioural assessments, and simulations to evaluate readiness and potential-then translate findings into focused development actions and clearer growth pathways.",
+            "Strong talent decisions begin with clear insight. Through structured diagnostics, competency mapping, and behavioral assessments, we evaluate leadership readiness and potential. These diagnostics provide a clear starting point for development planning and leadership pipeline decisions.",
         },
+        {
+          heading: "Competency Mapping & Assessment Architecture",
+          description:
+          "Effective assessment centers begin with clearly defined leadership competencies. We work with business leaders to identify critical capabilities and design assessment architectures that align competencies with appropriate evaluation tools such as simulations, interviews, and psychometric instruments."
+        },
+        {
+          heading: "Behavioral & Simulation-Based Leadership Assessment",
+          description:
+          "Leadership capability is best evaluated through behavior in action. Our assessment centers use role plays, case simulations, in-basket exercises, presentations, and Behavioral Event Interviews (BEI) to observe how individuals think, decide, influence stakeholders, and respond to real business scenarios."
+        },
+        {
+          heading: "Psychometric, 360° Feedback & Talent Insights",
+          description:
+          "We complement behavioral observations with validated psychometric tools that measure cognitive ability, personality patterns, and decision styles. Combined with 360-degree feedback, assessor observations, competency ratings, and targeted feedback sessions, organizations gain clear guidance for succession planning, capability development, and leadership growth."
+        }
       ]}
     />
   );

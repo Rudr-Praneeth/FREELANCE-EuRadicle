@@ -36,7 +36,7 @@ export default function StoryTimelineSection({ items }) {
         delay: 0.3,
       });
     },
-    { scope: sectionRef }
+    { scope: sectionRef },
   );
 
   useGSAP(
@@ -71,7 +71,10 @@ export default function StoryTimelineSection({ items }) {
             onUpdate: (self) => {
               const total = items.length - 1;
               const rawIndex = self.progress * total;
-              const index = Math.min(total, Math.max(0, Math.floor(rawIndex + 0.5)));
+              const index = Math.min(
+                total,
+                Math.max(0, Math.floor(rawIndex + 0.5)),
+              );
               setActiveIndex(index);
             },
           },
@@ -113,7 +116,10 @@ export default function StoryTimelineSection({ items }) {
             onUpdate: (self) => {
               const total = items.length - 1;
               const rawIndex = self.progress * total;
-              const index = Math.min(total, Math.max(0, Math.floor(rawIndex + 0.5)));
+              const index = Math.min(
+                total,
+                Math.max(0, Math.floor(rawIndex + 0.5)),
+              );
               setActiveIndex(index);
             },
           },
@@ -136,7 +142,7 @@ export default function StoryTimelineSection({ items }) {
         window.scrollTo(0, 0);
       };
     },
-    { scope: sectionRef, dependencies: [items.length] }
+    { scope: sectionRef, dependencies: [items.length] },
   );
 
   useGSAP(
@@ -163,7 +169,7 @@ export default function StoryTimelineSection({ items }) {
               y: 0,
               duration: 0.6,
               ease: "power3.inOut",
-            }
+            },
           );
         } else {
           gsap.to(card, {
@@ -183,7 +189,7 @@ export default function StoryTimelineSection({ items }) {
         }
       });
     },
-    { dependencies: [activeIndex] }
+    { dependencies: [activeIndex] },
   );
 
   return (
@@ -264,14 +270,21 @@ export default function StoryTimelineSection({ items }) {
                   alt=""
                   className={`absolute w-auto object-contain ${
                     item.size === "yes"
-                      ? "top-12 right-10 h-6 min-[600px]:h-8 min-[768px]:h-10"
-                      : "top-0 right-[-20px] h-20 min-[600px]:h-30 min-[768px]:h-32"
+                      ? "top-8 right-10 h-8 min-[600px]:h-10 min-[768px]:h-12"
+                      : item.size === "hh"
+                        ? "top-[-30px] left-53 h-34 min-[600px]:h-38 min-[768px]:h-40"
+                        : "top-[-30px] left-50 h-24 min-[600px]:h-38 min-[768px]:h-40"
                   }`}
                 />
-
-                <p className="text-lg font-semibold tracking-wide text-[var(--color-primary-mauve)]">
-                  {item.title?.toUpperCase()}
-                </p>
+                {item.break ? (
+                  <p className="text-[17px] font-semibold tracking-wide text-[var(--color-primary-mauve)]">
+                    {item.title?.toUpperCase()}
+                  </p>
+                ) : (
+                  <p className="text-lg font-semibold tracking-wide text-[var(--color-primary-mauve)]">
+                    {item.title?.toUpperCase()}
+                  </p>
+                )}
                 <h3 className="text-h4 text-[var(--color-primary-mauve)]">
                   {item.year}
                 </h3>

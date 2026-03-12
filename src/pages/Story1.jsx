@@ -325,6 +325,7 @@ ${idx === 2 ? "z-20" : "z-10"}`}
                 required
                 className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-mauve"
               />
+              <p className="text-center text-black/30 italic">Our consultant will get in touch with you shortly</p>
               <button
                 type="submit"
                 disabled={loading}
@@ -333,6 +334,7 @@ ${idx === 2 ? "z-20" : "z-10"}`}
                 {loading ? "Sending..." : "Submit"}
               </button>
             </form>
+            
           </div>
         </div>
       )}

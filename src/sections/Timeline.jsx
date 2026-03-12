@@ -269,10 +269,10 @@ export default function StoryTimelineSection({ items }) {
                   }`}
                 />
 
-                <p className="text-body-xs font-semibold tracking-wide text-[var(--color-primary-mauve)]">
+                <p className="text-lg font-semibold tracking-wide text-[var(--color-primary-mauve)]">
                   {item.title?.toUpperCase()}
                 </p>
-                <h3 className="mt-2 min-[600px]:mt-3 text-h4 text-[var(--color-primary-mauve)]">
+                <h3 className="text-h4 text-[var(--color-primary-mauve)]">
                   {item.year}
                 </h3>
 

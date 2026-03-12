@@ -133,7 +133,7 @@ export default function Footer() {
           <div className="space-y-8 text-body-sm text-primary-navy/80">
             <div className="space-y-2">
               <p className="font-bold text-primary-navy text-[10px] uppercase tracking-[0.2em] opacity-40">
-                India Hub
+                India
               </p>
               <p className="leading-relaxed">
                 2nd floor Building no: 8-2-120/86/5/B<br />
@@ -144,7 +144,7 @@ export default function Footer() {
 
             <div className="space-y-2">
               <p className="font-bold text-primary-navy text-[10px] uppercase tracking-[0.2em] opacity-40">
-                USA Office
+                USA
               </p>
               <p className="leading-relaxed">
                 EuRadicle Learning Inc<br />

@@ -50,7 +50,8 @@ export default function ResourcesModal({ modalType, closeModal }) {
       setLoading(true);
       setStatus(null);
 
-      const certificate_code = `${firstName}_${lastName}_${certificateNumber}`;
+      const certificate_code =
+`${firstName.trim().replace(/\s+/g,"")}_${lastName.trim().replace(/\s+/g,"")}_${certificateNumber.trim()}`;
 
       try {
         const res = await fetch(

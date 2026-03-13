@@ -106,8 +106,8 @@ export default function ContactSection({
     <section className="w-full bg-[var(--color-bg-white)]">
       {header}
 
-      <div className="max-w-6xl mx-auto px-4 pb-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+      <div className="max-w-6xl xl:max-w-7xl 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 xl:px-8 pb-10 xl:pb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 xl:gap-10 2xl:gap-14 items-start">
           <div className="w-full h-full overflow-hidden rounded-2xl group order-1 md:order-2">
             <img
               src={imageUrl}
@@ -118,7 +118,7 @@ export default function ContactSection({
 
           <form
             onSubmit={handleSubmit}
-            className="relative overflow-visible rounded-2xl bg-[var(--color-brand-400)]/10 p-8 space-y-6 w-full order-2 md:order-1"
+            className="relative overflow-visible rounded-2xl bg-[var(--color-brand-400)]/10 p-8 xl:p-10 2xl:p-12 space-y-6 xl:space-y-7 w-full order-2 md:order-1"
           >
             {status?.message && (
               <div
@@ -137,7 +137,7 @@ export default function ContactSection({
                 return (
                   <div
                     key={index}
-                    className="grid grid-cols-1 sm:grid-cols-2 gap-6"
+                    className="grid grid-cols-1 sm:grid-cols-2 gap-6 xl:gap-8"
                   >
                     {group.map((field) => (
                       <div key={field.name}>

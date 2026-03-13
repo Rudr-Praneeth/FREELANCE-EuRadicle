@@ -109,7 +109,6 @@ export default function Jobs() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     if (!resumeFile) return;
 
     setLoading(true);
@@ -117,7 +116,6 @@ export default function Jobs() {
 
     try {
       const form = new FormData();
-
       form.append("file", resumeFile);
       form.append("title", formData.fullName);
       form.append("full_name", formData.fullName);
@@ -166,7 +164,7 @@ export default function Jobs() {
       } else {
         setStatus({ type: "error", message: "Submission failed." });
       }
-    } catch (err) {
+    } catch {
       setStatus({ type: "error", message: "Network error." });
     }
 
@@ -177,19 +175,19 @@ export default function Jobs() {
     <>
       <section
         ref={sectionRef}
-        className="w-full bg-[var(--color-bg-muted)] py-16 px-6 overflow-hidden"
+        className="w-full bg-[var(--color-bg-muted)] py-16 xl:py-20 2xl:py-24 px-6"
       >
-        <div className="max-w-5xl mx-auto text-center">
-          <h1 className="text-h1 mb-2 jobs-animate">
+        <div className="max-w-6xl xl:max-w-7xl 2xl:max-w-[1600px] mx-auto text-center">
+          <h1 className="text-h1 xl:text-[48px] 2xl:text-[56px] mb-3">
             <span className="text-[var(--color-primary-navy)]">OPEN</span>{" "}
             <span className="text-[var(--color-primary-mauve)]">ROLES</span>
           </h1>
 
-          <p className="text-subheading-lg italic mb-4 jobs-animate">
+          <p className="text-subheading-lg italic mb-4">
             Work That Shapes You, and the World
           </p>
 
-          <p className="italic text-body-sm mt-6 max-w-5xl mx-auto jobs-animate">
+          <p className="italic text-body-sm xl:text-base mt-6 max-w-5xl xl:max-w-6xl mx-auto">
             Join a global consulting firm where impact is intentional and growth
             is personal. At EuRadicle, curious minds come together in a culture
             of trust, collaboration, and continuous learning, where high
@@ -201,7 +199,7 @@ export default function Jobs() {
           </p>
         </div>
 
-        <div className="max-w-6xl mx-auto mt-12 grid md:grid-cols-2 gap-8">
+        <div className="max-w-6xl xl:max-w-7xl 2xl:max-w-[1600px] mx-auto mt-14 grid md:grid-cols-2 xl:grid-cols-2 gap-8 xl:gap-10">
           {roles.map((role) => (
             <div
               key={role.id}
@@ -209,14 +207,16 @@ export default function Jobs() {
                 setSelectedRole(role);
                 setIsPdfExpanded(false);
               }}
-              className="jobs-card jobs-animate bg-[var(--color-bg-white)] rounded-2xl p-8 shadow-lg cursor-pointer transition-all duration-500 border border-transparent hover:border-brand-600"
+              className="jobs-card bg-[var(--color-bg-white)] rounded-2xl p-8 xl:p-10 shadow-lg cursor-pointer transition-all duration-500 border border-transparent hover:border-brand-600"
             >
               <p className="text-subheading text-[var(--color-primary-mauve)] mb-3">
                 Open Role
               </p>
-              <h3 className="text-h5 text-[var(--color-primary-navy)]">
+
+              <h3 className="text-h5 xl:text-xl text-[var(--color-primary-navy)]">
                 {role.title}
               </h3>
+
               {role.location && (
                 <p className="mt-4 text-body-sm text-[var(--color-primary-mauve)]">
                   {role.location}
@@ -230,14 +230,14 @@ export default function Jobs() {
       {selectedRole &&
         createPortal(
           <div
-            className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 px-4 py-6"
+            className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 px-6 py-6"
             onClick={() => {
               setSelectedRole(null);
               setIsPdfExpanded(false);
             }}
           >
             <div
-              className="bg-[var(--color-bg-white)] w-full max-w-6xl rounded-2xl p-6 md:p-10 relative shadow-xl flex flex-col max-h-[95vh] overflow-y-auto"
+              className="bg-[var(--color-bg-white)] w-full max-w-6xl xl:max-w-7xl 2xl:max-w-[1600px] rounded-2xl p-6 md:p-10 xl:p-12 relative shadow-xl flex flex-col max-h-[95vh] overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
             >
               <button
@@ -250,41 +250,18 @@ export default function Jobs() {
                 ×
               </button>
 
-              <div className="grid lg:grid-cols-12 gap-10">
+              <div className="grid lg:grid-cols-12 gap-10 xl:gap-14">
                 <div className="lg:col-span-7 flex flex-col">
-                  <h2 className="text-h3 text-[var(--color-primary-navy)] mb-1">
+                  <h2 className="text-h3 xl:text-[32px] text-[var(--color-primary-navy)] mb-1">
                     {selectedRole.title}
                   </h2>
+
                   <p className="text-body-sm text-[var(--color-primary-mauve)] mb-6">
                     {selectedRole.location}
                   </p>
 
-                  <div className="block lg:hidden mb-4">
-                    <button
-                      onClick={() => setIsPdfExpanded(!isPdfExpanded)}
-                      className="w-full flex items-center justify-between px-5 py-3 bg-gray-50 border border-[var(--color-primary-mauve)] rounded-xl text-[var(--color-primary-navy)] font-medium"
-                    >
-                      <span>
-                        {isPdfExpanded
-                          ? "Close Job Description"
-                          : "View Job Description"}
-                      </span>
-                      <span
-                        className={`transition-transform duration-300 ${
-                          isPdfExpanded ? "rotate-180" : ""
-                        }`}
-                      >
-                        ↓
-                      </span>
-                    </button>
-                  </div>
-
                   <div
-                    className={`w-full border border-[var(--color-primary-mauve)] rounded-xl overflow-hidden transition-all duration-500 ${
-                      isPdfExpanded
-                        ? "h-[60vh] opacity-100 mt-2"
-                        : "h-0 lg:h-[60vh] opacity-0 lg:opacity-100 lg:mt-0"
-                    }`}
+                    className={`w-full border border-[var(--color-primary-mauve)] rounded-xl overflow-hidden transition-all duration-500 h-[65vh]`}
                   >
                     <iframe
                       src={selectedRole.pdfPath}
@@ -295,7 +272,7 @@ export default function Jobs() {
                 </div>
 
                 <div className="lg:col-span-5 flex flex-col justify-start pt-2">
-                  <div className="bg-gray-50/50 p-6 rounded-2xl border border-gray-100">
+                  <div className="bg-gray-50/50 p-6 xl:p-8 rounded-2xl border border-gray-100">
                     <h4 className="text-lg font-semibold text-[var(--color-primary-navy)] mb-6">
                       Apply for this position
                     </h4>

@@ -41,43 +41,44 @@ export default function Interns({ interns, info }) {
   return (
     <section
       ref={sectionRef}
-      className="w-full bg-[var(--color-bg-white)] pb-16 sm:pb-24"
+      className="w-full bg-[var(--color-bg-white)] pb-16 sm:pb-24 xl:pb-28 2xl:pb-32"
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="text-center mb-12 sm:mb-16">
-          <h1 className="text-h1 sm:text-h2 mb-4">
+      <div className="max-w-6xl xl:max-w-7xl 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 xl:px-8">
+        <div className="text-center mb-12 sm:mb-16 xl:mb-20">
+          <h1 className="text-h1 sm:text-h2 xl:text-[44px] 2xl:text-[52px] mb-4">
             <span className="text-[var(--color-primary-navy)]">EARLY </span>
             <span className="text-[var(--color-primary-mauve)]">TALENT</span>
           </h1>
-          <div className="italic text-body-sm mt-6 max-w-5xl mx-auto">
+
+          <div className="italic text-body-sm xl:text-base 2xl:text-lg mt-6 max-w-5xl xl:max-w-6xl mx-auto">
             <p>{info}</p>
           </div>
         </div>
 
-        <div className="space-y-6 sm:space-y-10">
+        <div className="space-y-6 sm:space-y-10 xl:space-y-12">
           {interns.map((item, i) => (
             <div
               key={i}
               className="intern-card flex items-center justify-center"
             >
-              <div className="w-full max-w-5xl bg-[var(--color-bg-muted)] rounded-2xl px-4 sm:px-10 py-6 sm:py-8 shadow-md">
-                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6">
+              <div className="w-full max-w-5xl xl:max-w-6xl 2xl:max-w-7xl bg-[var(--color-bg-muted)] rounded-2xl px-4 sm:px-10 xl:px-14 2xl:px-16 py-6 sm:py-8 xl:py-10 shadow-md">
+                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 xl:gap-8">
                   <img
                     src={item.url}
                     alt={item.name}
-                    className="w-20 h-20 rounded-full object-cover flex-shrink-0"
+                    className="w-20 h-20 xl:w-24 xl:h-24 rounded-full object-cover flex-shrink-0"
                   />
 
                   <div className="flex-1 text-center sm:text-left">
-                    <p className="text-body sm:text-body-lg italic text-[var(--color-primary-purple)] leading-relaxed mb-4">
+                    <p className="text-body sm:text-body-lg xl:text-lg 2xl:text-xl italic text-[var(--color-primary-purple)] leading-relaxed mb-4">
                       "{item.text}"
                     </p>
 
                     <div>
-                      <p className="text-subheading text-[var(--color-primary-navy)]">
+                      <p className="text-subheading xl:text-lg text-[var(--color-primary-navy)]">
                         {item.name}
                       </p>
-                      <p className="text-body-sm text-[var(--color-primary-mauve)] mt-1">
+                      <p className="text-body-sm xl:text-base text-[var(--color-primary-mauve)] mt-1">
                         {item.role}
                       </p>
                     </div>
@@ -86,7 +87,7 @@ export default function Interns({ interns, info }) {
               </div>
             </div>
           ))}
-        </div>  
+        </div>
       </div>
     </section>
   );

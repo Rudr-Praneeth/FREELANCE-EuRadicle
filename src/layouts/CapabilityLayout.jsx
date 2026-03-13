@@ -9,6 +9,7 @@ function CapabilityLayout({
   title,
   subtitle,
   image,
+  position,
   intro,
   cards = [],
   children,
@@ -195,7 +196,7 @@ function CapabilityLayout({
           <img
             src={image}
             alt={title}
-            className="absolute inset-0 w-full h-full object-cover object-top"
+            className={`absolute inset-0 w-full h-full object-cover ${ position==="top" ?"object-bottom/20": "object-center"}`}
           />
         )}
         <div className="absolute inset-0 bg-[var(--color-primary-navy)]/60"></div>

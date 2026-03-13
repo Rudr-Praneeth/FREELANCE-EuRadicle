@@ -6,7 +6,8 @@ function CreativeSolutions() {
     <CapabilityLayout
       title="Creative Solutions"
       subtitle="Designing immersive learning and engagement experiences that turn insight into sustained action."
-      image="/Capabilities/compressed-Creative solutions.png"
+      image="/Capabilities/creative solution internal.avif"
+      position = "top"
       intro="Learning experiences must engage the mind, emotion, and application, not just deliver content. EuRadicle’s Creative Solutions capability focuses on designing immersive, learner-centric experiences that drive real capability development. By blending instructional design, storytelling, and operational excellence, organizations create learning journeys that are impactful, scalable, and aligned with business goals."
       cards={[
         {

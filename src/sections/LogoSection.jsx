@@ -8,7 +8,7 @@ const LogoMarqueeColumn = ({ logoIndices, reverse = false }) => {
           reverse ? "animate-marquee-reverse" : "animate-marquee"
         }`}
       >
-        {[...logoIndices, ...logoIndices, ...logoIndices].map((index, idx) => (
+        {[...logoIndices, ...logoIndices].map((index, idx) => (
           <div key={idx} className="w-full flex items-center justify-center py-2">
             <img
               src={`/logos/${index}.png`}
@@ -29,11 +29,10 @@ const LogoSection = () => {
     (i) => i !== 18 && i !== 19
   );
 
-  const colSize = Math.ceil(indices.length / 3);
   const columns = [
-    indices.slice(0, colSize),
-    indices.slice(colSize, colSize * 2),
-    indices.slice(colSize * 2),
+    indices.filter((_, i) => i % 3 === 0),
+    indices.filter((_, i) => i % 3 === 1),
+    indices.filter((_, i) => i % 3 === 2),
   ];
 
   return (

@@ -17,7 +17,9 @@ function CreativeSolutions() {
         {
           heading: "Storyboarding & Learning Content Development",
           description:
-            "Powerful learning begins with intentional design. We craft story-driven, visually engaging content that captures attention, strengthens retention, and translates seamlessly into real-world application.",
+            (<>
+              Powerful learning begins with intentional design. We craft <span className="whitespace-nowrap">story-driven</span>, visually engaging content that captures attention, strengthens retention, and translates seamlessly into real-world application.
+            </>),
         },
         {
           heading: "Collateral Design & Visual Communication",

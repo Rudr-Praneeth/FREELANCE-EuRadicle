@@ -38,7 +38,7 @@ const GrowWithUs = () => {
     },
     {
       title: "A Consulting Mindset from Day One",
-      text: "You don’t just execute - you think, question, and co-create. We function with a true consulting mindset, encouraging structured thinking, client empathy, and outcome-driven solutions. From strategy discussions to delivery, you’re treated as a problem-solver, not just a role-holder.",
+      text: "You don’t just execute, you think, question, and co-create. We function with a true consulting mindset, encouraging structured thinking, client empathy, and outcome-driven solutions. From strategy discussions to delivery, you’re treated as a problem-solver, not just a role-holder.",
     },
     {
       title: "Learn Fast, Grow Faster",
@@ -46,7 +46,7 @@ const GrowWithUs = () => {
     },
     {
       title: "Global Exposure, Human Culture",
-      text: "With a footprint across the US, Middle East, and India, you work in a global context while staying rooted in a people-first culture. We value trust, curiosity, and collaboration, because high performance is sustainable only when humans come first.",
+      text: "With a footprint across the US, Middle East, and India, you work in a global context while staying rooted in a people-first culture. We value trust, curiosity, and collaboration, because high performance is sustainable only when humans come first. Replace Middle East with UAE.",
     },
   ];
   const info = `Our Early Talent & Internship programs are built to give emerging professionals 

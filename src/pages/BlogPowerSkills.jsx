@@ -4,10 +4,10 @@ function BlogPowerSkills() {
   return (
     <BlogLayout
       title="WHY POWER SKILLS ARE THE NEW CURRENCY OF LEADERSHIP IN THE AGE OF AI"
-      subtitle="Why power skills are the new currency of leadership in the age of AI."
+      subtitle=""
       date="Jan 1, 2026"
       category="News"
-      image="/Home/compressed-blog1.png"
+      image="/Home/blog1.jpeg"
       authorName={"Atreye Gupta"}
       authorRole={"Manager – Solutioning "}
     >

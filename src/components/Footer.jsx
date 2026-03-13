@@ -55,7 +55,7 @@ export default function Footer() {
             <Link to="/capabilities/assessment-development-centers" className="hover:text-[var(--color-primary-mauve)] transition-colors w-fit">Assessment Development Centers</Link>
             <Link to="/capabilities/power-skills-development" className="hover:text-[var(--color-primary-mauve)] transition-colors w-fit">Power Skills Development</Link>
             <Link to="/capabilities/digital-business-transformation" className="hover:text-[var(--color-primary-mauve)] transition-colors w-fit">Digital & Business Transformation</Link>
-            <Link to="/capabilities/commercial-sales-enablement" className="hover:text-[var(--color-primary-mauve)] transition-colors w-fit">Commercial Sales Enablement</Link>
+            <Link to="/capabilities/commercial-sales-enablement" className="hover:text-[var(--color-primary-mauve)] transition-colors w-fit">Commercial & Sales Enablement</Link>
             <Link to="/capabilities/dei-culture-building" className="hover:text-[var(--color-primary-mauve)] transition-colors w-fit">DEI & Culture Building</Link>
             <Link to="/capabilities/creative-solutions" className="hover:text-[var(--color-primary-mauve)] transition-colors w-fit">Creative Solutions</Link>
           </nav>

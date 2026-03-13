@@ -32,12 +32,12 @@ function PowerSkillsDevelopment() {
         {
           heading: "Customer Service & Client Experience",
           description:
-            "Every interaction shapes the relationship. We cultivate a service mindset grounded in empathy and value creation-building trust, managing expectations, and creating lasting partnerships.",
+            "Every interaction shapes the relationship. We cultivate a service mindset grounded in empathy and value creation, building trust, managing expectations, and creating lasting partnerships.",
         },
         {
           heading: "Emotional Intelligence & Self-Mastery",
           description:
-            "Personal effectiveness begins within. We strengthen self-awareness, emotional regulation, and empathy-enabling thoughtful responses, balanced decisions, and healthier workplace relationships.",
+            "Personal effectiveness begins within. We strengthen self-awareness, emotional regulation, and empathy, enabling thoughtful responses, balanced decisions, and healthier workplace relationships.",
         },
         {
           heading: "Problem Solving & Decision Making",

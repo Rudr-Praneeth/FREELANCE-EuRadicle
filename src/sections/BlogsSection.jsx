@@ -13,7 +13,7 @@ function BlogsSection() {
     {
       title:
         "Why Power Skills Are The New Currency Of Leadership In The Age Of AI",
-      imageUrl: "Home/compressed-blog1.png",
+      imageUrl: "Home/blog1.jpeg",
       path: "power-skills",
     },
     {
@@ -25,7 +25,7 @@ function BlogsSection() {
     {
       title:
         "Psychological Safety, Trust And Performance: The Capability Connection",
-      imageUrl: "Home/compressed-blog3.png",
+      imageUrl: "Home/blog3.jpeg",
       path: "ai-ethics",
     },
   ];

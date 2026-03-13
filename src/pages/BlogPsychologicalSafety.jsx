@@ -7,7 +7,7 @@ function BlogPsychologicalSafety() {
       subtitle="Why trust and psychological safety function as performance accelerators."
       // date="Aug 4, 2025"
       category="News"
-      image="/Home/compressed-blog3.png"
+      image="/Home/blog3.jpeg"
       authorName={"Shahnawaz Khan"}
       authorRole={"Founder & Managing Partner"}
     >

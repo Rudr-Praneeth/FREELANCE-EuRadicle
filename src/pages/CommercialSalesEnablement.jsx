@@ -7,7 +7,19 @@ function CommercialSalesEnablement() {
       title="Commercial & Sales Enablement"
       subtitle="Developing commercial acumen that converts relationships into measurable growth."
       image="/Capabilities/compressed-Commercials & Sales Enablement.png"
-      intro="Sustainable growth requires more than sales targets. It demands strong commercial thinking, disciplined execution, and value-driven customer engagement. EuRadicle’s Commercial & Sales Enablement capability strengthens how sales teams, account managers, and commercial leaders approach markets, customers, and channels. By enhancing consultative selling skills, negotiation capability, and go-to-market effectiveness, organizations build commercially agile teams that consistently deliver results in competitive environments."
+      intro={
+        <>
+          Sustainable growth requires more than sales targets. It demands strong
+          commercial thinking, disciplined execution, and value-driven customer
+          engagement. EuRadicle’s Commercial & Sales Enablement capability
+          strengthens how sales teams, account managers, and commercial leaders
+          approach markets, customers, and channels. By enhancing consultative
+          selling skills, negotiation capability, and{" "}
+          <span className="whitespace-nowrap">go-to-market</span> effectiveness,
+          organizations build commercially agile teams that consistently deliver
+          results in competitive environments.
+        </>
+      }
       cards={[
         {
           heading: "Sales & Trade Promotion Excellence",
@@ -20,9 +32,15 @@ function CommercialSalesEnablement() {
             "Winning sales requires insight, not just persuasion. We strengthen negotiation and client engagement skills to handle objections confidently, build trust, and close for lasting impact.",
         },
         {
-          heading: "Go-to-Market Strategy & Execution",
-          description:
-            "Market success depends on aligned strategy and execution. We design channel-focused, insight-led go-to-market approaches that ensure clear positioning and sustained traction.",
+          heading: "go-to-market Strategy & Execution",
+          description: (
+            <>
+              Market success depends on aligned strategy and execution. We
+              design channel-focused, insight-led{" "}
+              <span className="whitespace-nowrap">go-to-market</span> approaches
+              that ensure clear positioning and sustained traction.
+            </>
+          ),
         },
         {
           heading: "Channel & Retail Effectiveness",

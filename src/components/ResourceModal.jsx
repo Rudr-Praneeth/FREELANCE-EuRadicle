@@ -5,16 +5,24 @@ export default function ResourcesModal({ modalType, closeModal }) {
   const modalRef = useRef(null);
   const modalContentRef = useRef(null);
 
+  const [view, setView] = useState(modalType);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [certificateNumber, setCertificateNumber] = useState("");
+  const [programAttended, setProgramAttended] = useState("");
+  const [programDate, setProgramDate] = useState("");
+  const [organisation, setOrganisation] = useState("");
+  const [department, setDepartment] = useState("");
+  const [designation, setDesignation] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [query, setQuery] = useState("");
   const [otp, setOtp] = useState("");
   const [leadId, setLeadId] = useState(null);
   const [step, setStep] = useState("form");
   const [loading, setLoading] = useState(false);
-  const [status, setStatus] = useState(null);
+  const [statusMessage, setStatusMessage] = useState(null);
+  const [statusType, setStatusType] = useState(null);
 
   useEffect(() => {
     if (!modalRef.current || !modalContentRef.current) return;
@@ -22,13 +30,13 @@ export default function ResourcesModal({ modalType, closeModal }) {
     gsap.fromTo(
       modalRef.current,
       { opacity: 0 },
-      { opacity: 1, duration: 0.3, ease: "power2.out" }
+      { opacity: 1, duration: 0.3, ease: "power2.out" },
     );
 
     gsap.fromTo(
       modalContentRef.current,
       { y: 40, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.4, ease: "power2.out" }
+      { y: 0, opacity: 1, duration: 0.4, ease: "power2.out" },
     );
   }, []);
 
@@ -46,12 +54,16 @@ export default function ResourcesModal({ modalType, closeModal }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (modalType === "certificate") {
+    if (view === "certificate") {
       setLoading(true);
-      setStatus(null);
+      setStatusMessage(null);
+      setStatusType(null);
 
-      const certificate_code =
-`${firstName.trim().replace(/\s+/g,"")}_${lastName.trim().replace(/\s+/g,"")}_${certificateNumber.trim()}`;
+      const certificate_code = `${firstName
+        .trim()
+        .replace(/\s+/g, "")}_${lastName
+        .trim()
+        .replace(/\s+/g, "")}_${certificateNumber.trim()}`;
 
       try {
         const res = await fetch(
@@ -61,10 +73,8 @@ export default function ResourcesModal({ modalType, closeModal }) {
             headers: {
               "Content-Type": "application/json",
             },
-            body: JSON.stringify({
-              certificate_code,
-            }),
-          }
+            body: JSON.stringify({ certificate_code }),
+          },
         );
 
         const data = await res.json();
@@ -73,7 +83,8 @@ export default function ResourcesModal({ modalType, closeModal }) {
           window.open(data.download_url, "_blank");
           handleClose();
         } else {
-          setStatus("Certificate not found");
+          setStatusMessage("Certificate not found");
+          setStatusType("error");
         }
       } catch {
         setStatus("Network error");
@@ -82,9 +93,57 @@ export default function ResourcesModal({ modalType, closeModal }) {
       setLoading(false);
     }
 
-    if (modalType === "brochure") {
+    if (view === "missing-certificate") {
       setLoading(true);
-      setStatus(null);
+      setStatusMessage(null);
+      setStatusType(null);
+
+      try {
+        const res = await fetch(
+          "https://backend.euradicle.com/wp-json/custom/v1/missing-certificate",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              first_name: firstName,
+              last_name: lastName,
+              program_attended: programAttended,
+              program_date: programDate,
+              organisation,
+              department,
+              designation,
+              email,
+              phone,
+              query,
+            }),
+          },
+        );
+
+        const data = await res.json();
+
+        if (data.success) {
+          setStatusMessage("Request submitted successfully");
+          setStatusType("success");
+          setTimeout(() => {
+            handleClose();
+          }, 1500);
+        } else {
+          setStatusMessage("Submission failed");
+          setStatusType("error");
+        }
+      } catch {
+        setStatus("Network error");
+      }
+
+      setLoading(false);
+    }
+
+    if (view === "brochure") {
+      setLoading(true);
+      setStatusMessage(null);
+      setStatusType(null);
 
       try {
         const res = await fetch(
@@ -99,7 +158,7 @@ export default function ResourcesModal({ modalType, closeModal }) {
               email,
               phone,
             }),
-          }
+          },
         );
 
         const data = await res.json();
@@ -108,7 +167,8 @@ export default function ResourcesModal({ modalType, closeModal }) {
           setLeadId(data.lead_id);
           setStep("otp");
         } else {
-          setStatus("Failed to send OTP");
+          setStatusMessage("Failed to send OTP");
+          setStatusType("error");
         }
       } catch {
         setStatus("Network error");
@@ -122,7 +182,8 @@ export default function ResourcesModal({ modalType, closeModal }) {
     e.preventDefault();
 
     setLoading(true);
-    setStatus(null);
+    setStatusMessage(null);
+    setStatusType(null);
 
     try {
       const res = await fetch(
@@ -136,7 +197,7 @@ export default function ResourcesModal({ modalType, closeModal }) {
             lead_id: leadId,
             otp,
           }),
-        }
+        },
       );
 
       const data = await res.json();
@@ -145,7 +206,8 @@ export default function ResourcesModal({ modalType, closeModal }) {
         window.open(data.download_url, "_blank");
         handleClose();
       } else {
-        setStatus(data.message);
+        setStatusMessage(data.message);
+        setStatusType("error");
       }
     } catch {
       setStatus("Network error");
@@ -171,62 +233,59 @@ export default function ResourcesModal({ modalType, closeModal }) {
         </button>
 
         <h3 className="text-h4 mb-6 text-center">
-          {modalType === "brochure"
+          {view === "brochure"
             ? "Download Brochure"
-            : "Download E-Certificate"}
+            : view === "missing-certificate"
+              ? "Missing Certificate Request"
+              : "Download E-Certificate"}
         </h3>
 
-        {status && (
-          <div className="mb-4 text-center text-red-600 text-sm">
-            {status}
+        {statusMessage && (
+          <div
+            className={`mb-4 text-center text-sm ${
+              statusType === "success" ? "text-green-600" : "text-red-600"
+            }`}
+          >
+            {statusMessage}
           </div>
         )}
-
         {modalType === "brochure" && step === "form" && (
           <form className="space-y-5" onSubmit={handleSubmit}>
-            <div>
-              <label className="block text-body-sm mb-2">First Name</label>
-              <input
-                type="text"
-                required
-                value={firstName}
-                onChange={(e) => setFirstName(e.target.value)}
-                className="w-full border border-gray-300 rounded-lg px-4 py-3"
-              />
-            </div>
+            <input
+              type="text"
+              required
+              placeholder="First Name"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+              className="w-full border border-gray-300 rounded-lg px-4 py-3"
+            />
 
-            <div>
-              <label className="block text-body-sm mb-2">Last Name</label>
-              <input
-                type="text"
-                required
-                value={lastName}
-                onChange={(e) => setLastName(e.target.value)}
-                className="w-full border border-gray-300 rounded-lg px-4 py-3"
-              />
-            </div>
+            <input
+              type="text"
+              required
+              placeholder="Last Name"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+              className="w-full border border-gray-300 rounded-lg px-4 py-3"
+            />
 
-            <div>
-              <label className="block text-body-sm mb-2">Email</label>
-              <input
-                type="email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="w-full border border-gray-300 rounded-lg px-4 py-3"
-              />
-            </div>
+            <input
+              type="email"
+              required
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full border border-gray-300 rounded-lg px-4 py-3"
+            />
 
-            <div>
-              <label className="block text-body-sm mb-2">Phone</label>
-              <input
-                type="text"
-                required
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                className="w-full border border-gray-300 rounded-lg px-4 py-3"
-              />
-            </div>
+            <input
+              type="text"
+              required
+              placeholder="Phone"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              className="w-full border border-gray-300 rounded-lg px-4 py-3"
+            />
 
             <button
               type="submit"
@@ -240,16 +299,14 @@ export default function ResourcesModal({ modalType, closeModal }) {
 
         {modalType === "brochure" && step === "otp" && (
           <form className="space-y-5" onSubmit={handleVerifyOtp}>
-            <div>
-              <label className="block text-body-sm mb-2">Enter OTP</label>
-              <input
-                type="text"
-                required
-                value={otp}
-                onChange={(e) => setOtp(e.target.value)}
-                className="w-full border border-gray-300 rounded-lg px-4 py-3"
-              />
-            </div>
+            <input
+              type="text"
+              required
+              placeholder="Enter OTP"
+              value={otp}
+              onChange={(e) => setOtp(e.target.value)}
+              className="w-full border border-gray-300 rounded-lg px-4 py-3"
+            />
 
             <button
               type="submit"
@@ -261,42 +318,42 @@ export default function ResourcesModal({ modalType, closeModal }) {
           </form>
         )}
 
-        {modalType === "certificate" && (
+        {view === "certificate" && (
           <form className="space-y-5" onSubmit={handleSubmit}>
-            <div>
-              <label className="block text-body-sm mb-2">First Name</label>
-              <input
-                type="text"
-                required
-                value={firstName}
-                onChange={(e) => setFirstName(e.target.value)}
-                className="w-full border border-gray-300 rounded-lg px-4 py-3"
-              />
-            </div>
+            <input
+              type="text"
+              required
+              placeholder="First Name"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+              className="w-full border border-gray-300 rounded-lg px-4 py-3"
+            />
 
-            <div>
-              <label className="block text-body-sm mb-2">Last Name</label>
-              <input
-                type="text"
-                required
-                value={lastName}
-                onChange={(e) => setLastName(e.target.value)}
-                className="w-full border border-gray-300 rounded-lg px-4 py-3"
-              />
-            </div>
+            <input
+              type="text"
+              required
+              placeholder="Last Name"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+              className="w-full border border-gray-300 rounded-lg px-4 py-3"
+            />
 
-            <div>
-              <label className="block text-body-sm mb-2">
-                Certificate Number
-              </label>
-              <input
-                type="text"
-                required
-                value={certificateNumber}
-                onChange={(e) => setCertificateNumber(e.target.value)}
-                className="w-full border border-gray-300 rounded-lg px-4 py-3"
-              />
-            </div>
+            <input
+              type="text"
+              required
+              placeholder="Certificate Number"
+              value={certificateNumber}
+              onChange={(e) => setCertificateNumber(e.target.value)}
+              className="w-full border border-gray-300 rounded-lg px-4 py-3"
+            />
+
+            <button
+              type="button"
+              onClick={() => setView("missing-certificate")}
+              className="w-full py-2 text-sm text-primary-purple underline"
+            >
+              Missing Certificate?
+            </button>
 
             <button
               type="submit"
@@ -304,6 +361,106 @@ export default function ResourcesModal({ modalType, closeModal }) {
               className="w-full py-3 rounded-lg text-white font-semibold uppercase tracking-wide bg-primary-purple"
             >
               {loading ? "Checking..." : "Download"}
+            </button>
+          </form>
+        )}
+
+        {view === "missing-certificate" && (
+          <form className="space-y-5" onSubmit={handleSubmit}>
+            <input
+              type="text"
+              required
+              placeholder="First Name"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+              className="w-full border border-gray-300 rounded-lg px-4 py-3"
+            />
+
+            <input
+              type="text"
+              required
+              placeholder="Last Name"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+              className="w-full border border-gray-300 rounded-lg px-4 py-3"
+            />
+
+            <input
+              type="text"
+              required
+              placeholder="Program Attended"
+              value={programAttended}
+              onChange={(e) => setProgramAttended(e.target.value)}
+              className="w-full border border-gray-300 rounded-lg px-4 py-3"
+            />
+
+            <input
+              type="date"
+              required
+              value={programDate}
+              onChange={(e) => setProgramDate(e.target.value)}
+              className="w-full border border-gray-300 rounded-lg px-4 py-3"
+            />
+
+            <input
+              type="text"
+              required
+              placeholder="Organisation"
+              value={organisation}
+              onChange={(e) => setOrganisation(e.target.value)}
+              className="w-full border border-gray-300 rounded-lg px-4 py-3"
+            />
+
+            <input
+              type="text"
+              required
+              placeholder="Department"
+              value={department}
+              onChange={(e) => setDepartment(e.target.value)}
+              className="w-full border border-gray-300 rounded-lg px-4 py-3"
+            />
+
+            <input
+              type="text"
+              required
+              placeholder="Designation"
+              value={designation}
+              onChange={(e) => setDesignation(e.target.value)}
+              className="w-full border border-gray-300 rounded-lg px-4 py-3"
+            />
+
+            <input
+              type="email"
+              required
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full border border-gray-300 rounded-lg px-4 py-3"
+            />
+
+            <input
+              type="text"
+              required
+              placeholder="Phone"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              className="w-full border border-gray-300 rounded-lg px-4 py-3"
+            />
+
+            <textarea
+              required
+              placeholder="Query"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              className="w-full border border-gray-300 rounded-lg px-4 py-3"
+            />
+
+            <button
+              type="submit"
+              disabled={loading}
+              className="w-full py-3 rounded-lg text-white font-semibold uppercase tracking-wide bg-primary-purple"
+            >
+              {loading ? "Submitting..." : "Submit Request"}
             </button>
           </form>
         )}

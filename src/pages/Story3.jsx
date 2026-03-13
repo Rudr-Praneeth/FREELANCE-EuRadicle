@@ -1,4 +1,3 @@
-// src/sections/Story1.jsx
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import gsap from "gsap";
@@ -13,7 +12,9 @@ export default function Story1() {
   const parasRef = useRef([]);
   const outcomesRef = useRef([]);
   const imagesRef = useRef([]);
+  const imagesWrapperRef = useRef(null);
   const taglineRef = useRef(null);
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -124,10 +125,6 @@ export default function Story1() {
       );
     };
 
-    imagesRef.current.forEach((el) => {
-      el.addEventListener("mouseenter", spread);
-      el.addEventListener("mouseleave", reset);
-    });
     imagesRef.current.forEach((img, idx) => {
       gsap.set(img, {
         x: idx === 0 ? -25 : idx === 1 ? 25 : 0,
@@ -135,6 +132,21 @@ export default function Story1() {
         rotate: idx === 0 ? -6 : idx === 1 ? 6 : 0,
         scale: 0.96,
       });
+    });
+
+    ScrollTrigger.create({
+      trigger: imagesWrapperRef.current,
+      start: "top 80%",
+      once: true,
+      onEnter: () => {
+        spread();
+        gsap.delayedCall(1.2, reset);
+      },
+    });
+
+    imagesRef.current.forEach((el) => {
+      el.addEventListener("mouseenter", spread);
+      el.addEventListener("mouseleave", reset);
     });
   }, []);
 
@@ -232,16 +244,18 @@ export default function Story1() {
         </button>
 
         <div className="flex flex-col md:flex-row gap-12 md:gap-6">
-          <div className="md:w-[40%] flex items-center justify-center relative min-h-[350px]">
+          <div
+            ref={imagesWrapperRef}
+            className="md:w-[40%] flex items-center justify-center relative min-h-[350px]"
+          >
             {Catalyst.hoveerImages.map((img, idx) => (
               <img
                 key={idx}
                 ref={(el) => (imagesRef.current[idx] = el)}
                 src={img}
-                className={`absolute w-[140px] h-[200px] md:w-[180px] md:h-[280px] 
-rounded-2xl border border-gray-200 shadow-xl cursor-pointer 
-transition-transform duration-100 hover:scale-105 object-cover 
-${idx === 2 ? "z-20" : "z-10"}`}
+                className={`absolute w-[140px] h-[200px] md:w-[180px] md:h-[280px] rounded-2xl border border-gray-200 shadow-xl cursor-pointer transition-transform duration-100 hover:scale-105 object-cover ${
+                  idx === 2 ? "z-20" : "z-10"
+                }`}
               />
             ))}
           </div>
@@ -302,9 +316,11 @@ ${idx === 2 ? "z-20" : "z-10"}`}
             >
               ×
             </button>
+
             <p className="text-primary-navy text-h4">
               Start a <span className="text-primary-mauve">Conversation</span>
             </p>
+
             <form onSubmit={handleSubmit} className="flex flex-col gap-4 mt-8">
               {status && (
                 <div
@@ -317,6 +333,7 @@ ${idx === 2 ? "z-20" : "z-10"}`}
                   {status.message}
                 </div>
               )}
+
               <input
                 type="text"
                 name="name"
@@ -326,6 +343,7 @@ ${idx === 2 ? "z-20" : "z-10"}`}
                 required
                 className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-mauve"
               />
+
               <input
                 type="email"
                 name="email"
@@ -335,6 +353,7 @@ ${idx === 2 ? "z-20" : "z-10"}`}
                 required
                 className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-mauve"
               />
+
               <input
                 type="tel"
                 name="number"
@@ -344,9 +363,11 @@ ${idx === 2 ? "z-20" : "z-10"}`}
                 required
                 className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-mauve"
               />
+
               <p className="text-center text-black/30 italic">
                 Our consultant will get in touch with you shortly
               </p>
+
               <button
                 type="submit"
                 disabled={loading}

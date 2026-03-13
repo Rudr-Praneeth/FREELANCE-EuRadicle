@@ -18,13 +18,24 @@ const Testimonials = () => {
   const baseIndex = rawVideos.length;
 
   const [index, setIndex] = useState(baseIndex);
-  const [playing, setPlaying] = useState(null);
   const [muted, setMuted] = useState(true);
   const [hovering, setHovering] = useState(false);
+  const [pausedVideos, setPausedVideos] = useState(new Set());
 
   useEffect(() => {
     gsap.set(trackRef.current, { x: -(baseIndex * totalWidth) });
   }, []);
+
+  useEffect(() => {
+    videoRefs.current.forEach((v, i) => {
+      if (!v) return;
+      if (i === index && !pausedVideos.has(i)) {
+        v.play().catch(() => {});
+      } else {
+        v.pause();
+      }
+    });
+  }, [index, pausedVideos]);
 
   const slide = (dir) => {
     if (animating.current) return;
@@ -39,7 +50,6 @@ const Testimonials = () => {
       ease: "power2.inOut",
       onComplete: () => {
         let reset = next;
-
         if (next >= rawVideos.length * 2) reset = next - rawVideos.length;
         else if (next < rawVideos.length) reset = next + rawVideos.length;
 
@@ -47,7 +57,6 @@ const Testimonials = () => {
           gsap.set(trackRef.current, { x: -(reset * totalWidth) });
           setIndex(reset);
         }
-
         animating.current = false;
       },
     });
@@ -55,64 +64,32 @@ const Testimonials = () => {
 
   useEffect(() => {
     if (hovering) return;
-
     autoRef.current = setInterval(() => {
       slide(1);
     }, 3500);
-
     return () => clearInterval(autoRef.current);
   }, [index, hovering]);
-
-  const playVideo = (i) => {
-    const v = videoRefs.current[i];
-    if (!v) return;
-
-    setHovering(true);
-
-    videoRefs.current.forEach((vid) => {
-      if (vid) {
-        vid.pause();
-        vid.currentTime = 0;
-      }
-    });
-
-    v.muted = muted;
-    v.currentTime = 0;
-    v.play().catch(() => {});
-    setPlaying(i);
-  };
-
-  const stopVideo = (i) => {
-    const v = videoRefs.current[i];
-    if (!v) return;
-
-    v.pause();
-    v.currentTime = 0;
-    setPlaying(null);
-    setHovering(false);
-  };
 
   const togglePlay = (e, i) => {
     e.stopPropagation();
     const v = videoRefs.current[i];
     if (!v) return;
 
+    const newPaused = new Set(pausedVideos);
     if (v.paused) {
-      v.currentTime = 0;
       v.play().catch(() => {});
-      setPlaying(i);
+      newPaused.delete(i);
     } else {
       v.pause();
-      v.currentTime = 0;
-      setPlaying(null);
+      newPaused.add(i);
     }
+    setPausedVideos(newPaused);
   };
 
   const toggleMute = (e) => {
     e.stopPropagation();
     const newMute = !muted;
     setMuted(newMute);
-
     videoRefs.current.forEach((v) => {
       if (v) v.muted = newMute;
     });
@@ -129,7 +106,7 @@ const Testimonials = () => {
         </h2>
       </div>
 
-      <div className="relative max-w-[1200px] mx-auto">
+      <div className="relative max-w-[1400px] 2xl:max-w-[1700px] mx-auto">
         <button
           onClick={() => slide(-1)}
           className="absolute left-0 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center w-12 h-12 rounded-full border border-brand-400 bg-white text-primary-navy shadow-md hover:bg-primary-navy hover:text-white transition"
@@ -144,7 +121,7 @@ const Testimonials = () => {
           <FiChevronRight size={24} />
         </button>
 
-        <div className="overflow-hidden px-14">
+        <div className="overflow-hidden px-14 xl:px-20 2xl:px-28">
           <div
             ref={trackRef}
             className="flex"
@@ -157,16 +134,15 @@ const Testimonials = () => {
               const dist = Math.abs(i - index);
               const opacity = dist === 0 ? 1 : dist === 1 ? 0.7 : 0.4;
               const scale = dist === 0 ? 1 : dist === 1 ? 0.94 : 0.88;
-
               const active = i === index;
-              const isPlaying = playing === i;
+              const isPlaying = !pausedVideos.has(i);
 
               return (
                 <div
                   key={i}
-                  onMouseEnter={() => playVideo(i)}
-                  onMouseLeave={() => stopVideo(i)}
-                  className="relative shrink-0 rounded-[20px] overflow-hidden transition-all duration-[1200ms]"
+                  onMouseEnter={() => setHovering(true)}
+                  onMouseLeave={() => setHovering(false)}
+                  className="relative shrink-0 rounded-[20px] overflow-hidden transition-all duration-[1200ms] xl:rounded-[24px] 2xl:rounded-[28px]"
                   style={{
                     width: `${cardWidth}px`,
                     aspectRatio: "9/14",

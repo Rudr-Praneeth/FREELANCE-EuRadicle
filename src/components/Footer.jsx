@@ -14,18 +14,18 @@ export default function Footer() {
   return (
     <footer
       ref={footerRef}
-      className="bg-[var(--color-bg-muted)] text-black py-16 md:py-24 px-6 md:px-12 z-90 border-t border-brand-400/10"
+      className="bg-[var(--color-bg-muted)] text-black py-16 md:py-24 2xl:py-28 px-6 md:px-12 2xl:px-20 z-90 border-t border-brand-400/10"
     >
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8">
+      <div className="max-w-7xl 2xl:max-w-[1600px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 2xl:gap-12">
         
-        <div className="lg:col-span-3 flex flex-col justify-between items-center space-y-12">
+        <div className="lg:col-span-3 flex flex-col justify-between items-center 2xl:items-start space-y-12 2xl:space-y-16">
           <div className="space-y-8">
             <img
               src="/Home/logo.gif"
               alt="EuRadicle Logo"
-              className="w-auto h-28 md:h-32 object-contain"
+              className="w-auto h-28 md:h-32 2xl:h-36 object-contain"
             />
-            <div className="flex gap-5 text-xl text-primary-navy/80">
+            <div className="flex gap-5 2xl:gap-6 text-xl 2xl:text-2xl text-primary-navy/80">
               <a href="#" className="p-2 rounded-full border border-brand-400/20 hover:bg-white hover:text-[var(--color-primary-mauve)] transition-all duration-300">
                 <FaLinkedinIn />
               </a>
@@ -46,10 +46,10 @@ export default function Footer() {
         </div>
 
         <div className="lg:col-span-3">
-          <h3 className="text-subheading mb-8 pb-3 border-b border-brand-400/10 w-full">
+          <h3 className="text-subheading 2xl:text-xl mb-8 2xl:mb-10 pb-3 border-b border-brand-400/10 w-full">
             Our Capabilities
           </h3>
-          <nav className="flex flex-col space-y-4 text-body-sm text-primary-navy/80">
+          <nav className="flex flex-col space-y-4 2xl:space-y-5 text-body-sm 2xl:text-base text-primary-navy/80">
             <Link to="/capabilities/leadership-development" className="hover:text-[var(--color-primary-mauve)] transition-colors w-fit">Leadership Development</Link>
             <Link to="/capabilities/consulting-talent-management" className="hover:text-[var(--color-primary-mauve)] transition-colors w-fit">Consulting & Talent Management</Link>
             <Link to="/capabilities/assessment-development-centers" className="hover:text-[var(--color-primary-mauve)] transition-colors w-fit">Assessment Development Centers</Link>
@@ -66,7 +66,7 @@ export default function Footer() {
             Contact Details
           </h3>
 
-          <div className="flex flex-col space-y-6 text-body-sm text-primary-navy/80">
+          <div className="flex flex-col space-y-6 2xl:space-y-8 text-body-sm 2xl:text-base text-primary-navy/80">
             
             <div className="space-y-1">
               <p className="text-[10px] uppercase tracking-widest opacity-40 font-bold mb-2">
@@ -130,7 +130,7 @@ export default function Footer() {
             Global Presence
           </h3>
 
-          <div className="space-y-8 text-body-sm text-primary-navy/80">
+          <div className="space-y-8 2xl:space-y-10 text-body-sm 2xl:text-base text-primary-navy/80">
             <div className="space-y-2">
               <p className="font-bold text-primary-navy text-[10px] uppercase tracking-[0.2em] opacity-40">
                 India
@@ -155,7 +155,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="col-span-full pt-12 mt-12 border-t border-brand-400/10 lg:hidden text-center">
+        <div className="col-span-full pt-12 mt-12 2xl:pt-16 2xl:mt-16 border-t border-brand-400/10 lg:hidden text-center">
           <p className="text-[10px] uppercase tracking-widest opacity-40">
             © 2026 EuRadicle Learning Inc.
           </p>

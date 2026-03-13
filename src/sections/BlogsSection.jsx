@@ -76,24 +76,24 @@ function BlogsSection() {
         background: "linear-gradient(to bottom left, #E1E8FF, #F9DCED)",
       }}
     >
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl 2xl:max-w-[1600px] mx-auto">
         <h2 className="text-h1 text-center mb-14 normal-case">
           <span className="text-[var(--color-primary-navy)]">INDUSTRY </span>
           <span className="text-[var(--color-primary-mauve)]">INSIGHTS</span>
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 gap-8 2xl:gap-12">
           {Blogs.map((blog) => (
             <Link
               key={blog.title}
               to={`/blogs/${blog.path}`}
-              className="blog-card bg-[var(--color-bg-white)] rounded-2xl p-4 block"
+              className="blog-card bg-[var(--color-bg-white)] rounded-2xl p-4 xl:p-6 2xl:p-8 block"
             >
               <div className="relative overflow-hidden rounded-xl">
                 <img
                   src={`/${blog.imageUrl}`}
                   alt={blog.title}
-                  className="blog-image w-full h-48 object-cover"
+                  className="blog-image w-full h-48 xl:h-56 2xl:h-64 object-cover"
                 />
                 {/* <span className="absolute top-3 left-3 bg-[var(--color-bg-white)] text-body-xs px-3 py-1 rounded-full">
                   News
@@ -101,7 +101,7 @@ function BlogsSection() {
               </div>
 
               <div className="flex items-center justify-between mt-4">
-                <p className="text-body text-[var(--color-primary-navy)]">
+                <p className="text-body xl:text-lg 2xl:text-xl text-[var(--color-primary-navy)]">
                   {blog.title}
                 </p>
                 {/* <span className="text-body-xs bg-[var(--color-bg-muted)] px-3 py-1 rounded-full">

@@ -35,8 +35,7 @@ const StoryCard = ({ story, index, isHovered, onHover, onLeave, image, slug }) =
       onMouseEnter={() => onHover(index)}
       onMouseLeave={onLeave}
       onClick={() => navigate(`/stories/${slug}`)}
-      className={`relative rounded-2xl overflow-hidden cursor-pointer transition-all duration-500 ease-in-out flex-shrink-0 w-full min-[768px]:w-auto h-[380px] min-[600px]:h-[420px] min-[768px]:h-[480px] min-[992px]:h-[520px] ${
-        isHovered ? 'min-[768px]:flex-[2]' : 'min-[768px]:flex-1'
+      className={`relative rounded-2xl overflow-hidden cursor-pointer transition-all duration-500 ease-in-out flex-shrink-0 w-full min-[768px]:w-auto max-w-[480px] h-[380px] min-[600px]:h-[420px] min-[768px]:h-[480px] min-[992px]:h-[520px] ${isHovered ? 'min-[768px]:flex-[1.6]' : 'min-[768px]:flex-[1]'}
       }`}
     >
       <img
@@ -70,10 +69,10 @@ const StoryCard = ({ story, index, isHovered, onHover, onLeave, image, slug }) =
           ref={contentRef}
           className="absolute left-8 bottom-8 opacity-0 translate-y-5"
         >
-          <h4 className="italic text-white mb-4 text-body">
+          <h4 className="italic text-white max-[595px]:mb-4 mb-10 text-body">
             {story.tagline}
           </h4>
-          <button className="relative max-[595px]:bottom-35 bottom-25 left-0 px-8 py-2.5 rounded-full bg-bg-white text-primary-navy text-subheading-sm font-semibold hover:bg-brand-500 hover:text-bg-white transition-colors duration-300 shadow-xl">
+          <button className="relative max-[595px]:bottom-35 bottom-35 left-0 px-8 py-2.5 rounded-full bg-bg-white text-primary-navy text-subheading-sm font-semibold hover:bg-brand-500 hover:text-bg-white transition-colors duration-300 shadow-xl">
             Know More
           </button>
         </div>
@@ -122,7 +121,7 @@ const ImpactStories = () => {
         </h2>
       </div>
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col min-[768px]:flex-row gap-6 items-stretch min-[768px]:h-[500px]">
+      <div className="relative z-10 w-full max-w-[1600px] mx-auto flex flex-col min-[768px]:flex-row gap-6 items-stretch justify-center min-[768px]:h-[520px]">
         {Stories.map((story, index) => (
           <StoryCard
             key={index}

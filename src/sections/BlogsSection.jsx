@@ -87,13 +87,13 @@ function BlogsSection() {
             <Link
               key={blog.title}
               to={`/blogs/${blog.path}`}
-              className="blog-card bg-[var(--color-bg-white)] rounded-2xl p-4 xl:p-6 2xl:p-8 block"
+              className="blog-card bg-[var(--color-bg-white)] rounded-2xl p-3 block"
             >
               <div className="relative overflow-hidden rounded-xl">
                 <img
                   src={`/${blog.imageUrl}`}
                   alt={blog.title}
-                  className="blog-image w-full h-48 xl:h-56 2xl:h-64 object-cover"
+                  className="blog-image w-full h-50 xl:h-56 2xl:h-64 object-cover"
                 />
                 {/* <span className="absolute top-3 left-3 bg-[var(--color-bg-white)] text-body-xs px-3 py-1 rounded-full">
                   News

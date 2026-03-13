@@ -48,15 +48,15 @@ export default function MindsBehind({ items }) {
   return (
     <section
       ref={sectionRef}
-      className="bg-white pb-12 sm:pb-16 md:pb-20 lg:pb-24"
+      className="bg-white pb-12 sm:pb-16 md:pb-20 lg:pb-24 2xl:pb-28"
     >
-      <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 md:px-8 lg:px-10">
+      <div className="mx-auto w-full max-w-6xl xl:max-w-7xl 2xl:max-w-[1600px] px-4 sm:px-6 md:px-8 lg:px-10 2xl:px-12">
         <div className="text-center">
-          <h2 className="text-h1 font-bold text-primary-navy leading-tight">
+          <h2 className="text-h1 2xl:text-[64px] font-bold text-primary-navy leading-tight">
             OUR CORE <span className="text-primary-mauve">VERTICALS</span>
           </h2>
 
-          <p className="italic text-body-sm mt-6 max-w-5xl mx-auto leading-relaxed">
+          <p className="italic text-body-sm xl:text-base 2xl:text-lg mt-6 max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto leading-relaxed">
             We combine deep expertise, practical experience, and a
             results-driven approach to deliver transformative solutions for our
             clients. Our versatile pool of consultants brings together diverse
@@ -69,7 +69,7 @@ export default function MindsBehind({ items }) {
           </p>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+        <div className="mt-12 xl:mt-14 2xl:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8 2xl:gap-10 items-stretch">
           {items.slice(0, 3).map((item, i) => (
             <div
               key={i}
@@ -106,15 +106,15 @@ export default function MindsBehind({ items }) {
                 <img
                   src={item.img}
                   alt=""
-                  className="w-full h-40 sm:h-44 md:h-48 object-cover object-top rounded-xl"
+                  className="w-full h-40 sm:h-44 md:h-48 xl:h-56 2xl:h-64 object-cover object-top rounded-xl"
                 />
 
                 <div className="mt-4 flex-1 flex flex-col">
-                  <h3 className="text-sm sm:text-base md:text-lg font-semibold text-primary-mauve">
+                  <h3 className="text-sm sm:text-base md:text-lg xl:text-xl 2xl:text-2xl font-semibold text-primary-mauve">
                     {item.title}
                   </h3>
 
-                  <p className="mt-2 text-xs sm:text-sm leading-relaxed">
+                  <p className="mt-2 text-xs sm:text-sm xl:text-base 2xl:text-lg leading-relaxed">
                     {item.text}
                   </p>
                 </div>
@@ -149,15 +149,15 @@ export default function MindsBehind({ items }) {
                 <img
                   src={items[3].img}
                   alt=""
-                  className="w-full h-40 sm:h-44 md:h-48 object-cover object-top rounded-xl"
+                  className="w-full h-40 sm:h-44 md:h-48 xl:h-56 2xl:h-64 object-cover object-top rounded-xl"
                 />
 
                 <div className="mt-4 flex-1 flex flex-col">
-                  <h3 className="text-sm sm:text-base md:text-lg font-semibold text-primary-mauve">
+                  <h3 className="text-sm sm:text-base md:text-lg xl:text-xl 2xl:text-2xl font-semibold text-primary-mauve">
                     {items[3].title}
                   </h3>
 
-                  <p className="mt-2 text-xs sm:text-sm leading-relaxed">
+                  <p className="mt-2 text-xs sm:text-sm xl:text-base 2xl:text-lg leading-relaxed">
                     {items[3].text}
                   </p>
                 </div>
@@ -168,7 +168,7 @@ export default function MindsBehind({ items }) {
             <img
               src="/Home/logo.gif"
               alt="logo"
-              className="h-92 md:h-90 object-contain"
+              className="h-92 md:h-90 xl:h-[420px] 2xl:h-[480px] object-contain"
             />
           </div>
           {items[4] && (
@@ -199,15 +199,15 @@ export default function MindsBehind({ items }) {
                 <img
                   src={items[4].img}
                   alt=""
-                  className="w-full h-40 sm:h-44 md:h-48 object-cover object-top rounded-xl"
+                  className="w-full h-40 sm:h-44 md:h-48 xl:h-56 2xl:h-64 object-cover object-top rounded-xl"
                 />
 
                 <div className="mt-4 flex-1 flex flex-col">
-                  <h3 className="text-sm sm:text-base md:text-lg font-semibold text-primary-mauve">
+                  <h3 className="text-sm sm:text-base md:text-lg xl:text-xl 2xl:text-2xl font-semibold text-primary-mauve">
                     {items[4].title}
                   </h3>
 
-                  <p className="mt-2 text-xs sm:text-sm leading-relaxed">
+                  <p className="mt-2 text-xs sm:text-sm xl:text-base 2xl:text-lg leading-relaxed">
                     {items[4].text}
                   </p>
                 </div>

@@ -47,12 +47,12 @@ export default function GlobalFooterSection() {
       ref={sectionRef}
       className="w-full bg-[var(--color-bg-white)] relative z-10"
     >
-      <div className="max-w-6xl mx-auto px-4 py-8 text-center">
-        <h1 className="text-h1 gfs-animate">
+      <div className="max-w-6xl xl:max-w-7xl 2xl:max-w-[1600px] mx-auto px-4 xl:px-8 2xl:px-12 py-8 2xl:py-12 text-center">
+        <h1 className="text-h1 2xl:text-[64px] gfs-animate">
           OUR GLOBAL{" "}
           <span className="text-[var(--color-primary-mauve)]">FOOTPRINTS</span>
         </h1>
-        <p className="italic text-body-sm mt-6 max-w-5xl mx-auto gfs-animate">
+        <p className="italic text-body-sm xl:text-base 2xl:text-lg mt-6 max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto gfs-animate">
           Our footprint spans the U.S., UAE, and India - blending global
           perspective with local relevance. With our registered office in Texas
           and headquarters in Hyderabad, we design and deliver scalable talent
@@ -60,13 +60,13 @@ export default function GlobalFooterSection() {
         </p>
       </div>
 
-      <div className="h-[270px] w-auto sm:w-[80%] sm:h-[420px] mx-auto rounded-xl pb-8 relative z-0">
+      <div className="h-[270px] sm:h-[420px] xl:h-[520px] 2xl:h-[620px] w-auto sm:w-[80%] 2xl:w-[70%] mx-auto rounded-xl pb-8 2xl:pb-12 relative z-0">
         <MapContainer
           center={[0, 0]}
           zoom={isMobile ? 0.4 : 2}
           scrollWheelZoom={false}
           attributionControl={false}
-          className="w-full h-full rounded-3xl"
+          className="w-full h-full rounded-3xl 2xl:rounded-[32px]"
         >
           <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
           {locations.map((loc, i) => (

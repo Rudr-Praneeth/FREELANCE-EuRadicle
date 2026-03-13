@@ -82,7 +82,7 @@ export default function OurApproach({ data }) {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative bg-white py-24 overflow-hidden">
+    <section ref={sectionRef} className="relative bg-white py-24 2xl:py-28 overflow-hidden">
       <div
         ref={bgRef}
         className="absolute top-50 left-10 right-10 h-1/2 bg-center bg-cover bg-no-repeat pointer-events-none"
@@ -92,40 +92,40 @@ export default function OurApproach({ data }) {
         }}
       />
 
-      <div className="relative z-10 mx-auto max-w-6xl px-6">
+      <div className="relative z-10 mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1600px] px-6 xl:px-8 2xl:px-12">
         <div ref={introRef} className="text-center">
-          <h2 className="text-h1 font-bold tracking-tight text-primary-navy">
+          <h2 className="text-h1 2xl:text-[64px] font-bold tracking-tight text-primary-navy">
             OUR <span className="text-primary-mauve">APPROACH</span>
           </h2>
 
-          <p className="italic mx-auto mt-2 max-w-5xl text-sm text-primary-navy">
+          <p className="italic mx-auto mt-2 max-w-5xl xl:max-w-6xl 2xl:max-w-7xl text-sm xl:text-base 2xl:text-lg text-primary-navy">
             Our approach is designed to move organizations beyond isolated
             people development initiatives toward sustainable leadership and
             capability transformation.
           </p>
         </div>
 
-        <div className="mt-10 space-y-8">
+        <div className="mt-10 xl:mt-12 2xl:mt-16 space-y-8 2xl:space-y-12">
           {data.map((item, i) => (
             <div
               key={i}
               ref={(el) => (rowsRef.current[i] = el)}
-              className="grid grid-cols-[80px_1fr] md:grid-cols-[140px_1fr] gap-6 md:gap-12"
+              className="grid grid-cols-[80px_1fr] md:grid-cols-[140px_1fr] xl:grid-cols-[160px_1fr] 2xl:grid-cols-[200px_1fr] gap-6 md:gap-12 xl:gap-14 2xl:gap-16"
             >
               <div className="approach-icon flex items-center justify-center bg-transparent">
                 <img
                   src={item.iconUrl}
                   alt={item.title}
-                  className="w-14 h-14 md:w-24 md:h-24 object-contain object-center rounded-xl"
+                  className="w-14 h-14 md:w-24 md:h-24 xl:w-28 xl:h-28 2xl:w-32 2xl:h-32 object-contain object-center rounded-xl"
                 />
               </div>
 
               <div className="approach-content">
-                <h3 className="text-xl md:text-2xl font-semibold text-primary-mauve">
+                <h3 className="text-xl md:text-2xl xl:text-3xl 2xl:text-4xl font-semibold text-primary-mauve">
                   {item.title}
                 </h3>
 
-                <p className="mt-4 whitespace-pre-line text-sm leading-relaxed">
+                <p className="mt-4 whitespace-pre-line text-sm xl:text-base 2xl:text-lg leading-relaxed">
                   {item.text}
                 </p>
               </div>

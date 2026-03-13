@@ -1,7 +1,6 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 const Hero = () => {
@@ -24,8 +23,9 @@ const Hero = () => {
         .from(titleRef.current, { y: 30, opacity: 0 }, "-=0.7")
         .from(sublineRef.current, { y: 20, opacity: 0 }, "-=0.7");
     },
-    { scope: container },
+    { scope: container }
   );
+
   const location = useLocation();
 
   useEffect(() => {
@@ -39,7 +39,7 @@ const Hero = () => {
 
   return (
     <section
-    id="hero"
+      id="hero"
       ref={container}
       className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-bg-dark text-bg-white mt-6 min-[600px]:mt-8 min-[768px]:mt-10 min-[992px]:mt-12"
     >
@@ -65,15 +65,14 @@ const Hero = () => {
           <source src="/Home/background.mp4" type="video/mp4" />
         </video>
 
-        <div className="absolute inset-0 bg-primary-navy/40" />
+        <div className="absolute inset-0 bg-black/60" />
       </div>
 
       <div className="relative z-10 flex flex-col items-center justify-center px-4 max-[600px]:px-5 min-[600px]:px-6 min-[768px]:px-8 min-[992px]:px-10 text-center w-full max-w-[95%] min-[600px]:max-w-2xl min-[768px]:max-w-3xl min-[992px]:max-w-5xl mx-auto">
         <div
           ref={badgeRef}
-          className="mb-5 min-[600px]:mb-6 min-[768px]:mb-7 min-[992px]:mb-8 flex items-center gap-2 rounded-full border border-bg-white/10 bg-bg-white/10 px-3 py-1 min-[600px]:px-4" //backdrop-blur-md
+          className="mb-5 min-[600px]:mb-6 min-[768px]:mb-7 min-[992px]:mb-8 flex items-center gap-2 rounded-full border border-bg-white/10 bg-bg-white/10 px-3 py-1 min-[600px]:px-4"
         >
-          {/* <span className="h-1 w-1 rounded-xl bg-brand-500" /> */}
           <span className="text-subheading-xs uppercase tracking-tighter text-[10px] min-[600px]:text-xs min-[768px]:text-sm">
             Truly Transforming
           </span>

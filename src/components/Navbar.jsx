@@ -160,6 +160,11 @@ function Navbar({ openModal }) {
     setOpenMobile(false);
     setOpenDropdown(false);
     setOpenBrochureDropdown(false);
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   const openDropdownImmediate = () => {
@@ -273,6 +278,7 @@ function Navbar({ openModal }) {
                 >
                   <Link
                     to={to}
+                    onClick={handleNavClick}
                     className="nav-link relative text-body text-[var(--color-primary-navy)]"
                   >
                     Our Capabilities
@@ -323,6 +329,7 @@ function Navbar({ openModal }) {
               >
                 <Link
                   to={to}
+                  onClick={handleNavClick}
                   className="nav-link relative text-body text-[var(--color-primary-navy)]"
                 >
                   Downloads

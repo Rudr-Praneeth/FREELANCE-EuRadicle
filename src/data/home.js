@@ -105,7 +105,7 @@ const Catalyst = {
   ],
   outro: "Participants demonstrated a visible movement from solution execution to consultative ownership, along with tangible improvements in decision speed, stakeholder trust, collaboration, and clarity of thinking. At EuRadicle, we view professional readiness as a mindset shift, not a skill checklist. Enterprise Consulting reflects our belief that future-ready leaders create sustained business value by combining structured thinking, emotional intelligence, and consultative influence.",
 bannerUrl: "/Home/compressed-PrysmBanner.jpeg",
-hoveerImages: ["/Home/compressed-PrysmCard.jpeg", "/Home/compressed-PrysmHover2.jpeg", "/Home/PrysmHover1.jpeg",]
+hoveerImages: ["/Home/compressed-Enterprise3.jpeg", "/Home/compressed-PrysmHover2.jpeg", "/Home/PrysmHover1.jpeg",]
 }
 
 const Testimonials = [

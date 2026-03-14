@@ -5,7 +5,8 @@ export default function DEICultureBuilding() {
     <CapabilityLayout
       title="DEI & Culture Building"
       subtitle="Creating inclusive, values-driven cultures where trust, belonging, and performance coexist."
-      image="/Capabilities/compressed-DEI & CULTURE BUILDING inside picture.png"
+      image="/Capabilities/DEI internal.avif"
+      position="right"
       intro="Strong organizational cultures are built intentionally through inclusive leadership, shared values, and everyday behaviors. EuRadicle’s DEI & Culture Building capability enables organizations to create environments where individuals feel respected, empowered, and able to perform at their best. By strengthening inclusive leadership practices and cross-cultural effectiveness, organizations foster trust, collaboration, and sustained engagement across diverse workforces."
       cards={[
         {

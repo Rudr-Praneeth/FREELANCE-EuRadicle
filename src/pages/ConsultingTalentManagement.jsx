@@ -6,7 +6,7 @@ function ConsultingTalentManagement() {
     <CapabilityLayout
       title="Consulting & Talent Management"
       subtitle="Aligning talent strategy, organizational design, and capability architecture with business ambition."
-      image="/Capabilities/Consulting & Talent Management inside picture.png"
+      image="/Capabilities/C&TM internsl.avif"
       intro="Creating future-ready organizations requires moving beyond transactional HR processes toward strategic, business-aligned talent systems. EuRadicle’s Consulting & Talent Management capability enables organizations to strengthen internal consulting capability, build robust leadership pipelines, and design talent frameworks that support long-term growth. Through consulting programs, advisory interventions, and capability-building workshops, HR teams and leaders develop the confidence to make informed, strategic talent decisions that align people outcomes with business priorities."
       cards={[
         {

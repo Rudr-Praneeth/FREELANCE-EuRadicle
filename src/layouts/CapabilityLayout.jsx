@@ -9,7 +9,7 @@ function CapabilityLayout({
   title,
   subtitle,
   image,
-  position,
+  position="center",
   intro,
   cards = [],
   children,
@@ -23,6 +23,13 @@ function CapabilityLayout({
   const [activeCard, setActiveCard] = useState(null);
   const [status, setStatus] = useState(null);
   const [loading, setLoading] = useState(false);
+  const map = {
+    left: "object-left",
+    right: "object-right",
+    center: "object-center",
+    bottom: "object-bottom/20",
+    top: "object-top"
+  }
 
   const formatSlug = (str) =>
     str
@@ -196,7 +203,7 @@ function CapabilityLayout({
           <img
             src={image}
             alt={title}
-            className={`absolute inset-0 w-full h-full object-cover ${ position==="top" ?"object-bottom/20": "object-center"}`}
+            className={`absolute inset-0 w-full h-full object-cover ${map[position]}`}
           />
         )}
         <div className="absolute inset-0 bg-[var(--color-primary-navy)]/60"></div>

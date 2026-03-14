@@ -26,7 +26,7 @@ const capabilities = [
     },
     {
         title: "Commercial & Sales Enablement",
-        imageUrl: "Capabilities/compressed-Commercials & Sales Enablement.png",
+        imageUrl: "Capabilities/sales internal.avif",
         sub: ["Sales & Trade Promotion Excellence","Negotiation & Influence for Sales","Go-to-Market Strategy & Execution","Channel & Retail Effectiveness","Key Account Management Excellence","Solution & Consultative Selling", "Other"]
     },
     {
@@ -36,8 +36,7 @@ const capabilities = [
     },
     {
         title: "Creative Solutions",
-        imageUrl: "Capabilities/Creative solutions.png",
-        imageUrl: "Capabilities/Creative-solutions.png",
+        imageUrl: "Capabilities/creative solution card.jpg",
         sub: ["E-Learning & Digital Course Design","Storyboarding & Learning Content Development","Collateral Design & Visual Communication","Program Management & Learning Operations","Learning Analytics & Reporting", "Other"]
     },
 ];

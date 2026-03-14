@@ -4,7 +4,7 @@ import { FaPlay, FaPause, FaVolumeMute, FaVolumeUp } from "react-icons/fa";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 const Testimonials = () => {
-  const rawVideos = Array.from({ length: 5 }, (_, i) => `/Testimonial/${i + 1}.mp4`);
+  const rawVideos = Array.from({ length: 6 }, (_, i) => `/Testimonial/${i + 1}.mp4`);
   const videos = [...rawVideos, ...rawVideos, ...rawVideos];
 
   const trackRef = useRef(null);

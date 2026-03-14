@@ -9,8 +9,8 @@ const Testimonials = () => {
 
   const trackRef = useRef(null);
   const videoRefs = useRef([]);
-  const animating = useRef(false);
   const autoRef = useRef(null);
+  const animating = useRef(false);
 
   const cardWidth = 340;
   const gap = 32;
@@ -23,12 +23,47 @@ const Testimonials = () => {
   const [pausedVideos, setPausedVideos] = useState(new Set());
 
   useEffect(() => {
-    gsap.set(trackRef.current, { x: -(baseIndex * totalWidth) });
+    gsap.set(trackRef.current, {
+      x: -(baseIndex * totalWidth),
+      willChange: "transform"
+    });
   }, []);
+
+  const slide = (dir) => {
+    if (animating.current) return;
+    animating.current = true;
+
+    let next = index + dir;
+
+    gsap.to(trackRef.current, {
+      x: -(next * totalWidth),
+      duration: 1.2,
+      ease: "power3.inOut",
+      onComplete: () => {
+        if (next >= rawVideos.length * 2) next -= rawVideos.length;
+        if (next < rawVideos.length) next += rawVideos.length;
+
+        gsap.set(trackRef.current, { x: -(next * totalWidth) });
+        setIndex(next);
+        animating.current = false;
+      }
+    });
+  };
+
+  useEffect(() => {
+    if (hovering) return;
+
+    autoRef.current = setInterval(() => {
+      slide(1);
+    }, 3500);
+
+    return () => clearInterval(autoRef.current);
+  }, [hovering, index]);
 
   useEffect(() => {
     videoRefs.current.forEach((v, i) => {
       if (!v) return;
+
       if (i === index && !pausedVideos.has(i)) {
         v.play().catch(() => {});
       } else {
@@ -37,45 +72,14 @@ const Testimonials = () => {
     });
   }, [index, pausedVideos]);
 
-  const slide = (dir) => {
-    if (animating.current) return;
-    animating.current = true;
-
-    const next = index + dir;
-    setIndex(next);
-
-    gsap.to(trackRef.current, {
-      x: -(next * totalWidth),
-      duration: 1.8,
-      ease: "power2.inOut",
-      onComplete: () => {
-        let reset = next;
-        if (next >= rawVideos.length * 2) reset = next - rawVideos.length;
-        else if (next < rawVideos.length) reset = next + rawVideos.length;
-
-        if (reset !== next) {
-          gsap.set(trackRef.current, { x: -(reset * totalWidth) });
-          setIndex(reset);
-        }
-        animating.current = false;
-      },
-    });
-  };
-
-  useEffect(() => {
-    if (hovering) return;
-    autoRef.current = setInterval(() => {
-      slide(1);
-    }, 3500);
-    return () => clearInterval(autoRef.current);
-  }, [index, hovering]);
-
   const togglePlay = (e, i) => {
     e.stopPropagation();
+
     const v = videoRefs.current[i];
     if (!v) return;
 
     const newPaused = new Set(pausedVideos);
+
     if (v.paused) {
       v.play().catch(() => {});
       newPaused.delete(i);
@@ -83,13 +87,16 @@ const Testimonials = () => {
       v.pause();
       newPaused.add(i);
     }
+
     setPausedVideos(newPaused);
   };
 
   const toggleMute = (e) => {
     e.stopPropagation();
+
     const newMute = !muted;
     setMuted(newMute);
+
     videoRefs.current.forEach((v) => {
       if (v) v.muted = newMute;
     });
@@ -102,7 +109,9 @@ const Testimonials = () => {
           <span className="text-[var(--color-primary-navy)]">
             What Our Users <br />
           </span>
-          <span className="text-[var(--color-primary-mauve)]">Are Saying</span>
+          <span className="text-[var(--color-primary-mauve)]">
+            Are Saying
+          </span>
         </h2>
       </div>
 
@@ -132,8 +141,17 @@ const Testimonials = () => {
           >
             {videos.map((src, i) => {
               const dist = Math.abs(i - index);
-              const opacity = dist === 0 ? 1 : dist === 1 ? 0.7 : 0.4;
-              const scale = dist === 0 ? 1 : dist === 1 ? 0.94 : 0.88;
+
+              const opacity =
+                dist === 0 ? 1 :
+                dist === 1 ? 0.7 :
+                0.4;
+
+              const scale =
+                dist === 0 ? 1 :
+                dist === 1 ? 0.94 :
+                0.88;
+
               const active = i === index;
               const isPlaying = !pausedVideos.has(i);
 
@@ -142,7 +160,7 @@ const Testimonials = () => {
                   key={i}
                   onMouseEnter={() => setHovering(true)}
                   onMouseLeave={() => setHovering(false)}
-                  className="relative shrink-0 rounded-[20px] overflow-hidden transition-all duration-[1200ms] xl:rounded-[24px] 2xl:rounded-[28px]"
+                  className="relative shrink-0 rounded-[20px] overflow-hidden transition-all duration-[900ms] xl:rounded-[24px] 2xl:rounded-[28px]"
                   style={{
                     width: `${cardWidth}px`,
                     aspectRatio: "9/14",
@@ -156,6 +174,7 @@ const Testimonials = () => {
                     muted
                     loop
                     playsInline
+                    preload="metadata"
                     className="w-full h-full object-cover"
                   />
 

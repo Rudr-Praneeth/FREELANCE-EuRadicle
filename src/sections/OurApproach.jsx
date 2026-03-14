@@ -10,25 +10,12 @@ export default function OurApproach({ data }) {
   const introRef = useRef(null);
   const bgRef = useRef(null);
   const rowsRef = useRef([]);
+  const leftHandRef = useRef(null);
+  const rightHandRef = useRef(null);
 
   useGSAP(() => {
     const ctx = gsap.context(() => {
       const isMobile = window.innerWidth < 768;
-
-      gsap.fromTo(
-        bgRef.current,
-        { opacity: 0 },
-        {
-          opacity: 0.08,
-          ease: "none",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top bottom",
-            end: "top 20%",
-            scrub: true,
-          },
-        }
-      );
 
       gsap.from(introRef.current, {
         opacity: 0,
@@ -40,6 +27,48 @@ export default function OurApproach({ data }) {
           start: "top 80%",
         },
       });
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top+=100 center",
+          end: "center+=200 center",
+          scrub: true,
+          // markers: true
+        },
+      });
+
+      tl.fromTo(
+        leftHandRef.current,
+        { x: "-70vw", rotate: -10, scale: 1.3, opacity: 0.2 },
+        { x: "-3vw", rotate: 0, scale: 1.6, opacity: 0.2, duration: 1, ease: "none" }
+      );
+
+      tl.fromTo(
+        rightHandRef.current,
+        { x: "70vw", rotate: 10, scale: 1.3, opacity: 0.2 },
+        { x: "3vw", rotate: 0, scale: 1.6, opacity: 0.2, duration: 1, ease: "none" },
+        "<"
+      );
+
+      tl.to(
+        [leftHandRef.current, rightHandRef.current],
+        {
+          opacity: 0,
+          duration: 0.4,
+          ease: "none",
+        }
+      );
+
+      tl.to(
+        bgRef.current,
+        {
+          opacity: 0.08,
+          duration: 0.4,
+          ease: "none",
+        },
+        "<"
+      );
 
       rowsRef.current.forEach((row) => {
         const icon = row.querySelector(".approach-icon");
@@ -90,6 +119,18 @@ export default function OurApproach({ data }) {
           backgroundImage: "url('/Hands.jpeg')",
           opacity: 0,
         }}
+      />
+
+      <img
+        ref={leftHandRef}
+        src="/Hand/Hand 1.png"
+        className="pointer-events-none absolute top-1/2 left-0 w-[420px] md:w-[560px] xl:w-[680px] -translate-x-[120%] -translate-y-1/2 opacity-20"
+      />
+
+      <img
+        ref={rightHandRef}
+        src="/Hand/Hand 2.png"
+        className="pointer-events-none absolute top-1/2 left-1/2 w-[420px] md:w-[560px] xl:w-[680px] translate-x-[120%] -translate-y-1/2 opacity-20"
       />
 
       <div className="relative z-10 mx-auto max-w-6xl xl:max-w-7xl 2xl:max-w-[1600px] px-6 xl:px-8 2xl:px-12">

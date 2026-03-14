@@ -126,7 +126,7 @@ const About = () => {
   return (
     <div>
       <AboutSection />
-      <Timeline  items={items}/>
+      {/* <Timeline  items={items}/> */}
       <OurApproach data={data}/>
       <MindsBehind items={minds}/>
       <GlobalFootprintsSection />

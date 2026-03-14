@@ -14,18 +14,46 @@ const StoryCard = ({ story, index, isHovered, onHover, onLeave, image, slug }) =
   const navigate = useNavigate()
 
   useGSAP(() => {
-    const tl = gsap.timeline({ defaults: { ease: 'power3.out', duration: 0.5 } })
-
     if (isHovered) {
-      tl.to(imageRef.current, { scale: index === 1 ? 1 : 1.5, rotation: index === 1 ? 0 : 1, duration: 0.9, ease: 'power2.out' }, 0)
-        .to(titleRef.current, { y: -20 }, 0)
-        .to(contentRef.current, { autoAlpha: 1, y: 0 }, 0.05)
-        .to(cardRef.current, { scale: 1.02 }, 0)
+      gsap.to(imageRef.current, {
+        scale: index === 1 ? 1.15 : 1.45,
+        duration: 0.9,
+        ease: 'power3.out',
+        overwrite: 'auto'
+      })
+      gsap.to(titleRef.current, {
+        y: -18,
+        duration: 0.45,
+        ease: 'power3.out',
+        overwrite: 'auto'
+      })
+      gsap.to(contentRef.current, {
+        autoAlpha: 1,
+        y: 0,
+        duration: 0.45,
+        ease: 'power3.out',
+        overwrite: 'auto'
+      })
     } else {
-      tl.to(imageRef.current, { scale: 1, rotation: 0, duration: 0.9, ease: 'power2.out' }, 0)
-        .to(titleRef.current, { y: 0 }, 0)
-        .to(contentRef.current, { autoAlpha: 0, y: 20 }, 0)
-        .to(cardRef.current, { scale: 1 }, 0)
+      gsap.to(imageRef.current, {
+        scale: 1,
+        duration: 0.9,
+        ease: 'power3.out',
+        overwrite: 'auto'
+      })
+      gsap.to(titleRef.current, {
+        y: 0,
+        duration: 0.45,
+        ease: 'power3.out',
+        overwrite: 'auto'
+      })
+      gsap.to(contentRef.current, {
+        autoAlpha: 0,
+        y: 20,
+        duration: 0.45,
+        ease: 'power3.out',
+        overwrite: 'auto'
+      })
     }
   }, { dependencies: [isHovered], scope: cardRef })
 
@@ -35,8 +63,7 @@ const StoryCard = ({ story, index, isHovered, onHover, onLeave, image, slug }) =
       onMouseEnter={() => onHover(index)}
       onMouseLeave={onLeave}
       onClick={() => navigate(`/stories/${slug}`)}
-      className={`relative rounded-2xl overflow-hidden cursor-pointer transition-all duration-500 ease-in-out flex-shrink-0 w-full min-[768px]:w-auto max-w-[480px] h-[380px] min-[600px]:h-[420px] min-[768px]:h-[480px] min-[992px]:h-[520px] ${isHovered ? 'min-[768px]:flex-[1.6]' : 'min-[768px]:flex-[1]'}
-      }`}
+      className={`relative rounded-2xl overflow-hidden cursor-pointer transition-[flex] duration-700 ease-[cubic-bezier(.22,1,.36,1)] flex-shrink-0 w-full min-[768px]:w-auto max-w-[480px] h-[380px] min-[600px]:h-[420px] min-[768px]:h-[480px] min-[992px]:h-[520px] ${isHovered ? 'min-[768px]:flex-[1.7]' : 'min-[768px]:flex-[1]'}`}
     >
       <img
         ref={imageRef}
@@ -52,7 +79,7 @@ const StoryCard = ({ story, index, isHovered, onHover, onLeave, image, slug }) =
           <img
             src={story.iconUrl}
             alt={`${story.title} icon`}
-            className="w-full h-full object-contain rounded-xl "
+            className="w-full h-full object-contain rounded-xl"
           />
         </div>
       )}

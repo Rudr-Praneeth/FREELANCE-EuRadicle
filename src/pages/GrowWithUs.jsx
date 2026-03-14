@@ -46,7 +46,7 @@ const GrowWithUs = () => {
     },
     {
       title: "Global Exposure, Human Culture",
-      text: "With a footprint across the US, Middle East, and India, you work in a global context while staying rooted in a people-first culture. We value trust, curiosity, and collaboration, because high performance is sustainable only when humans come first. Replace Middle East with UAE.",
+      text: "With a footprint across the US, Middle East, and India, you work in a global context while staying rooted in a people-first culture. We value trust, curiosity, and collaboration, because high performance is sustainable only when humans come first.",
     },
   ];
   const info = `Our Early Talent & Internship programs are built to give emerging professionals 

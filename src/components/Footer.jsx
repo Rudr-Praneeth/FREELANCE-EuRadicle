@@ -52,7 +52,7 @@ export default function Footer() {
           <nav className="flex flex-col space-y-4 2xl:space-y-5 text-body-sm 2xl:text-base text-primary-navy/80">
             <Link to="/capabilities/leadership-development" className="hover:text-[var(--color-primary-mauve)] transition-colors w-fit">Leadership Development</Link>
             <Link to="/capabilities/consulting-talent-management" className="hover:text-[var(--color-primary-mauve)] transition-colors w-fit">Consulting & Talent Management</Link>
-            <Link to="/capabilities/assessment-development-centers" className="hover:text-[var(--color-primary-mauve)] transition-colors w-fit">Assessment Development Centers</Link>
+            <Link to="/capabilities/assessment-development-centers" className="hover:text-[var(--color-primary-mauve)] transition-colors w-fit">Assessment & Development Centers</Link>
             <Link to="/capabilities/power-skills-development" className="hover:text-[var(--color-primary-mauve)] transition-colors w-fit">Power Skills Development</Link>
             <Link to="/capabilities/digital-business-transformation" className="hover:text-[var(--color-primary-mauve)] transition-colors w-fit">Digital & Business Transformation</Link>
             <Link to="/capabilities/commercial-sales-enablement" className="hover:text-[var(--color-primary-mauve)] transition-colors w-fit">Commercial & Sales Enablement</Link>

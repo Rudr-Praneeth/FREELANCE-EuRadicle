@@ -248,10 +248,10 @@ export default function StoryTimelineSection({ items }) {
                 
                 <div className="flex justify-between items-start mb-6">
                   <div className="flex-1 pr-4">
-                    <p className="text-[15px] min-[600px]:text-lg font-semibold tracking-wide text-[var(--color-primary-mauve)] leading-tight uppercase">
+                    <p className="text-[18px] min-[600px]:text-xl font-semibold tracking-wide text-[var(--color-primary-mauve)] leading-tight uppercase">
                       {item.title}
                     </p>
-                    <h3 className="text-h4 text-[var(--color-primary-mauve)]">
+                    <h3 className="text-md text-[var(--color-primary-mauve)]">
                       {item.year}
                     </h3>
                   </div>

@@ -4,7 +4,10 @@ import { FaPlay, FaPause, FaVolumeMute, FaVolumeUp } from "react-icons/fa";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 const Testimonials = () => {
-  const rawVideos = Array.from({ length: 6 }, (_, i) => `/Testimonial/${i + 1}.mp4`);
+  const rawVideos = Array.from(
+    { length: 6 },
+    (_, i) => `/Testimonial/${i + 1}.mp4`,
+  );
   const videos = [...rawVideos, ...rawVideos, ...rawVideos];
 
   const trackRef = useRef(null);
@@ -12,7 +15,7 @@ const Testimonials = () => {
   const autoRef = useRef(null);
   const animating = useRef(false);
 
-  const cardWidth = 340;
+  const cardWidth = 320;
   const gap = 32;
   const totalWidth = cardWidth + gap;
   const baseIndex = rawVideos.length;
@@ -25,7 +28,7 @@ const Testimonials = () => {
   useEffect(() => {
     gsap.set(trackRef.current, {
       x: -(baseIndex * totalWidth),
-      willChange: "transform"
+      willChange: "transform",
     });
   }, []);
 
@@ -46,7 +49,7 @@ const Testimonials = () => {
         gsap.set(trackRef.current, { x: -(next * totalWidth) });
         setIndex(next);
         animating.current = false;
-      }
+      },
     });
   };
 
@@ -109,9 +112,7 @@ const Testimonials = () => {
           <span className="text-[var(--color-primary-navy)]">
             What Our Users <br />
           </span>
-          <span className="text-[var(--color-primary-mauve)]">
-            Are Saying
-          </span>
+          <span className="text-[var(--color-primary-mauve)]">Are Saying</span>
         </h2>
       </div>
 
@@ -130,27 +131,21 @@ const Testimonials = () => {
           <FiChevronRight size={24} />
         </button>
 
-        <div className="overflow-hidden px-14 xl:px-20 2xl:px-28">
+        <div className="overflow-hidden px-10 xl:px-16 2xl:px-24">
           <div
             ref={trackRef}
-            className="flex"
+            className="flex items-center"
             style={{
               gap: `${gap}px`,
-              paddingLeft: `calc(50% - ${cardWidth / 2}px)`
+              paddingLeft: `calc(50% - ${cardWidth / 2}px - ${gap / 2}px)`,
             }}
           >
             {videos.map((src, i) => {
               const dist = Math.abs(i - index);
 
-              const opacity =
-                dist === 0 ? 1 :
-                dist === 1 ? 0.7 :
-                0.4;
+              const opacity = dist === 0 ? 1 : dist === 1 ? 0.7 : 0.4;
 
-              const scale =
-                dist === 0 ? 1 :
-                dist === 1 ? 0.94 :
-                0.88;
+              const scale = dist === 0 ? 1 : dist === 1 ? 0.94 : 0.88;
 
               const active = i === index;
               const isPlaying = !pausedVideos.has(i);
@@ -165,7 +160,7 @@ const Testimonials = () => {
                     width: `${cardWidth}px`,
                     aspectRatio: "9/14",
                     transform: `scale(${scale})`,
-                    opacity
+                    opacity,
                   }}
                 >
                   <video
@@ -184,14 +179,22 @@ const Testimonials = () => {
                         onClick={(e) => togglePlay(e, i)}
                         className="flex items-center justify-center w-10 h-10 rounded-full backdrop-blur-md bg-black/30 border border-white/30 text-white hover:bg-black/50 transition"
                       >
-                        {isPlaying ? <FaPause size={15} /> : <FaPlay size={15} />}
+                        {isPlaying ? (
+                          <FaPause size={15} />
+                        ) : (
+                          <FaPlay size={15} />
+                        )}
                       </button>
 
                       <button
                         onClick={(e) => toggleMute(e)}
                         className="flex items-center justify-center w-10 h-10 rounded-full backdrop-blur-md bg-black/30 border border-white/30 text-white hover:bg-black/50 transition"
                       >
-                        {muted ? <FaVolumeMute size={16} /> : <FaVolumeUp size={16} />}
+                        {muted ? (
+                          <FaVolumeMute size={16} />
+                        ) : (
+                          <FaVolumeUp size={16} />
+                        )}
                       </button>
                     </div>
                   )}

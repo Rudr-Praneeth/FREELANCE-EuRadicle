@@ -182,7 +182,7 @@ const Testimonials = [
       "A well-structured and thoughtfully designed program that delivered meaningful and practical insights. Participants found the session highly engaging, with interactive activities and clear explanations that deepened their understanding of leadership concepts. The facilitator’s clarity, dedication, and ability to align learning with real workplace needs were especially appreciated. Overall, a powerful and impactful experience that left participants satisfied and better equipped for their professional journey."
   },
   {
-    org: "Peepal Co",
+    org: "PeepalCo",
     logoUrl: "/logos/peepalco.svg",
     h: 3,
     by: "",

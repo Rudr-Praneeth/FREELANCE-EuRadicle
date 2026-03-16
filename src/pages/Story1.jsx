@@ -308,7 +308,7 @@ export default function Story1() {
             </button>
 
             <p className="text-primary-navy text-h4">
-              Start A <span className="text-primary-mauve">Conversation</span>
+              Start A{" "}<span className="text-primary-mauve">Conversation</span>
             </p>
 
             <form onSubmit={handleSubmit} className="flex flex-col gap-4 mt-8">

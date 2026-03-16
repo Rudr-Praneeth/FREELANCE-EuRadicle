@@ -21,7 +21,7 @@ const TestimonialCard = ({ data }) => {
         ))}
       </div>
 
-      <p className="text-primary-navy/70 italic leading-relaxed text-sm sm:text-base">
+      <p className="text-primary-navy/70 italic leading-relaxed text-xs sm:text-base">
         {data.testimonial}
       </p>
 

@@ -59,7 +59,7 @@ export default function AboutSection() {
   return (
     <section
       ref={sectionRef}
-      className="w-full mx-auto py-8 px-4 xl:px-8 2xl:px-12 min-[600px]:py-14 min-[768px]:py-16 min-[992px]:py-20 min-[1200px]:py-24 2xl:py-28"
+      className="w-full mx-auto pt-24 pb-8 px-4 xl:px-8 2xl:px-12 min-[600px]:pt-28 min-[600px]:pb-14 min-[768px]:pt-32 min-[768px]:pb-16 min-[992px]:pt-36 min-[992px]:pb-20 min-[1200px]:pt-40 min-[1200px]:pb-24 2xl:pt-44 2xl:pb-28"
     >
       <h1
         ref={titleRef}

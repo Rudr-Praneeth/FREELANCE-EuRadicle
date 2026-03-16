@@ -224,7 +224,7 @@ export default function Story1() {
   return (
     <section className="w-full">
       <div
-        className="relative w-full h-[400px] md:h-[500px] mt-[84px] bg-center bg-cover flex flex-col items-center justify-center"
+        className="relative w-full h-[400px] md:h-[500px] mt-[84px] bg-center bg-cover bg-top flex flex-col items-center justify-center"
         style={{ backgroundImage: `url(${LeaderStory.bannerUrl})` }}
       >
         <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center px-4 text-center">

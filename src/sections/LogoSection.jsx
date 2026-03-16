@@ -46,7 +46,7 @@ const LogoSection = () => {
         <div className="relative z-10 mx-auto">
           <div className="text-center mb-12">
             <h1 className="text-h1 text-primary-navy tracking-tight text-[clamp(28px,5vw,56px)] leading-tight">
-              TRUSTED BY <span className="text-primary-mauve"><br className="block sm:hidden"/>BRANDS </span>
+              TRUSTED BY <span className="text-primary-mauve"><br className="block sm:hidden"/>BRANDS AND </span>
               <br className="hidden sm:block"/>
               INDUSTRIES <br className="block sm:hidden"/>WORLDWIDE
             </h1>

@@ -79,7 +79,7 @@ export default function BeyondBusiness() {
             <p className="text-body xl:text-lg 2xl:text-xl mb-4 leading-relaxed text-justify">
               At EuRadicle, every Project we deliver carries a commitment beyond
               business impact. As we help organisations build capability and
-              leadership, we also invest in life beyond the workplace -
+              leadership, we also invest in life beyond the workplace,
               supporting environmental sustainability through tree plantation
               and extending care to old age homes and orphanages through
               essential contributions. For us, impact is both immediate and

@@ -100,22 +100,7 @@ const Contact = () => {
           },
         }),
       });
-
-      await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        {
-          name: `${formData.FirstName} ${formData.LastName}`,
-          email: formData.Email,
-          phone: phone,
-          company: formData.Company,
-          organisation: formData.Designation,
-        },
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      );
-
       setStatus({ type: "success", message: "Form submitted successfully" });
-
       setFormData({
         FirstName: "",
         LastName: "",

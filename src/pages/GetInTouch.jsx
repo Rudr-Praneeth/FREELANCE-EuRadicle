@@ -74,19 +74,6 @@ const GetInTouch = () => {
           }
         })
       })
-
-      await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        {
-          name: formData.Name,
-          email: formData.Email,
-          phone: phone,
-          message: formData.Message
-        },
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      )
-
       setStatus({ type: "success", message: "Form submitted successfully" })
 
       setFormData({

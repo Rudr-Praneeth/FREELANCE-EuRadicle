@@ -26,16 +26,16 @@ export default function Footer() {
               className="w-auto h-28 md:h-32 2xl:h-36 object-contain"
             />
             <div className="flex gap-5 2xl:gap-6 text-xl 2xl:text-2xl text-primary-navy/80">
-              <a href="#" className="p-2 rounded-full border border-brand-400/20 hover:bg-white hover:text-[var(--color-primary-mauve)] transition-all duration-300">
+              <a href="https://www.linkedin.com/company/euradicle-training-india/posts/?feedView=all" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full border border-brand-400/20 hover:bg-white hover:text-[var(--color-primary-mauve)] transition-all duration-300">
                 <FaLinkedinIn />
               </a>
-              <a href="#" className="p-2 rounded-full border border-brand-400/20 hover:bg-white hover:text-[var(--color-primary-mauve)] transition-all duration-300">
+              <a href="https://www.instagram.com/euradicle/?hl=en" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full border border-brand-400/20 hover:bg-white hover:text-[var(--color-primary-mauve)] transition-all duration-300">
                 <FaInstagram />
               </a>
-              <a href="#" className="p-2 rounded-full border border-brand-400/20 hover:bg-white hover:text-[var(--color-primary-mauve)] transition-all duration-300">
+              <a href="https://www.facebook.com/EuRadicleTrainingIndia/" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full border border-brand-400/20 hover:bg-white hover:text-[var(--color-primary-mauve)] transition-all duration-300">
                 <FaFacebookF />
               </a>
-              <a href="#" className="p-2 rounded-full border border-brand-400/20 hover:bg-white hover:text-[var(--color-primary-mauve)] transition-all duration-300">
+              <a href="https://www.youtube.com/channel/UC5pBaWce56rhEgrfEtj--3g" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full border border-brand-400/20 hover:bg-white hover:text-[var(--color-primary-mauve)] transition-all duration-300">
                 <FaYoutube />
               </a>
             </div>

@@ -23,10 +23,26 @@ export default function ContactSection({
   loading = false,
 }) {
   const socials = [
-    { label: "LinkedIn", icon: <FaLinkedinIn /> },
-    { label: "Facebook", icon: <FaFacebookF /> },
-    { label: "Instagram", icon: <FaInstagram /> },
-    { label: "YouTube", icon: <FaYoutube /> },
+    {
+      label: "LinkedIn",
+      icon: <FaLinkedinIn />,
+      url: "https://www.linkedin.com/company/euradicle-training-india/posts/?feedView=all",
+    },
+    {
+      label: "Facebook",
+      icon: <FaFacebookF />,
+      url: "https://www.facebook.com/EuRadicleTrainingIndia/",
+    },
+    {
+      label: "Instagram",
+      icon: <FaInstagram />,
+      url: "https://www.instagram.com/euradicle/?hl=en",
+    },
+    {
+      label: "YouTube",
+      icon: <FaYoutube />,
+      url: "https://www.youtube.com/channel/UC5pBaWce56rhEgrfEtj--3g",
+    },
   ];
 
   const [focused, setFocused] = useState(false);
@@ -171,9 +187,15 @@ export default function ContactSection({
         {show && (
           <div className="mt-8 flex justify-center gap-2 md:grid md:grid-cols-4 px-4 md:px-12 w-full md:w-max mx-auto">
             {socials.map((item) => (
-              <div key={item.label} className="scale-75 md:scale-100">
+              <a
+                key={item.label}
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="scale-75 md:scale-100"
+              >
                 <FlowButton icon={item.icon} id="contact" arrow={false} />
-              </div>
+              </a>
             ))}
           </div>
         )}

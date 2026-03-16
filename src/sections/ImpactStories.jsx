@@ -116,7 +116,7 @@ const ImpactStories = () => {
   const images = [
     '/Home/compressed-AwarenessCard.jpg',
     '/Home/compressed-AspireCard.jpeg',
-    '/Home/compressed-PrysmCard.jpeg',
+    '/Home/Enterprise Card.jpeg',
   ]
 
   useGSAP(() => {

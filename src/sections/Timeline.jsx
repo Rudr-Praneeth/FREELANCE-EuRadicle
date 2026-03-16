@@ -51,7 +51,7 @@ export default function StoryTimelineSection({ items }) {
           return trackRef.current.scrollWidth - window.innerWidth + END_GAP;
         };
 
-        const horizontalTween = gsap.to(trackRef.current, {
+        gsap.to(trackRef.current, {
           x: () => -getTotalScroll(),
           ease: "none",
           scrollTrigger: {
@@ -79,15 +79,6 @@ export default function StoryTimelineSection({ items }) {
             },
           },
         });
-
-        cardsRef.current.forEach((card) => {
-          if (!card) return;
-          ScrollTrigger.create({
-            trigger: card,
-            containerAnimation: horizontalTween,
-            start: "center center",
-          });
-        });
       });
 
       mm.add("(max-width: 767px)", () => {
@@ -96,7 +87,7 @@ export default function StoryTimelineSection({ items }) {
           return trackRef.current.scrollWidth - window.innerWidth + END_GAP;
         };
 
-        const horizontalTween = gsap.to(trackRef.current, {
+        gsap.to(trackRef.current, {
           x: () => -getTotalScroll(),
           ease: "none",
           scrollTrigger: {
@@ -124,22 +115,11 @@ export default function StoryTimelineSection({ items }) {
             },
           },
         });
-
-        cardsRef.current.forEach((card) => {
-          if (!card) return;
-          ScrollTrigger.create({
-            trigger: card,
-            containerAnimation: horizontalTween,
-            start: "center center",
-          });
-        });
       });
 
       return () => {
         mm.revert();
         ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-        ScrollTrigger.clearScrollMemory();
-        window.scrollTo(0, 0);
       };
     },
     { scope: sectionRef, dependencies: [items.length] },
@@ -195,7 +175,7 @@ export default function StoryTimelineSection({ items }) {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full overflow-hidden min-[768px]:h-screen pt-16  pb-28 min-[768px]:py-0"
+      className="relative w-full overflow-hidden min-[768px]:h-screen pt-16 pb-28 min-[768px]:py-0"
       style={{
         background: "linear-gradient(to bottom right, #E4E7FD, #F4DEF0)",
       }}
@@ -251,7 +231,7 @@ export default function StoryTimelineSection({ items }) {
           <div
             key={i}
             ref={(el) => (cardsRef.current[i] = el)}
-            className="shrink-0 w-full max-w-md min-[768px]:w-screen min-[768px]:flex min-[768px]:items-center min-[768px]:justify-center rounded-2xl transition-transform duration-500"
+            className="shrink-0 w-full max-w-md min-[768px]:w-screen min-[768px]:flex min-[768px]:items-center min-[768px]:justify-center rounded-2xl"
             style={{ perspective: "1000px" }}
           >
             <div className="w-full max-w-md rounded-2xl bg-[var(--color-bg-white)] shadow-2xl overflow-hidden">
@@ -265,38 +245,40 @@ export default function StoryTimelineSection({ items }) {
                 }}
               />
               <div className="relative flex flex-col p-6 min-[600px]:p-7 min-[768px]:p-8">
-                <img
-                  src={item.logo}
-                  alt=""
-                  className={`absolute w-auto object-contain ${
-                    item.size === "yes"
-                      ? "top-8 right-10 h-8 min-[600px]:h-10 min-[768px]:h-12"
-                      : item.size === "hh"
-                        ? "top-[-30px] left-53 h-34 min-[600px]:h-38 min-[768px]:h-40"
-                        : "top-[-30px] left-50 h-24 min-[600px]:h-38 min-[768px]:h-40"
-                  }`}
-                />
-                {item.break ? (
-                  <p className="text-[17px] font-semibold tracking-wide text-[var(--color-primary-mauve)]">
-                    {item.title?.toUpperCase()}
-                  </p>
-                ) : (
-                  <p className="text-lg font-semibold tracking-wide text-[var(--color-primary-mauve)]">
-                    {item.title?.toUpperCase()}
-                  </p>
-                )}
-                <h3 className="text-h4 text-[var(--color-primary-mauve)]">
-                  {item.year}
-                </h3>
+                
+                <div className="flex justify-between items-start mb-6">
+                  <div className="flex-1 pr-4">
+                    <p className="text-[15px] min-[600px]:text-lg font-semibold tracking-wide text-[var(--color-primary-mauve)] leading-tight uppercase">
+                      {item.title}
+                    </p>
+                    <h3 className="text-h4 text-[var(--color-primary-mauve)]">
+                      {item.year}
+                    </h3>
+                  </div>
+
+                  <div className="relative w-24 h-12 min-[600px]:w-32 min-[600px]:h-16 flex items-center justify-center">
+                    <img
+                      src={item.logo}
+                      alt=""
+                      className={`max-w-none transition-transform duration-500 origin-center ${
+                        item.size === "yes"
+                          ? "h-10 min-[600px]:h-12 scale-100"
+                          : item.size === "hh"
+                            ? "h-24 min-[600px]:h-32 scale-[1.5]"
+                            : "h-20 min-[600px]:h-28 scale-[1.5]"
+                      }`}
+                    />
+                  </div>
+                </div>
 
                 <div
                   ref={(el) => (contentRefs.current[i] = el)}
                   className="overflow-hidden"
                 >
-                  <p className="mt-4 min-[600px]:mt-5 text-body-sm">
+                  <p className="mt-2 text-body-sm leading-relaxed">
                     {item.text}
                   </p>
-                  <hr className="my-4 min-[600px]:my-5 border-brand-600" />
+                  <hr className="my-4 border-brand-600/30" />
                 </div>
               </div>
             </div>

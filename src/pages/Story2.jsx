@@ -85,18 +85,18 @@ export default function Story1() {
       );
     });
 
-    const spread = () => {
+        const spread = () => {
       gsap.to(imagesRef.current[0], {
-        x: -160,
-        y: -120,
+        x: -120,
+        y: -90,
         rotate: -12,
         scale: 1,
         duration: 0.5,
         ease: "power3.out",
       });
       gsap.to(imagesRef.current[1], {
-        x: 160,
-        y: -120,
+        x: 120,
+        y: -90,
         rotate: 12,
         scale: 1,
         duration: 0.5,
@@ -104,7 +104,7 @@ export default function Story1() {
       });
       gsap.to(imagesRef.current[2], {
         x: 0,
-        y: 140,
+        y: 120,
         rotate: 0,
         scale: 1.05,
         duration: 0.5,

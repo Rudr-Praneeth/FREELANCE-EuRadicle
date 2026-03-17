@@ -69,7 +69,7 @@ export default function MindsBehind({ items }) {
           </p>
         </div>
 
-        <div className="mt-12 xl:mt-14 2xl:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8 2xl:gap-10 items-stretch">
+        <div className="mt-12 xl:mt-14 2xl:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8 2xl:gap-10">
           {items.slice(0, 3).map((item, i) => (
             <div
               key={i}
@@ -170,7 +170,7 @@ export default function MindsBehind({ items }) {
           {items[4] && (
             <div
               ref={(el) => (cardsRef.current[4] = el)}
-              className="relative rounded-2xl bg-white shadow-lg w-full max-w-md h-full sm:col-span-2 sm:justify-self-center lg:col-span-1 lg:col-start-3 lg:justify-self-center"
+              className="relative rounded-2xl bg-white shadow-lg w-full max-w-md h-full sm:col-span-2 sm:justify-self-center lg:col-span-1 lg:max-w-none lg:justify-self-auto"
             >
               <svg
                 className="absolute inset-0 h-full w-full"

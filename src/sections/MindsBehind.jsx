@@ -74,14 +74,7 @@ export default function MindsBehind({ items }) {
             <div
               key={i}
               ref={(el) => (cardsRef.current[i] = el)}
-              className={`
-                relative
-                rounded-2xl
-                bg-white
-                shadow-lg
-                w-full h-full
-                ${""}
-              `}
+              className="relative rounded-2xl bg-white shadow-lg w-full h-full"
             >
               <svg
                 className="absolute inset-0 h-full w-full"
@@ -121,6 +114,7 @@ export default function MindsBehind({ items }) {
               </div>
             </div>
           ))}
+
           {items[3] && (
             <div
               ref={(el) => (cardsRef.current[3] = el)}
@@ -164,6 +158,7 @@ export default function MindsBehind({ items }) {
               </div>
             </div>
           )}
+
           <div className="hidden lg:flex items-center justify-center">
             <img
               src="/Home/logo.gif"
@@ -171,10 +166,11 @@ export default function MindsBehind({ items }) {
               className="h-92 md:h-90 xl:h-[420px] 2xl:h-[480px] object-contain"
             />
           </div>
+
           {items[4] && (
             <div
               ref={(el) => (cardsRef.current[4] = el)}
-              className="relative rounded-2xl bg-white shadow-lg w-full max-w-md h-full sm:col-span-2 sm:col-start-1 sm:justify-self-center lg:col-span-1 lg:col-start-2 lg:justify-self-center"
+              className="relative rounded-2xl bg-white shadow-lg w-full max-w-md h-full sm:col-span-2 sm:justify-self-center lg:col-span-1 lg:col-start-3 lg:justify-self-center"
             >
               <svg
                 className="absolute inset-0 h-full w-full"

@@ -189,14 +189,14 @@ export default function StoryTimelineSection({ items }) {
 
       <div
         ref={timelineRef}
-        className="relative min-[768px]:absolute top-20 min-[768px]:top-32 left-0 right-0 w-full px-4 min-[600px]:px-6 mb-10 min-[768px]:mb-0"
+        className="relative min-[768px]:absolute top-20 min-[768px]:top-32 left-0 right-0 w-full px-6 min-[440px]:px-8 min-[600px]:px-12 mb-10 min-[768px]:mb-0"
       >
-        <div className="flex items-center justify-center mx-auto max-w-xs min-[600px]:max-w-lg min-[768px]:max-w-4xl min-[1200px]:max-w-5xl">
+        <div className="flex items-center justify-center pl-2 pr-2 min-[440px]:pl-3 min-[440px]:pr-3 mx-auto max-w-[92%] min-[440px]:max-w-sm min-[600px]:max-w-lg min-[768px]:max-w-4xl min-[1200px]:max-w-5xl">
           {items.map((item, i) => (
-            <div key={i} className="flex items-center flex-1">
+            <div key={i} className="flex items-center flex-none min-[600px]:flex-1">
               <div className="flex flex-col items-center flex-shrink-0">
                 <div
-                  className={`z-10 flex h-8 min-[600px]:h-10 px-3 min-[600px]:px-4 min-w-16 min-[600px]:min-w-24 items-center justify-center rounded-full border text-[10px] min-[600px]:text-body-sm font-semibold transition-all duration-500 ${
+                  className={`z-10 flex h-7 min-[600px]:h-10 px-2 min-[600px]:px-4 min-w-12 min-[600px]:min-w-24 items-center justify-center rounded-full border text-[10px] min-[600px]:text-body-sm font-semibold transition-all duration-500 ${
                     activeIndex === i
                       ? "bg-brand-600 text-white border-transparent scale-110 shadow-lg shadow-brand-600/30"
                       : "bg-[var(--color-bg-white)] text-[var(--color-primary-mauve)] border-brand-600"
@@ -209,7 +209,7 @@ export default function StoryTimelineSection({ items }) {
                 )}
               </div>
               {i !== items.length - 1 && (
-                <div className="relative h-px flex-1 mx-1 min-[600px]:mx-2 bg-brand-600/20 overflow-hidden">
+                <div className="relative h-px flex-1 mx-0.5 min-[440px]:mx-0.5 min-[600px]:mx-2 bg-brand-600/20 overflow-hidden">
                   <div
                     className="absolute left-0 top-0 h-full bg-brand-600/60 transition-all duration-500"
                     style={{

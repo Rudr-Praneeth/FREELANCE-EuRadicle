@@ -44,7 +44,7 @@ export default function BeyondBusiness() {
   );
 
   const statement =
-    "We believe that growth carries a responsibility - to give back to the world that enables it.";
+    "We believe that growth carries a responsibility to give back to the world that enables it.";
 
   return (
     <section
@@ -76,8 +76,8 @@ export default function BeyondBusiness() {
           </div>
 
           <div className="bb-fade italic">
-            <p className="text-body xl:text-lg 2xl:text-xl mb-4 leading-relaxed text-justify">
-              At EuRadicle, every Project we deliver carries a commitment beyond
+            <p className="text-body xl:text-lg 2xl:text-xl mb-4 leading-relaxed text-center">
+              At EuRadicle, every project we deliver, carries a commitment beyond
               business impact. As we help organisations build capability and
               leadership, we also invest in life beyond the workplace,
               supporting environmental sustainability through tree plantation

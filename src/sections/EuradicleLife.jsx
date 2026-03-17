@@ -11,6 +11,7 @@ export default function EuradicleLife() {
     "/Celebrations/compressed-celeb4.jpg",
     "/Celebrations/compressed-celeb5.jpg",
     "/Celebrations/compressed-celeb6.jpg",
+    "/Celebrations/compressed-celeb1.jpeg",
   ];
 
   useGSAP(
@@ -83,7 +84,7 @@ export default function EuradicleLife() {
             />
           </div>
 
-          <div className="col-span-8 row-span-2 overflow-hidden rounded-3xl life-animate">
+          <div className="col-span-12 row-span-2 overflow-hidden rounded-3xl life-animate">
             <img
               src={images[2]}
               alt=""
@@ -96,6 +97,15 @@ export default function EuradicleLife() {
           <div className="col-span-4 row-span-2 overflow-hidden rounded-3xl life-animate">
             <img
               src={images[4]}
+              alt=""
+              loading="lazy"
+              decoding="async"
+              className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+            />
+          </div>
+          <div className="col-span-8 row-span-2 overflow-hidden rounded-3xl life-animate">
+            <img
+              src={images[5]}
               alt=""
               loading="lazy"
               decoding="async"

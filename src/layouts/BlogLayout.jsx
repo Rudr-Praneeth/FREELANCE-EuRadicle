@@ -48,15 +48,15 @@ function BlogLayout({
           },
           "-=0.4"
         )
-        .from(
-          ".blog-subtitle",
-          {
-            y: 30,
-            opacity: 0,
-            duration: 0.7,
-          },
-          "-=0.5"
-        )
+        // .from(
+        //   ".blog-subtitle",
+        //   {
+        //     y: 30,
+        //     opacity: 0,
+        //     duration: 0.7,
+        //   },
+        //   "-=0.5"
+        // )
         .from(
           heroRef.current,
           {
@@ -133,9 +133,9 @@ function BlogLayout({
               {title}
             </h1>
 
-            <p className="blog-subtitle my-4 text-lg text-[var(--color-primary-navy)]/70 max-w-3xl italic">
+            {/* <p className="blog-subtitle my-4 text-lg text-[var(--color-primary-navy)]/70 max-w-3xl italic">
               {subtitle}
-            </p>
+            </p> */}
 
             <div className="overflow-hidden rounded-[30px]">
               <img
@@ -148,7 +148,7 @@ function BlogLayout({
 
             <div
               ref={contentRef}
-              className="blog-content mt-12 space-y-8 text-gray-700 text-lg leading-relaxed text-justify"
+              className="blog-content mt-12 space-y-8 text-gray-700 text-lg leading-relaxed text-left sm:text-justify"
             >
               {children}
             </div>

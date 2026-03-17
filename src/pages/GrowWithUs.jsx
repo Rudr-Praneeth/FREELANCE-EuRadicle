@@ -25,7 +25,7 @@ const GrowWithUs = () => {
       url: "/Interns/2.png",
     },
     {
-      text: "I joined EuRadicle as an intern expecting to learn, but it quickly became a phase of accelerated growth and a defining career milestone. From day one, I was trusted with real projects, real clients, and meaningful impact, never treated as “just an intern.” The vibrant, collaborative culture encouraged creativity and pushed me to think beyond the obvious, while also offering flexibility and genuine support as I balanced academics. Working on innovation-driven projects expanded my perspective across strategy, creativity, and solution design, which eventually led to my transition into a Senior Associate – Content Development & Solutioning. Today, I design research-backed capability programs that solve complex talent challenges for large organizations. At EuRadicle, early talent isn’t just managed it’s mentored, empowered, and accelerated.",
+      text: "I joined EuRadicle as an intern expecting to learn, but it quickly became a phase of accelerated growth and a defining career milestone. From day one, I was trusted with real projects, real clients, and meaningful impact. The vibrant, collaborative culture encouraged creativity and pushed me to think beyond the obvious, while also offering flexibility and genuine support as I balanced academics. Working on innovation-driven projects expanded my perspective across strategy, creativity, and solution design, which eventually led to my transition into a Senior Associate – Content Development & Solutioning. Today, I design research-backed capability programs that solve complex talent challenges for large organizations. At EuRadicle, early talent isn’t just managed it’s mentored, empowered, and accelerated.",
       name: "Saba Siddiqui",
       role: "Sr. Associate – Content Development & Solutioning",
       url: "/Interns/3.png",
@@ -46,7 +46,7 @@ const GrowWithUs = () => {
     },
     {
       title: "Global Exposure, Human Culture",
-      text: "With a footprint across the US, Middle East, and India, you work in a global context while staying rooted in a people-first culture. We value trust, curiosity, and collaboration, because high performance is sustainable only when humans come first.",
+      text: "With a footprint across the U.S., U.A.E., and India, you work in a global context while staying rooted in a people-first culture. We value trust, curiosity, and collaboration, because high performance is sustainable only when humans come first.",
     },
   ];
   const info = `Our Early Talent & Internship programs are built to give emerging professionals 

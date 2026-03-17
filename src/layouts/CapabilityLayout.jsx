@@ -28,7 +28,8 @@ function CapabilityLayout({
     right: "object-right",
     center: "object-center",
     bottom: "object-bottom/20",
-    top: "object-top"
+    top: "object-top",
+    top_20: "top/20"
   }
 
   const formatSlug = (str) =>
@@ -193,7 +194,7 @@ function CapabilityLayout({
             className={`absolute inset-0 w-full h-full object-cover ${map[position]}`}
           />
         )}
-        <div className="absolute inset-0 bg-[var(--color-primary-navy)]/60"></div>
+        <div className="absolute inset-0 bg-black/60"></div>
         <div className="relative z-10 flex flex-col items-center justify-center text-center h-full px-10">
           <h1 ref={titleRef} className="text-h1 text-white mb-6 max-w-4xl">
             {selectedCapability?.title || title}
@@ -216,7 +217,7 @@ function CapabilityLayout({
       <div className="max-w-7xl mx-auto py-16">
         <div className="cap-content text-body text-[var(--color-primary-navy)]">
           {intro && (
-            <p className="text-body-lg leading-relaxed max-w-6xl mx-auto text-center mb-28">
+            <p className="text-body-lg leading-relaxed max-w-6xl mx-auto text-center mb-28 px-2 ">
               {intro}
             </p>
           )}

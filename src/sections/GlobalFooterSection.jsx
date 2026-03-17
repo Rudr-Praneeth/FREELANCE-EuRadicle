@@ -53,7 +53,7 @@ export default function GlobalFooterSection() {
           <span className="text-[var(--color-primary-mauve)]">FOOTPRINTS</span>
         </h1>
         <p className="italic text-body-sm xl:text-base 2xl:text-lg mt-6 max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto gfs-animate">
-          Our footprint spans the U.S., UAE, and India - blending global
+          Our footprint spans the U.S., U.A.E., and India - blending global
           perspective with local relevance. With our registered office in Texas
           and headquarters in Hyderabad, we design and deliver scalable talent
           systems that drive lasting impact across globe.

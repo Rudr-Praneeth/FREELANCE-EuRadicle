@@ -7,7 +7,7 @@ function CommercialSalesEnablement() {
       title="Commercial & Sales Enablement"
       subtitle="Developing commercial acumen that converts relationships into measurable growth."
       image="/Capabilities/sales internal.avif"
-      position="top"
+      position="center"
       intro={
         <>
           Sustainable growth requires more than sales targets. It demands strong

@@ -174,7 +174,7 @@ export default function MindsBehind({ items }) {
           {items[4] && (
             <div
               ref={(el) => (cardsRef.current[4] = el)}
-              className="relative rounded-2xl bg-white shadow-lg w-full h-full sm:col-span-2 sm:col-start-1 sm:justify-self-center lg:col-span-1 lg:col-start-auto"
+              className="relative rounded-2xl bg-white shadow-lg w-full max-w-md h-full sm:col-span-2 sm:col-start-1 sm:justify-self-center lg:col-span-1 lg:col-start-2 lg:justify-self-center"
             >
               <svg
                 className="absolute inset-0 h-full w-full"

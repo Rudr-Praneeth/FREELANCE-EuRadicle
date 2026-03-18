@@ -5,7 +5,7 @@ import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 const Testimonials = () => {
   const rawVideos = Array.from(
-    { length: 6 },
+    { length: 7 },
     (_, i) => `/Testimonial/${i + 1}.mp4`,
   );
   const videos = [...rawVideos, ...rawVideos, ...rawVideos];

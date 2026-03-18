@@ -16,7 +16,7 @@ const StoryCard = ({ story, index, isHovered, onHover, onLeave, image, slug }) =
   useGSAP(() => {
     if (isHovered) {
       gsap.to(imageRef.current, {
-        scale: index === 1 ? 1.15 : 1.45,
+        scale: 1.15,
         duration: 0.9,
         ease: 'power3.out',
         overwrite: 'auto'
@@ -148,7 +148,7 @@ const ImpactStories = () => {
         </h2>
       </div>
 
-      <div className="relative z-10 w-full max-w-[1600px] mx-auto flex flex-col min-[768px]:flex-row gap-6 items-stretch justify-center min-[768px]:h-[520px]">
+      <div className="relative z-10 w-full max-w-[1600px] mx-auto flex flex-col min-[768px]:flex-row gap-6 items-center justify-center min-[768px]:h-[520px]">
         {Stories.map((story, index) => (
           <StoryCard
             key={index}

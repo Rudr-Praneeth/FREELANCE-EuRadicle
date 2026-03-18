@@ -5,7 +5,7 @@ const TestimonialCard = ({ data }) => {
   const isParticipantVoice = !data.by && !data.designation;
 
   return (
-    <div className="testimonial-card relative flex-shrink-0 w-[90vw] min-[500px]:w-[75vw] min-[650px]:w-[60vw] min-[800px]:w-full max-w-[480px] min-[800px]:max-w-none bg-bg-white rounded-2xl p-5 sm:p-6 border border-brand-400/20 shadow-[0_10px_30px_-15px_rgba(45,48,71,0.1)] min-h-[460px] flex flex-col gap-3">
+    <div className="testimonial-card snap-x snap-mandatory relative flex-shrink-0 w-[90vw] min-[500px]:w-[75vw] min-[650px]:w-[60vw] min-[800px]:w-full max-w-[480px] min-[800px]:max-w-none bg-bg-white rounded-2xl p-5 sm:p-6 border border-brand-400/20 shadow-[0_10px_30px_-15px_rgba(45,48,71,0.1)] min-h-[460px] flex flex-col gap-3">
       {/* {isParticipantVoice && (
         <img
           src="/ParticipantsVoices.png"
@@ -57,15 +57,47 @@ const TestimonialCard = ({ data }) => {
   );
 };
 
-const MarqueeRow = ({ items }) => (
-  <div className="relative w-full overflow-hidden min-[800px]:hidden py-6">
-    <div className="flex gap-6 animate-marquee-x w-max cursor-grab active:cursor-grabbing overflow-x-auto no-scrollbar">
-      {[...items, ...items].map((item, idx) => (
-        <TestimonialCard key={idx} data={item} />
-      ))}
+const MarqueeRow = ({ items }) => {
+  const scrollRef = React.useRef(null);
+  const isHovering = React.useRef(false);
+
+  React.useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+
+    let animationFrame;
+
+    const autoScroll = () => {
+      if (!isHovering.current) {
+        el.scrollLeft += 3.5;
+        if (el.scrollLeft >= el.scrollWidth / 2) {
+          el.scrollLeft = 0;
+        }
+      }
+
+      animationFrame = requestAnimationFrame(autoScroll);
+    };
+
+    animationFrame = requestAnimationFrame(autoScroll);
+
+    return () => cancelAnimationFrame(animationFrame);
+  }, []);
+
+  return (
+    <div className="relative w-full min-[800px]:hidden py-6">
+      <div
+        ref={scrollRef}
+        onMouseEnter={() => (isHovering.current = true)}
+        onMouseLeave={() => (isHovering.current = false)}
+        className="flex gap-6 overflow-x-auto no-scrollbar scroll-smooth px-2"
+      >
+        {[...items, ...items].map((item, idx) => (
+          <TestimonialCard key={idx} data={item} />
+        ))}
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 const MarqueeColumn = ({ items, reverse = false }) => (
   <div className="relative h-[560px] md:h-[640px] lg:h-[680px] overflow-hidden hidden min-[800px]:block">
